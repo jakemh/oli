@@ -41,7 +41,7 @@ src: url(proxima_nova_thin.otf);
 }
 
 /* Landscape phones and smaller */
-@media (max-width: 400px) {
+@media (max-width: 300px) {
    .logo img{
     max-width: 130px !important;
     max-height: 80px !important;
