@@ -41,10 +41,18 @@ src: url(proxima_nova_thin.otf);
 }
 
 /* Landscape phones and smaller */
-@media (max-width: 300px) {
+@media (max-width: 480px) {
    .logo img{
-    max-width: 130px !important;
-    max-height: 80px !important;
+    max-width: 156px !important;
+    max-height: 96px !important;
+  }
+
+  .logo{
+    padding-bottom: 20px !important;
+  }
+
+  .content-container{
+    padding-top: 20px !important;
   }
 }
 
@@ -52,6 +60,8 @@ src: url(proxima_nova_thin.otf);
   height: 100%;
   width: 100%;
   padding-top: 50px;
+  position: relative;
+  overflow: auto;
 }
 
 .oli-form{
@@ -73,6 +83,7 @@ src: url(proxima_nova_thin.otf);
   letter-spacing:.03em;
   font-weight: thin;
   outline: none;
+  -webkit-appearance:none;
   opacity: .95;
 }
 
@@ -87,6 +98,7 @@ src: url(proxima_nova_thin.otf);
 }
 
 .body-text{
+
   font-family: pn-light;
   text-align: center;
   font-weight: normal;
@@ -110,7 +122,6 @@ src: url(proxima_nova_thin.otf);
 } 
 .oli-form{
   max-width: 400px;
-  position:relative;
 }
 
 .submit-field{

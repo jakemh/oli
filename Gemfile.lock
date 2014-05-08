@@ -28,6 +28,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    aweber (1.6.1)
+      json
+      oauth
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -55,6 +58,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.3.3)
     multi_json (1.9.2)
+    oauth (0.4.7)
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -125,6 +129,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aweber
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails

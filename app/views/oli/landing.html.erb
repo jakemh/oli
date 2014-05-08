@@ -1,6 +1,8 @@
 <div class="content-container">
   <div class="logo"><%= image_tag "oli-logo.png" %>
 </div>
+
+
   <div class="header-text">
     NEW ONLINE COURSE COMING SOON 
   </div>
@@ -13,8 +15,8 @@
       Be the first to hear when OLI launches.
     </div>
     <div class="oli-form">
-      <%= form_tag("/search", method: "get") do %>
-        <%= text_field_tag(:q, nil, :placeholder => "Enter your email address", :class => "submit-field") %>
+      <%= form_tag("/oli/landing", method: "post") do %>
+        <%= text_field_tag(:data, nil, :placeholder => "Enter your email address", :class => "submit-field") %>
         <%= submit_tag("SUBMIT", :class => "submit-button") %>
       <% end %>
     </div> <!-- /oli-form -->
