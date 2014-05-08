@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'oli/landing'
-  match "/oli/landing" => "oli#subscribe", via: :post
+  match "/landing" => "oli#landing", via: :get
+  match "/landing" => "oli#subscribe", via: :post
+  root to: 'oli#landing'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -13,7 +13,7 @@
       Be the first to hear when OLI launches.
     </div>
     <div class="oli-form">
-      <%= form_tag("/oli/landing", method: "post") do %>
+      <%= form_tag("/landing", method: "post") do %>
         <%= text_field_tag(:data, nil, :type => "email", :placeholder => "Enter your email address", :class => "form-control submit-field") %>
         <%= submit_tag("SUBMIT", :class => "submit-button") %>
       <% end %>
