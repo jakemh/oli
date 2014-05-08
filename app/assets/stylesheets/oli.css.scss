@@ -55,7 +55,7 @@ src: url(proxima_nova_thin.otf);
 
 }
 
-@media (max-height: 350px) {
+@media (max-height: 350px ) and (min-width: 400px) {
   .body-text{
   display: none;
 
