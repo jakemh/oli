@@ -48,11 +48,21 @@ src: url(proxima_nova_thin.otf);
   }
 
   .logo{
+    padding-top: 10px !important;
+
     padding-bottom: 20px !important;
   }
 
-  .content-container{
-    padding-top: 20px !important;
+}
+
+@media (max-height: 300px) {
+  .body-text{
+  display: none;
+
+  }
+
+  .footer-text{
+    padding-top: 10px !important;
   }
 }
 
@@ -147,6 +157,7 @@ src: url(proxima_nova_thin.otf);
   z-index: 100;
   text-align: center;
   padding-bottom: 60px;
+  padding-top: 50px;
   /*background: url('oli-logo.png') no-repeat center;*/
   /*background-size: 216px 134px;*/
 }

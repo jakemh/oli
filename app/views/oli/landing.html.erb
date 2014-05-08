@@ -1,7 +1,5 @@
-<div class="content-container">
   <div class="logo"><%= image_tag "oli-logo.png" %>
 </div>
-
 
   <div class="header-text">
     NEW ONLINE COURSE COMING SOON 
@@ -16,9 +14,8 @@
     </div>
     <div class="oli-form">
       <%= form_tag("/oli/landing", method: "post") do %>
-        <%= text_field_tag(:data, nil, :placeholder => "Enter your email address", :class => "submit-field") %>
+        <%= text_field_tag(:data, nil, :type => "email", :placeholder => "Enter your email address", :class => "form-control submit-field") %>
         <%= submit_tag("SUBMIT", :class => "submit-button") %>
       <% end %>
     </div> <!-- /oli-form -->
   </div> <!-- /info -->
-</div> <!-- /content-container -->
