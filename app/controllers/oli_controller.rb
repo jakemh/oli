@@ -10,31 +10,42 @@ class OliController < ApplicationController
   def landing
   end
 
+
   def subscribe
     @status = "Thank you for registering!"
-    begin
-    oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
-    oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-    aweber = AWeber::Base.new(oauth)
-    new_subscriber = {}
-    new_subscriber["email"] = params[:data]
-    new_subscriber["name"] = "No name"
-    aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
+    error = false
 
-    rescue AWeber::CreationError => message
-      if message.to_s.include? "email: Subscriber already subscribed."
-         @status = "You have already subscribed!"
-      elsif message.to_s.include? "email: Invalid email address."
-         @status = "Please enter a proper address!"
-      elsif message.to_s.include? "email: Required input is missing."
-         @status = "Your input was blank!"
-      else @status = "Please try again!"
-      end
-    end
-
-    flash.now[:notice] = @status
+    flash[:notice] = @status
     respond_to do |format|
-      format.html { render :landing}
+      format.html do 
+        begin
+          oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
+          oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+          aweber = AWeber::Base.new(oauth)
+          new_subscriber = {}
+          new_subscriber["email"] = params[:data]
+          new_subscriber["name"] = "No name"
+          aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
+
+        rescue AWeber::CreationError => message
+
+          if message.to_s.include? "email: Subscriber already subscribed."
+             @status = "You have already subscribed!"
+          elsif message.to_s.include? "email: Invalid email address."
+             @status = "Please enter a proper address!"
+          elsif message.to_s.include? "email: Required input is missing."
+             @status = "Your input was blank!"
+          else @status = "Please try again!"
+          end
+
+          error = true
+        end
+        flash[:notice] = @status
+        if error
+          redirect_to error_path
+        else redirect_to success_path
+        end
+      end
       format.js 
     end
   end

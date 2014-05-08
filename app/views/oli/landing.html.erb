@@ -1,3 +1,20 @@
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39809535-2', 'peaceful-gorge-4955.herokuapp.com');
+  ga('send', 'pageview');
+
+
+  $( document ).ready(function() {
+      $(".submit-button").on("click", function(){
+        _gaq.push(['_trackEvent', 'registration', 'sign_up', 'oli',, false]);
+      })
+  });
+</script>
+
   <div class="logo"><%= image_tag "oli-logo.png" %>
 </div>
 
@@ -17,7 +34,7 @@
         <%= text_field_tag(:data, nil, :type => "email", :placeholder => "Enter your email address", :class => "form-control submit-field") %>
         <%= submit_tag("SUBMIT", :class => "submit-button") %>
       <% end %>
-      <div class="status"> <%=flash.now[:notice]%></div>
+      <div class="status"> <%=flash[:notice]%></div>
 
     </div> <!-- /oli-form -->
   </div> <!-- /info -->
