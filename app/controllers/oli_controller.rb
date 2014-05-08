@@ -8,10 +8,10 @@ class OliController < ApplicationController
   ACCESS_TOKEN_SECRET = "SsqIjkwe4KCCGFr4l0BvVrviZXfJdnXn33Qs1R45"
 
   def landing
-    
   end
 
   def subscribe
+    @status = "Thank you for registering!"
     begin
     oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
     oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
@@ -20,19 +20,22 @@ class OliController < ApplicationController
     new_subscriber["email"] = params[:data]
     new_subscriber["name"] = "No name"
     aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
+
     rescue AWeber::CreationError => message
-      p message
       if message.to_s.include? "email: Subscriber already subscribed."
-        puts "TEST1"
+         @status = "You have already subscribed!"
       elsif message.to_s.include? "email: Invalid email address."
-        puts "TEST2"
+         @status = "Please enter a proper address!"
       elsif message.to_s.include? "email: Required input is missing."
-        puts "TEST3"
-      else puts "TEST4"
+         @status = "Your input was blank!"
+      else @status = "Please try again!"
       end
     end
 
-
-    render :landing
+    flash.now[:notice] = @status
+    respond_to do |format|
+      format.html { render :landing}
+      format.js 
+    end
   end
 end

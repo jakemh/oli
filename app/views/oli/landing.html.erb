@@ -17,5 +17,7 @@
         <%= text_field_tag(:data, nil, :type => "email", :placeholder => "Enter your email address", :class => "form-control submit-field") %>
         <%= submit_tag("SUBMIT", :class => "submit-button") %>
       <% end %>
+      <div class="status"> <%=flash.now[:notice]%></div>
+
     </div> <!-- /oli-form -->
   </div> <!-- /info -->

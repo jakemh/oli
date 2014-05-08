@@ -113,7 +113,17 @@ src: url(proxima_nova_thin.otf);
   opacity: .6;
   padding-top: 30px;
   padding-bottom: 20px;
-} 
+}
+
+.status{
+  font-family: pn-light;
+  text-align: center;
+  font-weight: normal;
+  font-smoothing: antialiased;
+  opacity: .6;
+  padding-top: 5px;
+}
+
 .oli-form{
   max-width: 400px;
 }
@@ -167,16 +177,9 @@ src: url(proxima_nova_thin.otf);
   text-align: center;
   padding-bottom: 60px;
   padding-top: 50px;
-  /*background: url('oli-logo.png') no-repeat center;*/
-  /*background-size: 216px 134px;*/
 }
 
 .logo img{
   max-width: 216px;
   max-height: 134px;
 }
-
-/*.mobile .logo img{
-  max-width: 216px !important;
-  max-height: 134px !important;
-}*/
