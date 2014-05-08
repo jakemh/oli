@@ -55,7 +55,7 @@ src: url(proxima_nova_thin.otf);
 
 }
 
-@media (max-height: 300px) {
+@media (max-height: 350px) {
   .body-text{
   display: none;
 
@@ -80,22 +80,6 @@ src: url(proxima_nova_thin.otf);
   text-align: center;
 }
 
-.submit-button{
-  border: none;  
-  height: 37px;
-  width: 100px;
-  border-radius: 20px;
-  margin-left: -106px;
-  background-color: #266dbf;
-  color: white;
-  font-family: pn-thin;
-  font-size: 1em;
-  letter-spacing:.03em;
-  font-weight: thin;
-  outline: none;
-  -webkit-appearance:none;
-  opacity: .95;
-}
 
 .header-text{
   color: #f26e1b;
@@ -134,6 +118,23 @@ src: url(proxima_nova_thin.otf);
   max-width: 400px;
 }
 
+.submit-button{
+  border: none;  
+  height: 37px;
+  width: 100px;
+  border-radius: 20px;
+  margin-left: -106px;
+  background-color: #266dbf;
+  color: white;
+  font-family: pn-thin;
+  font-size: 1em;
+  letter-spacing:.03em;
+  font-weight: thin;
+  outline: none;
+  -webkit-appearance:none;
+  opacity: .95;
+}
+
 .submit-field{
   height: 39px;
   font-family: pn-light;
@@ -149,6 +150,14 @@ src: url(proxima_nova_thin.otf);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 1em;
+}
+
+.mobile .submit-field{
+  height: 50px !important;
+}
+
+.mobile .submit-button{
+  height: 48px !important;
 }
 
 .logo{
