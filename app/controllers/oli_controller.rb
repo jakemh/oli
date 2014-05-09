@@ -34,7 +34,7 @@ class OliController < ApplicationController
           aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
 
         rescue AWeber::CreationError => message
-
+          p message
           if message.to_s.include? "email: Subscriber already subscribed."
              @status = "You have already subscribed!"
           elsif message.to_s.include? "email: Invalid email address."
