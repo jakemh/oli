@@ -187,10 +187,10 @@ src: url(proxima_nova_thin.otf);
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -225px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer-oli, .push-oli {
-    height: 142px; /* .push must be the same height as .footer */
+    height: 225px; /* .push must be the same height as .footer */
 }
 
 
