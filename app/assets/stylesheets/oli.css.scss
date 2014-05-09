@@ -1,10 +1,14 @@
 body, html{
-  background: url('oli_bg2.png'); 
   height: 100%;
   width: 100%;
   margin: 0;
   padding:0;
   font-size: 1em;
+}
+
+body{
+  background: url('oli_bg2.png'); 
+  z-index: -1;
 }
 
 @font-face
@@ -65,6 +69,20 @@ src: url(proxima_nova_thin.otf);
   .footer-text-oli{
     padding-top: 10px !important;
   }
+}
+
+
+.flames{
+/*  position: fixed;
+  bottom: 0;*/
+  bottom: 0;
+  width: 100%;
+  background: url("flames.png");
+  height: 225px;
+  z-index: 0;
+  background-size:1032px 225px;
+  padding: 0;
+  margin: 0;
 }
 
 .content-container{
@@ -164,6 +182,17 @@ src: url(proxima_nova_thin.otf);
   box-sizing: border-box;
   font-size: 1em;
 }
+
+.wrapper-oli {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer-oli, .push-oli {
+    height: 142px; /* .push must be the same height as .footer */
+}
+
 
 .submit-field-oli{
   height: 39px;
