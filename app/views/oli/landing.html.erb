@@ -31,7 +31,7 @@
       <%= text_field_tag(:email, nil, :type => "email", :placeholder => "Email", :class => "submit-field-oli") %>
         <%= submit_tag("SUBMIT", :class => "submit-button-oli") %>
       <% end %>
-      <div class="status-oli"> <%=flash.now[:notice]%></div>
+      <div class="status-oli"> <%= flash.now[:notice] %></div>
 
     </div> <!-- /oli-form -->
   </div> <!-- /info -->

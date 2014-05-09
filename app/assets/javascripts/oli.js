@@ -1,4 +1,7 @@
 $(document ).ready(function() {
+
+
+ //default action
       $("#oli-form").submit(function() {
         $.ajax({
         url: '/landing',
@@ -15,4 +18,5 @@ $(document ).ready(function() {
         });
       return false;
       })
+
   });
