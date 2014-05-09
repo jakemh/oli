@@ -81,8 +81,7 @@ src: url(proxima_nova_thin.otf);
   height: 225px;
   z-index: 0;
   background-size:1032px 225px;
-  padding: 0;
-  margin: 0;
+  margin-top: 15px;
 }
 
 .content-container{
@@ -141,6 +140,7 @@ src: url(proxima_nova_thin.otf);
   font-smoothing: antialiased;
   opacity: .6;
   padding-top: 5px;
+  margin-bottom: 10px;
 }
 
 .oli-form{
