@@ -27,9 +27,11 @@
       <%= form_tag("/landing", method: "post", id: "oli-form") do %>
       <%= text_field_tag(:name, nil, :placeholder => "Name", :class => "submit-field-name-oli") %>
       <%= text_field_tag(:email, nil, :type => "email", :placeholder => "Email", :class => "submit-field-oli") %>
-        <%= submit_tag("SUBMIT", :class => "submit-button-oli") %>
+        <button class="ladda-button submit-button-oli" data-style="zoom-out"><span class="ladda-label">SUBMIT</span></button>
+        <div class="status-oli"> <%= flash.now[:notice] %></div>
+        
+
       <% end %>
-      <div class="status-oli"> <%= flash.now[:notice] %></div>
 
     </div> <!-- /oli-form -->
   </div> <!-- /info -->
