@@ -1,4 +1,4 @@
 var text = '<%= flash.now[:notice] %>'
-_gaq.push(['_trackEvent', 'registration', 'sign_up', 'oli', 1, false]);
+ga('send', 'event', 'registration', 'sign_up', 'oli', 1);
 $('#myModal').modal('show')  
 $(".status-oli").empty().append(text)
