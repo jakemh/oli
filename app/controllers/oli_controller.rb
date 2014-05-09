@@ -8,6 +8,11 @@ class OliController < ApplicationController
   ACCESS_TOKEN_SECRET = "SsqIjkwe4KCCGFr4l0BvVrviZXfJdnXn33Qs1R45"
 
   def landing
+
+  end
+
+  def success
+    render "landing"
   end
 
 
@@ -15,17 +20,18 @@ class OliController < ApplicationController
     @status = "Thank you for registering!"
     error = false
 
-    flash[:notice] = @status
+    flash.now[:notice] = @status
     respond_to do |format|
-      format.html do 
+      format.html
+      format.js do 
         begin
           oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
           oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
           aweber = AWeber::Base.new(oauth)
           new_subscriber = {}
-          new_subscriber["email"] = params[:data]
-          new_subscriber["name"] = "No name"
-          aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
+          new_subscriber["email"] = params[:email]
+          new_subscriber["name"] = params[:name]
+          # aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
 
         rescue AWeber::CreationError => message
 
@@ -40,13 +46,13 @@ class OliController < ApplicationController
 
           error = true
         end
-        flash[:notice] = @status
+        flash.now[:notice] = @status
         if error
-          redirect_to error_path
-        else redirect_to success_path
+          render "error"
+        else
+          render "subscribe"
         end
       end
-      format.js 
     end
   end
 end
