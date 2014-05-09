@@ -28,7 +28,7 @@
     <div class="oli-form">
       <%= form_tag("/landing", method: "post", id: "oli-form") do %>
       <%= text_field_tag(:name, nil, :placeholder => "Name", :class => "submit-field-name-oli") %>
-        <%= text_field_tag(:email, nil, :type => "email", :placeholder => "Email address", :class => "submit-field-oli") %>
+      <%= text_field_tag(:email, nil, :type => "email", :placeholder => "Email", :class => "submit-field-oli") %>
         <%= submit_tag("SUBMIT", :class => "submit-button-oli") %>
       <% end %>
       <div class="status-oli"> <%=flash.now[:notice]%></div>
