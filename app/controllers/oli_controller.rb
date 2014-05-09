@@ -8,7 +8,7 @@ class OliController < ApplicationController
   ACCESS_TOKEN_SECRET = "SsqIjkwe4KCCGFr4l0BvVrviZXfJdnXn33Qs1R45"
 
   def landing
-
+    render "landing"
   end
 
   def success
@@ -31,7 +31,7 @@ class OliController < ApplicationController
           new_subscriber = {}
           new_subscriber["email"] = params[:email]
           new_subscriber["name"] = params[:name]
-          aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
+          # aweber.account.lists.find_by_name("test-api").subscribers.create(new_subscriber)
 
         rescue AWeber::CreationError => message
           if message.to_s.include? "email: Subscriber already subscribed."

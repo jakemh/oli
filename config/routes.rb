@@ -2,13 +2,6 @@ Rails.application.routes.draw do
 
   match "/landing" => "oli#landing", via: :get
   match "/landing" => "oli#subscribe", via: :post
-  match "/success" => "oli#success", via: :get, :as => "success"
-  match "/success/:bool" => "oli#success_with_modal", via: :get, :as => "success_with_modal"
-
-  match "/error" => "oli#success", via: :post, :as => "error"
-  match "/error" => "oli#landing", via: :get
-  match "/success" => "oli#landing", via: :get
-
 
   root to: 'oli#landing'
 
