@@ -175,7 +175,7 @@ cursor: pointer;
   max-width: 102*.9px;
   max-height: 141*.9px;
   &:hover {
-    -webkit-animation: vibrate 0.2s infinite;
+    -webkit-animation: vibrate 0.2s;
   }
   z-index: 1000;
 }
