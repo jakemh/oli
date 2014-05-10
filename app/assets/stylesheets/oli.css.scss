@@ -175,14 +175,29 @@ cursor: pointer;
   max-width: 102*.9px;
   max-height: 141*.9px;
   &:hover {
-    -webkit-animation: vibrate 0.2s;
+   -webkit-animation: spin .5s linear;
+
   }
   z-index: 1000;
 }
 
-@keyframes vibrate {
-  50% { transform: rotate(100deg) translateX(0px); }
-  100% { transform: rotate(-100deg) translateX(0px); }
+@-webkit-keyframes spin {
+  0%   {-webkit-transform: rotate(3deg)}
+      10% {-webkit-transform: rotate(6deg)}
+      20% {-webkit-transform: rotate(10deg)}
+      30% {-webkit-transform: rotate(6deg)}
+      40% {-webkit-transform: rotate(3deg)}
+      50% {-webkit-transform: rotate(0deg)}
+      60% {-webkit-transform: rotate(-3deg)}
+      70% {-webkit-transform: rotate(-6deg)}
+      80% {-webkit-transform: rotate(-3deg)}
+      90% {-webkit-transform: rotate(0deg)}
+      100% {-webkit-transform: rotate(0deg)}
+     
+/*  25% { transform: rotate(5deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(15deg); }
+  100% { transform: rotate(20deg); }*/
 }
 
 .content-container{
