@@ -46,11 +46,11 @@ src: url(proxima_nova_thin.otf);
    .logo-oli img{
     max-width: 156px !important;
     max-height: 96px !important;
+
   }
 
   .logo-oli{
     padding-top: 10px !important;
-
     padding-bottom: 20px !important;
   }
 
@@ -62,9 +62,13 @@ src: url(proxima_nova_thin.otf);
   .logo-flame img{
     max-width: 102*.6px !important;
     max-height: 141*.6px !important;
-    margin-right: -80px !important;
+    margin-right: -25px !important;
     margin-top: -30px !important;
 
+  }
+
+  .logo-wrapper{
+    max-width:190px !important;
   }
 }
 
