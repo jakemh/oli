@@ -58,6 +58,14 @@ src: url(proxima_nova_thin.otf);
     padding-top: 10px !important;
   }
 
+
+  .logo-flame img{
+    max-width: 102*.6px !important;
+    max-height: 141*.6px !important;
+    margin-right: -80px !important;
+    margin-top: -30px !important;
+
+  }
 }
 
 @media (max-height: 350px ) and (min-width: 400px) {
@@ -82,6 +90,95 @@ src: url(proxima_nova_thin.otf);
   z-index: 0;
   background-size:1032px 225px;
   margin-top: 15px;
+}
+
+.icons div:hover img{
+margin-left: 0px;
+cursor: pointer;
+
+}
+ 
+@keyframes vibrate
+{
+0% {margin-left: 0px;}
+25% {margin-left: -3px;}
+50% {margin-left: 0px;}
+75% {margin-left: 3px;}
+100% {margin-left: 0px;}
+}
+ 
+@-moz-keyframes vibrate /* Firefox */
+{
+0% {margin-left: 0px;}
+25% {margin-left: -3px;}
+50% {margin-left: 0px;}
+75% {margin-left: 3px;}
+100% {margin-left: 0px;}
+}
+ 
+@-webkit-keyframes vibrate /* Safari and Chrome */
+{
+0% {margin-left: 0px;}
+25% {margin-left: -3px;}
+50% {margin-left: 0px;}
+75% {margin-left: 3px;}
+100% {margin-left: 0px;}
+}
+ 
+@-o-keyframes vibrate /* Opera */
+{
+0% {margin-left: 0px;}
+25% {margin-left: -3px;}
+50% {margin-left: 0px;}
+75% {margin-left: 3px;}
+100% {margin-left: 0px;}
+}
+
+.logo-oli{
+  position: absolute;
+  margin:0 auto;
+
+  top: 10px;
+  right: 28px;
+  z-index: -1;
+  text-align: center;
+  padding-bottom: 60px;
+  padding-top: 50px;
+  max-width: 250px;
+}
+
+.logo-oli img{
+  max-width: 216px;
+  max-height: 134px;
+}
+
+.logo-wrapper{
+  position: relative;
+  margin:0 auto;
+  max-width: 250px;
+}
+
+.logo-flame{
+  max-width: 250px;
+  text-align: center;
+  padding-bottom: 60px;
+  margin-right:100px;
+  padding-top: 50px;
+  z-index: 100;
+}
+
+.logo-flame img{
+  max-width: 102*.9px;
+  max-height: 141*.9px;
+  &:hover {
+    -webkit-animation: vibrate 0.2s infinite;
+  }
+  z-index: 1000;
+}
+
+@keyframes vibrate {
+  50% { transform: rotate(100deg) translateX(0px); }
+  100% { transform: rotate(-100deg) translateX(0px); }
 }
 
 .content-container{
@@ -230,18 +327,4 @@ src: url(proxima_nova_thin.otf);
 
 .mobile .submit-button-oli{
   height: 48px !important;
-}
-
-.logo-oli{
-
-  margin:0 auto;
-  z-index: 100;
-  text-align: center;
-  padding-bottom: 60px;
-  padding-top: 50px;
-}
-
-.logo-oli img{
-  max-width: 216px;
-  max-height: 134px;
 }
