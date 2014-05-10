@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap
+//= require browser_selector
+//= require spin
+//= require ladda.min
+//= require oli-content

@@ -96,47 +96,7 @@ src: url(proxima_nova_thin.otf);
   margin-top: 15px;
 }
 
-.icons div:hover img{
-margin-left: 0px;
-cursor: pointer;
 
-}
- 
-@keyframes vibrate
-{
-0% {margin-left: 0px;}
-25% {margin-left: -3px;}
-50% {margin-left: 0px;}
-75% {margin-left: 3px;}
-100% {margin-left: 0px;}
-}
- 
-@-moz-keyframes vibrate /* Firefox */
-{
-0% {margin-left: 0px;}
-25% {margin-left: -3px;}
-50% {margin-left: 0px;}
-75% {margin-left: 3px;}
-100% {margin-left: 0px;}
-}
- 
-@-webkit-keyframes vibrate /* Safari and Chrome */
-{
-0% {margin-left: 0px;}
-25% {margin-left: -3px;}
-50% {margin-left: 0px;}
-75% {margin-left: 3px;}
-100% {margin-left: 0px;}
-}
- 
-@-o-keyframes vibrate /* Opera */
-{
-0% {margin-left: 0px;}
-25% {margin-left: -3px;}
-50% {margin-left: 0px;}
-75% {margin-left: 3px;}
-100% {margin-left: 0px;}
-}
 
 .logo-oli{
   position: absolute;
@@ -170,14 +130,16 @@ cursor: pointer;
   padding-top: 50px;
   z-index: 100;
 }
-
+  
 .logo-flame img{
   max-width: 102*.9px;
   max-height: 141*.9px;
-  &:hover {
+}
+.logo-flame-animate img{
+ 
+
    -webkit-animation: spin .5s;
    -webkit-animation-timing-function: ease;
-  }
   z-index: 1000;
 }
 
