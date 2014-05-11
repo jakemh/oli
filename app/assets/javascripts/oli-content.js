@@ -3,10 +3,10 @@ $(document ).ready(function() {
 
       var animateFlame = function(){
         var _this = $(".logo-flame")
-        _this.addClass("logo-flame-animate");
+        _this.addClass("element-animation");
         setTimeout(function() {
-          _this.removeClass("logo-flame-animate")
-        }, 500);
+          _this.removeClass("element-animation")
+        }, 2000);
       }
 
       $("#oli-form").submit(function() {
