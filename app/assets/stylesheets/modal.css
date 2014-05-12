@@ -1,6 +1,7 @@
 .modal-dialog-oli{
   margin: auto;
   padding: 10%;
+  padding-top: 20%;
   font-family: pn-light;
   max-width: 680px;
 }
