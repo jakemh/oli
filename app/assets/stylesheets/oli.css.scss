@@ -132,16 +132,16 @@ src: url(proxima_nova_thin.otf);
   max-width: 102*.9px;
   max-height: 141*.9px;
 }
-.logo-flame-animate img{
+.fail-animation img{
  
 
    -webkit-animation: spin .6s;
-   -webkit-animation-timing-function: linear;
+   -webkit-animation-timing-function: ease;
   z-index: 1000;
 }
 
 @-webkit-keyframes spin {
-/*  0%   {-webkit-transform: rotate(2deg)}
+  0%   {-webkit-transform: rotate(2deg)}
       5% {-webkit-transform: rotate(4deg)}
       10% {-webkit-transform: rotate(6deg)}
       15% {-webkit-transform: rotate(8deg)}
@@ -162,7 +162,7 @@ src: url(proxima_nova_thin.otf);
       90% {-webkit-transform: rotate(2deg)}
       95% {-webkit-transform: rotate(1deg)}
       100% {-webkit-transform: rotate(0deg)}
-      */
+      /**/
       
 }
 

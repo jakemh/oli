@@ -1,11 +1,19 @@
 $(document ).ready(function() {
   var laddaLoadingButton = Ladda.create( document.querySelector( '.ladda-button' ) );
 
-      var animateFlame = function(){
+      var successAnimation = function(){
         var _this = $(".logo-flame")
-        _this.addClass("element-animation");
+        _this.addClass("success-animation");
         setTimeout(function() {
-          _this.removeClass("element-animation")
+          _this.removeClass("success-animation")
+        }, 2000);
+      }
+
+      var failAnimation = function(){
+        var _this = $(".logo-flame")
+        _this.addClass("fail-animation");
+        setTimeout(function() {
+          _this.removeClass("fail-animation")
         }, 2000);
       }
 
@@ -20,11 +28,14 @@ $(document ).ready(function() {
         beforeSend: function (xhr) {
           xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
         }
-        }).done(function() {
+        }).fail(function() {
+          failAnimation();
+          laddaLoadingButton.stop();
 
         }).success(function(){
+          successAnimation();
           laddaLoadingButton.stop();
-          animateFlame();
+
         });
       return false;
       })

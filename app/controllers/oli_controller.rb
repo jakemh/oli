@@ -47,9 +47,9 @@ class OliController < ApplicationController
         end
         flash.now[:notice] = @status
         if error
-          render "error"
+          render 'error', :status => 404
         else
-          render "subscribe"
+          render 'subscribe'
         end
       end
     end
