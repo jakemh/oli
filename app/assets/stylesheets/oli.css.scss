@@ -6,6 +6,11 @@ body, html{
   font-size: 1.02em;
 }
 
+.alert, .notice{
+  margin: 0;
+  padding: 0;
+}
+
 body{
   background: image-url('oli_bg2.png'); 
   z-index: -1;
@@ -50,8 +55,8 @@ src: font-url('proxima_nova_thin.otf');
   }
 
    .logo-oli img{
-    max-width: 156px !important;
-    max-height: 96px !important;
+  max-width: 331*.5px !important;
+   max-height: 208*.5px !important;
 
   }
 
@@ -69,10 +74,10 @@ src: font-url('proxima_nova_thin.otf');
   }
 
   .logo-flame img{
-    max-width: 102*.6px !important;
-    max-height: 141*.6px !important;
-    margin-right: -27px !important;
-    margin-top: -30px !important;
+    max-width: 122*.5px !important;
+      max-height: 188*.5px !important;
+    margin-right: 10px !important;
+    margin-top: -40px !important;
   }
 
   .logo-wrapper{
@@ -91,17 +96,7 @@ src: font-url('proxima_nova_thin.otf');
   }
 }
 
-.flames{
-/*  position: fixed;
-  bottom: 0;*/
-  bottom: 0;
-  width: 100%;
-  background: image-url("flames.png");
-  height: 225px;
-  z-index: 0;
-  background-size:1032px 225px;
-  margin-top: 15px;
-}
+
 
 .logo-oli{
   position: absolute;
@@ -117,8 +112,8 @@ src: font-url('proxima_nova_thin.otf');
 }
 
 .logo-oli img{
-  max-width: 216px;
-  max-height: 134px;
+  max-width: 331*.6px;
+  max-height: 208*.6px;
 }
 
 .logo-wrapper{
@@ -131,15 +126,15 @@ src: font-url('proxima_nova_thin.otf');
   max-width: 250px;
   text-align: center;
   padding-bottom: 60px;
-  margin-right:114px;
-  padding-top: 50px;
+  margin-right:95px;
+  padding-top: 60px;
   z-index: 100;
   
 }
   
 .logo-flame img{
-  max-width: 102*.9px;
-  max-height: 141*.9px;
+  max-width: 122*.6px;
+  max-height: 188*.6px;
 }
 
 
@@ -290,12 +285,21 @@ src: font-url('proxima_nova_thin.otf');
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -225px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -363*.6px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer-oli, .push-oli {
-    height: 225px; /* .push must be the same height as .footer */
+    height:  363*.6px; /* .push must be the same height as .footer */
 }
 
+.flames{
+  bottom: 0;
+  width: 100%;
+  background: image-url("flames.png");
+  height: 363*.6px;
+  z-index: 0;
+  background-size:1721*.6px 363*.6px;
+  margin-top: 0px;
+}
 
 .mobile .submit-field-oli, .mobile .submit-field-name-oli{
   height: 50px !important;
