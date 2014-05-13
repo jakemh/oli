@@ -32,7 +32,7 @@
 .fail-animation img{
  
 
-   -webkit-animation: shrink 1.5s;
+   -webkit-animation: hinge 2s;
    -webkit-animation-timing-function: linear;
 }
 
