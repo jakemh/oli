@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   match "/landing" => "oli#landing", via: :get
   match "/landing" => "oli#subscribe", via: :post
 
