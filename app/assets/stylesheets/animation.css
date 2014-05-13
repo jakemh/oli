@@ -32,9 +32,12 @@
 .fail-animation img{
  
 
-   -webkit-animation: hinge 2s;
+   -webkit-animation: shrink 1.5s;
    -webkit-animation-timing-function: linear;
 }
+
+
+
 @-webkit-keyframes wobble {
   0% {
     -webkit-transform: translateX(0%);
@@ -71,7 +74,16 @@
     transform: translateX(0%);
   }
 }
+@-webkit-keyframes shrink {
+  50%   {-webkit-transform: scale(0) translateY(70%); opacity: 0;}
+  100% {opacity: 1; -webkit-transform: scale(0)}
+  /*0%   {-webkit-transform: rotate(0deg)}
+  20% {-webkit-transform: rotate(8deg)}
+  60% {-webkit-transform: rotate(-8deg)}
+  85% {-webkit-transform: rotate(-4deg)}
+  100% {-webkit-transform: rotate(0deg)}*/
 
+}
 @-webkit-keyframes spin {
   /*0%   {-webkit-transform: rotate(0deg)}
   20% {-webkit-transform: rotate(8deg)}
