@@ -13,10 +13,9 @@
   }
   0% {
   }
-  15% { -webkit-transform:   skew(0deg,0deg);  scaleY(1.05) scaleX(1.2)  translate(0,-1%) ;
-}
+  15% { -webkit-transform:   skew(0deg,0deg);}
 
-  33% { opacity:.9; -webkit-transform:  skew(0deg,0deg); scaleY(1.1) scaleX(1.3)  translate(0,-2%) ;}
+  33% { opacity:.9; -webkit-transform:  skew(0deg,0deg);}
 
   60% { opacity:.9; -webkit-transform:   skew(0deg,0deg)scaleY(1.05) scaleX(.8)  translate(0,-1%) ;}
 
