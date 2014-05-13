@@ -43,6 +43,12 @@ src: url(proxima_nova_thin.otf);
 
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
+
+  .header-text-oli{
+    font-size: 1.2em !important;
+
+  }
+
    .logo-oli img{
     max-width: 156px !important;
     max-height: 96px !important;
@@ -51,13 +57,16 @@ src: url(proxima_nova_thin.otf);
 
   .logo-oli{
     padding-top: 10px !important;
-    padding-bottom: 20px !important;
+    margin-bottom: -10px !important;
   }
 
   .footer-text-oli{
     padding-top: 10px !important;
   }
 
+  .logo-flame{
+    padding-bottom: 30px !important;
+  }
 
   .logo-flame img{
     max-width: 102*.6px !important;
@@ -133,13 +142,6 @@ src: url(proxima_nova_thin.otf);
   max-height: 141*.9px;
 }
 
-.content-container{
-  height: 100%;
-  width: 100%;
-  padding-top: 50px;
-  position: relative;
-  overflow: auto;
-}
 
 .oli-form{
   width: 100%;
@@ -168,7 +170,7 @@ src: url(proxima_nova_thin.otf);
   margin:0 auto;
   max-width: 295px;
   padding-bottom: 20px;
-  color: rgba(0,0,0,.5) !important;
+  color: rgba(0,0,0,.6) !important;
 } 
 
 
@@ -180,7 +182,7 @@ src: url(proxima_nova_thin.otf);
   font-smoothing: antialiased;
   margin:0 auto;
   max-width: 300px;
-  opacity: .78;
+  color: rgba(0,0,0,.6) !important;
   padding-top: 0px;
   padding-bottom: 10px;
 }
@@ -236,6 +238,15 @@ src: url(proxima_nova_thin.otf);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
 
 }
+.mobile .oli-form input[type=text], .mobile .oli-form input[type=email]{
+  display: inline !important;
+  border-radius: 0;
+  border: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important; 
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 .submit-field-name-oli{
   margin-bottom: 15px !important;
@@ -244,43 +255,29 @@ src: url(proxima_nova_thin.otf);
 
 .submit-field-oli{
     margin-bottom: 8px;
+}
+
+.mobile .submit-field-oli{
+  width: 63% !important;
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  padding: 5px !important;
+  padding-left: 20px !important;
+  padding-right: 120px !important;
 
 }
 
-.inline .submit-button-oli{
-  border: none;  
-  height: 37px;
-  width: 100px;
-  border-radius: 20px;
-  margin-left: -106px;
-  background-color: #266dbf;
-  color: white;
-  font-family: pn-thin;
-  font-size: 1em;
-  letter-spacing:.03em;
-  font-weight: thin;
-  outline: none;
-  -webkit-appearance:none;
-  opacity: .95;
+
+.mobile .submit-button-oli{
+  margin-left: -106px !important;
 }
 
-.inline .submit-field-name-oli{
-  height: 39px;
-  font-family: pn-light;
-  margin:0 auto;
-  width: 35%;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  margin-right: -4px;
-  border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); 
-  outline:none;
-  padding: 5px;
-  padding-left: 20px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 1em;
+.mobile .submit-field-name-oli{
+
+  width: 35% !important;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  margin-right: -3px !important;
 }
 
 .loader{
@@ -299,27 +296,6 @@ src: url(proxima_nova_thin.otf);
 .footer-oli, .push-oli {
     height: 225px; /* .push must be the same height as .footer */
 }
-
-.inline .submit-field-oli{
-  height: 39px;
-  font-family: pn-light;
-  margin:0 auto;
-  width: 63%;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); 
-  outline:none;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 120px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 1em;
-}
-
 
 
 .mobile .submit-field-oli, .mobile .submit-field-name-oli{
