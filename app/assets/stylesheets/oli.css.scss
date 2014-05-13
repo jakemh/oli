@@ -14,31 +14,31 @@ body{
 @font-face
 {
 font-family: pn-light;
-src: url(proxima_nova_light.otf);
+src: image-url(proxima_nova_light.otf);
 }
 
 @font-face
 {
 font-family: pn-extrabold;
-src: url(proxima_nova_scosf_extrabold.otf);
+src: image-url(proxima_nova_scosf_extrabold.otf);
 }
 
 @font-face
 {
 font-family: pn-bold;
-src: url(proxima_nova_bold.otf);
+src: image-url(proxima_nova_bold.otf);
 }
 
 @font-face
 {
 font-family: pn-semibold;
-src: url(proxima_nova_scosf_semibold.otf);
+src: image-url(proxima_nova_scosf_semibold.otf);
 }
 
 @font-face
 {
 font-family: pn-thin;
-src: url(proxima_nova_thin.otf);
+src: image-url(proxima_nova_thin.otf);
 }
 
 /* Landscape phones and smaller */
