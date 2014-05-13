@@ -7,38 +7,38 @@ body, html{
 }
 
 body{
-  background: image-url('oli_bg2.png'); 
+  background: font-url('oli_bg2.png'); 
   z-index: -1;
 }
 
 @font-face
 {
 font-family: pn-light;
-src: image-url(proxima_nova_light.otf);
+src: font-url(proxima_nova_light.otf);
 }
 
 @font-face
 {
 font-family: pn-extrabold;
-src: image-url(proxima_nova_scosf_extrabold.otf);
+src: font-url(proxima_nova_scosf_extrabold.otf);
 }
 
 @font-face
 {
 font-family: pn-bold;
-src: image-url(proxima_nova_bold.otf);
+src: font-url(proxima_nova_bold.otf);
 }
 
 @font-face
 {
 font-family: pn-semibold;
-src: image-url(proxima_nova_scosf_semibold.otf);
+src: font-url(proxima_nova_scosf_semibold.otf);
 }
 
 @font-face
 {
 font-family: pn-thin;
-src: image-url(proxima_nova_thin.otf);
+src: font-url(proxima_nova_thin.otf);
 }
 
 /* Landscape phones and smaller */
