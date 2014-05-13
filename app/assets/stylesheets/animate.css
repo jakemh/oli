@@ -2650,7 +2650,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   25% {
-    -webkit-transform: rotate(-120deg)  scale(.95);
+    -webkit-transform: rotate(-120deg)  scale(.92);
     transform: rotate(-120deg);
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
@@ -2659,26 +2659,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   50% {
-    -webkit-transform: rotate(-90deg)  scale(.9);
+    -webkit-transform: rotate(-90deg)  scale(.86);
     transform: rotate(-90deg);
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
 
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
+    opacity: .85;
   }
-
-  75% {
-    -webkit-transform: rotate(-150deg) scale(.85);
-    transform: rotate(-150deg);
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    opacity: .8;
-
-  }
-
 
   100% {
     -webkit-transform: rotate(-360deg) scale(1);
@@ -2688,7 +2677,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
     opacity: 1;
+
   }
+
+
+ /* 100% {
+    -webkit-transform: rotate(-360deg) scale(1);
+    transform: rotate(-360deg);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }*/
 }
 
 @keyframes hinge {
