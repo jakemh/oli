@@ -25,11 +25,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-iteration-count: infinite;
 }
 
-.animated.hinge {
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-}
-
 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     -webkit-transform: translateY(0);
@@ -2640,116 +2635,50 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 @-webkit-keyframes hinge {
   0% {
-    -webkit-transform: rotate(0);
+    -webkit-transform: rotate(0) scaleX(1) scaleY(1);
 
-    transform: rotate(0);
+    /*transform: rotate(0);*/
     -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+    /*transform-origin: bottom;*/
     -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
+    /*animation-timing-function: ease-in-out;*/
   }
 
   25% {
-    -webkit-transform: rotate(-120deg)  scale(.92);
-    transform: rotate(-120deg);
+    -webkit-transform: rotate(-120deg)  scaleX(.92) scaleY(.92);
+    /*transform: rotate(-120deg);*/
     -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+    /*transform-origin: bottom;*/
     -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
+    /*animation-timing-function: ease-in-out;*/
   }
 
   50% {
-    -webkit-transform: rotate(-90deg)  scale(.86);
-    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg) scaleX(.86) scaleY(.86);
+    /*transform: rotate(-90deg)  scale(.86);*/
     -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+    /*transform-origin: bottom;*/
 
     -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
+    /*animation-timing-function: ease-in-out;*/
     opacity: .85;
   }
 
   100% {
-    -webkit-transform: rotate(-360deg) scale(1);
-    transform: rotate(-360deg);
+
+    -webkit-transform: rotate(-360deg) scaleX(1) scaleY(1);
+    /*transform: rotate(-360deg) scale(1);*/
     -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+    /*transform-origin: bottom;*/
     -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
+    /*animation-timing-function: ease-in-out;*/
     opacity: 1;
 
   }
 
-
- /* 100% {
-    -webkit-transform: rotate(-360deg) scale(1);
-    transform: rotate(-360deg);
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    opacity: 1;
-  }*/
 }
 
-@keyframes hinge {
-  0% {
-    -webkit-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
-    -webkit-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-  }
 
-  20%, 60% {
-    -webkit-transform: rotate(80deg);
-    -ms-transform: rotate(80deg);
-    transform: rotate(80deg);
-    -webkit-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-  }
-
-  40% {
-    -webkit-transform: rotate(60deg);
-    -ms-transform: rotate(60deg);
-    transform: rotate(60deg);
-    -webkit-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-  }
-
-  80% {
-    -webkit-transform: rotate(60deg) translateY(0);
-    -ms-transform: rotate(60deg) translateY(0);
-    transform: rotate(60deg) translateY(0);
-    -webkit-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: translateY(700px);
-    -ms-transform: translateY(700px);
-    transform: translateY(700px);
-    opacity: 0;
-  }
-}
-
-.hinge {
-  -webkit-animation-name: hinge;
-  animation-name: hinge;
-}
 
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
