@@ -35,14 +35,14 @@ group :development do
   gem 'capistrano-unicorn', :require => false
 end
 gem 'capistrano-rvm'
-gem 'sqlite3'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'thin'
+  gem 'sqlite3'
 
 end
+gem 'thin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
