@@ -137,7 +137,6 @@ src: font-url('proxima_nova_thin.otf');
   max-height: 188*.6px;
 }
 
-
 .oli-form{
   width: 100%;
   margin:auto;
@@ -286,16 +285,16 @@ $flames-height: 363;
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -1 * ($flames-height + 10) * .6px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -1 * ($flames-height) * .6px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer-oli, .push-oli {
-    height:  ($flames-height + 10)*.6px; /* .push must be the same height as .footer */
+    height:  ($flames-height)*.6px; /* .push must be the same height as .footer */
 }
 
 .flames{
   width: 100%;
   background: image-url("flames.png");
-  height: ($flames-height - 10) * .6px;
+  height: ($flames-height) * .6px;
   z-index: 0;
   background-size:1721*.6px $flames-height * .6px;
 }
