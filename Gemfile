@@ -30,7 +30,7 @@ gem 'spring',        group: :development
 
 gem 'newrelic_rpm'
 gem 'devise'
-
+gem "figaro"
 group :development do
   gem 'capistrano-unicorn', :require => false
 end
