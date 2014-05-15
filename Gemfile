@@ -32,7 +32,7 @@ gem 'newrelic_rpm'
 gem 'devise'
 gem "figaro"
 group :development do
-  gem 'capistrano-unicorn', :require => false
+  gem 'capistrano3-unicorn', :require => false
 end
 gem 'capistrano-rvm'
 

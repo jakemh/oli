@@ -43,6 +43,16 @@ set :deploy_to, '~/www/oli'
 
 namespace :deploy do
   # run the db migrations
+    desc 'Restart application'
+    task :restart do
+      on roles(:app) do
+        puts "restarting unicorn..."
+        execute "sudo /etc/init.d/unicorn_#{fetch(:application)} restart"
+        sleep 5
+        puts "whats running now, eh unicorn?"
+        execute "ps aux | grep unicorn"
+      end
+    end
  
 
   desc 'Restart application'
