@@ -35,6 +35,7 @@ group :development do
   gem 'capistrano3-unicorn', :require => false
 end
 gem 'capistrano-rvm'
+gem 'capistrano-nginx-unicorn', group: :development
 
 group :development, :test do
   gem 'rspec-rails'
