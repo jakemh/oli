@@ -13,10 +13,8 @@ set :default_stage, "staging"
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '~/www/oli'
-set :deploy_via, :remote_cache
-set :pty, true
-set :use_sudo, true 
+set :deploy_to, '/home/oli/www/oli'
+
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -44,44 +42,28 @@ set :use_sudo, true
 
 
 namespace :deploy do
-  desc 'Stop Unicorn'
-  task :stop do
-    puts "TEST"
+  # run the db migrations
+ 
 
-    on roles(:app) do
-      if test("[ -f #{fetch(:unicorn_pid)} ]")
-        execute :kill, capture(:cat, fetch(:unicorn_pid))
-      end
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
-  desc 'Start Unicorn'
-  task :start do
-    puts "TEST**"
+  after :publishing, :restart
 
-    on roles(:app) do
-      within current_path do
-        with rails_env: fetch(:rails_env) do
-          execute :bundle, "exec unicorn -c #{fetch(:unicorn_config)} -D"
-        end
-      end
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      print "TEST**"
+
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
     end
   end
 
-  desc 'Reload Unicorn without killing master process'
-  task :reload do
-    puts "TEST**"
-    on roles(:app) do
-      if test("[ -f #{fetch(:unicorn_pid)} ]")
-        execute :kill, '-s USR2', capture(:cat, fetch(:unicorn_pid))
-      else
-        error 'Unicorn process not running'
-      end
-    end
-  end
-
-  desc 'Restart Unicorn'
-  task :restart
-  before :restart, :stop
-  before :restart, :start
 end
