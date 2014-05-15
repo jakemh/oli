@@ -45,6 +45,8 @@ set :deploy_via, :remote_cache
 namespace :deploy do
   desc 'Stop Unicorn'
   task :stop do
+    puts "TEST"
+
     on roles(:app) do
       if test("[ -f #{fetch(:unicorn_pid)} ]")
         execute :kill, capture(:cat, fetch(:unicorn_pid))
@@ -54,6 +56,8 @@ namespace :deploy do
 
   desc 'Start Unicorn'
   task :start do
+    puts "TEST**"
+
     on roles(:app) do
       within current_path do
         with rails_env: fetch(:rails_env) do
