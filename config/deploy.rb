@@ -14,7 +14,6 @@ set :default_stage, "staging"
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '~/www/oli'
-set :deploy_via, :remote_cache
 
 # Default value for :scm is :git
 # set :scm, :git
