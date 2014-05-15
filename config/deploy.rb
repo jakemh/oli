@@ -43,37 +43,40 @@ set :deploy_via, :remote_cache
 
 
 namespace :deploy do
-  # run the db migrations
-    # desc 'Restart application'
-    # task :restart do
-    #   on roles(:app) do
-    #     puts "restarting unicorn..."
-    #     execute "sudo /etc/init.d/unicorn_#{fetch(:application)} restart"
-    #     sleep 5
-    #     puts "whats running now, eh unicorn?"
-    #     execute "ps aux | grep unicorn"
-    #   end
-    # end
- 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+  desc 'Stop Unicorn'
+  task :stop do
+    on roles(:app) do
+      if test("[ -f #{fetch(:unicorn_pid)} ]")
+        execute :kill, capture(:cat, fetch(:unicorn_pid))
+      end
     end
   end
 
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      print "TEST**"
-
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+  desc 'Start Unicorn'
+  task :start do
+    on roles(:app) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          execute :bundle, "exec unicorn -c #{fetch(:unicorn_config)} -D"
+        end
+      end
     end
   end
 
+  desc 'Reload Unicorn without killing master process'
+  task :reload do
+    puts "TEST**"
+    on roles(:app) do
+      if test("[ -f #{fetch(:unicorn_pid)} ]")
+        execute :kill, '-s USR2', capture(:cat, fetch(:unicorn_pid))
+      else
+        error 'Unicorn process not running'
+      end
+    end
+  end
+
+  desc 'Restart Unicorn'
+  task :restart
+  before :restart, :stop
+  before :restart, :start
 end
