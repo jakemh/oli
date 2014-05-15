@@ -1,4 +1,4 @@
-root = "/home/oli/www/oli/current"
+root = "/home/oli/www/oli/shared"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
