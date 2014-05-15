@@ -5,8 +5,8 @@ require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/rails'
 require 'capistrano/rvm'
-# require 'capistrano/nginx_unicorn'
-require 'capistrano/unicorn'
+require 'capistrano/nginx_unicorn'
+# require 'capistrano/unicorn'
 
 # Includes tasks from other gems included in your Gemfile
 #
