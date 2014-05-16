@@ -30,7 +30,6 @@ gem 'spring',        group: :development
 
 gem 'newrelic_rpm'
 gem 'devise'
-gem "figaro"
 gem 'capistrano3-nginx_unicorn', group: :development
 
 # group :development do
