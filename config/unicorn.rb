@@ -12,6 +12,6 @@ timeout 30
 # reference the capistrano "current" symlink
 before_exec do |_|
   ENV["BUNDLE_GEMFILE"] = File.join(root, 'Gemfile')
-
+  ENV["SECRET_KEY_BASE"] = %x[rake secret].to_s
 end
 
