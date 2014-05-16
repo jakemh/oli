@@ -7,7 +7,6 @@ stdout_path "#{working_directory}/log/unicorn.log"
 listen "/tmp/unicorn.projectname.sock"
 worker_processes 2
 timeout 30
-SECRET_KEY_BASE: mysecretkeyproduction
 
 # Force the bundler gemfile environment variable to
 # reference the capistrano "current" symlink
