@@ -16,8 +16,7 @@ role :db,  '162.243.37.21'
 # used to set extended properties on the server.
 
 # server '162.243.37.21', user: 'oli', roles: %w{web app}, my_property: :my_value
-set :password, ask('Server password', nil)
-server '162.243.37.21', user: 'oli', port: 22, password: fetch(:password), roles: %w{web app db}
+server '162.243.37.21', user: 'oli', port: 22, roles: %w{web app db}
 
 # Custom SSH Options
 # ==================
