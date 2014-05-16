@@ -9,7 +9,7 @@ set :repo_url, 'git@github.com:jakemh/oli.git'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/oli/www/'
-
+set :rbenv_ruby, '2.1.1'
 # Default value for :scm is :git
 # set :scm, :git
 
