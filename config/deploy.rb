@@ -1,19 +1,14 @@
 # config valid only for Capistrano 3.1
-
-
 lock '3.2.1'
 
 set :application, 'oli'
-set :repo_url, 'https://github.com/jakemh/oli.git'
-set :user, "oli"
-set :stages, ["staging", "production"]
-set :default_stage, "staging"
+set :repo_url, 'git@github.com:jakemh/oli.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/oli/www/oli'
+set :deploy_to, '/home/oli/www/'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -39,11 +34,7 @@ set :deploy_to, '/home/oli/www/oli'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-
-
 namespace :deploy do
-  # run the db migrations
- 
 
   desc 'Restart application'
   task :restart do
@@ -57,8 +48,6 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      print "TEST**"
-
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'

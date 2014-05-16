@@ -32,13 +32,13 @@ gem 'newrelic_rpm'
 gem 'devise'
 gem "figaro"
 
-group :development do
-  gem 'capistrano3-unicorn', :require => false
-  gem 'sepastian-capistrano3-unicorn', :require => false
+# group :development do
+#   gem 'capistrano3-unicorn', :require => false
+#   gem 'sepastian-capistrano3-unicorn', :require => false
 
-end
-gem 'capistrano-rvm'
-gem 'capistrano-nginx-unicorn', group: :development
+# end
+# gem 'capistrano-rvm'
+# gem 'capistrano-nginx-unicorn', group: :development
 
 group :development, :test do
   gem 'rspec-rails'
