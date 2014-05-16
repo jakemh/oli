@@ -3,4 +3,4 @@
 git add .
 git commit -m "$1"
 git push origin master
-cap producition deploy
+cap production deploy
