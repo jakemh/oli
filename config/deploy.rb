@@ -49,6 +49,10 @@ namespace :deploy do
 
   def unicorn_pid
     root + "/tmp/pids/unicorn.pid"
+  end 
+
+  def old_unicorn_pid
+    '/home/oli/www/shared/tmp/pids/unicorn.pid.oldbin'
   end
 
  desc 'Start Unicorn'
@@ -69,11 +73,11 @@ namespace :deploy do
      end
    end
 
-
   task :restart do
     on roles(:web) do
       within current_path do
-          execute "kill -s SIGUSR2 `cat #{unicorn_pid}`"
+          puts "RESTARTING UNICORN"
+          execute "kill -s USR2 `cat #{unicorn_pid}`"
         end
     end
 
@@ -83,20 +87,20 @@ namespace :deploy do
   task :finalize do
     on roles(:web) do
       within current_path do
-          execute "ln -sf #{root}/application.yml #{working_directory}/config/application.yml"
-        end
+        puts "SYM LINKING APPLICATION.YML"
+        execute "ln -sf #{root}/application.yml #{working_directory}/config/application.yml"
+      end
     end
 
   end
 
   after :publishing, :restart
+  after :restart, :finalize
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+  after :finalize, :kill_old do
+    on roles(:web), in: :groups, limit: 1, wait: 10 do
+      puts "KILLING OLD UNICORN"
+      execute  "kill `cat #{old_unicorn_pid}`"
     end
   end
 
