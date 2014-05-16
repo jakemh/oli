@@ -1,5 +1,5 @@
 root = "/home/oli/www/shared"
-working_directory "/home/oli/www/current"
+working_directory = "/home/oli/www/current"
 pid "#{working_directory}/tmp/pids/unicorn.pid"
 stderr_path "#{working_directory}/log/unicorn.log"
 stdout_path "#{working_directory}/log/unicorn.log"
