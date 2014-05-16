@@ -9,6 +9,8 @@ set :repo_url, 'git@github.com:jakemh/oli.git'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/oli/www/'
+set :deploy_via, :remote_cache
+
 set :unicorn_config_path, '/home/oli/www/current/config/unicorn.rb'
 set :unicorn_rack_env, 'production'
 set :unicorn_pid, '/home/oli/www/shared/tmp/pids/unicorn.pid'
