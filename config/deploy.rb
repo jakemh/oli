@@ -9,6 +9,9 @@ set :repo_url, 'git@github.com:jakemh/oli.git'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/oli/www/'
+set :unicorn_config_path, '/home/oli/www/current/config/unicorn.rb'
+set :unicorn_rack_env, 'production'
+set :unicorn_pid, '/home/oli/www/shared/tmp/pids/unicorn.pid'
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -34,6 +37,15 @@ set :deploy_to, '/home/oli/www/'
 # set :keep_releases, 5
 
 namespace :deploy do
+
+ desc 'Start Unicorn'
+  task :test do
+    on roles(:app) do
+      within current_path do
+          execute :bundle, "exec unicorn -c /home/oli/www/current/config/unicorn.rb -D -E production"
+        end
+    end
+  end
 
   desc 'Restart application'
   task :restart do

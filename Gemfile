@@ -49,6 +49,10 @@ group :development, :test do
 end
 gem 'thin'
 
+group :development do
+  gem 'capistrano3-unicorn'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
