@@ -37,15 +37,36 @@ set :unicorn_pid, '/home/oli/www/shared/tmp/pids/unicorn.pid'
 # set :keep_releases, 5
 
 namespace :deploy do
+  def root
+    "/home/oli/www/shared"
+  end
+
+  def working_directory
+    "/home/oli/www/current"
+  end
+
+  def unicorn_pid
+    root + "/tmp/pids/unicorn.pid"
+  end
 
  desc 'Start Unicorn'
-  task :test do
-    on roles(:app) do
+  task :start do
+    on roles(:web) do
       within current_path do
-          execute :bundle, "exec unicorn -c /home/oli/www/current/config/unicorn.rb -D -E production"
+          execute "export SECRET_KEY_BASE=76015d74859449d720617ad69330b4b769d1b5d14f213c14c4c63b8ce2a8e26c659a16792bf81fb0f1e0e4a1a5289140165d5f040157659ece6ff288a5601d77"
+          execute :bundle, "exec unicorn -c #{working_directory}/config/unicorn.rb -D -E production"
         end
     end
   end
+
+  desc 'kill Unicorn'
+   task :kill do
+     on roles(:web) do
+       within current_path do
+           execute  "kill `cat #{unicorn_pid}`"
+         end
+     end
+   end
 
   desc 'Restart application'
   task :restart do
