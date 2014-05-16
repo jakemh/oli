@@ -55,7 +55,6 @@ namespace :deploy do
   task :start do
     on roles(:web) do
       within current_path do
-          execute "export SECRET_KEY_BASE=76015d74859449d720617ad69330b4b769d1b5d14f213c14c4c63b8ce2a8e26c659a16792bf81fb0f1e0e4a1a5289140165d5f040157659ece6ff288a5601d77"
           execute :bundle, "exec unicorn -c #{working_directory}/config/unicorn.rb -D -E production"
         end
     end
@@ -70,12 +69,24 @@ namespace :deploy do
      end
    end
 
-  desc 'Restart application'
+
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+    on roles(:web) do
+      within current_path do
+          execute "kill -s USR2 `cat #{unicorn_pid}`"
+        end
     end
+
+  end
+
+  desc "Symlink application.yml to the release path"
+  task :finalize do
+    on roles(:web) do
+      within current_path do
+          execute "ln -sf #{root}/application.yml #{working_directory}/config/application.yml"
+        end
+    end
+
   end
 
   after :publishing, :restart
