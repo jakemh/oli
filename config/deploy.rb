@@ -73,7 +73,7 @@ namespace :deploy do
   task :restart do
     on roles(:web) do
       within current_path do
-          execute "kill -s USR2 `cat #{unicorn_pid}`"
+          execute "kill -s SIGUSR2 `cat #{unicorn_pid}`"
         end
     end
 
