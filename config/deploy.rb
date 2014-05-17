@@ -73,14 +73,13 @@ namespace :deploy do
      end
    end
 
-  task :restart do
+  task :restart_uni do
     on roles(:web) do
       within current_path do
           puts "RESTARTING UNICORN"
           execute "kill -s USR2 `cat #{unicorn_pid}`"
         end
     end
-
   end
 
   desc "Symlink application.yml to the release path"
@@ -94,9 +93,8 @@ namespace :deploy do
 
   end
 
-  after :publishing, :restart
-  after :restart, :finalize
-
+  after :publishing, :restart_uni
+  after :restart_uni, :finalize
   after :finalize, :kill_old do
     on roles(:web), in: :groups, limit: 1, wait: 10 do
       puts "KILLING OLD UNICORN"
