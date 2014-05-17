@@ -27,4 +27,4 @@ test:
 production:
   <<: *default
   database: postgres
-  password: oli2014
+  password: <%= ENV["PG_PW"] %>
