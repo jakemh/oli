@@ -6,7 +6,6 @@ gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'pg',  group: :production
 gem 'rails_12factor', group: :production
-gem 'aweber'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,42 +29,32 @@ gem 'spring',        group: :development
 
 gem 'newrelic_rpm'
 gem 'devise'
-gem 'capistrano3-nginx_unicorn', group: :development
+gem 'aweber'
 
-# group :development do
-#   gem 'capistrano3-unicorn', :require => false
-#   gem 'sepastian-capistrano3-unicorn', :require => false
-
-# end
-# gem 'capistrano-rvm'
-# gem 'capistrano-nginx-unicorn', group: :development
+group :production do
+  gem 'unicorn'
+end
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'sqlite3'
-
+  gem 'thin'
+  gem 'debugger'
 end
-gem 'thin'
 
 group :development do
-  gem 'capistrano3-unicorn'
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rvm'
 end
 
 gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-gem 'unicorn'
 gem 'cancancan', '~> 1.8'
 
-# Use Capistrano for deployment
-gem 'capistrano',  '~> 3.1'
-gem 'capistrano-rails', '~> 1.1'
-gem 'capistrano-rbenv', '~> 2.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rvm'
-# Use debugger
-gem 'debugger', group: [:development, :test]
 
