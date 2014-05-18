@@ -58,6 +58,7 @@ gem 'figaro'
 
 # Use unicorn as the app server
 gem 'unicorn'
+gem 'cancancan', '~> 1.8'
 
 # Use Capistrano for deployment
 gem 'capistrano',  '~> 3.1'

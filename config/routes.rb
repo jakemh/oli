@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+
+  match "/me" => "users#show", via: :get, :as => :my_page
+
   devise_for :users
   match "/landing" => "oli#landing", via: :get
   match "/landing" => "oli#subscribe", via: :post
 
   root to: 'oli#landing'
+  resources :courses
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

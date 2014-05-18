@@ -1,0 +1,7 @@
+<div> Welcome <%= @user.name %></div>
+
+<div> My courses: </div>
+  <% @user.courses.each do |course| %>
+    <div> <%=course.name %>
+  <% end %>
+<div> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>

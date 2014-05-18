@@ -1,4 +1,5 @@
 class Course < ActiveRecord::Base
-  has_many :users
+  has_many :sign_ups
+  has_many :users, :through => :sign_ups
   has_many :topics
 end
