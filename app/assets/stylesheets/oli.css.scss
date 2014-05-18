@@ -1,3 +1,5 @@
+$flames-height: 363;
+
 body, html{
   height: 100%;
   width: 100%;
@@ -6,14 +8,9 @@ body, html{
   font-size: 1.02em;
 }
 
-.alert, .notice{
+.alert-oli, .notice-oli{
   margin: 0;
   padding: 0;
-}
-
-body{
-  background: image-url('oli_bg2.png'); 
-  z-index: -1;
 }
 
 @font-face
@@ -28,23 +25,7 @@ font-family: pn-extrabold;
 src: font-url('proxima_nova_scosf_extrabold.otf');
 }
 
-@font-face
-{
-font-family: pn-bold;
-src: font-url('proxima_nova_bold.otf');
-}
 
-@font-face
-{
-font-family: pn-semibold;
-src: font-url('proxima_nova_scosf_semibold.otf');
-}
-
-@font-face
-{
-font-family: pn-thin;
-src: font-url('proxima_nova_thin.otf');
-}
 
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
@@ -96,15 +77,11 @@ src: font-url('proxima_nova_thin.otf');
   }
 }
 
-
-
 .logo-oli{
   position: absolute;
   margin:0 auto;
-
   top: 10px;
   right: 28px;
-  z-index: -1;
   text-align: center;
   padding-bottom: 60px;
   padding-top: 50px;
@@ -120,21 +97,25 @@ src: font-url('proxima_nova_thin.otf');
   position: relative;
   margin:0 auto;
   max-width: 250px;
+  z-index: 3;
+
 }
 
 .logo-flame{
+  position: relative;
+  z-index:100;
   max-width: 250px;
   text-align: center;
   padding-bottom: 60px;
   margin-right:95px;
   padding-top: 60px;
-  z-index: 100;
   
 }
   
 .logo-flame img{
   max-width: 122*.6px;
   max-height: 188*.6px;
+
 }
 
 .oli-form{
@@ -279,9 +260,9 @@ src: font-url('proxima_nova_thin.otf');
   right: 0;
   margin-right: 0;
 }
-$flames-height: 363;
 
 .wrapper-oli {
+  background: image-url('oli_bg2.png'); 
     min-height: 100%;
     height: auto !important;
     height: 100%;
@@ -295,7 +276,6 @@ $flames-height: 363;
   width: 100%;
   background: image-url("flames.png");
   height: ($flames-height) * .6px;
-  z-index: 0;
   background-size:1721*.6px $flames-height * .6px;
 }
 

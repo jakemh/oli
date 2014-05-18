@@ -7,8 +7,8 @@ class CoursesController < ApplicationController
   end
 
   def show
-    if current_user.courses.include? params[:id]
-
+    if current_user.courses.pluck(:id).include? params[:id].to_i
+      render 'show'
     else
       flash[:alert] = "You are not signed up yet!"
       redirect_to my_page_path

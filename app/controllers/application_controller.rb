@@ -19,12 +19,18 @@ class ApplicationController < ActionController::Base
   def after_inactive_sign_up_path_for(resource)
     my_page_path
   end
+
   def after_sign_up_path_for(resource)
     my_page_path
   end
+
   def after_sign_in_path_for(resource)
-    my_page_path
+    if session[:previous_urls]
+      session[:previous_urls].last || root_path
+    else my_page_path
+    end
   end
+
     protected
 
     def configure_permitted_parameters
