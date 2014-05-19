@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   match "/me" => "users#show", via: :get, :as => :my_page
 
   devise_for :users
@@ -8,7 +7,11 @@ Rails.application.routes.draw do
   match "/landing" => "oli#subscribe", via: :post
 
   root to: 'oli#landing'
-  resources :courses
+  resources :courses do
+    resources :topics do
+      resources :sections
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

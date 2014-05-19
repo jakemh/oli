@@ -1,0 +1,49 @@
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
+  .header-text-oli{
+    font-size: 1.2em !important;
+
+  }
+
+   .logo-oli img{
+  max-width: 331*.5px !important;
+   max-height: 208*.5px !important;
+
+  }
+
+  .logo-oli{
+    padding-top: 10px !important;
+    margin-bottom: -10px !important;
+  }
+
+  .footer-text-oli{
+    padding-top: 10px !important;
+  }
+
+  .logo-flame{
+    padding-bottom: 30px !important;
+  }
+
+  .logo-flame img{
+    max-width: 122*.5px !important;
+      max-height: 188*.5px !important;
+    margin-right: 10px !important;
+    margin-top: -40px !important;
+  }
+
+  .logo-wrapper{
+    max-width:190px !important;
+  }
+}
+
+@media (max-height: 350px ) and (min-width: 400px) {
+  .body-text-oli{
+  display: none;
+
+  }
+
+  .footer-text-oli{
+    padding-top: 10px !important;
+  }
+}

@@ -9,4 +9,10 @@ class User < ActiveRecord::Base
   validate :name, :presence => true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+
+  def role?(role)
+    return self.roles.pluck(:name).include? role
+  end
 end
