@@ -2,6 +2,6 @@
 
 <div> My courses: </div>
   <% @user.courses.each do |course| %>
-    <div> <%=course.name %> </div>
+    <div> <%= link_to course.name , course_path(course) %> </div>
   <% end %>
  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
