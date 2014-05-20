@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .navbar-oli{
-
+  width: 100%;
+  margin: 0 auto;
+  text-align: center
 }
 
-.section-wrapper{
-  max-width: 400px;
+.start-items{
+  display: inline;
   margin: auto;
 }

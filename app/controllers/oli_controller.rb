@@ -20,10 +20,10 @@ class OliController < ApplicationController
     @status = "Thank you for registering!"
     error = false
 
-    flash.now[:notice] = @status
     respond_to do |format|
       format.html
       format.js do 
+
         begin
           oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
           oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
@@ -46,6 +46,7 @@ class OliController < ApplicationController
           error = true
         end
         flash.now[:notice] = @status
+        oauth = nil; aweber = nil;
         if error
           render 'error', :status => 404
         else

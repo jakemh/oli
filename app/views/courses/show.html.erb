@@ -24,9 +24,9 @@
 </nav>
 
 <div class="section-wrapper">
-  <div class="row sections-row-oli">
+  <div class="sections-row-oli">
     <% @topic.sections.each do |section| %>
-      <div class="col-md-3"><a href="topic"><%= link_to section.name, course_topic_section_path(@course, @topic.name, section.name) %></a></div>
+      <div class="start-items"><a href="topic"><%= link_to section.name, course_topic_section_path(@course, @topic.name, section.name) %></a></div>
     <% end %>
   </div> <!-- /.row -->
 </div>
