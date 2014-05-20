@@ -30,6 +30,7 @@ gem 'devise'
 gem 'aweber'
 gem 'acts_as_tree'
 gem 'figaro'
+gem 'cancancan', '~> 1.8'
 
 group :production do
   gem 'unicorn'
