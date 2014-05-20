@@ -1,13 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
-# define roles
+@topic_list = ["Values", "Strengths", "Passions", "LifeStyle", "Environment"]
+@section_list = ["Level 1", "Level 2", "Level 3"]
+@sub_section_list = ["Start", "Discover", "Share"]
 
 admin = Role.create(:name => "admin")
 super_admin = Role.create(:name => "super_admin")
@@ -27,38 +20,27 @@ beth.roles << admin
 bob.roles << customer
 
 innerOLI = Course.create(:name => "innerOLI")
+innerOLI2 = Course.create(:name => "innerOLI2")
+
 ahalya.courses << innerOLI
 bob.courses << innerOLI
 jake.courses << innerOLI
 
-topic_values = Topic.create(:name => "Values", :course => innerOLI)
-topic_strength = Topic.create(:name => "Strengths", :course => innerOLI)
-topic_passions = Topic.create(:name => "Passions", :course => innerOLI)
-topic_lifestyle = Topic.create(:name => "Lifestyle", :course => innerOLI)
-topic_environment = Topic.create(:name => "Environment", :course => innerOLI)
 
-innerOLI.topics.each do |topic|
-  section_start = Section.create(:name => "Start")
-  section_discover = Section.create(:name => "Discover")
-  section_share = Section.create(:name => "Share")
-  topic.sections << section_start 
-  topic.sections << section_discover 
-  topic.sections << section_share 
+
+def add_content_to_course(course)
+  @topic_list.each do |topic|
+    t = Topic.create!(:name => topic, :course => course)
+    @section_list.each do |section|
+      s = t.sections.create!(:name => section)
+      @sub_section_list.each do |sub|
+        s.children.create!(:name => sub)
+      end
+    end
+  end
 end
 
-innerOLI2 = Course.create(:name => "innerOLI2")
-jake.courses << innerOLI2
-topic_values2 = Topic.create(:name => "Values2", :course => innerOLI2)
-topic_strength2 = Topic.create(:name => "Strengths2", :course => innerOLI2)
-topic_passions2 = Topic.create(:name => "Passions2", :course => innerOLI2)
-topic_lifestyle2 = Topic.create(:name => "Lifestyle2", :course => innerOLI2)
-topic_environment2 = Topic.create(:name => "Environmen2t", :course => innerOLI2)
 
-innerOLI2.topics.each do |topic|
-  section_start = Section.create(:name => "Start")
-  section_discover = Section.create(:name => "Discover")
-  section_share = Section.create(:name => "Share")
-  topic.sections << section_start 
-  topic.sections << section_discover 
-  topic.sections << section_share 
-end
+add_content_to_course(innerOLI)
+add_content_to_course(innerOLI2)
+

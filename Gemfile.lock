@@ -27,13 +27,14 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_tree (1.6.0)
+      activerecord (>= 3.0.0)
     arel (5.0.1.20140414130214)
     aweber (1.6.1)
       json
       oauth
     bcrypt (3.1.7)
     builder (3.2.2)
-    cancancan (1.8.0)
     capistrano (3.2.1)
       i18n
       rake (>= 10.0.0)
@@ -201,8 +202,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_tree
   aweber
-  cancancan (~> 1.8)
   capistrano (~> 3.1)
   capistrano-bundler (~> 1.1.2)
   capistrano-rails (~> 1.1)

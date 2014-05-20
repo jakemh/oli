@@ -28,9 +28,7 @@ class OliController < ApplicationController
           oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
           oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
           aweber = AWeber::Base.new(oauth)
-          new_subscriber = {}
-          new_subscriber["email"] = params[:email]
-          new_subscriber["name"] = params[:name]
+          new_subscriber = {"email" => params[:email], "name" => params[:name]}
           aweber.account.lists.find_by_name(AWEBER_LIST).subscribers.create(new_subscriber)
 
         rescue AWeber::CreationError => message

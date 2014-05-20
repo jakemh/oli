@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'newrelic_rpm'
 gem 'devise'
 gem 'aweber'
+gem 'acts_as_tree'
+gem 'figaro'
 
 group :production do
   gem 'unicorn'
@@ -52,10 +54,10 @@ group :development do
   gem 'capistrano-rvm'
 end
 
-gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'cancancan', '~> 1.8'
+
+
 
 
