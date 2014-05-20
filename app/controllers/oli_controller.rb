@@ -26,7 +26,7 @@ class OliController < ApplicationController
 
         begin
           oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
-          # oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+          oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
           aweber = AWeber::Base.new(oauth)
           new_subscriber = {}
           new_subscriber["email"] = params[:email]
