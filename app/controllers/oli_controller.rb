@@ -25,13 +25,13 @@ class OliController < ApplicationController
       format.js do 
 
         begin
-          oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
-          oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-          aweber = AWeber::Base.new(oauth)
+          # oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
+          # oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+          # aweber = AWeber::Base.new(oauth)
           new_subscriber = {}
           new_subscriber["email"] = params[:email]
           new_subscriber["name"] = params[:name]
-          aweber.account.lists.find_by_name(AWEBER_LIST).subscribers.create(new_subscriber)
+          # aweber.account.lists.find_by_name(AWEBER_LIST).subscribers.create(new_subscriber)
 
         rescue AWeber::CreationError => message
           if message.to_s.include? "email: Subscriber already subscribed."
@@ -46,7 +46,6 @@ class OliController < ApplicationController
           error = true
         end
         flash.now[:notice] = @status
-        oauth = nil; aweber = nil;
         if error
           render 'error', :status => 404
         else
