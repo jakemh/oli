@@ -25,9 +25,9 @@ class OliController < ApplicationController
       format.js do 
 
         begin
-          # oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
+          oauth = AWeber::OAuth.new(CONSUMER_KEY, CONSUMER_SECRET)
           # oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-          # aweber = AWeber::Base.new(oauth)
+          aweber = AWeber::Base.new(oauth)
           new_subscriber = {}
           new_subscriber["email"] = params[:email]
           new_subscriber["name"] = params[:name]
