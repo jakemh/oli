@@ -6,7 +6,11 @@ class SectionsController < TopicsController
         sections.where("lower(sections.name) = ?", params[:id].downcase).first
     @topic = @section.topic
     @course = @topic.course
-    puts "SECTIONS: ",  @topic.sections
+    @activities = @section.activities
     render 'courses/show'
+  end
+
+  def list
+    render :json => Section.where(params[:ids])
   end
 end

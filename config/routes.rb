@@ -1,17 +1,40 @@
 Rails.application.routes.draw do
+  class FormatTest
+    attr_accessor :mime_type
 
+    def initialize(format)
+      @mime_type = Mime::Type.lookup_by_extension(format)
+    end
+
+    def matches?(request)
+      request.format == mime_type
+    end
+  end
   match "/me" => "users#show", via: :get, :as => :my_page
 
   devise_for :users
-  match "/landing" => "oli#landing", via: :get
-  match "/landing" => "oli#subscribe", via: :post
+  # match "/landing" => "oli#landing", via: :get
+  # match "/landing" => "oli#subscribe", via: :post
 
   root to: 'oli#landing'
+  get '/courses/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/topics', :to => 'topics#list'
+  get '/sections', :to => 'sections#list'
+  get '/activities', :to => 'activity#list'
+  get '/topics/:id', :to => 'topics#list'
+  get '/sections/:id', :to => 'sections#list'
+  get '/activities/:id', :to => 'activity#list'
+  get '/courses/:id', :to => 'courses#get'
+
   resources :courses do
     resources :topics do
       resources :sections
     end
   end
+  
+    
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

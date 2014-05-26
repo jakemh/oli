@@ -1,0 +1,11 @@
+  <div id="hover-box" class="test-hover" {{action "goHere" hovering on="click"}}>
+    {{hovering}}
+  </div>
+
+  <div class="thin-bar-wrapper" id="thin-bar">
+    {{#each item in controller.activities}}{{#view Oli.NotchView contextBinding="item"}}
+    <div class="notch"></div>
+    {{/view}}{{/each}}
+    {{#view Oli.TriangleView id="triangle"}}{{/view}}
+
+  </div> <!-- /.thin-bar-wrapper -->

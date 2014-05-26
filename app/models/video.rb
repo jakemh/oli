@@ -1,3 +1,3 @@
 class Video < ActiveRecord::Base
-  belongs_to :section
+  belongs_to :exercise
 end

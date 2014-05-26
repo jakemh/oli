@@ -31,6 +31,10 @@ gem 'aweber'
 gem 'acts_as_tree'
 gem 'figaro'
 gem 'cancancan', '~> 1.8'
+gem 'ember-rails'
+gem 'ember-source', '1.5.0'
+gem 'rack-rewrite' # for the actual rewriting
+gem 'active_model_serializers'
 
 group :production do
   gem 'unicorn'

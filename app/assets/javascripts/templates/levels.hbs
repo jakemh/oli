@@ -1,0 +1,12 @@
+<div class="section-wrapper">
+  <br><br><br><br>
+  <div class="sections-row-oli row">
+    <div class="sections-row-ball"></div>
+
+    {{#each controller.sections}}
+      <div class="start-items col-lg-2">
+        {{#link-to 'sections' this.name disabledWhen=controller.disableLink}}{{this.name}}{{/link-to}} 
+      </div>
+      {{/each}}
+  </div> <!-- /.row -->
+</div> <!-- /.section-wrapper -->
