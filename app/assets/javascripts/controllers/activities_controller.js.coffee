@@ -4,16 +4,19 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
 
   init: ->
 
-  trans: (m)->
-    @trigger('delegate.setArrow', @) 
+  
 
   progress: null
-  sectionsPerSection: [9,10,10]
+  sectionsPerSection: [10,10,10]
 
   hash: (() ->
     
+    console.log "HASH ACTIVITIES0: "
+
     hash = {}
     @get('activities').then (acts)->
+      console.log "HASH ACTIVITIES: " + acts
+
       for a, i in acts.toArray()
         hash[a] = (i + 1)
       return hash
@@ -26,13 +29,33 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
     ).property('name')
 
   actions:
+    moveArrow: (element) ->
+      @trigger('delegate.setArrow', @) 
+    
+
+    trans: (m)->
+      @trigger('delegate.setArrow', @) 
+
     nextAct: (act) ->
+
       @get('hash').then (h)=>
         newActInd = h[act]
         @get('activities').then (acts)=>
+          actsArray = acts.toArray()
+          console.log "newActInd: " + newActInd
+          console.log "actsArrayL: " + actsArray.length
 
-          newAct = acts.toArray()[newActInd].get('name')
-          @transitionToRoute('activities',newAct)
+          if newActInd < actsArray.length
+            
+            newAct = actsArray[newActInd].get('name')
+            @transitionToRoute('activities',newAct)
+          
+          else  
+            @notifyPropertyChange('hash')
+            console.log "NEXT LEVEL"
+
+            @get('controllers.sections').get('nextLevel')
+          
           if act.get('completed') == false
             @trigger('delegate.increaseProgress', @) 
             act.set('completed', true)

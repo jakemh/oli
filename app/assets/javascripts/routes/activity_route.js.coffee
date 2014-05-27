@@ -2,6 +2,7 @@ Oli.ActivitiesRoute = Ember.Route.extend({
   setupController: (controller, model) ->
     controller.set('content', model);
     controller.send('trans', model)
+    controller.notifyPropertyChange('hash')
 
   model: (params) -> 
     section = @modelFor('sections')

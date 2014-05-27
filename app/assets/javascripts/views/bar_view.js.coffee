@@ -2,8 +2,6 @@ Oli.BarView = Em.View.extend({
 
   didInsertElement: ->
     @get('controller').on('delegate.increaseProgress', @, @delegate.increaseProgress);
-    
-
     @get('controller').set('progress', Oli.SectionsBar.create({
       element: $('#sections-progress')
       sectionsPerSection:  @get('controller').get('sectionsPerSection')
@@ -57,15 +55,17 @@ Oli.TriangleView = Em.View.extend({
 
   didInsertElement: ->
     @get('controller').on('delegate.setArrow', @, @delegate.setArrow);
+    @get('delegate.setArrow')(@get('controller'))
 
   delegate:
-    setArrow: (t) ->
-      triangle = @.$()
-      t.get('activities').then (acts)=>
-        hash = t.get('hash').then (h) =>          
+    setArrow: (controller) ->
+      triangle = $('#triangle')
+      controller.get('activities').then (acts)=>
+        hash = controller.get('hash').then (h) =>          
           oTri = triangle.offset()
-          console.log("TEST: " + t.content)
-          index = h[t.content]
+          console.log("HASH: " + JSON.stringify(h))
+          console.log("CONT: " + controller.content)
+          index = h[controller.content]
           thinBar = $('#thin-bar')
           oThin = thinBar.offset()
           hoverBox = $('#hover-box')
