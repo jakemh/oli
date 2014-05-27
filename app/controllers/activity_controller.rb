@@ -1,7 +1,7 @@
 class ActivityController < ApplicationController
   
   def list
-    render :json => Activity.where(params[:ids])
+    render :json => Activity.find(params[:ids])
   end
 
 end
