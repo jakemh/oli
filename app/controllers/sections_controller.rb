@@ -11,6 +11,6 @@ class SectionsController < TopicsController
   end
 
   def list
-    render :json => Section.where(params[:ids])
+    render :json => Section.find(params[:ids])
   end
 end
