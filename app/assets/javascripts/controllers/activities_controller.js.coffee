@@ -2,16 +2,20 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
   
   needs: ['sections']
 
+  init: ->
+
   trans: (m)->
     @trigger('delegate.setArrow', @) 
 
+  progress: null
+  sectionsPerSection: [9,10,10]
 
   hash: (() ->
     
     hash = {}
     @get('activities').then (acts)->
       for a, i in acts.toArray()
-        hash[a.get('name')] = (i + 1)
+        hash[a] = (i + 1)
       return hash
     ).property()
 
@@ -22,19 +26,22 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
     ).property('name')
 
   actions:
-
     nextAct: (act) ->
       @get('hash').then (h)=>
-        console.log "VAL: " + h[act.get('name')]
-        newActInd = h[act.get('name')]
+        console.log "VAL: " + h[act]
+        newActInd = h[act]
         @get('activities').then (acts)=>
           newAct = acts.toArray()[newActInd].get('name')
           @transitionToRoute('activities',newAct)
+          if act.get('completed') == false
+            @trigger('delegate.increaseProgress', @) 
+            act.set('completed', true)
+
 
     moveArrow: (element) ->
       console.log "MOVE ARROW"
       console.log @content.get("name")
-      @set('hovering', @content.get("name"));
+      @set('hovering', @content);
       @trigger('delegate.setArrow', @) 
 
  
@@ -45,9 +52,9 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
 
     hover: (item)->
       console.log "HOVER: " + item
-      @set('hovering', item.get('name')); 
+      @set('hovering', item); 
       
     click: (item)->
       console.log "CLICK: " + item
-      @set('hovering', item.get('name')); 
+      @set('hovering', item); 
 });

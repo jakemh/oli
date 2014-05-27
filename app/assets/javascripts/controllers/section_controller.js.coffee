@@ -14,7 +14,6 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
       @set('hovering', item); 
       
     click: (item)->
-      alert("TEST")
       @set('clicking', item); 
       
   activities:  ((model, obj) ->

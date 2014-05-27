@@ -1,11 +1,30 @@
 @import "oli-root";
 
-
 .start-items{
   display: inline;
   margin: auto;
 }
 
+.sections-progress{
+  position: absolute;
+  z-index: -1;
+  background: oli-orange(1);
+  left: 4px;
+  height: $levels-height - 1;
+}
+  
+.sections-row-ball{
+  position: absolute;
+  background: white image-url('small-flame-icon.png') no-repeat center; 
+  background-size: 30*.8px 46*.8px;
+  z-index: 100;
+  border: 1px solid rgba(0,0,0, .25);
+  border-radius: 1000px;
+  margin-left: -24px;
+  margin-top: -1px;
+  width: $levels-height;
+  height: $levels-height;
+}
 
 .sections-row-oli{
   position: relative;
@@ -25,34 +44,25 @@
 .start-items{
   border-right:  1px solid rgba(0,0,0, .25);
   padding: 13px 25px 13px 25px;
-
 }
-
-  
-.sections-row-ball{
-  background: image-url('small-flame-icon.png') no-repeat center; 
-  background-size: 30*.8px 46*.8px;
-  z-index: 100px;
-  position: absolute;
-  border: 1px solid rgba(0,0,0, .25);
-  border-radius: 1000px;
-  margin-left: -24px;
-  margin-top: -1px;
-  width: $levels-height;
-  height: $levels-height;
-}
-
 
 .sections-row-oli div:last-of-type{
     border-right: none;
     padding: 0 0 5px 0;
-    margin-left: 25px;
+    margin-left: 0px;
+
   }
 
-  .sections-row-oli div:nth-of-type(2){
-      // background: red;
-      margin-left: -35px;
+  .sections-row-oli div:last-of-type a{
+    padding-left: 35px;
+      margin-right: -45px;
+
     }
+
+.sections-row-oli div:nth-of-type(3){
+    margin-left: -75px;
+  }
+
 .section-wrapper{
   width: 400px;
   margin: 0 auto;

@@ -1,7 +1,17 @@
 Oli.BarView = Em.View.extend({
 
   didInsertElement: ->
-    # console.log "NOT LIKELY: " + @get('childViews')[0]
+    @get('controller').on('delegate.increaseProgress', @, @delegate.increaseProgress);
+    
+
+    @get('controller').set('progress', Oli.SectionsBar.create({
+      element: $('#sections-progress')
+      sectionsPerSection:  @get('controller').get('sectionsPerSection')
+      }))
+  
+  delegate:
+    increaseProgress: (e)->
+      @get('controller').progress.grow()
 
   click: ->
     console.log(@get('controller').get('name'))
@@ -32,19 +42,7 @@ Oli.NotchView = Em.View.extend({
     ), ->
       # handled in BarView class
 
-  # mouseEnter: ->
-  #   oBox = @hoverBox().offset()
-  #   oNotch = this.$().offset()
-  #   if @hoverBox().is(":hidden")
-  #     @hoverBox().stop().fadeIn("fast")
-  #     @hoverBox().offset({top: oNotch.top, left:oNotch.left})
-  #   else 
-  #     @hoverBox().animate({top: oBox.top, left:oNotch.left}, "slow")
-
-  #   @get('controller').send('hover', @get('context'));
-
   click: ->
-
     @get('controller').send('goHere', @get('context').get('name'));
 
   hoverBox: ->
@@ -58,18 +56,16 @@ Oli.TriangleView = Em.View.extend({
   
 
   didInsertElement: ->
-    @get('controller').on('delegate.clickedBox', @, @delegate.clickedBox);
     @get('controller').on('delegate.setArrow', @, @delegate.setArrow);
-
 
   delegate:
     setArrow: (t) ->
-      console.log("TRI: " + t)
       triangle = @.$()
       t.get('activities').then (acts)=>
         hash = t.get('hash').then (h) =>          
           oTri = triangle.offset()
-          index = h[t.get('name')]
+          console.log("TEST: " + t.content)
+          index = h[t.content]
           thinBar = $('#thin-bar')
           oThin = thinBar.offset()
           hoverBox = $('#hover-box')
@@ -79,21 +75,5 @@ Oli.TriangleView = Em.View.extend({
             top: oTri.top - oThin.top
             left: ((index - 1) * notchLength)
             })
-
-    # clickedBox: (t) -> 
-    #   triangle = @.$()
-    #   t.get('activities').then (acts)=>
-    #     hash = t.get('hash').then (h) =>          
-    #       oTri = triangle.offset()
-    #       index = h[t.get('name')]
-    #       thinBar = $('#thin-bar')
-    #       oThin = thinBar.offset()
-    #       hoverBox = $('#hover-box')
-    #       bar = $('#thin-bar')
-    #       notchLength = bar.children('.notch-ember').eq(0).width()
-    #       triangle.animate({
-    #         top: oTri.top - oThin.top
-    #         left: ((index - 1) * notchLength)
-    #         })
       
 });

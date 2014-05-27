@@ -1,5 +1,9 @@
-  <div id="hover-box" class="test-hover">
-    {{hovering}}
+  <div id="hover-box" class="test-hover" >
+    {{hovering.name}}<br>
+    {{#if hovering.completed}}
+        DONE
+    {{/if}}
+    
   </div>
 
   <div class="thin-bar-wrapper" id="thin-bar">
