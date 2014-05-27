@@ -1,4 +1,4 @@
 <h1>Available Courses</h1>
 <% @courses.each do |course| %>
-  <div><%=course%></div>
+  <div><%= link_to course.name, course_path(course), {:format=> :json} %></div>
 <% end %>

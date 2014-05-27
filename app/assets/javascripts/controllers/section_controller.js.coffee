@@ -1,8 +1,5 @@
 Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
   needs: "topics"
-
-    
-
   actions:
     moveArrow: (element) ->
       @trigger('delegate.setArrow', @) 

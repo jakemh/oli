@@ -3,12 +3,8 @@
 <div> My courses: </div>
   <% @user.courses.each do |course| %>
   <div> 
-<% 
-=begin %>
-    <%= link_to course.name , course_path(course) %>
-<% 
-=end %>
-<%= course.name  %>
+
+  <%= link_to course.name , course_path(course) %>
 </div>
   <% end %>
  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>

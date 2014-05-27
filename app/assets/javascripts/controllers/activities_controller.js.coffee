@@ -28,9 +28,9 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
   actions:
     nextAct: (act) ->
       @get('hash').then (h)=>
-        console.log "VAL: " + h[act]
         newActInd = h[act]
         @get('activities').then (acts)=>
+
           newAct = acts.toArray()[newActInd].get('name')
           @transitionToRoute('activities',newAct)
           if act.get('completed') == false

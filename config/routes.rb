@@ -28,7 +28,10 @@ Rails.application.routes.draw do
 
   resources :courses do
     resources :topics do
-      resources :sections
+      resources :sections do
+        resources :activities do
+        end
+      end
     end
   end
   

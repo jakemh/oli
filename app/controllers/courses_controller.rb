@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   # check_authorization
   def index
     puts "CURRENT USER: ", current_user
-    @courses = Course.all.pluck(:name)
+    @courses = Course.all
 
   end
 
