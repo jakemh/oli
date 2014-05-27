@@ -8,7 +8,7 @@ class TopicsController < CoursesController
   end
 
   def list
-    @topics = Topic.where(params[:ids])
+    @topics = Topic.find(params[:ids])
    render :json => @topics
 
   end
