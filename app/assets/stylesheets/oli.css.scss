@@ -1,3 +1,5 @@
+@import "oli-root";
+
 $flames-height: 363;
 
 body, html{
@@ -176,23 +178,9 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
   max-width: 400px;
 }
 .submit-button-oli{
-  border: none;  
+  @include oli-button;
   height: 37px;
   width: 100px;
-  border-radius: 20px;
-  margin-top: 10px;
-  background-color: #266dbf;
-  color: white;
-  font-family: pn-thin;
-  font-smoothing: antialiased;
-  box-shadow: 0 1px 3px rgba(38, 109, 191, .3); 
-
-  font-size: .9em;
-  letter-spacing:.03em;
-  font-weight: thin;
-  outline: none;
-  -webkit-appearance:none;
-  opacity: .95;
 }
 
 .oli-form ::-webkit-input-placeholder{

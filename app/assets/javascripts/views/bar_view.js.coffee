@@ -44,6 +44,7 @@ Oli.NotchView = Em.View.extend({
   #   @get('controller').send('hover', @get('context'));
 
   click: ->
+
     @get('controller').send('goHere', @get('context').get('name'));
 
   hoverBox: ->
@@ -58,28 +59,41 @@ Oli.TriangleView = Em.View.extend({
 
   didInsertElement: ->
     @get('controller').on('delegate.clickedBox', @, @delegate.clickedBox);
+    @get('controller').on('delegate.setArrow', @, @delegate.setArrow);
 
 
   delegate:
-    clickedBox: (t) -> 
+    setArrow: (t) ->
+      console.log("TRI: " + t)
+      triangle = @.$()
       t.get('activities').then (acts)=>
-        hash = {}
-        for a, i in acts.toArray()
-          hash[a.get('name')] = (i + 1)
+        hash = t.get('hash').then (h) =>          
+          oTri = triangle.offset()
+          index = h[t.get('name')]
+          thinBar = $('#thin-bar')
+          oThin = thinBar.offset()
+          hoverBox = $('#hover-box')
+          bar = $('#thin-bar')
+          notchLength = bar.children('.notch-ember').eq(0).width()
+          triangle.animate({
+            top: oTri.top - oThin.top
+            left: ((index - 1) * notchLength)
+            })
 
-        index
-        triangle = @.$()
-        oTri = triangle.offset()
-        console.log hash[t.get('name')]
-        index = hash[t.get('name')]
-        thinBar = $('#thin-bar')
-        oThin = thinBar.offset()
-        hoverBox = $('#hover-box')
-        bar = $('#thin-bar')
-        notchLength = bar.children('.notch-ember').eq(0).width()
-        triangle.animate({
-          top: oTri.top - oThin.top
-          left: ((index - 1) * notchLength)
-          })
+    # clickedBox: (t) -> 
+    #   triangle = @.$()
+    #   t.get('activities').then (acts)=>
+    #     hash = t.get('hash').then (h) =>          
+    #       oTri = triangle.offset()
+    #       index = h[t.get('name')]
+    #       thinBar = $('#thin-bar')
+    #       oThin = thinBar.offset()
+    #       hoverBox = $('#hover-box')
+    #       bar = $('#thin-bar')
+    #       notchLength = bar.children('.notch-ember').eq(0).width()
+    #       triangle.animate({
+    #         top: oTri.top - oThin.top
+    #         left: ((index - 1) * notchLength)
+    #         })
       
 });

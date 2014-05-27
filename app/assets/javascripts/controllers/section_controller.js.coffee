@@ -5,7 +5,7 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
 
   actions:
     moveArrow: (element) ->
-      @trigger('delegate.clickedBox', @) 
+      @trigger('delegate.setArrow', @) 
   
     goHere: (act) ->
       @transitionToRoute('activities',act)

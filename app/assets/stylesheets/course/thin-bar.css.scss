@@ -1,4 +1,4 @@
-@import "course";
+@import "oli-root";
 
 .thin-bar-wrapper{
   position: relative;
@@ -7,6 +7,9 @@
 }
 
 .test-hover{
+
+  pointer-events: none;
+
   display:none;
   z-index: 100;
   position: absolute;
