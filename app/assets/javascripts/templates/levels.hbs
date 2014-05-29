@@ -1,13 +1,12 @@
 <div class="section-wrapper">
   <br><br><br><br>
 
-  <div class="sections-row-oli row">
+  <div id="sections-row-oli" class="sections-row-oli row">
     <div class="sections-row-ball"></div>
-
     <div id="sections-progress" class="sections-progress"></div>
-   
     {{#each controller.sections}}
-      <div class="start-items col-lg-2">
+      <div class="start-items col-sm-2">
+        <div class="sections-progress-inner"></div>
         {{#link-to 'sections' this.name disabledWhen=controller.disableLink}}{{this.name}}{{/link-to}} 
       </div>
       {{/each}}

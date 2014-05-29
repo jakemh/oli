@@ -5,6 +5,18 @@
 $nav-bar-height: 60px;
 $levels-height: 45px;
 
+@function oli-yellow($a){
+  @return rgba(248, 160, 32, $a); 
+}
+
+@function oli-orange($a){
+  @return rgba(242, 111, 33, $a); 
+}
+
+@function oli-red($a){
+  @return rgba(219, 69, 52, $a); 
+}
+
 @mixin oli-button{
   border: none;  
   
@@ -35,8 +47,4 @@ $levels-height: 45px;
     color: rgba(0,0,0, .75) !important;
 
   }
-}
-
-@function oli-orange($a){
-  @return rgba(248, 160, 32, $a); 
 }

@@ -1,14 +1,5 @@
- <div class="activity-contents">
-<br>
-<br>
-<br>
-<br>
-<br>
-{{!-- content will go here --}}
-<br>
-<br>
-<br>
-<br>
- </div>
+<div class="activity-contents">
+  {{outlet template}}
+</div>
 
  <button class="smaller-button" data-style="zoom-out" {{action "nextAct" this on="click"}}><span class="ladda-label">CONTINUE</span></button>

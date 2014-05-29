@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521034857) do
+ActiveRecord::Schema.define(version: 20140529194741) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20140521034857) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.string   "template"
+  end
+
+  create_table "components", force: true do |t|
+    t.integer  "activity_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "componentable_type"
+    t.string   "type"
   end
 
   create_table "courses", force: true do |t|
@@ -100,6 +111,15 @@ ActiveRecord::Schema.define(version: 20140521034857) do
     t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "words", force: true do |t|
+    t.string   "word"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "wordable_id"
+    t.string   "wordable_type"
   end
 
 end

@@ -3,13 +3,18 @@ Oli.BarView = Em.View.extend({
   didInsertElement: ->
     @get('controller').on('delegate.increaseProgress', @, @delegate.increaseProgress);
     @get('controller').set('progress', Oli.SectionsBar.create({
-      element: $('#sections-progress')
-      sectionsPerSection:  @get('controller').get('sectionsPerSection')
+      element: $('#sections-row-oli')
+      colors: ["oli-yellow", "oli-orange", "oli-red"]
+      sectionsPerSection: @get('controller').get('sectionsPerSection')
       }))
   
   delegate:
-    increaseProgress: (e)->
-      @get('controller').progress.grow()
+    increaseProgress: (e, callback)->
+      @get('controller').get('controllers.sections').get('sections').then (sects) =>
+        firstID = sects.toArray()[0].id
+        currentID = @get('controller').get('controllers.sections').content.id
+        relID = currentID - firstID
+        @get('controller').progress.grow(relID, callback)
 
   click: ->
     console.log(@get('controller').get('name'))
@@ -63,8 +68,8 @@ Oli.TriangleView = Em.View.extend({
       controller.get('activities').then (acts)=>
         hash = controller.get('hash').then (h) =>          
           oTri = triangle.offset()
-          console.log("HASH: " + JSON.stringify(h))
-          console.log("CONT: " + controller.content)
+          # console.log("HASH: " + JSON.stringify(h))
+          # console.log("CONT: " + controller.content)
           index = h[controller.content]
           thinBar = $('#thin-bar')
           oThin = thinBar.offset()

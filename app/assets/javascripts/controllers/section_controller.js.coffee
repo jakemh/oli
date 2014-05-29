@@ -1,5 +1,30 @@
 Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
   needs: "topics"
+
+  hash: (() ->
+   
+    hash = {}
+    @get('sections').then (sects)->
+      console.log "UPDATE SECT HASH"
+      for s, i in sects.toArray()
+        hash[s.get('name')] = (i + 1)
+      return hash
+    ).property('content')
+
+
+  activities:  ((model, obj) ->
+    @content.get('activities')
+
+    ).property('name')
+
+  sectionDone: ((sectionName) -> 
+    console.log "UPDATE SECTION DONE"
+    @get('activities').then (acts) ->
+      for a in acts.toArray()
+        return false if a.get('completed') == false
+      return true
+    ).property()
+
   actions:
     goHere: (act) ->
       @transitionToRoute('activities',act)
@@ -10,19 +35,8 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
     click: (item)->
       @set('clicking', item); 
   
-  hash: (() ->
-    
-    hash = {}
-    @get('sections').then (sects)->
-      for s, i in sects.toArray()
-        hash[s] = (i + 1)
-      return hash
-    ).property()
 
-  activities:  ((model, obj) ->
-    @content.get('activities')
 
-    ).property('name')
 
   sections: (() ->
     @get('controllers.topics').get('sections')
@@ -30,11 +44,10 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
 
   nextLevel: (() ->
     @get('hash').then (h) =>
-      ind = h[@content]
+      ind = h[@content.get('name')]
       @get('sections').then (s) =>
-        console.log "TESTING: " + s.toArray()[ind]
         @transitionToRoute('activities', s.toArray()[ind].get('name'), "Start")
-
+        @content.set('ready', true)
     ).property('name')
   
 });

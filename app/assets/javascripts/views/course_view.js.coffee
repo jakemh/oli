@@ -1,4 +1,4 @@
-Oli.CoursView = Em.View.extend({
+Oli.CourseView = Em.View.extend({
   classNameBindings: ['thinBarArrow'],
   thinBarArrow: true
   
@@ -17,7 +17,7 @@ Oli.CoursView = Em.View.extend({
           thinBar = $('#thin-bar')
           oThin = thinBar.offset()
           hoverBox = $('#hover-box')
-          bar = $('#thin-bar')
+          bar = $a('#thin-bar')
           notchLength = bar.children('.notch-ember').eq(0).width()
           triangle.animate({
             top: oTri.top - oThin.top

@@ -1,0 +1,24 @@
+<br><br>
+
+<div class="description">
+{{this.description}}
+</div>
+<br>
+<br>
+
+<div clas="row">
+{{#view Oli.WordSelectionView}}
+{{#each view.words}}
+  {{#each this.words}}
+  <div class='col-md-3 col-sm-4'>
+      {{radio-button value=value name=view.name selection=view.value}}{{this.word}}
+      </div>
+    {{/each}}
+  {{/each }}
+{{/view}}
+</div>
+<br><br>
+<br>
+<br>
+<br>
+<br>
