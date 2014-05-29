@@ -28,7 +28,7 @@ config.assets.enabled = true
   config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -83,5 +83,15 @@ config.assets.enabled = true
   config.active_record.dump_schema_after_migration = false
 
   # Compress JavaScripts and CSS
+    # Compress JavaScripts and CSS
+    class NoCompression
+         def compress(string)
+             # do nothing
+             string
+         end
+     end
 
+     config.assets.compress = true
+     config.assets.js_compressor = NoCompression.new
+     config.assets.css_compressor = NoCompression.new
 end
