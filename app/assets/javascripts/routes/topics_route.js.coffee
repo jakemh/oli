@@ -3,7 +3,7 @@ Oli.TopicsRoute = Ember.Route.extend({
     controller.set('content', model)
 
     # set first to ready 
-    controller.store.getById('section', 1).set('ready', true)
+    # controller.store.getById('section', 1).set('ready', true)
     # controller.get('sections').then (sects)->
     #   sects.toArray()[0].set('ready', true)
 
