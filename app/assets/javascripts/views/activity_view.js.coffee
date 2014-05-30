@@ -8,7 +8,7 @@ Oli.WordSelectionView = Em.View.extend({
 
   words: (->
     act = @get('controller').content
-    return act.get('components')
+    act.get('components')
   ).property()
 
   value: 0

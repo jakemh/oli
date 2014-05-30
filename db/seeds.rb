@@ -32,7 +32,12 @@ add_content_to_course(innerOLI)
 add_content_to_course(innerOLI2, {:no_activities => true})
 add_content_to_course(innerOLI3, {:no_activities => true})
 
-ex1 = Course.first.activities.find(2)
+ex0 = Course.first.topics.first.sections.first.activities.where(:name => "Start").first
+ex0.template = "video"
+ex0.save
+
+ex1 = Course.first.topics.first.sections.first.activities.where(:name => "Exercise 1").first
+# ex1 = Course.first.activities.find(2)
 ex1.description = 
 '''
 Think of a peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:
@@ -41,15 +46,15 @@ Think of a peak time in your life, a time of extreme pleaseure or joy, learning 
 
 ex1.template = "questions_answers"
 ex1.save
-
-ex2 = Course.first.activities.find(3)
+ex2 = Course.first.topics.first.sections.first.activities.where(:name => "Exercise 2").first
+# ex2 = Course.first.activities.find(3)
 ex2.description = 
 '''
 Pull out the values that were being honored in that experience. Perhaps it was connection or freedom or adventure. Select 5 words that you associate with this experience, keeping in mind the following:
 '''
 
 ex2.template="choose_word"
-w_s = WordSelection.create(:content => "Select Words")
+w_s = Component.create(:content => "Select Words")
 words = 25.times.inject([]){|result, element| result << Word.create(:word => "Word #{element + 1}") }
 ex2.components << w_s
 ex2.components[0].words = words

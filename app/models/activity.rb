@@ -1,4 +1,4 @@
 class Activity < ActiveRecord::Base
-
-  has_many :components
+  belongs_to :section
+  has_many :components, dependent: :destroy
 end

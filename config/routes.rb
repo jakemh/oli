@@ -25,9 +25,8 @@ Rails.application.routes.draw do
   get '/sections/:id', :to => 'sections#list'
   get '/activities/:id', :to => 'activity#list'
   get '/courses/:id', :to => 'courses#get'
-  get '/components/', :to => 'components#list'
   get '/words/', :to => 'words#list'
-
+  get '/components/', :to => 'components#list'
   get '/components/:id', :to => 'components#list'
 
   resources :courses do
