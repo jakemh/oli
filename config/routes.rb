@@ -10,13 +10,14 @@ Rails.application.routes.draw do
       request.format == mime_type
     end
   end
+  root to: 'oli#landing'
+
   match "/me" => "users#show", via: :get, :as => :my_page
 
   devise_for :users
   match "/landing" => "oli#landing", via: :get
   match "/landing" => "oli#subscribe", via: :post
 
-  root to: 'oli#landing'
   get '/courses/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
   get '/topics', :to => 'topics#list'
   get '/sections', :to => 'sections#list'

@@ -58,7 +58,8 @@ Pull out the values that were being honored in that experience. Perhaps it was c
 
 ex2.template="choose_word"
 w_s = WordSelection.create!(:content => "Select Words", :user_data => false)
-words = 25.times.inject([]){|result, element| result << Word.create(:word => "Word #{element + 1}") }
+words = 20.times.inject([]){|result, element| result << Word.create(:word => "Word #{element + 1}") }
+words.sort
 ex2.components << w_s
 ex2.components[0].words = words
 ex2.save

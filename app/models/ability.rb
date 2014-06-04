@@ -11,9 +11,15 @@ class Ability
         can :index, :all
       else
         can :index, :all
-        can :show, Course do |course|
+        # can :show, :all
+
+        can :manage, Course do |course|
             course.users.include? user
         end
+        # can :list, Course do |course|
+        #     course.users.include? user
+        # end
+    
       end
     #
     # The first argument to `can` is the action you are giving the user
