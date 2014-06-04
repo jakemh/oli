@@ -342,10 +342,10 @@
 }
 
 .vjs-default-skin .vjs-big-play-button {
-    left: 1em;
-    top: .5em;
+    left: 1.2em;
+    top: .4em;
     font-size: 3em;
-    padding: 8px 0 0 15px;
+    padding: 8px 0 0 25px;
     display: block;
     z-index: 2;
     position: absolute;
@@ -368,9 +368,9 @@
 }
 
 .vjs-default-skin.vjs-big-play-centered .vjs-big-play-button {
-    left: 51%;
+    left: 53%;
     margin-left: -2.1em;
-    top: 50%;
+    top: 48%;
     margin-top: -1.4000000000000001em;
 }
 
@@ -405,7 +405,7 @@
     /*text-shadow: .05em .05em .1em #000;*/
     text-align: center;
     position: absolute;
-    left: 0;
+    left: 3px;
     width: 100%;
     height: 100%;
 }

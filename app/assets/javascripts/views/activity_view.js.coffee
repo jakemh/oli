@@ -139,7 +139,7 @@ Oli.NewWordBox = Ember.TextField.extend({
 
           })
         component.get('words').pushObject(newWord)
-        newWord.save()
+        # newWord.save()
        
     
 })
