@@ -48,7 +48,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
         @set('words', ws)
 
     return value
-  ).property('[]')
+  ).property()
 
   updateComponents: ->
 
