@@ -32,6 +32,12 @@ Oli.CourseRoute = Ember.Route.extend({
       controller: activitiesController 
       })
 
+    @render('status', {
+      outlet: 'status', 
+      into: 'activity',
+
+      controller: activitiesController 
+      })
 
   afterModel: (course, transition) -> 
     if (transition.targetName == "course.index") 

@@ -1,0 +1,2 @@
+class UserComponent < Component
+end

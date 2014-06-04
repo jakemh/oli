@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529194741) do
+ActiveRecord::Schema.define(version: 20140603022916) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20140529194741) do
     t.datetime "updated_at"
     t.string   "componentable_type"
     t.string   "type"
+    t.boolean  "user_data"
+    t.integer  "user_id"
+    t.integer  "master_id"
+    t.text     "user_content"
   end
 
   create_table "courses", force: true do |t|
@@ -86,6 +90,15 @@ ActiveRecord::Schema.define(version: 20140529194741) do
     t.integer  "course_id"
   end
 
+  create_table "user_entries", force: true do |t|
+    t.integer  "component_id"
+    t.integer  "user_id"
+    t.text     "post"
+    t.string   "content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -120,6 +133,7 @@ ActiveRecord::Schema.define(version: 20140529194741) do
     t.datetime "updated_at"
     t.integer  "wordable_id"
     t.string   "wordable_type"
+    t.boolean  "selected"
   end
 
 end

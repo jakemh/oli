@@ -2,7 +2,7 @@
 
 .thin-bar-wrapper{
   position: relative;
-  width: 500px;
+  width: 550px;
   margin: auto;
 }
 
@@ -30,7 +30,7 @@
 
 .notch{
   display: inline-block;
-  width: 45px;
+  width: 53px;
   height: 3px;
   border-radius: 1px;
   padding-left:0px;
@@ -44,6 +44,7 @@
 }
 
 .thin-bar-arrow{
+  z-index: 5;
   position: absolute;
   top: 18px;
   width: 0; 

@@ -1,11 +1,17 @@
 <br><br>
 
 <div class="description">
-{{this.description}}
-</div>
+{{#view Oli.QuestionAnswerView}}
+  {{this.description}}
+  </div>
 
-<br><br>
-{{#view Ember.TextArea class="response-box"}}{{/view}}
+  <br><br>
+
+  {{#each view.components}}
+    {{#view Ember.TextArea class="response-box" value=user_content}}
+    {{/view}}
+  {{/each}}
+{{/view}}
 <br>
 <br>
 <br>

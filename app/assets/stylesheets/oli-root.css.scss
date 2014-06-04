@@ -17,6 +17,10 @@ $levels-height: 45px;
   @return rgba(219, 69, 52, $a); 
 }
 
+@function oli-gray($a){
+  @return rgba(222, 222, 222, $a); 
+}
+
 @mixin oli-button{
   border: none;  
   

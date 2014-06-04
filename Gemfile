@@ -35,6 +35,7 @@ gem 'ember-rails'
 gem 'ember-source', '1.5.0'
 gem 'rack-rewrite' # for the actual rewriting
 gem 'active_model_serializers'
+gem 'deep_cloneable'
 
 group :production do
   gem 'unicorn'
@@ -48,6 +49,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'thin'
   gem 'debugger'
+  gem 'byebug'
 end
 
 group :development do

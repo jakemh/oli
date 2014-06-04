@@ -45,7 +45,10 @@ Think of a peak time in your life, a time of extreme pleaseure or joy, learning 
 '''
 
 ex1.template = "questions_answers"
+comp1 = Component.create!(:content => "", :user_data => false)
+ex1.components << comp1
 ex1.save
+
 ex2 = Course.first.topics.first.sections.first.activities.where(:name => "Exercise 2").first
 # ex2 = Course.first.activities.find(3)
 ex2.description = 
@@ -54,7 +57,7 @@ Pull out the values that were being honored in that experience. Perhaps it was c
 '''
 
 ex2.template="choose_word"
-w_s = Component.create(:content => "Select Words")
+w_s = WordSelection.create!(:content => "Select Words", :user_data => false)
 words = 25.times.inject([]){|result, element| result << Word.create(:word => "Word #{element + 1}") }
 ex2.components << w_s
 ex2.components[0].words = words

@@ -8,17 +8,31 @@
 
 <div clas="row">
 {{#view Oli.WordSelectionView}}
-{{#each view.words}}
-  {{#each this.words}}
-  <div class='col-md-3 col-sm-4'>
-      {{radio-button value=value name=view.name selection=view.value}}{{this.word}}
-      </div>
-    {{/each}}
+<div class="hidden">{{view.selected}}</div>
+<div class='select-word-container'>
+{{#each controller.words}}
+<!-- Rounded ONE -->
+<div class='col-lg-3 col-md-4 col-sm-4 col-xs-5 description'>
+  <div class="roundedOne">
+
+      {{view Ember.Checkbox checked=this.selected type="checkbox" name=check id=this.id class="roundedOne"}}
+      <label  {{bindAttr for="this.id"}} ></label>
+    </div><div class="select-word"> {{this.word}}</div>
+ </div>
+
   {{/each }}
+  <div class='col-lg-3 col-md-4 col-sm-4 col-xs-5 description'>
+    <div class="roundedOne">
+
+      {{view Oli.NewWordCheck checked=this.selected type="checkbox" name=check id=this.id class="roundedOne" checkBinding="controller.checked"}}
+
+      <label  {{bindAttr for="this.id"}} ></label>
+    </div><div class="select-word">{{#view Oli.NewWordBox class="new-word-box" cont=controller valueBinding=view.theValue placeholder="New Word" }}
+
+    {{/view}}
+    </div>
+ </div>
+
+</div>
 {{/view}}
 </div>
-<br><br>
-<br>
-<br>
-<br>
-<br>

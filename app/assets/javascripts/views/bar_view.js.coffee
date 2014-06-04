@@ -41,12 +41,12 @@ Oli.NotchView = Em.View.extend({
       else 
         @hoverBox().animate({top: oBox.top, left:oNotch.left})
 
-      @get('controller').send('hover', @get('context'));
+      @get('controller').send('hover', @get('title'));
     ), ->
       # handled in BarView class
 
   click: ->
-    @get('controller').send('goHere', @get('context').get('name'));
+    @get('controller').send('goHere', @get('title').get('name'));
 
   hoverBox: ->
     $('#hover-box')

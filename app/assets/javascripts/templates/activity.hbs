@@ -2,4 +2,7 @@
   {{outlet template}}
 </div>
 
- <button class="smaller-button" data-style="zoom-out" {{action "nextAct" this on="click"}}><span class="ladda-label">CONTINUE</span></button>
+<div class="forward-button-activity">
+  <button class="smaller-button" data-style="zoom-out" {{action "buttonClicked" this on="click"}}><span class="ladda-label">CONTINUE</span></button>
+  <div class="activity-status description">{{outlet status}}</div>
+</div>

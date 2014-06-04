@@ -4,4 +4,6 @@ class Course < ActiveRecord::Base
   has_many :topics, dependent: :destroy
   has_many :sections, :through => :topics
   has_many :activities, :through => :sections
+  has_many :components, :through => :activities
+  has_many :user_entries, :through => :components
 end

@@ -22,6 +22,7 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require ember-animate
 #= require_self
 #= require hoverintent.min
 #= require oli

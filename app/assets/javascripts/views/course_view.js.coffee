@@ -1,7 +1,17 @@
 Oli.CourseView = Em.View.extend({
   classNameBindings: ['thinBarArrow'],
   thinBarArrow: true
-  
+  willAnimateIn: ->
+    @$().css "opacity", 0
+    return
+
+  animateIn: (done) ->
+    @$().fadeTo 500, 1, done
+    return
+
+  animateOut: (done) ->
+    @$().fadeTo 500, 0, done
+    return
 
   didInsertElement: ->
     @get('controller').on('delegate.clickedBox', @, @delegate.clickedBox);

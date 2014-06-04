@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :roles, :through => :permissions
   has_many :courses, :through => :sign_ups
 
+  has_many :components
+  
   validate :name, :presence => true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

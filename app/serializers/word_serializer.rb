@@ -1,3 +1,3 @@
 class WordSerializer < ActiveModel::Serializer
-  attributes :id, :word
+  attributes :id, :word, :selected
 end

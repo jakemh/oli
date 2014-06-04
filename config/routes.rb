@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   get '/words/', :to => 'words#list'
   get '/components/', :to => 'components#list'
   get '/components/:id', :to => 'components#list'
+  put '/components/:id', :to => 'components#update'
+  put '/words/:id', :to => 'words#update'
+  post '/words/', :to => 'words#new'
 
   resources :courses do
     resources :topics do

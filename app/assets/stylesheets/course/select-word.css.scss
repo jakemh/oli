@@ -1,0 +1,38 @@
+@import "oli-root";
+
+
+.select-word-container{
+  max-height: 300px;
+  overflow: scroll;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.new-word-box{
+  display: inline-block;
+  height: 1.6em;
+  border: none;
+  width: 100px;
+  resize: none;
+  overflow: hidden;
+
+  &:focus{
+    outline: none;
+    border-bottom: 1px dashed oli-gray(1);
+
+  }
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
