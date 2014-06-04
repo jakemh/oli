@@ -1,6 +1,6 @@
 class WordSelectionSerializer < ComponentSerializer
 
-  def activities
+  def words
     object.words.sort
   end
 
