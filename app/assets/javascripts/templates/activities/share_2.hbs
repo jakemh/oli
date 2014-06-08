@@ -1,0 +1,26 @@
+<form id="email-form">
+  <div class="input string">
+ 
+
+    <label>Email</label>
+    {{input value=controller.addressEntry.content name='email' viewName='emailField'}}
+  </div>
+  <div class="input string">
+    <label>Subject</label>
+    {{input value=controller.subjectEntry.content name='subject' viewName='subjectField'}}
+  </div>
+  <div class="input string">
+    <label>Body</label>
+    {{textarea value=controller.bodyEntry.content name='body' viewName='bodyField'}}
+  </div>
+
+</form>
+
+{{!-- 
+{{#user-form-component
+  title="Test title" 
+  modalId="createNewAnalyticsRunModal" 
+  action="actionNameOnTheController"}}
+
+    {{this}}
+some message{{/user-form-component}} --}}

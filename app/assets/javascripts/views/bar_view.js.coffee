@@ -2,12 +2,19 @@ Oli.BarView = Em.View.extend({
 
   didInsertElement: ->
     @get('controller').on('delegate.increaseProgress', @, @delegate.increaseProgress);
+    @get('controller.controllers.sections.activitiesPerSection').then (aps) =>
+      @set('activitiesPerSection', aps)
+      @get('drawBar')
+
+  activitiesPerSection: null
+  drawBar: (->
     @get('controller').set('progress', Oli.SectionsBar.create({
-      element: $('#sections-row-oli')
-      colors: ["oli-yellow", "oli-orange", "oli-red"]
-      sectionsPerSection: @get('controller').get('sectionsPerSection')
-      }))
-  
+          element: $('#sections-row-oli')
+          colors: ["oli-yellow", "oli-orange", "oli-red"]
+          sectionsPerSection: @get('activitiesPerSection')
+          }))
+  ).property()
+
   delegate:
     increaseProgress: (e, callback)->
       @get('controller').get('controllers.sections').get('sections').then (sects) =>
@@ -32,6 +39,15 @@ Oli.NotchView = Em.View.extend({
   notchEmber: true
 
   didInsertElement: ->
+    # @.$().width(Math.floor($("#thin-bar").width() / @get('controller.activities').get('length')))
+    actNum =  @get('controller.activities').get('length')
+    totalWidth = $(".thin-bar-wrapper").innerWidth()
+    newWidth = Math.floor(totalWidth / actNum)
+    adj = totalWidth - (newWidth) * actNum
+    @.$().children('.notch').innerWidth(newWidth - 1)
+
+    last = $('.notch-ember .notch').last()
+    last.width(last.width() + adj)
     this.$().hoverIntent (=>
       oBox = @hoverBox().offset()
       oNotch = this.$().offset()

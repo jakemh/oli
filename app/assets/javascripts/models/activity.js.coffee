@@ -4,5 +4,5 @@ Oli.Activity = DS.Model.extend({
   template: DS.attr('string')
   description: DS.attr('string')
   components: DS.hasMany('component', {async: true})
-  completed: false
+  completed: DS.attr('boolean')
 });

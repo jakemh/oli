@@ -41,7 +41,7 @@ Oli.CourseRoute = Ember.Route.extend({
 
   afterModel: (course, transition) -> 
     if (transition.targetName == "course.index") 
-      @transitionTo("activities", "Values", "Level 1", "Start")
+      @transitionTo("activities", "Values", "Level 1", "Intro")
       
   model: (params) -> 
     course = @store.find('course', params.id)

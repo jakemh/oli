@@ -35,7 +35,9 @@ gem 'ember-rails'
 gem 'ember-source', '1.5.0'
 gem 'rack-rewrite' # for the actual rewriting
 gem 'active_model_serializers'
-gem 'deep_cloneable'
+gem 'deep_cloneable' #phase this out
+gem 'sidekiq'
+gem 'stemmify'
 
 group :production do
   gem 'unicorn'

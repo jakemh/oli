@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603022916) do
+ActiveRecord::Schema.define(version: 20140607045447) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -34,12 +34,9 @@ ActiveRecord::Schema.define(version: 20140603022916) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "componentable_type"
     t.string   "type"
-    t.boolean  "user_data"
-    t.integer  "user_id"
-    t.integer  "master_id"
-    t.text     "user_content"
+    t.boolean  "is_completed"
+    t.string   "context"
   end
 
   create_table "courses", force: true do |t|
@@ -76,9 +73,25 @@ ActiveRecord::Schema.define(version: 20140603022916) do
     t.integer  "parent_id"
   end
 
+  create_table "selections", force: true do |t|
+    t.integer  "word_id"
+    t.integer  "user_id"
+    t.boolean  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sign_ups", force: true do |t|
     t.integer  "user_id"
     t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statuses", force: true do |t|
+    t.integer  "activity_id"
+    t.integer  "user_id"
+    t.boolean  "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -133,7 +146,8 @@ ActiveRecord::Schema.define(version: 20140603022916) do
     t.datetime "updated_at"
     t.integer  "wordable_id"
     t.string   "wordable_type"
-    t.boolean  "selected"
+    t.boolean  "all_users"
+    t.integer  "word_selection_id"
   end
 
 end

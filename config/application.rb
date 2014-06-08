@@ -8,7 +8,19 @@ Bundler.require(*Rails.groups)
 
 module Oli
   class Application < Rails::Application
+    config.action_mailer.perform_deliveries = true
 
+    # config.action_mailer.delivery_method = :sendmail
+config.action_mailer.smtp_settings = {
+  :address => "smtp.zoho.com",
+  :port => 465,
+  :domain => "getoli.com",
+:authentication =>      :login,
+  :tls =>                true,
+  :user_name => "notification@getoli.com",
+  :password => "getoli2014",
+  :enable_starttls_auto => true
+}
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -2,6 +2,7 @@
 
 
 .select-word-container{
+
   max-height: 300px;
   overflow: scroll;
   -webkit-touch-callout: none;
@@ -15,11 +16,14 @@
 .new-word-box{
   display: inline-block;
   height: 1.6em;
-  border: none;
+  border: 1px dashed oli-gray(1);
   width: 100px;
   resize: none;
   overflow: hidden;
-
+  border-radius: 5px;
+  padding-left: 10px;
+  // text-align: center;
+  margin-left: -10px;
   &:focus{
     outline: none;
     border-bottom: 1px dashed oli-gray(1);
@@ -35,4 +39,100 @@
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.select-word{
+
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.roundedOne {
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2px solid oli-blue(.95);
+  // box-shadow: 0 0 1px  oli-blue(.7);
+  margin: 10px auto;
+  border-radius: 9px;
+  position: relative;
+}
+
+
+.roundedOne label:hover{
+  cursor: pointer;
+
+}
+.roundedOne:after{
+}
+
+.roundedOne label:after {
+  position: absolute;
+  opacity: 0;
+  top:0px;
+  left:0px;
+  color: white;
+  content: '\e802';  
+  text-align: center;
+  font-family: 'check';
+   cursor: pointer;
+   font-size: .80em;
+   line-height: 1.6em;
+   width: 17px;
+   height: 17px;
+   box-shadow:-1px -1px 0px 0px oli-blue(1); 
+    background:oli-blue(1);
+   box-shadow: 0 0 1px  oli-blue(1);
+   border-radius: 6px;
+   border-top-right-radius: 7px;
+   border-top-left-radius: 5px;
+
+   border-bottom-right-radius: 10px;
+   border-bottom-left-radius: 7px;
+
+}
+
+.roundedOne input[type=checkbox]:checked + label:after {
+  opacity: 1;
+
+}
+
+input[type=checkbox] {
+ display:none;
+ }
+
+.video-container{
+  // z-index: -10;
+  margin-bottom: 100px;
+  margin-top: -6px;
+}
+
+.video-js { 
+  background-color: oli-gray(1) !important; 
+  }
+
+.activity-status{
+  display: inline;
+  width: 140px;
+  float: right;
+  line-height: 4.3em;
+  font-style: italic;
+}
+
+.forward-button-activity{
+  display: inline-block;
+  margin:auto; 
+  width: 100%;
+  margin-right:0;
+
+}
+
+.smaller-button{
+  @include oli-button;
+
+  height: 30px;
+  width: 100px;
+  float: right;
 }

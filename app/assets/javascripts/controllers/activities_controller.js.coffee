@@ -1,6 +1,5 @@
 Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
   
-
   needs: ['sections']
   progress: null
 
@@ -8,7 +7,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
 
 
   newWordChanged:(->
-    alert(@get('newWord'))
 
   ).property('newWord')
 
@@ -17,7 +15,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
   ).property()
 
   checked: ->
-    alert("TEST")
     
   hash: (() ->
     
@@ -61,7 +58,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
     ).property('name')
 
   nextAct: (act) ->
-
     @get('hash').then (h)=>
       newActInd = h[act]
       @get('activities').then (acts)=>
@@ -74,7 +70,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
             # console.log "COMPLETED"
           ) 
           act.set('completed', true)
-
+          act.save()
         if newActInd < actsArray.length
           
           newAct = actsArray[newActInd].get('name')
@@ -93,7 +89,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
   actions:
 
     updateContent: ->
-      alert("TEST")
 
     moveArrow: (element) ->
       @trigger('delegate.setArrow', @) 
@@ -103,7 +98,8 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
 
     buttonClicked: (act)->
       @send('nextAct', act)
-      @send('updateComponents')
+      # @send('updateComponents')
+      @trigger('buttonPressed')
 
     # nextAct: (act) ->
 

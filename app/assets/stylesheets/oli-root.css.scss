@@ -21,12 +21,17 @@ $levels-height: 45px;
   @return rgba(222, 222, 222, $a); 
 }
 
+@function oli-blue($a){
+  @return rgba(38, 109, 191, $a); 
+}
+
+
 @mixin oli-button{
   border: none;  
   
   border-radius: 20px;
   margin-top: 10px;
-  background-color: #266dbf;
+  background-color: oli-blue(1);
   color: white;
   font-family: pn-thin;
   font-smoothing: antialiased;

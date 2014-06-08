@@ -29,13 +29,13 @@
 #= require app
 # for more details see: http:#emberjs.com/guides/application/
 
-window.Oli = Ember.Application.create({
-  LOG_TRANSITIONS: true,
-
+window.Oli = Em.Application.create({
+  LOG_TRANSITIONS: true
   customEvents: {
     #key is the jquery event, value is the name used in views
     hoverIntent: 'hoverIntent',
     'hover': 'hover'
   }
 });
+Em.run.backburner.DEBUG = true
 

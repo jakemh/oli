@@ -22,14 +22,41 @@ Oli.ActivitiesRoute = Ember.Route.extend({
         @get('controller').get('video').dispose()
 
   renderTemplate: ->
+
+    controllers = {
+      "share_2" : @controllerFor('emailForm');
+      "choose_word" : @controllerFor('activities')
+      "questions_answers" : @controllerFor('activities')
+      "questions_answers_2" : @controllerFor('activities')
+      "share_1" : @controllerFor('activities')
+      "video" : @controllerFor('activities')
+      "empty" : @controllerFor('activities')
+    }
+
     activitiesController = @controllerFor('activities');
-    console.log("route: " +  @modelFor('activities').get('name'))
-    console.log("route: " +  @modelFor('activities').get('template'))
+    newWordController = @controllerFor('newWord');
+
 
     template = @modelFor('activities').get('template') || 'empty'
     @render('activities/' + template, {
-      outlet: 'template', 
-      into: 'activity',
-      controller: activitiesController 
+      outlet: 'template'
+      into: 'activity'
+      controller: controllers[template] 
       })
-    });
+
+    if template == 'choose_word'
+      @render('activities/new_word', {
+        outlet: 'newWord'
+        into: 'activities/choose_word'
+        controller: newWordController 
+        })
+      })
+
+
+    
+
+
+
+
+
+

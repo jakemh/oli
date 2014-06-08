@@ -4,9 +4,9 @@ Oli.SectionsRoute = Ember.Route.extend({
   
   actions:
     willTransition: (transition)-> 
-      @controller.get('sectionDone').then (done)=>
-        @controller.notifyPropertyChange('hash')
-        @controller.get('hash').then (h) =>
+      # @controller.get('sectionDone').then (done)=>
+      #   @controller.notifyPropertyChange('hash')
+      #   @controller.get('hash').then (h) =>
           # paramIndex = h[transition.params.sections.section]
           # currentIndex = h[@controller.content.get('name')]
           # browsing to url
@@ -22,8 +22,9 @@ Oli.SectionsRoute = Ember.Route.extend({
 
   afterModel: (m, transition) -> 
     console.log("TRANS: " + transition)
+
     if (transition.targetName == "sections.index") 
-      @transitionTo("activities", "Start")
+      @transitionTo("activities", "Intro")
     # else
       # @controller.get('sectionDone').then (done) =>
       #   @controller.notifyPropertyChange('hash')
@@ -38,6 +39,9 @@ Oli.SectionsRoute = Ember.Route.extend({
           return s if s.get('name') == params.section
     });
 
-Oli.SectionsIndexRoute = Oli.SectionsRoute.extend({
 
-    });
+Oli.SectionsIndexRoute = Ember.Route.extend({
+  afterModel: (m, transition) -> 
+    if (transition.targetName == "sections.index") 
+      @transitionTo("activities", "Intro")
+});

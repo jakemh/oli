@@ -1,7 +1,8 @@
 Oli.Component = DS.Model.extend({
   content: DS.attr('string')
+  context: DS.attr('string')
   activity: DS.belongsTo('activity', {async: true})
-  user_content: DS.attr('string')
-
+  userContent: DS.attr('string')
+  entries: DS.hasMany('entry', {async: true})
   words: DS.hasMany('word', {async: true})
 });

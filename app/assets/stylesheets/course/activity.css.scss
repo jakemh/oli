@@ -1,5 +1,10 @@
 @import "oli-root";
 
+.course-wrapper{
+  width: 550px;
+  margin: 0 auto;
+}
+
 .activity-contents{
   height: 450px;
 }
@@ -8,86 +13,4 @@
   display: none;
 }
 
-.select-word{
-  display: inline-block;
-  margin-left: 10px;
-}
 
-.roundedOne {
-  cursor: pointer;
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  background: white;
-  border: 2px solid oli-gray(1);
-  margin: 10px auto;
-  border-radius: 50px;
-  position: relative;
-}
-
-
-.roundedOne label:hover{
-  cursor: pointer;
-}
-
-.roundedOne label:after {
-  content: '';
-  opacity: 0;
-  cursor: pointer;
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background: oli-gray(1);
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  top: 2px;
-  left: 2px
-}
-
-.roundedOne input[type=checkbox]:checked + label:after {
-  opacity: 1;
-}
-
-input[type=checkbox] {
- display:none;
- }
-
-.video-container{
-  // z-index: -10;
-  margin-bottom: 100px;
-  margin-top: -6px;
-}
-
-.video-js { 
-  background-color: oli-gray(1) !important; 
-  }
-
-.activity-status{
-  display: inline;
-  width: 140px;
-  float: right;
-  line-height: 4.3em;
-  font-style: italic;
-}
-
-.forward-button-activity{
-  display: inline-block;
-  margin:auto; 
-  width: 100%;
-  margin-right:0;
-
-}
-
-.smaller-button{
-  @include oli-button;
-
-  height: 30px;
-  width: 100px;
-  float: right;
-}
-
-.course-wrapper{
-  width: 600px;
-  margin: 0 auto;
-}

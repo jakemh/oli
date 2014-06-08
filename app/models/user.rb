@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :permissions
   has_many :roles, :through => :permissions
   has_many :courses, :through => :sign_ups
-
+  has_many :statuses
   has_many :components
   
   validate :name, :presence => true

@@ -4,4 +4,7 @@ class ActivityController < ApplicationController
     render :json => Activity.find(params[:ids])
   end
 
+  def update
+
+  end
 end

@@ -2,7 +2,7 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
   needs: "topics"
 
   hash: (() ->
-   
+    
     hash = {}
     @get('sections').then (sects)->
       console.log "UPDATE SECT HASH"
@@ -11,6 +11,21 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
       return hash
     ).property('content')
 
+  section: null
+  aps: []
+
+
+  activitiesPerSection: ((key, value) ->
+    return new Ember.RSVP.Promise (resolve, reject)=>
+      array = []
+      @get('sections').then (sections)->
+        for s,i in sections.toArray()
+          do (i)->
+            s.get('activities').then (activities)->
+              array.push(activities.get('length'))
+              if i == sections.get('length') - 1
+                resolve(array)
+  ).property()
 
   activities:  ((model, obj) ->
     @content.get('activities')
@@ -35,9 +50,7 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
     click: (item)->
       @set('clicking', item); 
   
-
-
-
+  
   sections: (() ->
     @get('controllers.topics').get('sections')
     ).property()
