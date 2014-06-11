@@ -18,7 +18,6 @@ Oli.SectionsBar = Ember.Object.extend({
         console.log "cor:  " + correction
         w = s.outerWidth() + correction
       else if i == items.length - 1
-        # alert()
         # correction = s.offset().left - s.parent().offset().left 
         console.log "cor:  " + correction
         w = s.parent().width() - s.position().left - correction
@@ -26,7 +25,6 @@ Oli.SectionsBar = Ember.Object.extend({
         w = s.outerWidth()
       array.push(w)
 
-    # alert(array)
     @set('widthEachSection', array)
     @._super()
 
@@ -40,7 +38,6 @@ Oli.SectionsBar = Ember.Object.extend({
   currentProgress: .25
 
   grow: (section_num, callback) ->
-    # alert(@get('element'))
     e = @get('element').children('.start-items').eq(section_num)
     bar = e.find('.sections-progress-inner')
     # e = @get('element').children('.start-items').children('.sections-progress-inner')

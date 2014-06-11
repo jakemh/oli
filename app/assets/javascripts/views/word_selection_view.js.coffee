@@ -13,12 +13,6 @@ Oli.WordSelectionView = Em.View.extend({
     @$().fadeTo 500, 0, done
     return
 
-  isChecked: ->
-    alert("CHECKED")
-  test: ->
-    alert("TEST")
-
-
   selectedItems: (->
     if @get('controller.words')
       for w in @get('controller.words').toArray()
@@ -52,7 +46,6 @@ Oli.NewWord = Ember.View.extend({
 Oli.NewWordBox = Ember.TextField.extend({
 
   didInsertElement: ->
-    # alert @get('parentView.controller')
     @get('parentView.controller').on("becomeFocused", @, @becomeFocused)
 
   becomeFocused: (-> 
@@ -62,7 +55,6 @@ Oli.NewWordBox = Ember.TextField.extend({
   cont: null
   theValue: null
   valChanged: (->
-    alert("TEST")
   ).property('value')
 
   valueBinding: 'parentView.controller.currentWord'

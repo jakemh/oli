@@ -29,10 +29,8 @@ Oli.Share1Controller = Ember.ObjectController.extend Ember.Evented, Oli.Componen
       picture: @get('picture')
     , (response) ->
       if not response or response.error
-        alert "Error occured"
       else
         callback()
-        # alert "Post ID: " + response.id
       return
 
   facebookLogin: (content)->

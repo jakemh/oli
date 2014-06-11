@@ -32,7 +32,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
     @get("components").then (cs) =>
 
       cs.toArray()[0].get('words').then (ws) =>
-        # alert "TEST"
             
         @set('words', ws)
 

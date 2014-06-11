@@ -6,6 +6,5 @@ Oli.NewWordController = Ember.ObjectController.extend(Ember.Evented,{
     @trigger('becomeFocused')
 
   currentWordChanged: (->
-    alert("TEST")
   ).property('currentWord')
 })

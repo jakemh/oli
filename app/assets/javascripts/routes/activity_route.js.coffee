@@ -12,7 +12,6 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
           return a
   actions: 
     willTransition: ->
-      # alert("OFF")
       @get('controller').off("buttonPressed")
       @get('controller').set("status", "")
 
