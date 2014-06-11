@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'mailer/send'
+
   class FormatTest
     attr_accessor :mime_type
 
@@ -38,6 +40,7 @@ Rails.application.routes.draw do
   put '/activities/:id', :to => 'activities#update'
   post '/entries', :to => 'user_entries#create'
   get '/entries', :to => 'user_entries#list'
+  post '/send_mail', :to => 'mailer#mail'
 
   resources :courses do
     resources :topics do

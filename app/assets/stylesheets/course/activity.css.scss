@@ -3,10 +3,18 @@
 .course-wrapper{
   width: 550px;
   margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+
 }
 
+.oli-text{
+  @include oli-font;
+  font-size: .85em;
+}
 .activity-contents{
   height: 450px;
+  @include oli-font;
+
 }
 
 .hidden{

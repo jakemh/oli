@@ -1,0 +1,9 @@
+@import "oli-root";
+
+.answer-box{
+
+  @include scrollable-box;
+  height: 210px;
+  resize: none;
+  font-size: 1em !important;
+}

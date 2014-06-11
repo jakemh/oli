@@ -25,6 +25,29 @@ $levels-height: 45px;
   @return rgba(38, 109, 191, $a); 
 }
 
+@mixin oli-font{
+  font-family: pn-light;
+  color: rgba(0,0,0, .85);
+}
+
+@mixin scrollable-box{
+  overflow: scroll;
+  @include oli-font;
+  @include oli-box;
+  font-size: .85em !important;
+
+}
+
+@mixin oli-box{
+  width: 100%;
+  @include oli-font;
+  border: 1px solid oli-gray(.5);
+  padding: 10px;
+  resize: none;
+  outline: none;
+  border-radius: 3px;
+  font-size: .85em !important;
+}
 
 @mixin oli-button{
   border: none;  
@@ -56,4 +79,15 @@ $levels-height: 45px;
     color: rgba(0,0,0, .75) !important;
 
   }
+}
+
+.oli-semibold{
+  font-family: pn-semibold;
+  font-size: .85em;
+  color: rgba(0,0,0,.9) !important;
+}
+
+.oli-text{
+  @include oli-font;
+  font-size: .85em;
 }

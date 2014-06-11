@@ -82,7 +82,7 @@ Oli.TriangleView = Em.View.extend({
     setArrow: (controller) ->
       triangle = $('#triangle')
       controller.get('activities').then (acts)=>
-        hash = controller.get('hash').then (h) =>          
+        hash = controller.hash().then (h) =>          
           oTri = triangle.offset()
           # console.log("HASH: " + JSON.stringify(h))
           # console.log("CONT: " + controller.content)

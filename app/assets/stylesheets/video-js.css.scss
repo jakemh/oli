@@ -343,19 +343,20 @@
 
 .vjs-default-skin .vjs-big-play-button {
     left: 1.2em;
-    top: .4em;
+    top: .8em;
     font-size: 3em;
-    padding: 8px 0 0 25px;
+    padding: 0px 0 0 25px;
     display: block;
     z-index: 2;
     position: absolute;
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
+    line-height: 3em !important;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     border: none;
-    background-color: oli-orange(.8);
+    background-color: oli-yellow(1);
     /*border: .1em solid oli-orange(.8);*/
     /*-webkit-border-radius: .8em;
     -moz-border-radius: .8em;*/
@@ -370,7 +371,7 @@
 .vjs-default-skin.vjs-big-play-centered .vjs-big-play-button {
     left: 53%;
     margin-left: -2.1em;
-    top: 48%;
+    top: 50%;
     margin-top: -1.4000000000000001em;
 }
 
@@ -401,7 +402,7 @@
 .vjs-default-skin .vjs-big-play-button:before {
     content: "\e001";
     font-family: VideoJS;
-    line-height: 2.6em;
+    line-height: 2.2em;
     /*text-shadow: .05em .05em .1em #000;*/
     text-align: center;
     position: absolute;

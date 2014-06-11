@@ -16,47 +16,15 @@ Oli.ActivityView = Em.View.extend({
     return
 });
 
-Oli.VideoView = Em.View.extend({
-  didInsertElement: ->
-    player = null
-
-    player = videojs("MY_VIDEO_1", { "controls": true, "autoplay": false, "preload": "none" }, ->
-      # this.play();
-      self = this
-      this.on('loadstart', =>
-        self.ready(->
-          console.log ("READY")
-          # alert "READY"
-        )
-      )
-
-    );
-    @set('controller.video', player)
-    @get('controller').set("status", "")
-
-})
   
 Oli.EmptyView = Em.View.extend({
   didInsertElement: ->
     @get('controller').set("status", "")
 })
   
-Oli.QuestionAnswerView = Em.View.extend({
-  didInsertElement: ->
-    @get('controller').set("status", "")
-
-  components: (->
-    @get('controller').get('components')
-  ).property()
-})
-  
-
 Oli.StatusView = Ember.View.extend({
   statusBinding: "controller.status"
 })
-
-
-
 
 Oli.RadioButton = Ember.Component.extend(
   tagName: "input"

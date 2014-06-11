@@ -1,7 +1,15 @@
 components = [
+
   :answer_form, 
   :email_form
 ]
+
+
+@vid1_trans = '''
+Values represent a big part of who you are. Values represent what is essential and most important to you. They are not universal morals, nor are they standards of good and evil. They are not things that come and go, or principles that you develop over time. Values represent that which, if honred fully, will bring immense fulfillment to your life. 
+<br><br>
+First you must discover your values. Then, you must honor them on a regular basis to be happy and fulfilled. 
+'''
 
 @activities = {
   "video" => "Intro",
@@ -16,7 +24,7 @@ components = [
 @section_list = ["Level 1", "Level 2", "Level 3"]
 @sub_section_list = ["Start", "Discover", "Share"]
 
-@activity_count = [6,7,5]
+@activity_count = [@activities.keys.count,7,5]
 innerOLI = Course.create(:name => "OLI")
 innerOLI2 = Course.create(:name => "OLI2")
 innerOLI3 = Course.create(:name => "OLI3")
@@ -45,7 +53,14 @@ add_content_to_course(innerOLI3, {:no_activities => true})
 # ex0.template = "video"
 # ex0.save
 
-ex1 = Course.first.topics.first.sections.first.activities.where(:template => "questions_answers").first
+act_set_1 = Course.first.topics.first.sections.first.activities
+
+ex0 = act_set_1.where(:template => "video").first
+ex0.components << Component.create(:context => :video, :content => @vid1_trans)
+
+
+
+ex1 = act_set_1.where(:template => "questions_answers").first
 # ex1 = Course.first.activities.find(2)
 ex1.description = 
 '''
@@ -53,11 +68,11 @@ Think of a peak time in your life, a time of extreme pleaseure or joy, learning 
 '''
 
 # ex1.template = "questions_answers"
-comp1 = Component.create!(:content => "")
+comp1 = Component.create!(:context => :question_answer)
 ex1.components << comp1
 ex1.save
 
-ex2 = Course.first.topics.first.sections.first.activities.where(:template => "choose_word").first
+ex2 = act_set_1.where(:template => "choose_word").first
 # ex2 = Course.first.activities.find(3)
 
 ex2.description = 
@@ -72,9 +87,10 @@ ex2.components << w_s
 ex2.components[0].words = words
 ex2.save
 
-share_1 = Course.first.topics.first.sections.first.activities.where(:template => "share_1").first
-share_2 = Course.first.topics.first.sections.first.activities.where(:template => "share_2").first
+share_1 = act_set_1.where(:template => "share_1").first
+share_2 = act_set_1.where(:template => "share_2").first
 
+share_1.components << Component.create!(:context => :share_box_fb)
 share_2.components << [
   Component.create!(:context => :email_address, :content => ""),
   Component.create!(:context => :email_subject, :content => "Prefilled subject line"),
@@ -109,3 +125,5 @@ bob.roles << customer
 ahalya.courses << innerOLI
 bob.courses << innerOLI
 jake.courses << innerOLI
+
+

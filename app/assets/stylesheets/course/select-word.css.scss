@@ -4,6 +4,7 @@
 .select-word-container{
 
   max-height: 300px;
+  width: 100% !important;
   overflow: scroll;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -14,10 +15,11 @@
 }
 
 .new-word-box{
-  display: inline-block;
+  display: inline;
+  font-size: .9em;
   height: 1.6em;
   border: 1px dashed oli-gray(1);
-  width: 100px;
+  width: 80px;
   resize: none;
   overflow: hidden;
   border-radius: 5px;

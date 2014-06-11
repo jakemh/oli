@@ -1,63 +1,36 @@
-Oli.EmailFormController = Ember.ObjectController.extend
+Oli.EmailFormController = Ember.ObjectController.extend Oli.Componentable,
   needs: "activities"
 
-  init: ->
-    @get('controllers.activities').on("buttonPressed", @, @submitForm)
-
-  saveHelper: (typeComponent, typeEntry)->
-    @get(typeComponent).then (a)=>
-      entry1 = @get('store').createRecord('entry', {
-          component: a
-          post: @get(typeEntry).get('content')
-        })
-      a.get('entries').then (ues)=>
-        ues.pushObject(entry1)
-        entry1.save()
+  # init: ->
+    # @get('controllers.activities').on("buttonPressed", @, @submitForm)
 
   submitForm: ->
-    @.saveHelper("addressComponent", "addressEntry")
-    @.saveHelper("subjectComponent", "subjectEntry")
-    @.saveHelper("bodyComponent", "bodyEntry")
+    alert "SUBMIT"
+    @saveEntry("email_address", @get("addressEntry.content"))
+    @saveEntry("email_subject",  @get("subjectEntry.content"))
+    @saveEntry("email_body", @get("bodyEntry.content"))
 
-  entryHelper: (typeComponent)->
-    return DS.PromiseObject.create promise: 
-      new Em.RSVP.Promise (resolve, reject) =>
-        @get(typeComponent).then (s)->
-          userEntries = s.get('entries')
-          userEntries.then (entries)->
-            entryArray = entries.toArray()
-            userEntry = entryArray[entryArray.length - 1]
-            alert JSON.stringify entryArray
-
-            if userEntry
-              resolve(userEntry.get('post'))
-            else resolve(s.get('content'))
-
-  componentHelper: (emailContextType)->
-    return new Em.RSVP.Promise (resolve, reject) =>
-      @get('controllers.activities.content.components').then (cs)->
-        resolve(cs.toArray().filterProperty("context", emailContextType)[0])
-
-  addressComponent: (->
-      @.componentHelper('email_address')
-    ).property()
-
-  subjectComponent: (->
-      @.componentHelper('email_subject')
-    ).property()
-
-  bodyComponent: (->
-      @.componentHelper('email_body')
-    ).property()
+    $.ajax(
+      url: "/send_mail"
+      type: "POST"
+      dataType: "json"
+      data: $.param(
+        to: @get("addressEntry.content")
+        subject: @get("subjectEntry.content")
+        body: @get("bodyEntry.content")
+      )
+    ).then (response) ->
+      alert response
+      return
 
   addressEntry: (->
-      @.entryHelper('addressComponent')
+      @last_post('email_address')
     ).property()
 
   subjectEntry: (->
-      @.entryHelper('subjectComponent')
+    @last_post('email_subject')
     ).property()
 
   bodyEntry: (->
-      @.entryHelper('bodyComponent')
+      @last_post('email_body')
     ).property()

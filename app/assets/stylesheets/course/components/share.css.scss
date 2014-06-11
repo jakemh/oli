@@ -1,0 +1,68 @@
+@import "oli-root";
+
+.share-1-box{
+  @include scrollable-box;
+  height: 200px;
+  margin-top: 15px;
+  font-size: .85em !important;
+}
+
+.share-1-box:focus{
+  border: 1px solid oli-gray(.7)
+}
+
+.share-1-image{
+  $mult: .75;
+
+
+  width: $mult*305px;
+  margin: 15px auto 0 auto;
+
+  img{
+    width: $mult*305px;
+    height: $mult*165px;
+  }
+}
+
+.share-buddy-image{
+  $mult: .75;
+  width: $mult*323px;
+  margin: 15px auto 0 auto;
+
+  img{
+    width: $mult*323px;
+    height: $mult*159px;
+  }
+}
+
+.accountability-text{
+  font-size: .85em !important;
+  padding: 10px;
+}
+
+.email-field{
+  @include oli-box;
+  padding-top: 5px;
+  font-size: .85em;
+  width: 50%;
+  padding-bottom: 5px;
+}
+
+.subject-field{
+  @include oli-box;
+  padding-top: 5px;
+  font-size: .85em;
+  padding-bottom: 5px;
+}
+
+.body-field{
+  @include oli-box;
+  font-size: .85em;
+}
+
+.email-field-outer{
+  padding: 10px;
+}
+.email-area{
+ @include scrollable-box;
+}

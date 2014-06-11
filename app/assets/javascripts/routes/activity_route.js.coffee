@@ -1,12 +1,9 @@
-Oli.ActivitiesRoute = Ember.Route.extend({
+Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
   setupController: (controller, model) ->
     controller.set('content', model);
-    # controller.set('video', "TEST")
     controller.send('trans', model)
     controller.notifyPropertyChange('hash')
-    model.addObserver "completed", ->
-      controller.get('controllers.sections').notifyPropertyChange('sectionDone')
-
+ 
   model: (params) -> 
     section = @modelFor('sections')
     section.get('activities').then (activities) ->
@@ -15,23 +12,28 @@ Oli.ActivitiesRoute = Ember.Route.extend({
           return a
   actions: 
     willTransition: ->
-      @get('controller').notifyPropertyChange('components')
+      # alert("OFF")
+      @get('controller').off("buttonPressed")
+      @get('controller').set("status", "")
 
       # video.js require video to be disposed between transitions
-      if @get('controller').get('video')
-        @get('controller').get('video').dispose()
+      if @get('controller.video')
+
+        @get('controller.video').dispose()
+        @set('controller.video', null)
 
   renderTemplate: ->
 
     controllers = {
       "share_2" : @controllerFor('emailForm');
       "choose_word" : @controllerFor('activities')
-      "questions_answers" : @controllerFor('activities')
+      "questions_answers" : @controllerFor('questionAnswers')
       "questions_answers_2" : @controllerFor('activities')
-      "share_1" : @controllerFor('activities')
-      "video" : @controllerFor('activities')
+      "share_1" : @controllerFor('share1')
+      "video" : @controllerFor('video')
       "empty" : @controllerFor('activities')
     }
+
 
     activitiesController = @controllerFor('activities');
     newWordController = @controllerFor('newWord');
@@ -49,9 +51,7 @@ Oli.ActivitiesRoute = Ember.Route.extend({
         outlet: 'newWord'
         into: 'activities/choose_word'
         controller: newWordController 
-        })
       })
-
 
     
 

@@ -23,6 +23,7 @@
 #= require ember
 #= require ember-data
 #= require ember-animate
+#= require video
 #= require_self
 #= require hoverintent.min
 #= require oli

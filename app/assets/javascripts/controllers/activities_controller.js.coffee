@@ -3,12 +3,11 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
   needs: ['sections']
   progress: null
 
-  sectionsPerSection: [10,10,10]
-
-
   newWordChanged:(->
 
   ).property('newWord')
+
+  video: null
 
   status: (()->
     
@@ -16,22 +15,15 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
 
   checked: ->
     
-  hash: (() ->
+  hash: ->
     
-    console.log "HASH ACTIVITIES0: "
+    new Em.RSVP.Promise (resolve, reject) =>
+      hash = {}
+      @get('activities').then (acts)->
 
-    hash = {}
-    @get('activities').then (acts)->
-      console.log "HASH ACTIVITIES: " + acts
-
-      for a, i in acts.toArray()
-        hash[a] = (i + 1)
-      return hash
-    ).property()
-
-  components: (->
-    @content.get('components')
-    ).property()
+        for a, i in acts.toArray()
+          hash[a] = (i + 1)
+        resolve(hash)
 
   words: ((key, value) ->
     if (arguments.length > 1) 
@@ -58,13 +50,10 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
     ).property('name')
 
   nextAct: (act) ->
-    @get('hash').then (h)=>
+    @hash().then (h)=>
       newActInd = h[act]
       @get('activities').then (acts)=>
         actsArray = acts.toArray()
-        console.log "newActInd: " + newActInd
-        console.log "actsArrayL: " + actsArray.length
-
         if act.get('completed') == false
           @trigger('delegate.increaseProgress', @, ->
             # console.log "COMPLETED"
@@ -77,17 +66,17 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
           @transitionToRoute('activities',newAct)
         
         else  
-          @notifyPropertyChange('hash')
-          @get('controllers.sections').get('sectionDone').then (done)=>
+          false
+          # @get('controllers.sections').get('sectionDone').then (done)=>
 
-            if done
+          #   if done
 
-              @get('controllers.sections').get('nextLevel')
+          #     @get('controllers.sections').get('nextLevel')
 
 
-
+ 
   actions:
-
+    
     updateContent: ->
 
     moveArrow: (element) ->
@@ -97,13 +86,12 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
       @trigger('delegate.setArrow', @) 
 
     buttonClicked: (act)->
-      @send('nextAct', act)
-      # @send('updateComponents')
-      @trigger('buttonPressed')
+      if @has('buttonPressed')
+        @trigger('buttonPressed', =>
+          @nextAct(act)
+        )
+      else @nextAct(act)
 
-    # nextAct: (act) ->
-
-          
     moveArrow: (element) ->
       console.log "MOVE ARROW"
       console.log @content.get("name")
