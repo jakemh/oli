@@ -1,7 +1,10 @@
 
 Oli.Share1View = Em.View.extend
   didInsertElement: ->
+
     @get('controller.controllers.activities').on("buttonPressed", @get('controller'), @get("controller").submitForm)
+    @set('controller.controllers.activities.buttonText', "Post")
+    @set('controller.controllers.activities.templateName',"skipActivity")
 
     fbAppId = 1452435865004111
     obj = "http://getoli.com"

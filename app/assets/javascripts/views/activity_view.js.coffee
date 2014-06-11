@@ -21,9 +21,16 @@ Oli.EmptyView = Em.View.extend({
   didInsertElement: ->
     @get('controller').set("status", "")
 })
+
   
 Oli.StatusView = Ember.View.extend({
   statusBinding: "controller.status"
+  templateNameBinding: 'controller.templateName'
+
+  templateNameObserver:( ->
+    @rerender();
+  ).observes('templateName')
+
 })
 
 Oli.RadioButton = Ember.Component.extend(

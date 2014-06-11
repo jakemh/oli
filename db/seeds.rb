@@ -1,7 +1,10 @@
 components = [
 
   :answer_form, 
-  :email_form
+  :email_form, 
+  :word_select,
+  :question_answer,
+  :video
 ]
 
 
@@ -80,7 +83,7 @@ ex2.description =
 Pull out the values that were being honored in that experience. Perhaps it was connection or freedom or adventure. Select 5 words that you associate with this experience, keeping in mind the following:
 '''
 
-w_s = WordSelection.create!(:content => "Select Words")
+w_s = WordSelection.create!(:content => "Select Words", :context => "word_select")
 words = 20.times.inject([]){|result, element| result << Word.create(:word => "Word #{element + 1}", :all_users => true) }
 words.sort
 ex2.components << w_s

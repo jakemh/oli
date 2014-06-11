@@ -1,8 +1,11 @@
-Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
+Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
   
   needs: ['sections']
   progress: null
-
+  status: ""
+  templateName: (->
+    "status"
+    ).property()
   newWordChanged:(->
 
   ).property('newWord')
@@ -25,18 +28,27 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
           hash[a] = (i + 1)
         resolve(hash)
 
-  words: ((key, value) ->
-    if (arguments.length > 1) 
-      return value;
+  # words: (->
+  #   return DS.PromiseObject.create promise: 
+  #     new Em.RSVP.Promise (resolve, reject) =>
+  #       @component("word_select").then (c)->
+  #         alert c
+  #         c.get('words').then (ws)->
+  #           resolve(ws)
+  #   ).property()
 
-    @get("components").then (cs) =>
+  # words: ((key, value) ->
+  #   if (arguments.length > 1) 
+  #     return value;
 
-      cs.toArray()[0].get('words').then (ws) =>
+  #   @get("components").then (cs) =>
+
+  #     cs.toArray()[0].get('words').then (ws) =>
             
-        @set('words', ws)
+  #       @set('words', ws)
 
-    return value
-  ).property()
+  #   return value
+  # ).property()
 
   updateComponents: ->
 
@@ -110,4 +122,3 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
     click: (item)->
       console.log "CLICK: " + item
       @set('hovering', item); 
-});

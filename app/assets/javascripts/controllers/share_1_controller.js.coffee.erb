@@ -16,7 +16,7 @@ Oli.Share1Controller = Ember.ObjectController.extend Ember.Evented, Oli.Componen
 
   shareOnFacebook: (callback)->
 
-    FB.ui "/me/feed", "post",
+    FB.api "/me/feed", "post",
 
       message: @get('fb_message.content')
       display: "modal"

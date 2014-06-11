@@ -13,20 +13,28 @@ Oli.WordSelectionView = Em.View.extend({
     @$().fadeTo 500, 0, done
     return
 
-  selectedItems: (->
-    if @get('controller.words')
-      for w in @get('controller.words').toArray()
-        w.get('test')
 
-      selected = @get("controller.words").filterBy("selected", true).get("length")
-  ).property('controller.words.@each.selected')
+  component: (->
+    @get('controller').component("word_select", @get('controller'))
+    ).property()
+
+  selectedItems: (->
+    new Ember.RSVP.Promise (resolve, reject)=>
+      @get('component').then (c)->
+        c.get('words').then (words)->
+          for w in words.toArray()
+            w.get('test')
+
+          selected = words.filterBy("selected", true).get("length")
+          resolve(selected)
+  ).property('component.words.@each.selected')
 
   selected: (->
-    if @get('selectedItems') != undefined
-      message = "Selected words: " + @get('selectedItems')
-      @get('controller').set("status", message)
-
-  ).property('controller.words.@each.selected')
+    @get('selectedItems').then (items)=>
+      if items != undefined
+        message = "Selected words: " + items
+        @get('controller').set("status", message)
+  ).property('component.words.@each.selected')
 
 
   components: (->
