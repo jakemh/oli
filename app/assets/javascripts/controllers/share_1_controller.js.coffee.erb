@@ -6,7 +6,7 @@ Oli.Share1Controller = Ember.ObjectController.extend Ember.Evented, Oli.Componen
     @last_post("share_box_fb")
   ).property()
 
-  name: "Discovering your values and honoring them fulfilled"
+  name: "Discovering your values and honoring them are the keys to being happy and fulfilled."
   title: ""
   type: "inneroli:completed"
   description: "Values represent a big part of who you are. Value respresent an essential..."
@@ -16,7 +16,7 @@ Oli.Share1Controller = Ember.ObjectController.extend Ember.Evented, Oli.Componen
 
   shareOnFacebook: (callback)->
 
-    FB.api "/me/feed", "post",
+    FB.ui "/me/feed", "post",
 
       message: @get('fb_message.content')
       display: "modal"

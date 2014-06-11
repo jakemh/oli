@@ -8,7 +8,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend(Ember.Evented,{
   ).property('newWord')
 
   video: null
-
+  buttonText: "Continue"
   status: (()->
     
   ).property()
