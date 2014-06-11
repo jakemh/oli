@@ -30,7 +30,8 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
       "share_2" : @controllerFor('emailForm');
       "choose_word" : @controllerFor('activities')
       "questions_answers" : @controllerFor('questionAnswers')
-      "questions_answers_2" : @controllerFor('activities')
+      "word_thread" : @controllerFor('wordThread')
+      
       "share_1" : @controllerFor('share1')
       "video" : @controllerFor('video')
       "empty" : @controllerFor('activities')

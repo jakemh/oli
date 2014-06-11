@@ -1,6 +1,10 @@
 Oli.QuestionAnswersController = Ember.ObjectController.extend Oli.Componentable,
   needs: "activities"
 
+  comp: (->
+    @component("question_answer")
+    ).property()
+
   questionEntry1: (->
     @last_post("question_answer")
     ).property()

@@ -4,7 +4,6 @@
   @include scrollable-box;
   height: 200px;
   margin-top: 15px;
-  font-size: .85em !important;
 }
 
 .share-1-box:focus{
@@ -36,14 +35,12 @@
 }
 
 .accountability-text{
-  font-size: .85em !important;
   padding: 10px;
 }
 
 .email-field{
   @include oli-box;
   padding-top: 5px;
-  font-size: .85em;
   width: 50%;
   padding-bottom: 5px;
 }
@@ -51,13 +48,11 @@
 .subject-field{
   @include oli-box;
   padding-top: 5px;
-  font-size: .85em;
   padding-bottom: 5px;
 }
 
 .body-field{
   @include oli-box;
-  font-size: .85em;
 }
 
 .email-field-outer{

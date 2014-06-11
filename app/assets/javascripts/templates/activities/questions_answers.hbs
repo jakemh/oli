@@ -1,9 +1,11 @@
-<br>
-<div class="description">
 {{#view Oli.QuestionAnswerView}}
-  {{controllers.activities.description}}
+  <div class="description-box oli-text">
+    {{controller.comp.content.content}}
+  </div>
+  <div class="component-title qa-title">
+    {{controller.comp.content.title}}
   </div>
 
-  <br><br>
-  {{textarea value=controller.questionEntry1.content class="answer-box"}}
+  {{textarea plaeholder="" value=controller.questionEntry1.content class="answer-box"}}
+  {{textarea class="qa-values-box" placeholder="Begin listing your values here"}}
 {{/view}}

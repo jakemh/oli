@@ -1,17 +1,25 @@
 Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
   
   needs: ['sections']
+  
+#   activities = 
+#   "video" => "Intro",
+#   "questions_answers" => "Excercise 1A",
+#   "questions_answers_2" => "Excercise 1B",
+#   "choose_word" => "Exercise 1C",
+#   "share_1" => "Share your progress!",
+#   "share_2" => "Share with a buddy!"
+# }
+
   progress: null
   status: ""
   templateName: (->
     "status"
     ).property()
-  newWordChanged:(->
-
-  ).property('newWord')
 
   video: null
   buttonText: "Continue"
+
   status: (()->
     
   ).property()
@@ -27,28 +35,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
         for a, i in acts.toArray()
           hash[a] = (i + 1)
         resolve(hash)
-
-  # words: (->
-  #   return DS.PromiseObject.create promise: 
-  #     new Em.RSVP.Promise (resolve, reject) =>
-  #       @component("word_select").then (c)->
-  #         alert c
-  #         c.get('words').then (ws)->
-  #           resolve(ws)
-  #   ).property()
-
-  # words: ((key, value) ->
-  #   if (arguments.length > 1) 
-  #     return value;
-
-  #   @get("components").then (cs) =>
-
-  #     cs.toArray()[0].get('words').then (ws) =>
-            
-  #       @set('words', ws)
-
-  #   return value
-  # ).property()
 
   updateComponents: ->
 

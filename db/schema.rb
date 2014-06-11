@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607045447) do
+ActiveRecord::Schema.define(version: 20140611223840) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140607045447) do
     t.string   "type"
     t.boolean  "is_completed"
     t.string   "context"
+    t.string   "title"
   end
 
   create_table "courses", force: true do |t|
@@ -107,9 +108,9 @@ ActiveRecord::Schema.define(version: 20140607045447) do
     t.integer  "component_id"
     t.integer  "user_id"
     t.text     "post"
-    t.string   "content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "context"
   end
 
   create_table "users", force: true do |t|

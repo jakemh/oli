@@ -1,5 +1,5 @@
 class ComponentSerializer < ActiveModel::Serializer
-  attributes :id, :content, :activity_id, :is_completed, :type, :context
+  attributes :id, :content, :activity_id, :is_completed, :type, :context, :title
 
   embed :ids
   

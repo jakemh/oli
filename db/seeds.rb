@@ -17,8 +17,8 @@ First you must discover your values. Then, you must honor them on a regular basi
 @activities = {
   "video" => "Intro",
   "questions_answers" => "Excercise 1A",
-  "questions_answers_2" => "Excercise 1B",
-  "choose_word" => "Exercise 1C",
+  "choose_word" => "Exercise 1B",
+  "word_thread" => "Excercise 1C",
   "share_1" => "Share your progress!",
   "share_2" => "Share with a buddy!"
 }
@@ -67,11 +67,15 @@ ex1 = act_set_1.where(:template => "questions_answers").first
 # ex1 = Course.first.activities.find(2)
 ex1.description = 
 '''
-Think of a peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:
 '''
 
 # ex1.template = "questions_answers"
-comp1 = Component.create!(:context => :question_answer)
+comp1 = Component.create!(
+  :context => :question_answer,
+ :title => "Peak Experience #1",
+ :content => "Think of a peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:"
+ 
+ )
 ex1.components << comp1
 ex1.save
 
@@ -89,6 +93,13 @@ words.sort
 ex2.components << w_s
 ex2.components[0].words = words
 ex2.save
+
+
+thread_ex = Activity.where(:template => :word_thread).first
+thread_ex.description = '''
+Drag and drop the values words into the different threads. Group the values in a wa that is meaningful to you and your peak experiences. Create at least 4 value thread and as many as 6. Be sure to use up all your values!
+'''
+thread_ex.save
 
 share_1 = act_set_1.where(:template => "share_1").first
 share_2 = act_set_1.where(:template => "share_2").first

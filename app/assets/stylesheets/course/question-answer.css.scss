@@ -1,9 +1,24 @@
 @import "oli-root";
 
 .answer-box{
-
   @include scrollable-box;
+  display: inline-block;
   height: 210px;
   resize: none;
-  font-size: 1em !important;
+  width: 65%;
+  // border-color: rgba(0,0,0,.5);
+}
+
+.qa-values-box{
+  @include scrollable-box;
+  display: inline-block;
+  height: 210px;
+  resize: none;
+  width: 32%;
+  padding: 10px;
+}
+
+
+.qa-title{
+  margin-top: 25px;
 }

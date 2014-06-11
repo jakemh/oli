@@ -8,12 +8,10 @@
   float: right;
 }
 
-.response-box{
-  width: 100%;
-  height: 200px;
-}
-
-.description{
-  font-family: pn-light;
-  font-size: .85em;
+.activity-status{
+  display: inline;
+  width: 140px;
+  float: right;
+  line-height: 4.3em;
+  font-style: italic;
 }

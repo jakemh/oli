@@ -25,28 +25,37 @@ $levels-height: 45px;
   @return rgba(38, 109, 191, $a); 
 }
 
+
 @mixin oli-font{
   font-family: pn-light;
-  color: rgba(0,0,0, .85);
+  color: #696969;
 }
 
+@mixin oli-text{
+  @include oli-font;
+  font-size: .90em;
+}
+
+@mixin oli-text-smaller{
+  @include oli-font;
+  font-size: .85em;
+
+}
 @mixin scrollable-box{
   overflow: scroll;
   @include oli-font;
   @include oli-box;
-  font-size: .85em !important;
 
 }
 
 @mixin oli-box{
   width: 100%;
-  @include oli-font;
+  @include oli-text;
   border: 1px solid oli-gray(.5);
   padding: 10px;
   resize: none;
   outline: none;
   border-radius: 3px;
-  font-size: .85em !important;
 }
 
 @mixin oli-button{
@@ -73,12 +82,18 @@ $levels-height: 45px;
   font-family: pn-bold;
   text-align: center;
   font-smoothing: antialiased;
-  font-size: .86em;
+  font-size: .85em;
 
   a{
     color: rgba(0,0,0, .75) !important;
 
   }
+}
+
+.component-title{
+  font-family: pn-bold;
+  font-size: 1.15em;
+  color: rgba(0,0,0,.9) !important;
 }
 
 .oli-semibold{
@@ -88,6 +103,9 @@ $levels-height: 45px;
 }
 
 .oli-text{
-  @include oli-font;
-  font-size: .85em;
+  @include oli-text;
+}
+
+.oli-text-smaller{
+  @include oli-text-smaller;
 }

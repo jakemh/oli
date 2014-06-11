@@ -1,0 +1,6 @@
+@import "oli-root";
+
+.thread-word-bank{
+  @include scrollable-box;
+  height: 100px;
+}
