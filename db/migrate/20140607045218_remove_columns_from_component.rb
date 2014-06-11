@@ -4,7 +4,6 @@ class RemoveColumnsFromComponent < ActiveRecord::Migration
     remove_column :components, :user_content, :text
     remove_column :components, :master_id, :integer
     remove_column :components, :user_id, :integer
-    remove_column :components, :componentable_type, :string
 
   end
 end
