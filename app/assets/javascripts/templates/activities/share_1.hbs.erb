@@ -1,0 +1,14 @@
+{{#view Oli.Share1View}}
+  
+  <div class="share-1-image">
+    <%= image_tag('share_world.png')%>
+  </div>
+
+  <div class="oli-text">Let the world know about your progress.</div>
+  {{textarea 
+    class="share-1-box" 
+    value=controller.fb_message.content
+    placeholder="Enter your share message!"
+  }}
+
+{{/view}}
