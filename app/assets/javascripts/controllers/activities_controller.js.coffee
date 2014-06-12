@@ -13,6 +13,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
 
   progress: null
   status: ""
+  template: null
   templateName: (->
     "status"
     ).property()
@@ -87,7 +88,8 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
         @trigger('buttonPressed', =>
           @nextAct(act)
         )
-      else @nextAct(act)
+      else 
+        @nextAct(act)
 
     moveArrow: (element) ->
       console.log "MOVE ARROW"

@@ -14,20 +14,27 @@ Values represent a big part of who you are. Values represent what is essential a
 First you must discover your values. Then, you must honor them on a regular basis to be happy and fulfilled. 
 '''
 
-@activities = {
-  "video" => "Intro",
-  "questions_answers" => "Excercise 1A",
-  "choose_word" => "Exercise 1B",
-  "word_thread" => "Excercise 1C",
-  "share_1" => "Share your progress!",
-  "share_2" => "Share with a buddy!"
-}
+
+@activities = [
+  {:video => "Intro"},
+  {:questions_answers => "Experience 1A"},
+  {:questions_answers => "Experience 2A"},
+  {:questions_answers => "Experience 3A"},
+  {:questions_values => "Experience 1B"},
+  {:questions_values => "Experience 2B"},
+  {:questions_values => "Experience 3B"},
+  {:choose_word => "Word Select"},
+  {:word_thread => "Word Thread"},
+  {:share_2 => "Share with a Buddy!"},
+  {:share_1 => "Share Your Progress!"}
+
+]
 
 @topic_list = ["Values", "Strengths", "Passions", "LifeStyle", "Environment"]
 @section_list = ["Level 1", "Level 2", "Level 3"]
 @sub_section_list = ["Start", "Discover", "Share"]
 
-@activity_count = [@activities.keys.count,7,5]
+@activity_count = [@activities.count,7,5]
 innerOLI = Course.create(:name => "OLI")
 innerOLI2 = Course.create(:name => "OLI2")
 innerOLI3 = Course.create(:name => "OLI3")
@@ -39,8 +46,8 @@ def add_content_to_course(course, options = {})
     @section_list.each_with_index do |section, i|
       s = t.sections.create!(:name => section)
       @activity_count[i].times.each do |j|
-        template = @activities.keys[j]
-        name = @activities[template]
+        template = @activities[j].keys[0]
+        name = @activities[j].values[0]
         s.activities << Activity.create!(:name => name, :template => template) unless options[:no_activities]
       end
     end
@@ -61,23 +68,39 @@ act_set_1 = Course.first.topics.first.sections.first.activities
 ex0 = act_set_1.where(:template => "video").first
 ex0.components << Component.create(:context => :video, :content => @vid1_trans)
 
+experienceValues1 = act_set_1.where(:template => "questions_values").first
+experienceValues1_comp1 = Component.create!( :context => :question_answer,:title => "Peak Experience #1",
+  :content => "For your first peak experience, extract the most significant values. Discover at least 5 values.")
+experienceValues1.components << experienceValues1_comp1
+
+experienceValues2 = act_set_1.where(:template => "questions_values").second
+experienceValues2_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #2",
+  :content => "For your second peak experience, extract the most significant values. Discover at least 5 values.")
+experienceValues2.components << experienceValues2_comp1
+
+experienceValues3 = act_set_1.where(:template => "questions_values").third
+experienceValues3_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #3",
+  :content => "For your third peak experience, extract the most significant values. Just to keep you guessing, youst must now discover at least 10 values.")
+experienceValues3.components << experienceValues3_comp1
 
 
-ex1 = act_set_1.where(:template => "questions_answers").first
-# ex1 = Course.first.activities.find(2)
-ex1.description = 
-'''
-'''
+experience1 = act_set_1.where(:template => "questions_answers").first
+experience1_comp1 = Component.create!( :context => :question_answer,:title => "Peak Experience #1",
+  :content => "Think of a peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:")
+experience1.components << experience1_comp1
 
-# ex1.template = "questions_answers"
-comp1 = Component.create!(
-  :context => :question_answer,
- :title => "Peak Experience #1",
- :content => "Think of a peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:"
- 
- )
-ex1.components << comp1
-ex1.save
+experience2 = act_set_1.where(:template => "questions_answers").second
+experience2_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #2",
+  :content => "Think of a second peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:")
+experience2.components << experience2_comp1
+
+experience3 = act_set_1.where(:template => "questions_answers").third
+experience3_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #3",
+  :content => "Think of a third peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:")
+experience3.components << experience3_comp1
+
+
+
 
 ex2 = act_set_1.where(:template => "choose_word").first
 # ex2 = Course.first.activities.find(3)
@@ -110,6 +133,29 @@ share_2.components << [
   Component.create!(:context => :email_subject, :content => "Prefilled subject line"),
   Component.create!(:context => :email_body, :content => "Prefilled body line")
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 admin = Role.create(:name => "admin")

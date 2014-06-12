@@ -1,14 +1,36 @@
 Oli.QuestionAnswersController = Ember.ObjectController.extend Oli.Componentable,
   needs: "activities"
 
+  setup: -> 
+    @notifyPropertyChange('comp')
+    @notifyPropertyChange('questionEntry')
+    @notifyPropertyChange('questionEntryList')
+
   comp: (->
     @component("question_answer")
     ).property()
 
-  questionEntry1: (->
-    @last_post("question_answer")
+  questionEntry: (->
+    return DS.PromiseObject.create promise: 
+      new Em.RSVP.Promise (resolve, reject) =>      
+        @entry("question_answer", "paragraph").then (e)->
+          lastEntry = e.toArray()[e.get('length') - 1]
+          if lastEntry 
+            resolve lastEntry.get('post')
+          else resolve null
     ).property()
 
+  questionEntryList: (->
+    return DS.PromiseObject.create promise: 
+      new Em.RSVP.Promise (resolve, reject) =>      
+        @entry("question_answer", "list").then (e)->
+          lastEntry = e.toArray()[e.get('length') - 1]
+          if lastEntry 
+            resolve lastEntry.get('post')
+          else resolve null
+    ).property()
+
+
   submitForm: (callback)-> 
-    @saveEntry("question_answer", @get('questionEntry1').content, callback)
-    
+    @commitEntry("question_answer", "paragraph", @get('questionEntry').content, callback)
+    @commitEntry("question_answer", "list", @get('questionEntryList').content, callback)

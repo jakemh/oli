@@ -1,5 +1,7 @@
 Oli.Componentable = Ember.Mixin.create
-
+  
+  setup: -> 
+    
   component: (context_type, context)->
     if context
       self = context.get('components') 
@@ -20,6 +22,7 @@ Oli.Componentable = Ember.Mixin.create
               resolve(current)
             else resolve(c.get('content'))
 
+  @deprecated
   last_post: (context_type)->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
@@ -32,6 +35,16 @@ Oli.Componentable = Ember.Mixin.create
             else
               resolve(c.get('content'))
 
+  entry: (componentContext, entryContext)->
+    return DS.PromiseObject.create promise: 
+      new Em.RSVP.Promise (resolve, reject) =>
+        @component(componentContext).then (c)->
+          c.get('entries').then (es)->
+            current = es.filterProperty("context", entryContext)
+            if current
+              resolve(current)
+   
+  @deprecated 
   saveEntry: (context_type, message, callback)->
     @component(context_type).then (c)=>
       entry1 = @get('store').createRecord('entry', {
@@ -43,3 +56,19 @@ Oli.Componentable = Ember.Mixin.create
         entry1.save()
         if callback
           callback()
+
+   commitEntry: (componentContext, entryContext, message, callback)->
+    @component(componentContext).then (c)=>
+      entry1 = @get('store').createRecord('entry', {
+          component: c
+          post: message
+          context: entryContext
+        })
+
+      c.get('entries').then (ues)=>
+        ues.pushObject(entry1)
+        entry1.save()
+        if callback
+          callback()
+
+

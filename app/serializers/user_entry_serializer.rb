@@ -1,4 +1,4 @@
 class UserEntrySerializer < ActiveModel::Serializer
-  attributes :id, :post, :content_type
+  attributes :id, :post, :context
   embed :ids
 end

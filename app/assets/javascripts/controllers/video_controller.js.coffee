@@ -4,3 +4,6 @@ Oli.VideoController = Ember.ObjectController.extend Ember.Evented, Oli.Component
   transcript: (->
     @component("video")
     ).property()
+
+  submitForm: (callback) -> 
+    callback()
