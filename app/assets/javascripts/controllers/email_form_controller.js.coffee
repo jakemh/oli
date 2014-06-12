@@ -4,7 +4,7 @@ Oli.EmailFormController = Ember.ObjectController.extend Oli.Componentable,
   # init: ->
     # @get('controllers.activities').on("buttonPressed", @, @submitForm)
 
-  submitForm: ->
+  submitForm: (callback)->
 
     @saveEntry("email_address", @get("addressEntry.content"))
     @saveEntry("email_subject",  @get("subjectEntry.content"))
@@ -20,6 +20,7 @@ Oli.EmailFormController = Ember.ObjectController.extend Oli.Componentable,
         body: @get("bodyEntry.content")
       )
     ).then (response) ->
+      callback()
       return
 
   addressEntry: (->
