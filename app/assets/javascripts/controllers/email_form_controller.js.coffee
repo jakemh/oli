@@ -9,7 +9,6 @@ Oli.EmailFormController = Ember.ObjectController.extend Oli.Componentable,
     @saveEntry("email_address", @get("addressEntry.content"))
     @saveEntry("email_subject",  @get("subjectEntry.content"))
     @saveEntry("email_body", @get("bodyEntry.content"))
-    alert("TEST1")
     $.ajax(
       url: "/send_mail"
       type: "POST"
