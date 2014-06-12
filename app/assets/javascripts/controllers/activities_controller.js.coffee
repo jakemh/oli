@@ -1,15 +1,6 @@
 Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
   
   needs: ['sections']
-  
-#   activities = 
-#   "video" => "Intro",
-#   "questions_answers" => "Excercise 1A",
-#   "questions_answers_2" => "Excercise 1B",
-#   "choose_word" => "Exercise 1C",
-#   "share_1" => "Share your progress!",
-#   "share_2" => "Share with a buddy!"
-# }
 
   progress: null
   status: ""
@@ -25,6 +16,9 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
     
   ).property()
 
+  submitForm: (callback) -> 
+    callback()
+    
   checked: ->
     
   hash: ->

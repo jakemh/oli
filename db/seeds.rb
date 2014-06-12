@@ -59,10 +59,6 @@ add_content_to_course(innerOLI)
 add_content_to_course(innerOLI2, {:no_activities => true})
 add_content_to_course(innerOLI3, {:no_activities => true})
 
-# ex0 = Course.first.topics.first.sections.first.activities.where(:name => "Start").first
-# ex0.template = "video"
-# ex0.save
-
 act_set_1 = Course.first.topics.first.sections.first.activities
 
 ex0 = act_set_1.where(:template => "video").first
@@ -103,7 +99,6 @@ experience3.components << experience3_comp1
 
 
 ex2 = act_set_1.where(:template => "choose_word").first
-# ex2 = Course.first.activities.find(3)
 
 ex2.description = 
 '''
