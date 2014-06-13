@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611223840) do
+ActiveRecord::Schema.define(version: 20140612174719) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20140611223840) do
     t.datetime "updated_at"
     t.text     "description"
     t.string   "template"
+  end
+
+  create_table "activity_dependencies", force: true do |t|
+    t.integer  "activity_id"
+    t.integer  "dependent_activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "components", force: true do |t|

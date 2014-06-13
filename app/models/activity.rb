@@ -5,6 +5,7 @@ class Activity < ActiveRecord::Base
   has_many :components, dependent: :destroy
   has_many :user_components
   has_many :users, :through => :course
+  has_many :activity_dependencies
   # has_many :statuses, :through => :users
   has_many :statuses
   # has_one :status, :through => current_user
@@ -12,6 +13,11 @@ class Activity < ActiveRecord::Base
 
   def status(current_user)
     Status.where(:activity => self, :user => current_user)
+  end
+
+  # if only 1 activity is dependent
+  def dependencies
+    self.activity_dependencies.pluck(:dependent_activity_id)
   end
 
   def update_completed(status, current_user)

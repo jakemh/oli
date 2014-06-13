@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   put '/components/:id', :to => 'components#update'
   put '/words/:id', :to => 'words#update'
   post '/words/', :to => 'words#new'
+  get '/words/', :to => 'words#new'
   put '/statuses/:id', :to => 'statuses#update'
   put '/activities/:id', :to => 'activities#update'
   post '/entries', :to => 'user_entries#create'

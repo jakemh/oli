@@ -5,4 +5,5 @@ Oli.Activity = DS.Model.extend({
   description: DS.attr('string')
   components: DS.hasMany('component', {async: true})
   completed: DS.attr('boolean')
+  dependencies: DS.hasMany('activity')
 });

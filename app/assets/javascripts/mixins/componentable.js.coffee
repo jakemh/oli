@@ -35,10 +35,10 @@ Oli.Componentable = Ember.Mixin.create
             else
               resolve(c.get('content'))
 
-  entry: (componentContext, entryContext)->
+  entry: (componentContext, entryContext, activity)->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
-        @component(componentContext).then (c)->
+        @component(componentContext, activity).then (c)->
           c.get('entries').then (es)->
             current = es.filterProperty("context", entryContext)
             if current
@@ -51,6 +51,7 @@ Oli.Componentable = Ember.Mixin.create
           component: c
           post: message
         })
+
       c.get('entries').then (ues)=>
         ues.pushObject(entry1)
         entry1.save()

@@ -1,5 +1,11 @@
-Oli.QuestionAnswerView = Em.View.extend({
+Oli.QuestionAnswerView = Em.View.extend
   didInsertElement: ->
-    # @get('controller.controllers.activities').on("buttonPressed", @get('controller'), @get("controller").submitForm)
+    @.$().find('.answer-box-large').focus();
 
-})
+  becomeFocused: (->
+    ).on('didInsertElement')
+
+  setFocus: (->
+    @.$().find('.answer-box-large').focus();
+
+    ).observes('controller.controllers.activities.content')

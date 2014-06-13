@@ -64,21 +64,7 @@ act_set_1 = Course.first.topics.first.sections.first.activities
 ex0 = act_set_1.where(:template => "video").first
 ex0.components << Component.create(:context => :video, :content => @vid1_trans)
 
-experienceValues1 = act_set_1.where(:template => "questions_values").first
-experienceValues1_comp1 = Component.create!( :context => :question_answer,:title => "Peak Experience #1",
-  :content => "For your first peak experience, extract the most significant values. Discover at least 5 values.")
-experienceValues1.components << experienceValues1_comp1
-
-experienceValues2 = act_set_1.where(:template => "questions_values").second
-experienceValues2_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #2",
-  :content => "For your second peak experience, extract the most significant values. Discover at least 5 values.")
-experienceValues2.components << experienceValues2_comp1
-
-experienceValues3 = act_set_1.where(:template => "questions_values").third
-experienceValues3_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #3",
-  :content => "For your third peak experience, extract the most significant values. Just to keep you guessing, youst must now discover at least 10 values.")
-experienceValues3.components << experienceValues3_comp1
-
+######################
 
 experience1 = act_set_1.where(:template => "questions_answers").first
 experience1_comp1 = Component.create!( :context => :question_answer,:title => "Peak Experience #1",
@@ -94,6 +80,28 @@ experience3 = act_set_1.where(:template => "questions_answers").third
 experience3_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #3",
   :content => "Think of a third peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:")
 experience3.components << experience3_comp1
+
+######################
+
+experienceValues1 = act_set_1.where(:template => "questions_values").first
+experienceValues1_comp1 = Component.create!( :context => :questions_values,:title => "Peak Experience #1",
+  :content => "For your first peak experience, extract the most significant values. Discover at least 5 values.")
+experienceValues1.components << experienceValues1_comp1
+experienceValues1.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience1.id)
+
+experienceValues2 = act_set_1.where(:template => "questions_values").second
+experienceValues2_comp1 = Component.create!(:context => :questions_values,:title => "Peak Experience #2",
+  :content => "For your second peak experience, extract the most significant values. Discover at least 5 values.")
+experienceValues2.components << experienceValues2_comp1
+experienceValues2.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience2.id)
+
+experienceValues3 = act_set_1.where(:template => "questions_values").third
+experienceValues3_comp1 = Component.create!(:context => :questions_values,:title => "Peak Experience #3",
+  :content => "For your third peak experience, extract the most significant values. Just to keep you guessing, youst must now discover at least 10 values.")
+experienceValues3.components << experienceValues3_comp1
+experienceValues3.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience3.id)
+
+######################
 
 
 
@@ -117,7 +125,10 @@ thread_ex = Activity.where(:template => :word_thread).first
 thread_ex.description = '''
 Drag and drop the values words into the different threads. Group the values in a wa that is meaningful to you and your peak experiences. Create at least 4 value thread and as many as 6. Be sure to use up all your values!
 '''
-thread_ex.save
+dep1 = ActivityDependency.create(:dependent_activity_id => experienceValues1.id)
+dep2 = ActivityDependency.create(:dependent_activity_id => experienceValues2.id)
+dep3 = ActivityDependency.create(:dependent_activity_id => experienceValues3.id)
+thread_ex.activity_dependencies << [dep1, dep2, dep3]
 
 share_1 = act_set_1.where(:template => "share_1").first
 share_2 = act_set_1.where(:template => "share_2").first
@@ -133,23 +144,7 @@ share_2.components << [
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 

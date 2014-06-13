@@ -51,7 +51,7 @@ $levels-height: 45px;
 @mixin oli-box{
   width: 100%;
   @include oli-text;
-  border: 1px solid oli-gray(.5);
+  border: 1px solid oli-gray(1);
   padding: 10px;
   resize: none;
   outline: none;

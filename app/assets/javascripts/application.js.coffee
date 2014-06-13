@@ -24,6 +24,7 @@
 #= require ember-data
 #= require ember-animate
 #= require video
+#= require jquery.highlighttextarea
 #= require_self
 #= require hoverintent.min
 #= require oli

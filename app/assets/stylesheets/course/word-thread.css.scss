@@ -4,3 +4,30 @@
   @include scrollable-box;
   height: 100px;
 }
+
+.word-pill{
+  cursor: pointer;
+  background-color: oli-blue(1);
+  margin: 2px;
+  display: inline-block;
+  color: white;
+  padding: 0px 5px 0px 5px;
+  font-family: pn-thin;
+  border-radius: 50px;
+  line-height: 1.8em;
+
+}
+
+.drop-box{
+  width: 215px;
+  display: inline-block;
+  border: 1px dotted oli-gray(1);
+  overflow: scroll;
+  height: 80px;
+  margin: 10px;
+}
+
+.drop-box-container{
+  margin:auto;
+  width: 480px;
+}

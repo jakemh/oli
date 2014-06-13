@@ -8,10 +8,19 @@
   </div>
 
   <div class="answer-box">
+    {{controller.dependentEntry.content.post}}
   </div>
 
-  {{textarea class="qa-values-box" placeholder="Begin listing your values here"
-  value=controller.questionEntryList.content
+  {{textarea class="qa-values-box" id="values-box" placeholder="Begin listing your values here"
+  valueBinding="controller.input"
   }}
+
+  <div class="bank-box">
+    {{#each controller.parsedWords}}
+      {{#view Oli.Box value=this class="word-pill"}}
+        <span>{{this}}</span>
+      {{/view}}
+    {{/each}}
+  </div>
 
 {{/view}}

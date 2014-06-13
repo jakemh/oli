@@ -2,5 +2,22 @@
     {{controller.controllers.activities.description}}
 </div>
 
-<div class="thread-word-bank">
-</div>
+{{#view  Oli.DropTarget class="thread-word-bank"}}
+  {{#each controller.allWords.content}}
+    {{#view Oli.Box value=this class="word-pill"}}
+      <span>{{this}}</span>
+    {{/view}}
+  {{/each}}
+{{/view}}
+
+  <div class="drop-box-container">
+    {{#each list in controller.lists}}
+      {{#view Oli.DropTarget index=_view.contentIndex class="drop-box"}}
+        {{#each list}}
+          {{#view Oli.Box class="word-pill"}}
+            <span>{{this}}</span>
+          {{/view}}
+        {{/each}}
+      {{/view}}
+    {{/each}}
+  </div>

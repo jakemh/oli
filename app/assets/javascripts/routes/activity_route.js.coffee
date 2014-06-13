@@ -18,7 +18,7 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
     "share_2" : @controllerFor('emailForm')
     "choose_word" : @controllerFor('activities')
     "questions_answers" : @controllerFor('questionAnswers')
-    "questions_values" : @controllerFor('questionAnswers')
+    "questions_values" : @controllerFor('answersValues')
     "word_thread" : @controllerFor('wordThread')
     "share_1" : @controllerFor('share1')
     "video" : @controllerFor('video')
