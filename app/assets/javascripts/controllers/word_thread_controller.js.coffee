@@ -5,6 +5,7 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     @dependentEntry()
    
     @get('chooseWordWords')
+    @notifyPropertyChange('chooseWordWords')
 
   chooseWordWords: (->
     return DS.PromiseObject.create promise: 
