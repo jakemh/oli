@@ -5,8 +5,10 @@ Oli.AnswersValuesController = Oli.ActivityBaseController.extend
     @notifyPropertyChange('comp')
     @get('questionEntryList')
     @notifyPropertyChange('questionEntryList')
+    @notifyPropertyChange('parsedWords')
 
     @notifyPropertyChange('dependentActivity')
+    @get('dependentEntry')
     @notifyPropertyChange('dependentEntry')
     
 
@@ -34,6 +36,7 @@ Oli.AnswersValuesController = Oli.ActivityBaseController.extend
         @get('dependentActivity').then (act)=>
           @entry("question_answer", "paragraph", act).then (entry)->
             resolve entry.toArray()[entry.get('length') - 1]
+
     ).property()
 
   questionEntryList: ((k,v)->
@@ -43,7 +46,7 @@ Oli.AnswersValuesController = Oli.ActivityBaseController.extend
           lastEntry = e.toArray()[e.get('length') - 1]
           if lastEntry 
             @set('input', lastEntry.get('post'))
-          else resolve null
+          else @set('input', null)
     ).property()
 
   submitForm: (callback)-> 

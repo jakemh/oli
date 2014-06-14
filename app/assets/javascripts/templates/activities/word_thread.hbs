@@ -2,8 +2,8 @@
     {{controller.controllers.activities.description}}
 </div>
 
-{{#view  Oli.DropTarget class="thread-word-bank"}}
-  {{#each controller.allWords.content}}
+{{#view  Oli.DropTarget index=6 class="thread-word-bank"}}
+  {{#each controller.lastList}}
     {{#view Oli.Box value=this class="word-pill"}}
       <span>{{this}}</span>
     {{/view}}
@@ -11,10 +11,11 @@
 {{/view}}
 
   <div class="drop-box-container">
-    {{#each list in controller.lists}}
+
+    {{#each list in controller.listsExceptLast}}
       {{#view Oli.DropTarget index=_view.contentIndex class="drop-box"}}
         {{#each list}}
-          {{#view Oli.Box class="word-pill"}}
+          {{#view Oli.Box value=this class="word-pill"}}
             <span>{{this}}</span>
           {{/view}}
         {{/each}}

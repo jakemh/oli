@@ -3,8 +3,9 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
 
   setup: ->
     @dependentEntry()
-   
     @get('chooseWordWords')
+    @get('setLists')
+    @notifyPropertyChange('setLists')
     @notifyPropertyChange('chooseWordWords')
 
   chooseWordWords: (->
@@ -24,12 +25,14 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     @get('wordsBox')
     ).property("wordsBox")
 
+
   allWords: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
         @get('chooseWordWords').then (words)=>
-
-          resolve @get('parsedWords').concat(words)
+          if @get('parsedWords')
+            resolve @get('parsedWords').concat(words)
+          else resolve null
     ).property("wordsBox")
 
   wordsBox: (->
@@ -39,17 +42,30 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     @get('activity.dependencies').toArray()
     ).property()
 
-  lists: (->
-      [[],[],[],[],[],[]]
+  setLists: (->
+    @get('allWords').then (all)=>
+      @set('lists', [[],[],[],[],[],[],all])
     ).property()
+
+  lists: null
+
+  listsExceptLast: (->
+    if @get('lists')
+      @get('lists').slice(0,-1)
+    ).property('lists')
+
+  lastList: (->
+    if @get('lists')
+      @get('lists').get('lastObject')
+    ).property('lists')
 
   dependentEntry: ->
     results = []
     for dAct in @get('dependentActivity').toArray()
-      @entry("questions_values", "list", dAct).then (entry)=>
-        entry = entry.toArray()[entry.get('length') - 1].get('post')
+      @entry("questions_values", "list", dAct).then (e)=>
+        entry = e.get('lastObject')
         if entry
-          results = results.concat(entry.replace(/[,;]/g, " ").split(/\s+/))
+          results = results.concat(entry.get('post').replace(/[,;]/g, " ").split(/\s+/))
           @set('wordsBox', results)
           @notifyPropertyChange('wordsBox')
 
