@@ -18,13 +18,20 @@
 
 }
 
+
 .drop-box{
   width: 215px;
   display: inline-block;
   border: 1px dotted oli-gray(1);
-  overflow: scroll;
   height: 80px;
   margin: 10px;
+  overflow: scroll;
+}
+
+.drag-active{
+  overflow: hidden;
+  background-color: oli-blue(.1) !important;
+  border-color: oli-blue(.7) !important;
 }
 
 .drop-box-container{

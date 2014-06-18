@@ -1,5 +1,5 @@
 class ActivitySerializer < ActiveModel::Serializer
-  attributes :id, :name, :template, :description, :section_id, :completed, :dependencies
+  attributes :id, :name, :template, :description, :section_id, :completed, :dependencies, :tip
 
   def completed
     stat = object.status(current_user).first

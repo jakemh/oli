@@ -11,6 +11,7 @@ Oli.CourseRoute = Ember.Route.extend({
     activitiesController = @controllerFor('activities');
     topicsController = @controllerFor('topics');
     courseController = @controllerFor('course');
+    tipsController = @controllerFor('tips');
 
     @render('nav', {
       outlet: 'nav',
@@ -35,6 +36,12 @@ Oli.CourseRoute = Ember.Route.extend({
     @render('status', {
       outlet: 'status', 
       into: 'activity',
+
+      controller: activitiesController 
+      })
+
+    @render('tip', {
+      outlet: 'tip', 
 
       controller: activitiesController 
       })

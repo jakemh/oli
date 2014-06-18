@@ -1,0 +1,2 @@
+class BoxxSerializer < BoxSerializer
+end

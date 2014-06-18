@@ -3,14 +3,25 @@ Oli.AnswersValuesController = Oli.ActivityBaseController.extend
 
   setup: -> 
     @notifyPropertyChange('comp')
-    @get('questionEntryList')
     @notifyPropertyChange('questionEntryList')
-    @notifyPropertyChange('parsedWords')
-
-    @notifyPropertyChange('dependentActivity')
-    @get('dependentEntry')
+    @set('initialList', null)
     @notifyPropertyChange('dependentEntry')
-    
+
+    # @get('parsedWords').then (words)->
+    #   alert words
+    @get('questionEntryList').then (rawText)=>
+      @set('input', rawText || "")
+      @notifyPropertyChange('parsedWords')
+
+      @set('initialList', @get('parsedWords'))
+
+    # @get('questionEntryList')
+    @notifyPropertyChange('dependentActivity')
+    # @get('dependentEntry')
+    @notifyPropertyChange('dependentEntry')
+  
+  
+  initialList: null
 
   comp: (->
     @component("questions_values")
@@ -18,16 +29,23 @@ Oli.AnswersValuesController = Oli.ActivityBaseController.extend
 
   input: null
 
+  handleDelimeter: ->
+    @notifyPropertyChange('parsedWords')
+
+  handleDelete: ->
+    @notifyPropertyChange('parsedWords')
+
+
   parsedWords: (-> 
-    if @get('input')   
-      @get('input').replace(/[,.;]/g, " ").split(/\s+/)
-    ).property("input")
+    if @get('input')
+      $.trim(@get('input')).split(/\s*,\s*|\s*\n\s*|\s*\r\s*/)
+    ).property()
 
   dependentActivity: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) => 
         resolve @get('activity.dependencies').toArray()[0]
-        
+
     ).property()
 
   dependentEntry: (->
@@ -39,15 +57,48 @@ Oli.AnswersValuesController = Oli.ActivityBaseController.extend
 
     ).property()
 
-  questionEntryList: ((k,v)->
+  questionEntryList: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>      
         @entry("questions_values", "list").then (e)=>
-          lastEntry = e.toArray()[e.get('length') - 1]
+          lastEntry = e.get('lastObject')
+          # alert lastEntry
+
           if lastEntry 
-            @set('input', lastEntry.get('post'))
-          else @set('input', null)
+            resolve lastEntry.get('post')
+          else resolve null
     ).property()
 
+
   submitForm: (callback)-> 
+    @notifyPropertyChange('parsedWords')
     @commitEntry("questions_values", "list", @get('input'), callback)
+    additions = _.difference(@get('parsedWords'), @get('initialList'));
+  
+
+    subtractions = _.difference( @get('initialList'), @get('parsedWords'));
+    @component("questions_values").then (component)=>
+      
+      for wordPrimitive in additions
+        do (wordPrimitive) =>
+          newWord = @store.createRecord('word', {
+              word: $.trim(wordPrimitive)
+              component: component
+              selected: true
+            })
+
+          newWord.save().then (response)->
+            # alert JSON.stringify response.id
+            component.get('words').then (ws)->
+              ws.pushObject(newWord)
+
+      component.get('words').then (ws)->
+        # alert "ALL: " + JSON.stringify ws.toArray()
+        for wordPrimitive in subtractions
+            deleteWord = ws.filterProperty('word', $.trim(wordPrimitive))[0]
+            # alert "PRIM: " + wordPrimitive
+            # alert deleteWord
+            if deleteWord
+              deleteWord.destroyRecord()
+
+

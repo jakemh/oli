@@ -1,11 +1,10 @@
-Oli.Word = DS.Model.extend({
+Oli.Word = DS.Model.extend
   
   word: DS.attr('string')
-  component: DS.belongsTo('component', {async: true})
+  boxx: DS.belongsTo('boxx')
+  component: DS.belongsTo('component')
   selected: DS.attr('boolean')
-  
+  # belongsTo: DS.belongsTo('box', async: true)
   test: (->
-    @.save() if @get('isDirty')
-      
+    @save() if @get('isDirty')
   ).property('selected')
-});

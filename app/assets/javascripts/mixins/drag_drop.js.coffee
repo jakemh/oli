@@ -1,5 +1,20 @@
+(->
+  droppable = $(".drop-box")
+  lastenter = undefined
+  droppable.on "dragenter", (event) ->
+    lastenter = event.target
+    droppable.addClass "drag-over"
+    return
+
+  droppable.on "dragleave", (event) ->
+    droppable.removeClass "drag-over"  if lastenter is event.target
+    return
+
+  return
+)()
+
 Oli.cancel = (event) ->
-  event.preventDefault()
+  # event.preventDefault()
   false
 
 Oli.Dragable = Ember.Mixin.create(
@@ -18,7 +33,23 @@ Oli.Droppable = Ember.Mixin.create(
     view = Ember.View.views[viewId]
     view.set("originalBox", @get('index'))
 
+
   dragOver: Oli.cancel
+
+  dragEnter: (event)->
+    @makeActive()
+    # console.log @get('index')
+    viewId = event.originalEvent.dataTransfer.getData("Text")
+    view = Ember.View.views[viewId]
+    if view
+      if @get('index') != view.get('originalBox')
+        alert("ENTER")
+
+  dragLeave: (event)->
+    # event.preventDefault()
+
+    @makeUnactive()
+
   drop: (event) ->
     viewId = event.originalEvent.dataTransfer.getData("Text")
     # alert event.originalEvent.dataTransfer.getData("index")
@@ -26,12 +57,25 @@ Oli.Droppable = Ember.Mixin.create(
     deleteIndex = null
     oldList = @get('controller.lists')[view.get('originalBox')]
     newList = @get('controller.lists')[@get('index')]
+
     if oldList
-      for word, i in oldList
+      for word, i in oldList.toArray()
         if word == view.value
           deleteIndex = i
           break
 
+    @makeUnactive()
     oldList.removeAt(deleteIndex)
     newList.pushObject(view.value)
+    if typeof oldList.save == 'function'
+      oldList.save()
+    # alert typeof newList.save
+    if typeof newList.save == 'function'
+      newList.save()
+    else 
+      @get('controller.store').find('boxx', 7).then (b)->
+        view.value.set('boxx', b)
+      # oldList.save()
+      # view.value.save()
+
 )

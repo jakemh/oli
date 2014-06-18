@@ -48,7 +48,7 @@ def add_content_to_course(course, options = {})
       @activity_count[i].times.each do |j|
         template = @activities[j].keys[0]
         name = @activities[j].values[0]
-        s.activities << Activity.create!(:name => name, :template => template) unless options[:no_activities]
+        s.activities << Activity.create!(:name => name, :template => template, :tip => "Tip #{j}") unless options[:no_activities]
       end
     end
   end
@@ -84,19 +84,19 @@ experience3.components << experience3_comp1
 ######################
 
 experienceValues1 = act_set_1.where(:template => "questions_values").first
-experienceValues1_comp1 = Component.create!( :context => :questions_values,:title => "Peak Experience #1",
+experienceValues1_comp1 = WordSelection.create!( :context => :questions_values,:title => "Peak Experience #1",
   :content => "For your first peak experience, extract the most significant values. Discover at least 5 values.")
 experienceValues1.components << experienceValues1_comp1
 experienceValues1.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience1.id)
 
 experienceValues2 = act_set_1.where(:template => "questions_values").second
-experienceValues2_comp1 = Component.create!(:context => :questions_values,:title => "Peak Experience #2",
+experienceValues2_comp1 = WordSelection.create!(:context => :questions_values,:title => "Peak Experience #2",
   :content => "For your second peak experience, extract the most significant values. Discover at least 5 values.")
 experienceValues2.components << experienceValues2_comp1
 experienceValues2.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience2.id)
 
 experienceValues3 = act_set_1.where(:template => "questions_values").third
-experienceValues3_comp1 = Component.create!(:context => :questions_values,:title => "Peak Experience #3",
+experienceValues3_comp1 = WordSelection.create!(:context => :questions_values,:title => "Peak Experience #3",
   :content => "For your third peak experience, extract the most significant values. Just to keep you guessing, youst must now discover at least 10 values.")
 experienceValues3.components << experienceValues3_comp1
 experienceValues3.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience3.id)
@@ -129,6 +129,11 @@ dep1 = ActivityDependency.create(:dependent_activity_id => experienceValues1.id)
 dep2 = ActivityDependency.create(:dependent_activity_id => experienceValues2.id)
 dep3 = ActivityDependency.create(:dependent_activity_id => experienceValues3.id)
 thread_ex.activity_dependencies << [dep1, dep2, dep3]
+word_thread_component = Component.create(:context => :word_thread)
+word_thread_component.boxxes << 7.times.inject([]){|result, element| result << Boxx.create}
+thread_ex.components << word_thread_component
+
+
 
 share_1 = act_set_1.where(:template => "share_1").first
 share_2 = act_set_1.where(:template => "share_2").first

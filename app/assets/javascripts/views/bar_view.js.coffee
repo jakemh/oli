@@ -44,18 +44,20 @@ Oli.NotchView = Em.View.extend({
     totalWidth = $(".thin-bar-wrapper").innerWidth()
     newWidth = Math.floor(totalWidth / actNum)
     adj = totalWidth - (newWidth) * actNum
-    @.$().children('.notch').innerWidth(newWidth - 1)
+    @$().children('.notch').innerWidth(newWidth - 1)
 
     last = $('.notch-ember .notch').last()
     last.width(last.width() + adj)
-    this.$().hoverIntent (=>
+    @$().hoverIntent (=>
       oBox = @hoverBox().offset()
-      oNotch = this.$().offset()
+      oNotch = @$().offset()
+      pBox = @hoverBox().position()
+      pNotch = @$().position()
       if @hoverBox().is(":hidden")
         @hoverBox().stop().fadeIn("fast")
         @hoverBox().offset({top: oNotch.top, left:oNotch.left})
       else 
-        @hoverBox().animate({top: oBox.top, left:oNotch.left})
+        @hoverBox().animate({top: pBox.top, left:pNotch.left })
 
       @get('controller').send('hover', @get('title'));
     ), ->

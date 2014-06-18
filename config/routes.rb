@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'boxes/list'
+
+  get 'boxes/new'
+
   get 'mailer/send'
 
   class FormatTest
@@ -37,6 +41,11 @@ Rails.application.routes.draw do
   put '/words/:id', :to => 'words#update'
   post '/words/', :to => 'words#new'
   get '/words/', :to => 'words#new'
+  get '/boxxes/', :to => 'boxxes#list'
+  get '/boxxes/:id', :to => 'boxxes#show'
+
+  delete '/words/:id', :to => 'words#destroy'
+
   put '/statuses/:id', :to => 'statuses#update'
   put '/activities/:id', :to => 'activities#update'
   post '/entries', :to => 'user_entries#create'

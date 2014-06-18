@@ -5,8 +5,8 @@ class WordsController < ApplicationController
 
   def update
     w = Word.find(params[:id])
-    permit = params[:word].permit(:word, :selected)
-    w.update_for_user(current_user, permit[:selected])
+    permit = params[:word].permit(:word, :selected, :boxx)
+    w.update_for_user(current_user, permit[:selected], :box => permit[:boxx])
     # Word.find(params[:id]).update_attributes(params[:word].permit(:word, :selected))
     render :json => nil
   end
@@ -16,8 +16,13 @@ class WordsController < ApplicationController
     # save_hash = {:word => permit[:word], :word_selection_id => permit[:component]}
     # allowed_params = params[:word].permit(:word, :selected, :component)
     # save_hash = {:word => allowed_params[:word], :selected => allowed_params[:selected]}.merge({:wordable_type => "Component", :wordable_id => allowed_params[:component]})
-    Word.create_for_user({:word => permit[:word], :user => current_user, :component_id => permit[:component], :status => permit[:selected]})
+    new_word = Word.create_for_user({:word => permit[:word].strip, :user => current_user, :component_id => permit[:component], :status => permit[:selected]})
+    render :json => new_word 
+  end
 
-    render :json => nil
+  def destroy
+    delete_word = Word.find(params[:id])
+    delete_word.destroy
+    render :json => delete_word
   end
 end

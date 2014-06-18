@@ -5,3 +5,10 @@ Oli.Box = Ember.View.extend Oli.Dragable,
 Oli.DropTarget = Ember.View.extend Oli.Droppable,
   index: null
 
+  makeActive: ->
+    if not @$().hasClass('drag-active')
+      @$().addClass('drag-active')
+
+  makeUnactive: ->
+    if @$().hasClass('drag-active')
+      @$().removeClass('drag-active')

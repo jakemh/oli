@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612174719) do
+ActiveRecord::Schema.define(version: 20140618134807) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -27,11 +27,18 @@ ActiveRecord::Schema.define(version: 20140612174719) do
     t.datetime "updated_at"
     t.text     "description"
     t.string   "template"
+    t.string   "tip"
   end
 
   create_table "activity_dependencies", force: true do |t|
     t.integer  "activity_id"
     t.integer  "dependent_activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "boxes", force: true do |t|
+    t.integer  "component_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -156,6 +163,7 @@ ActiveRecord::Schema.define(version: 20140612174719) do
     t.string   "wordable_type"
     t.boolean  "all_users"
     t.integer  "word_selection_id"
+    t.integer  "box_id"
   end
 
 end

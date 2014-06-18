@@ -13,3 +13,5 @@ Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable,
   activityController: (->
     @get('controllers.activities')
     ).property()
+
+

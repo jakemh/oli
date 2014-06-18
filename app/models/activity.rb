@@ -5,7 +5,7 @@ class Activity < ActiveRecord::Base
   has_many :components, dependent: :destroy
   has_many :user_components
   has_many :users, :through => :course
-  has_many :activity_dependencies
+  has_many :activity_dependencies, dependent: :destroy
   # has_many :statuses, :through => :users
   has_many :statuses
   # has_one :status, :through => current_user

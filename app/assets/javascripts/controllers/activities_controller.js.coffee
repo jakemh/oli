@@ -12,9 +12,16 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
   video: null
   buttonText: "Continue"
 
+  tip: (->
+    @content.get('tip')
+    ).property("content")
+
   status: (()->
     
   ).property()
+
+  handleDelimeter: ->
+    alert("TEST")
 
   submitForm: (callback) -> 
     callback()

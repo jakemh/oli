@@ -1,24 +1,92 @@
 @import "oli-root";
 
+.outer-wrapper{
+  margin: 0 auto;
+  width: 820px;
+  position: relative;
+}
+
 .course-wrapper{
   width: 550px;
   margin: 0 auto;
-
+  position: relative;
 }
 
 .oli-text{
   @include oli-font;
   font-size: .85em;
 }
+
 .activity-contents{
   height: 450px;
   margin-top: -6px;
   overflow: hidden;
-  width: 100;
+  width: 100%;
   // max-height: 450px;
   // min-height: 450px;
   @include oli-font;
 
+}
+.left-section{
+  display: inline-block;
+  width: 150px;
+}
+.right-section{
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+}
+
+.tip-container{
+  position: absolute;
+  width: 120px;
+  height: 200px;
+  top: 175px;
+  right: 0px;
+}
+
+.tip-inner{
+  @include scrollable-box;
+  display: none;
+  position: absolute;
+  top: 20px;
+  height: 80%;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0,0,0,.13); 
+  border-radius: 10px;
+  z-index: 51;
+  padding-top: 25px;
+  font-style: normal;
+  border: none;
+}
+
+.tip-outer{
+  @include oli-text;
+  text-align: center;
+  font-style: italic;
+  position: relative;
+  font-size: .8em;
+
+  height: 100%;
+  width: 100%;
+}
+
+.tip-text-preview{
+  position: relative;
+  z-index: 50;
+}
+
+.tip-logo{ 
+  background: #fbf5f2 image-url("tip-icon.png") center no-repeat;
+  background-size: 22*.8px 42*.8px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0,0,0,.12); 
 }
 
 .hidden{

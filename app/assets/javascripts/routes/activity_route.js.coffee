@@ -4,11 +4,11 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
     controller.send('trans', model)
     controller.notifyPropertyChange('hash')
     controller.set('template', @template)
-    childController = @get('childControllers')[@template()]
-    childController.setup()
+    @get('childControllers')[@template()].setup()
 
   model: (params) -> 
     section = @modelFor('sections')
+    # alert "MODEL " +  section.get('activities')
     section.get('activities').then (activities) ->
       for a in activities.toArray()
         if a.get('name') == params.activity
@@ -38,7 +38,6 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
 
       # video.js require video to be disposed between transitions
       if @get('controller.video')
-
         @get('controller.video').dispose()
         @set('controller.video', null)
 
