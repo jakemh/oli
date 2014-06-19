@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
-  
+
   def list
-    render :json => Word.includes([:selections]).where(params[:ids])
+    render :json => Word.includes([:selections]).find(params[:ids])
   end
 
   def update
@@ -26,4 +26,5 @@ class WordsController < ApplicationController
     delete_word.destroy
     render :json => delete_word
   end
+
 end

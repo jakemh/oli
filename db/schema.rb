@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618134807) do
+ActiveRecord::Schema.define(version: 20140619014828) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -70,6 +70,14 @@ ActiveRecord::Schema.define(version: 20140618134807) do
   create_table "permissions", force: true do |t|
     t.integer  "user_id"
     t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", force: true do |t|
+    t.integer  "box_id"
+    t.integer  "value"
+    t.string   "context"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
