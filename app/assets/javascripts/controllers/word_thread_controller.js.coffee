@@ -11,13 +11,14 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
   chooseWordWords: (->
     act = @get('activityController.activities').filterProperty('template', 'choose_word')[0]
     @component('word_select', act).then (c)=>
-      c.get('boxxes').then (boxes)->
-        lastBox = boxes.get('lastObject')
-        c.get('words').then (ws)->
-          for word in ws.filterProperty('selected', true)
-            box = word.get('boxx')
-            if box == null or box.id == lastBox.id
-              word.set('boxx', lastBox)
+      @component('word_thread').then (wC)->
+        wC.get('boxxes').then (boxes)->
+          lastBox = boxes.get('lastObject')
+          c.get('words').then (ws)->
+            for word in ws.filterProperty('selected', true)
+              box = word.get('boxx')
+              if box == null or box.id == lastBox.id
+                word.set('boxx', lastBox)
     ).property()
 
   allWords: (->
