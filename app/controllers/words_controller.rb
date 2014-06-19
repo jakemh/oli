@@ -1,6 +1,7 @@
 class WordsController < ApplicationController
+  
   def list
-    render :json => Word.find(params[:ids])
+    render :json => Word.includes([:selections]).where(params[:ids])
   end
 
   def update

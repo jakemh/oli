@@ -1,3 +1,3 @@
 Oli.Boxx = DS.Model.extend
-  words: DS.hasMany('word', async: false)
+  words: DS.hasMany('word', async: true)
   component: DS.belongsTo('component')

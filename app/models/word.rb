@@ -42,7 +42,11 @@ class Word < ActiveRecord::Base
   end
 
   def selected(current_user)
-    self.selections.where(:user => current_user, :status => true).length > 0
+    last_selection = self.selections.where(:user => current_user).last
+    if last_selection
+      return last_selection.status
+    else false
+    end
   end
 
   def component

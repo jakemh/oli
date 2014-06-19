@@ -55,27 +55,26 @@ Oli.Droppable = Ember.Mixin.create(
     # alert event.originalEvent.dataTransfer.getData("index")
     view = Ember.View.views[viewId]
     deleteIndex = null
-    oldList = @get('controller.lists')[view.get('originalBox')]
-    newList = @get('controller.lists')[@get('index')]
+    @get('controller.lists')[view.get('originalBox')].then (oldList)=>
+      @get('controller.lists')[@get('index')].then (newList)=>
+        if oldList
+          for word, i in oldList.toArray()
+            if word == view.value
+              deleteIndex = i
+              break
 
-    if oldList
-      for word, i in oldList.toArray()
-        if word == view.value
-          deleteIndex = i
-          break
-
-    @makeUnactive()
-    oldList.removeAt(deleteIndex)
-    newList.pushObject(view.value)
-    if typeof oldList.save == 'function'
-      oldList.save()
-    # alert typeof newList.save
-    if typeof newList.save == 'function'
-      newList.save()
-    else 
-      @get('controller.store').find('boxx', 7).then (b)->
-        view.value.set('boxx', b)
-      # oldList.save()
-      # view.value.save()
+        @makeUnactive()
+        oldList.removeAt(deleteIndex)
+        newList.pushObject(view.value)
+        if typeof oldList.save == 'function'
+          oldList.save()
+        # alert typeof newList.save
+        if typeof newList.save == 'function'
+          newList.save()
+        else 
+          box = @get('controller.store').all('boxx').get('lastObject')
+          view.value.set('boxx', box)
+          # oldList.save()
+          # view.value.save()
 
 )

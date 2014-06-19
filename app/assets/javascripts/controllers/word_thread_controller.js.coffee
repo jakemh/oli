@@ -54,7 +54,7 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
           b6 = boxes[5].get('words')
           b7 = boxes[6].get('words')
 
-          @set('lists', [b1,b2,b3,b4,b5,b6, b7])
+          @set('lists', [b1,b2,b3,b4,b5,b6,b7])
 
           @notifyPropertyChange('lists')
           # for box in bxs.toArray()
@@ -78,17 +78,19 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     ).property('lists')
 
   dependentWords: ->
-    @store.find("boxx", 7).then (box7)=>
 
-      for dAct in @get('dependentActivity').toArray()
-        do (dAct)=>
-          @component("questions_values", dAct).then (c)=>
-            c.get('words').then (ws)=>
-              for word in ws.filterProperty('selected', true)
-                box = word.get('boxx')
-                if box == null or box.id == 7
-                  word.set('boxx', box7)
-                  # @notifyPropertyChange('wordsBox')
+    @component("word_thread").then (c)=>
+      c.get('boxxes').then (bs)=>
+        lastBox = bs.get('lastObject')
+        for dAct in @get('dependentActivity').toArray()
+          do (dAct)=>
+            @component("questions_values", dAct).then (c)=>
+              c.get('words').then (ws)=>
+                for word in ws.filterProperty('selected', true)
+                  box = word.get('boxx')
+                  if box == null or box.id == lastBox.id
+                    word.set('boxx', lastBox)
+                    # @notifyPropertyChange('wordsBox')
 
 
         # dependentEntry: ->
