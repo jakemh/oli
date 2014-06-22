@@ -2,8 +2,7 @@ Oli.CourseRoute = Ember.Route.extend({
   setupController: (controller, model) ->
     console.log("MODEL: " + model)
     controller.set('content', model)
-    @store.findById('topic', 1).then (t)->
-      t.get('sections').then ()->
+    
 
   renderTemplate: ->
     navController = @controllerFor('topics');
@@ -33,12 +32,8 @@ Oli.CourseRoute = Ember.Route.extend({
       controller: activitiesController 
       })
 
-    @render('status', {
-      outlet: 'status', 
-      into: 'activity',
 
-      controller: activitiesController 
-      })
+   
 
     @render('tip', {
       outlet: 'tip', 

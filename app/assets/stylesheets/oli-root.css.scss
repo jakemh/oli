@@ -100,6 +100,10 @@ $levels-height: 45px;
   font-size: 1.15em;
 }
 
+.oli-box{
+  @include oli-box;
+}
+
 .oli-semibold{
   font-family: pn-semibold;
   font-size: .85em;
