@@ -1,2 +1,0 @@
-class BoxxSerializer < BoxSerializer
-end

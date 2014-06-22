@@ -1,3 +1,0 @@
-class Boxx < Box
-  
-end
