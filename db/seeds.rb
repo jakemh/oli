@@ -98,37 +98,37 @@ CSV.foreach(file, options) do |row|
     real_row_dependency_id = id_hash[row["dependency"]].to_i
     dependeded_on_activity = Activity.find(real_row_dependency_id)
     dep = activity.activity_dependencies.where(:dependent_activity_id => real_row_dependency_id).first
-    dep.box_id = dependeded_on_activity.components.first.boxes.find(row["box_id"].to_i).id
+    dep.box_id = dependeded_on_activity.components.first.boxes.limit(1).offset(row["box_id"].to_i - 1).first.id
     dep.save
   end
 end
 
-admin = Role.create(:name => "admin")
-super_admin = Role.create(:name => "super_admin")
-customer = Role.create(:name => "customer")
+# admin = Role.create(:name => "admin")
+# super_admin = Role.create(:name => "super_admin")
+# customer = Role.create(:name => "customer")
 
-ahalya = User.create(:name => "ahalya", :email => "ahalya@ahalyakumaran.com", :password => "inneroli2014")
-jake = User.create(:name => "jake", :email => "jakemh@gmail.com", :password => "inneroli2014")
-beth = User.create(:name => "beth", :email => "who@beth.is", :password => "inneroli2014")
-bob = User.create(:name => "bob", :email => "bob@gmail.com", :password => "inneroli2014")
-# poor jack has no access to any courses
-jack = User.create(:name => "jack", :email => "jack@gmail.com", :password => "inneroli2014")
+# ahalya = User.create(:name => "ahalya", :email => "ahalya@ahalyakumaran.com", :password => "inneroli2014")
+# jake = User.create(:name => "jake", :email => "jakemh@gmail.com", :password => "inneroli2014")
+# beth = User.create(:name => "beth", :email => "who@beth.is", :password => "inneroli2014")
+# bob = User.create(:name => "bob", :email => "bob@gmail.com", :password => "inneroli2014")
+# # poor jack has no access to any courses
+# jack = User.create(:name => "jack", :email => "jack@gmail.com", :password => "inneroli2014")
 
-first_act = Course.first.activities.first
-second_act = Course.first.activities.second
-third_act = Course.first.activities.third
+# first_act = Course.first.activities.first
+# second_act = Course.first.activities.second
+# third_act = Course.first.activities.third
 
-stat1 = Status.create(:activity => first_act, :user => jake, :completed => true)
-stat2 = Status.create(:activity => second_act, :user => jake, :completed => true)
-stat3 = Status.create(:activity => third_act, :user => jake, :completed => true)
+# stat1 = Status.create(:activity => first_act, :user => jake, :completed => true)
+# stat2 = Status.create(:activity => second_act, :user => jake, :completed => true)
+# stat3 = Status.create(:activity => third_act, :user => jake, :completed => true)
 
-ahalya.roles << super_admin
-jake.roles << super_admin
-beth.roles << admin
-bob.roles << customer
+# ahalya.roles << super_admin
+# jake.roles << super_admin
+# beth.roles << admin
+# bob.roles << customer
 
-ahalya.courses << Course.first
-bob.courses << Course.first
-jake.courses << Course.first
+# ahalya.courses << Course.first
+# bob.courses << Course.first
+# jake.courses << Course.first
 
 

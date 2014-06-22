@@ -48,4 +48,6 @@ Oli.SectionsIndexRoute = Ember.Route.extend({
        @transitionTo("activities", "Intro")
      else if model.get('name') == "Level 2"
        @transitionTo("activities", "Rate Thread 1")
+     else if model.get('name') == "Level 3"
+       @transitionTo("activities", "Take Action!")
 });

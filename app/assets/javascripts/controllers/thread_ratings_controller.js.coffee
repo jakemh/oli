@@ -1,6 +1,5 @@
 Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
   setup: ->
-    @get('activityController').on('threadUpdater', @, @threadUpdater)
     @threadUpdater()
     @notifyPropertyChange("box")
     @notifyPropertyChange("isSelected")
@@ -28,7 +27,7 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
           resolve mapped.join(", ")
 
   ).property("thread")
-  
+
   box: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>

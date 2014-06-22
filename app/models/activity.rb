@@ -21,7 +21,7 @@ class Activity < ActiveRecord::Base
   end
 
   def box_dependencies
-    self.activity_dependencies.pluck(:box_id)
+    self.activity_dependencies.pluck(:box_id).compact
   end
 
   def update_completed(status, current_user)
