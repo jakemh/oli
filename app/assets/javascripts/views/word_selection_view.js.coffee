@@ -1,17 +1,17 @@
 Oli.WordSelectionView = Em.View.extend({
   didInsertElement: ->
 
-  willAnimateIn: ->
-    @$().css "opacity", 0
-    return
+  # willAnimateIn: ->
+  #   @$().css "opacity", 0
+  #   return
 
-  animateIn: (done) ->
-    @$().fadeTo 500, 1, done
-    return
+  # animateIn: (done) ->
+  #   @$().fadeTo 500, 1, done
+  #   return
 
-  animateOut: (done) ->
-    @$().fadeTo 500, 0, done
-    return
+  # animateOut: (done) ->
+  #   @$().fadeTo 500, 0, done
+  #   return
 
 
   component: (->

@@ -1,3 +1,5 @@
+{{#view Oli.QuestionAnswerView}}
+
   <div class="description-box oli-text">
     {{controller.controllers.activities.description}}
   </div>
@@ -5,25 +7,26 @@
   <div class="word-thread">
     {{controller.joinedThread.content}}
   </div>
+
   <div class="oli-text rating-section-container">
     {{controller.component1.content.content}}
     <div class="radio-button-container">
       {{#each index in controller.buttons}}
-      <div class="radio-rating">
-        {{view Ember.RadioButton name="rating_1" selectionBinding="isSelected.content" value=index}}
+        <div class="radio-rating">
+          {{view Ember.RadioButton name="rating_1" selectionBinding="isSelected.content" value=index}}
 
-        <div class="rating-label">
-          <label for="rating_1">{{index}}</label>
+          <div class="rating-label">
+            <label for="rating_1">{{index}}</label>
+          </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
    </div>
   </div>
 
   <div class="oli-text rating-section-container">
     {{controller.component2.content.content}}
     <div class="radio-button-container">
-        {{#each index in controller.buttons}}
+      {{#each index in controller.buttons}}
         <div class="radio-rating">
           {{view Ember.RadioButton name="selectionTest2" selectionBinding="isSelected2.content" value=index}}
 
@@ -32,5 +35,7 @@
           </div>
         </div>
       {{/each}}
+    </div>
   </div>
 
+{{/view}}
