@@ -20,6 +20,10 @@ class Activity < ActiveRecord::Base
     self.activity_dependencies.pluck(:dependent_activity_id)
   end
 
+  def box_dependencies
+    self.activity_dependencies.pluck(:box_id)
+  end
+
   def update_completed(status, current_user)
     status_obj = status(current_user).first
     if status_obj

@@ -16,6 +16,9 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
     @content.get('tip')
     ).property("content")
 
+  boxUpdated: ->
+    @trigger('threadUpdater')
+
   status: (()->
     
   ).property()

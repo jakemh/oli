@@ -3,4 +3,5 @@ class BoxSerializer < ActiveModel::Serializer
 
   embed :ids
   has_many :words, key: :words
+  has_many :ratings, key: :ratings
 end

@@ -8,6 +8,5 @@ class ComponentSerializer < ActiveModel::Serializer
   end
 
   has_many :user_entries, key: :entries
-  has_many :boxxes, key: :boxxes
-
+  has_many :boxes, key: :boxes
 end

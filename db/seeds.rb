@@ -1,157 +1,107 @@
-components = [
+require 'csv'
 
-  :answer_form, 
-  :email_form, 
-  :word_select,
-  :question_answer,
-  :video
-]
+id_hash = {} #csv_id => actual_id
+
+options = {:encoding => 'UTF-8', :skip_blanks => true, :headers => true}
+file = [File.dirname(__FILE__), 'structure.csv' ].join("/")
 
 
-@vid1_trans = '''
-Values represent a big part of who you are. Values represent what is essential and most important to you. They are not universal morals, nor are they standards of good and evil. They are not things that come and go, or principles that you develop over time. Values represent that which, if honred fully, will bring immense fulfillment to your life. 
-<br><br>
-First you must discover your values. Then, you must honor them on a regular basis to be happy and fulfilled. 
-'''
-
-
-@activities = [
-  {:video => "Intro"},
-  {:questions_answers => "Experience 1A"},
-  {:questions_answers => "Experience 2A"},
-  {:questions_answers => "Experience 3A"},
-  {:questions_values => "Experience 1B"},
-  {:questions_values => "Experience 2B"},
-  {:questions_values => "Experience 3B"},
-  {:choose_word => "Word Select"},
-  {:word_thread => "Word Thread"},
-  {:share_2 => "Share with a Buddy!"},
-  {:share_1 => "Share Your Progress!"}
-
-]
-
-@topic_list = ["Values", "Strengths", "Passions", "LifeStyle", "Environment"]
-@section_list = ["Level 1", "Level 2", "Level 3"]
-@sub_section_list = ["Start", "Discover", "Share"]
-
-@activity_count = [@activities.count,7,5]
-innerOLI = Course.create(:name => "OLI")
-innerOLI2 = Course.create(:name => "OLI2")
-innerOLI3 = Course.create(:name => "OLI3")
-
-
-def add_content_to_course(course, options = {})
-  @topic_list.each do |topic|
-    t = Topic.create!(:name => topic, :course => course)
-    @section_list.each_with_index do |section, i|
-      s = t.sections.create!(:name => section)
-      @activity_count[i].times.each do |j|
-        template = @activities[j].keys[0]
-        name = @activities[j].values[0]
-        s.activities << Activity.create!(:name => name, :template => template, :tip => "Tip #{j}") unless options[:no_activities]
-      end
-    end
-  end
+#build structure
+CSV.foreach(file, options) do |row|
+  course = Course.find_or_create_by(:name => row["course"])
+  topic = Topic.find_or_create_by(:course => course, :name => row["topic"]) 
+  section = Section.find_or_create_by(:topic => topic, :name => row["section"])
 end
 
+#build activities
+CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row, i|
 
-add_content_to_course(innerOLI)
-add_content_to_course(innerOLI2, {:no_activities => true})
-add_content_to_course(innerOLI3, {:no_activities => true})
+  course = Course.where(:name => row["course"]).first
+  topic = Topic.where(:name => row["topic"], :course => course).first
+  section = Section.where(:name => row["section"], :topic => topic).first
+  components = []
+  dependencies = []
+  component_constant_string = row["c_type"]
+  component_constant = nil
 
-act_set_1 = Course.first.topics.first.sections.first.activities
+  if component_constant_string
+    component_constant = Kernel.const_get(component_constant_string) 
+  else component_constant = Component
+  end
 
-ex0 = act_set_1.where(:template => "video").first
-ex0.components << Component.create(:context => :video, :content => @vid1_trans)
+  if row["c_1_name"]
+    components << component_constant.create!(
+      :context => row["c_1_name"], 
+      :content => row["sub_text_1"]
+      )
+  end
 
-######################
+   if row["c_2_name"]
+    components << component_constant.create!(
+      :context => row["c_2_name"], 
+      :content => row["sub_text_2"]
+      )
+  end
 
-experience1 = act_set_1.where(:template => "questions_answers").first
-experience1_comp1 = Component.create!( :context => :question_answer,:title => "Peak Experience #1",
-  :content => "Think of a peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:")
-experience1.components << experience1_comp1
-
-experience2 = act_set_1.where(:template => "questions_answers").second
-experience2_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #2",
-  :content => "Think of a second peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:")
-experience2.components << experience2_comp1
-
-experience3 = act_set_1.where(:template => "questions_answers").third
-experience3_comp1 = Component.create!(:context => :question_answer,:title => "Peak Experience #3",
-  :content => "Think of a third peak time in your life, a time of extreme pleaseure or joy, learning or accomplishment, peace or power. It may be a moment in time, or mayb have happened over a long period. It may have been one day, one week, a couple months, or a couple years. Describe this time, keeping in mind the following questions:")
-experience3.components << experience3_comp1
-
-######################
-
-experienceValues1 = act_set_1.where(:template => "questions_values").first
-experienceValues1_comp1 = WordSelection.create!( :context => :questions_values,:title => "Peak Experience #1",
-  :content => "For your first peak experience, extract the most significant values. Discover at least 5 values.")
-experienceValues1.components << experienceValues1_comp1
-experienceValues1.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience1.id)
-
-experienceValues2 = act_set_1.where(:template => "questions_values").second
-experienceValues2_comp1 = WordSelection.create!(:context => :questions_values,:title => "Peak Experience #2",
-  :content => "For your second peak experience, extract the most significant values. Discover at least 5 values.")
-experienceValues2.components << experienceValues2_comp1
-experienceValues2.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience2.id)
-
-experienceValues3 = act_set_1.where(:template => "questions_values").third
-experienceValues3_comp1 = WordSelection.create!(:context => :questions_values,:title => "Peak Experience #3",
-  :content => "For your third peak experience, extract the most significant values. Just to keep you guessing, youst must now discover at least 10 values.")
-experienceValues3.components << experienceValues3_comp1
-experienceValues3.activity_dependencies << ActivityDependency.create(:dependent_activity_id => experience3.id)
-
-######################
-
-
-
-
-ex2 = act_set_1.where(:template => "choose_word").first
-
-ex2.description = 
-'''
-Pull out the values that were being honored in that experience. Perhaps it was connection or freedom or adventure. Select 5 words that you associate with this experience, keeping in mind the following:
-'''
-
-w_s = WordSelection.create!(:content => "Select Words", :context => "word_select")
-words = 20.times.inject([]){|result, element| result << Word.create(:word => "Word #{element + 1}", :all_users => true) }
-words.sort
-ex2.components << w_s
-ex2.components[0].words = words
-ex2.save
-
-
-thread_ex = Activity.where(:template => :word_thread).first
-thread_ex.description = '''
-Drag and drop the values words into the different threads. Group the values in a wa that is meaningful to you and your peak experiences. Create at least 4 value thread and as many as 6. Be sure to use up all your values!
-'''
-dep1 = ActivityDependency.create(:dependent_activity_id => experienceValues1.id)
-dep2 = ActivityDependency.create(:dependent_activity_id => experienceValues2.id)
-dep3 = ActivityDependency.create(:dependent_activity_id => experienceValues3.id)
-thread_ex.activity_dependencies << [dep1, dep2, dep3]
-word_thread_component = Component.create(:context => :word_thread)
-word_thread_component.boxxes << 7.times.inject([]){|result, element| result << Boxx.create}
-thread_ex.components << word_thread_component
-
-
-
-share_1 = act_set_1.where(:template => "share_1").first
-share_2 = act_set_1.where(:template => "share_2").first
-
-share_1.components << Component.create!(:context => :share_box_fb)
-share_2.components << [
-  Component.create!(:context => :email_address, :content => ""),
-  Component.create!(:context => :email_subject, :content => "Prefilled subject line"),
-  Component.create!(:context => :email_body, :content => "Prefilled body line")
-]
-
-
-
-
+   if row["c_3_name"]
+    components << component_constant.create!(
+      :context => row["c_3_name"], 
+      :content => row["sub_text_3"]
+      )
+  end
 
   
 
+  a = Activity.create!(
+    :section => section,
+    :template => row["template"],
+    :name => row["title"],
+    :description => row["main_text"],
+    :tip => row["tip"]
+    )
 
+  a.components << components
+  id_hash[row["id"]] = a.id
+
+  if row["dependencies"]
+    row["dependencies"].split(",").each do |id|
+      dependencies << ActivityDependency.create(
+        :dependent_activity_id => id_hash[id]
+        )
+    end
+  end
+
+
+  a.activity_dependencies << dependencies
+
+  if row["boxes"]
+    a.components.first.boxes << row["boxes"].to_i.times.inject([]){|result, element| result << Box.create}
+  end
+end
+
+#build words
+file = [File.dirname(__FILE__), 'words.csv' ].join("/")
+
+CSV.foreach(file, options) do |row|
+  activity = Activity.find(id_hash[row["activity_id"]])
+  activity.components.first.words << Word.create(:word => row["word"], :all_users => true)
+end
+
+file = [File.dirname(__FILE__), 'additional_info.csv' ].join("/")
+
+#misc stuff
+CSV.foreach(file, options) do |row|
+  
+  if row["box_id"]
+    real_id = id_hash[row["activity_id"]]
+    activity = Activity.find(real_id)
+    real_row_dependency_id = id_hash[row["dependency"]].to_i
+    dependeded_on_activity = Activity.find(real_row_dependency_id)
+    dep = activity.activity_dependencies.where(:dependent_activity_id => real_row_dependency_id).first
+    dep.box_id = dependeded_on_activity.components.first.boxes.find(row["box_id"].to_i).id
+    dep.save
+  end
+end
 
 admin = Role.create(:name => "admin")
 super_admin = Role.create(:name => "super_admin")
@@ -177,8 +127,8 @@ jake.roles << super_admin
 beth.roles << admin
 bob.roles << customer
 
-ahalya.courses << innerOLI
-bob.courses << innerOLI
-jake.courses << innerOLI
+ahalya.courses << Course.first
+bob.courses << Course.first
+jake.courses << Course.first
 
 

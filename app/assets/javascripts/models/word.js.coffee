@@ -1,7 +1,7 @@
 Oli.Word = DS.Model.extend
   
   word: DS.attr('string')
-  boxx: DS.belongsTo('boxx')
+  box: DS.belongsTo('box')
   component: DS.belongsTo('component')
   selected: DS.attr('boolean')
   # belongsTo: DS.belongsTo('box', async: true)

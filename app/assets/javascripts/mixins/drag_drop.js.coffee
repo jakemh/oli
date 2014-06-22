@@ -32,12 +32,15 @@ Oli.Droppable = Ember.Mixin.create(
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]
     view.set("originalBox", @get('index'))
+    view.set("originalView", @)
 
 
   dragOver: Oli.cancel
 
   dragEnter: (event)->
     @makeActive()
+    @notifyPropertyChange("hasWord")
+
     # console.log @get('index')
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]
@@ -50,31 +53,37 @@ Oli.Droppable = Ember.Mixin.create(
 
     @makeUnactive()
 
+
   drop: (event) ->
     viewId = event.originalEvent.dataTransfer.getData("Text")
     # alert event.originalEvent.dataTransfer.getData("index")
     view = Ember.View.views[viewId]
     deleteIndex = null
-    @get('controller.lists')[view.get('originalBox')].then (oldList)=>
-      @get('controller.lists')[@get('index')].then (newList)=>
-        if oldList
-          for word, i in oldList.toArray()
-            if word == view.value
-              deleteIndex = i
-              break
+    oldList = @get('controller.lists')[view.get('originalBox')]
+    newList = @get('controller.lists')[@get('index')]
+    if oldList
+      for word, i in oldList.toArray()
+        if word == view.value
+          deleteIndex = i
+          break
 
-        @makeUnactive()
-        oldList.removeAt(deleteIndex)
-        newList.pushObject(view.value)
-        if typeof oldList.save == 'function'
-          oldList.save()
-        # alert typeof newList.save
-        if typeof newList.save == 'function'
-          newList.save()
-        else 
-          box = @get('controller.store').all('boxx').get('lastObject')
-          view.value.set('boxx', box)
-          # oldList.save()
-          # view.value.save()
+    @makeUnactive()
+    @notifyPropertyChange("hasWord")
+    @notifyPropertyChange("controller.listChanges")
+    @get("controller").listChanges()
+
+    view.get('originalView').notifyPropertyChange("hasWord")
+    oldList.removeAt(deleteIndex)
+    newList.pushObject(view.value)
+    if typeof oldList.save == 'function'
+      oldList.save()
+    # alert typeof newList.save
+    if typeof newList.save == 'function'
+      newList.save()
+    else 
+      box = @get('controller.store').all('box').get('lastObject')
+      view.value.set('box', box)
+      # oldList.save()
+      # view.value.save()
 
 )

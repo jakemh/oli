@@ -4,7 +4,7 @@
 
 {{#view  Oli.DropTarget index=6 class="thread-word-bank"}}
   {{#each controller.lastList}}
-    {{#view Oli.Box value=this class="word-pill"}}
+    {{#view Oli.BoxView value=this class="word-pill"}}
       {{#if this.selected}}
 
         <span>{{this.word}}</span>
@@ -18,11 +18,13 @@
     {{#each list in controller.listsExceptLast}}
       {{#view Oli.DropTarget index=_view.contentIndex class="drop-box"}}
         {{#each list}}
-          {{#view Oli.Box value=this class="word-pill"}}
+          {{#view Oli.BoxView value=this class="word-pill"}}
             {{#if this.selected}}
               <span>{{this.word}}</span>
             {{/if}}
           {{/view}}
+        {{else}}
+          <div class="drop-box-placeholder">Drop word here</div>
         {{/each}}
       {{/view}}
     {{/each}}

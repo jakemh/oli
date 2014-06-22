@@ -34,15 +34,19 @@ Rails.application.routes.draw do
   get '/sections/:id', :to => 'sections#list'
   get '/activities/:id', :to => 'activity#list'
   get '/courses/:id', :to => 'courses#get'
-  get '/words/', :to => 'words#list'
   get '/components/', :to => 'components#list'
   get '/components/:id', :to => 'components#list'
   put '/components/:id', :to => 'components#update'
+  get '/words/', :to => 'words#list'
+
   put '/words/:id', :to => 'words#update'
   post '/words/', :to => 'words#new'
   get '/words/', :to => 'words#new'
-  get '/boxxes/', :to => 'boxxes#list'
-  get '/boxxes/:id', :to => 'boxxes#show'
+  get '/boxes/', :to => 'boxes#list'
+  get '/boxes/:id', :to => 'boxes#show'
+
+  get 'ratings', :to => 'ratings#list'
+  post 'ratings', :to => 'ratings#new'
 
   delete '/words/:id', :to => 'words#destroy'
 

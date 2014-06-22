@@ -1,7 +1,7 @@
 {{#view Oli.AnswerValuesView}}
-  <div class="description-box oli-text">
-    {{controller.comp.content.content}}
-  </div>
+   <div class="description-box oli-text">
+       {{controller.controllers.activities.description}}
+   </div>
 
   <div class="component-title qa-title">
     {{controller.comp.content.title}}
@@ -17,7 +17,7 @@
 
   <div class="bank-box">
     {{#each controller.parsedWords}}
-      {{#view Oli.Box value=this class="word-pill"}}
+      {{#view Oli.BoxView value=this class="word-pill"}}
         <span>{{this}}</span>
       {{/view}}
     {{/each}}

@@ -6,4 +6,4 @@ Oli.Component = DS.Model.extend
   userContent: DS.attr('string')
   entries: DS.hasMany('entry', async: true)
   words: DS.hasMany('word', async: true)
-  boxxes: DS.hasMany('boxx', async: true)
+  boxes: DS.hasMany('box', async: true)

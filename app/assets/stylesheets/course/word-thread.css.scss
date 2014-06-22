@@ -3,6 +3,7 @@
 .thread-word-bank{
   @include scrollable-box;
   height: 100px;
+  margin-bottom: 6px;
 }
 
 .word-pill{
@@ -22,10 +23,28 @@
 .drop-box{
   width: 215px;
   display: inline-block;
+  padding: 0;
   border: 1px dotted oli-gray(1);
-  height: 80px;
-  margin: 10px;
+  height: 70px;
+  margin: 2px;
   overflow: scroll;
+  overflow-x: hidden;
+
+}
+
+.drop-box-placeholder{
+  @include oli-text-smaller;
+  text-align: center;
+  line-height: 4.8em;
+  color: oli-gray(1);
+  width: 100%;
+  display: inline-block;
+  pointer-events: none;
+
+}
+
+.drop-box-not-empty{
+  border: 1px solid oli-blue(.7);
 }
 
 .drag-active{
@@ -36,5 +55,6 @@
 
 .drop-box-container{
   margin:auto;
-  width: 480px;
+  width: 445px;
+
 }

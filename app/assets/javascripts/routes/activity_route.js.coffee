@@ -3,7 +3,7 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
     controller.set('content', model);
     controller.send('trans', model)
     controller.notifyPropertyChange('hash')
-    controller.set('template', @template)
+    controller.set('template', @template())
     @get('childControllers')[@template()].setup()
 
   model: (params) -> 
@@ -23,6 +23,9 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
     "share_1" : @controllerFor('share1')
     "video" : @controllerFor('video')
     "empty" : @controllerFor('activities')
+    "thread_rating" : @controllerFor('threadRatings')
+    "describe_a_10" : @controllerFor('describeA10')
+    "calendar" : @controllerFor('takeAction')
     ).property()
 
   template: ->

@@ -12,6 +12,21 @@ Oli.Componentable = Ember.Mixin.create
           comp = cs.filterProperty("context", context_type)
           resolve(comp[0])
 
+  componentArray: (contextTypeArray, context)->
+    if context
+      self = context.get('components') 
+    else self = @get("controllers.activities.components")
+    return DS.PromiseObject.create promise: 
+      new Em.RSVP.Promise (resolve, reject) =>
+        self.then (cs)->
+          comp = cs.filter((item, index) ->
+            for context in contextTypeArray
+              if item.get('context') == context
+                return true
+            )
+
+          resolve(comp[0])
+
   last_entry: (context_type)->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>

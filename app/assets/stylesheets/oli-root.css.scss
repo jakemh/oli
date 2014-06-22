@@ -90,10 +90,14 @@ $levels-height: 45px;
   }
 }
 
-.component-title{
+@mixin oli-bold{
   font-family: pn-bold;
-  font-size: 1.15em;
   color: rgba(0,0,0,.9) !important;
+}
+
+.component-title{
+  @include oli-bold;
+  font-size: 1.15em;
 }
 
 .oli-semibold{

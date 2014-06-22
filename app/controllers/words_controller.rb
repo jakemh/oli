@@ -1,13 +1,14 @@
 class WordsController < ApplicationController
 
   def list
-    render :json => Word.includes([:selections]).find(params[:ids])
+    # render :json => Word.includes([:selections]).find(params[:ids])
+    render :json => Word.find_for_user(params[:ids], current_user)
   end
 
   def update
     w = Word.find(params[:id])
-    permit = params[:word].permit(:word, :selected, :boxx)
-    w.update_for_user(current_user, permit[:selected], :box => permit[:boxx])
+    permit = params[:word].permit(:word, :selected, :box)
+    w.update_for_user(current_user, permit[:selected], :box => permit[:box])
     # Word.find(params[:id]).update_attributes(params[:word].permit(:word, :selected))
     render :json => nil
   end

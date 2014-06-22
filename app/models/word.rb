@@ -1,7 +1,7 @@
 class Word < ActiveRecord::Base
   # has_many :component
   belongs_to :word_selection
-  has_many :selections
+  has_many :selections, dependent: :destroy
   belongs_to :user
   belongs_to :box
   validates :word, :uniqueness => true
@@ -10,12 +10,12 @@ class Word < ActiveRecord::Base
     Word.where("user_id = ? OR all_users = ?", current_user.id, true)
   end
 
-  def self.all_for_user_and_component(current_user, component)
-    self.all_for_user(current_user).where(:word_selection => component)
+  def self.find_for_user(ids, current_user)
+    Word.where(:id => ids).where("user_id = ? OR all_users = ?", current_user.id, true)
   end
 
-  def boxx
-    self.box
+  def self.all_for_user_and_component(current_user, component)
+    self.all_for_user(current_user).where(:word_selection => component)
   end
 
   def update_for_user(current_user, selected, options = {})

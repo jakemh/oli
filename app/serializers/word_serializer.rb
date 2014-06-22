@@ -5,7 +5,7 @@ class WordSerializer < ActiveModel::Serializer
     object.selected(current_user)
   end
 
-  has_one :boxx, embed: :id, key: :boxx
+  has_one :box, embed: :id, key: :box
   
   # has_many :selections, embed: :ids,  key: :selections
 end

@@ -1,7 +1,8 @@
-Oli.SectionsRoute = Ember.Route.extend({
+Oli.SectionsRoute = Ember.Route.extend
   setupController: (controller, model) ->
     controller.set('content', model);
-  
+    
+
   actions:
     willTransition: (transition)-> 
       # @controller.get('sectionDone').then (done)=>
@@ -20,28 +21,31 @@ Oli.SectionsRoute = Ember.Route.extend({
         #     # transition.abort()
             # window.history.back()
 
-  afterModel: (m, transition) -> 
+  afterModel: (model, transition) -> 
     console.log("TRANS: " + transition)
-
     if (transition.targetName == "sections.index") 
-      @transitionTo("activities", "Intro")
-    # else
-      # @controller.get('sectionDone').then (done) =>
-      #   @controller.notifyPropertyChange('hash')
-      #   @controller.get('hash').then (h) =>
-      #     paramIndex = h[transition.params.sections.section]
-      #     currentIndex = h[@controller.content.get('name')]
+      if model.get('name') == "Level 1"
+        @transitionTo("activities", "Intro")
+      else if model.get('name') == "Level 2"
+        @transitionTo("activities", "Rate Thread 1")
+      else if model.get('name') == "Level 3"
+        @transitionTo("activities", "Take Action!")
 
   model: (params) -> 
     topic = @modelFor('topics')
+
     topic.get('sections').then (sections) ->
       for s in sections.toArray()
           return s if s.get('name') == params.section
-    });
 
+          
 
 Oli.SectionsIndexRoute = Ember.Route.extend({
-  afterModel: (m, transition) -> 
-    if (transition.targetName == "sections.index") 
-      @transitionTo("activities", "Intro")
+ afterModel: (model, transition) -> 
+   console.log("TRANS: " + transition)
+   if (transition.targetName == "sections.index") 
+     if model.get('name') == "Level 1"
+       @transitionTo("activities", "Intro")
+     else if model.get('name') == "Level 2"
+       @transitionTo("activities", "Rate Thread 1")
 });

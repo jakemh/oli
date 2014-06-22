@@ -1,4 +1,4 @@
-Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable,
+Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable, Ember.Evented, 
   needs: "activities"
 
   setup: ->
@@ -13,5 +13,3 @@ Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable,
   activityController: (->
     @get('controllers.activities')
     ).property()
-
-
