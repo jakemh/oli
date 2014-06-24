@@ -10,6 +10,10 @@ class Word < ActiveRecord::Base
     Word.where("user_id = ? OR all_users = ?", current_user.id, true)
   end
 
+  def self.all_for_box(current_user, box)
+    self.all_for_user(current_user).where(:box => box)
+  end
+
   def self.find_for_user(ids, current_user)
     Word.where(:id => ids).where("user_id = ? OR all_users = ?", current_user.id, true)
   end
