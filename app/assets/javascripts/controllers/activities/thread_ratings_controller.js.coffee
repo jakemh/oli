@@ -1,6 +1,7 @@
 Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
   
   setup: ->
+    @get('activityController').on('threadUpdater', @, @threadUpdater)
     @threadUpdater()
     @notifyPropertyChange("box") 
     @notifyPropertyChange("buttons") #force buttons to reload
