@@ -1,4 +1,5 @@
 Oli.Activity = DS.Model.extend({
+  display: DS.attr('boolean')
   name: DS.attr('string')
   tip: DS.attr('string')
   section: DS.belongsTo('section', async: true)

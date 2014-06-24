@@ -7,7 +7,7 @@
   </div>
 
   <div class="thin-bar-wrapper" id="thin-bar">
-    {{#each item in controller.activities}}{{#view Oli.NotchView titleBinding="item"}}
+    {{#each item in controller.activities.content}}{{#view Oli.NotchView titleBinding="item"}}
     <div class="notch"></div>
     {{/view}}{{/each}}
     {{#view Oli.TriangleView id="triangle"}}{{/view}}

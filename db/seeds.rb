@@ -19,6 +19,7 @@ CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row
   course = Course.where(:name => row["course"]).first
   topic = Topic.where(:name => row["topic"], :course => course).first
   section = Section.where(:name => row["section"], :topic => topic).first
+  display = row["display"].to_i == 1 ? true : false 
   components = []
   dependencies = []
   component_constant_string = row["c_type"]
@@ -57,7 +58,8 @@ CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row
     :template => row["template"],
     :name => row["title"],
     :description => row["main_text"],
-    :tip => row["tip"]
+    :tip => row["tip"],
+    :display => display
     )
 
   a.components << components

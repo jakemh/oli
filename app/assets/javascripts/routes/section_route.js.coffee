@@ -5,6 +5,7 @@ Oli.SectionsRoute = Ember.Route.extend
 
   actions:
     willTransition: (transition)-> 
+      
       # @controller.get('sectionDone').then (done)=>
       #   @controller.notifyPropertyChange('hash')
       #   @controller.get('hash').then (h) =>
