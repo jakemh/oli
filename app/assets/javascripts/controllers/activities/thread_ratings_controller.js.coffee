@@ -12,12 +12,12 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
     @notifyPropertyChange("thread")
 
   thread: (->
-    console.log ("THREAD0")
+    console.log("THREAD0")
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
         @get('activity').get('box_dependencies').then (box)->
           box.get('firstObject').get('words').then (words)->
-            console.log ("THREAD: " + words.filterProperty('selected', true))
+            console.log("THREAD: " + words.filterProperty('selected', true))
             filteredWords = words.filterProperty('selected', true)
             resolve filteredWords
     ).property("boxUpdated")
@@ -26,7 +26,7 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
         @get('thread').then (t)->
-          console.log ("JOINED THREAD: " + JSON.stringify t)
+          console.log("JOINED THREAD: " + JSON.stringify t)
           mapped = t.map((item, index) ->
             item.get('word')
             )
