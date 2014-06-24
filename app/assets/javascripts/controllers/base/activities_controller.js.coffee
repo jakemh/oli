@@ -51,13 +51,13 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
     ).property('name')
   
 
-  activities: (->
-    return DS.PromiseObject.create promise: 
-      new Em.RSVP.Promise (resolve, reject) =>
-        @get('controllers.sections').get('activities').then (activities)->
-          resolve activities.filterProperty("display", true)
-          # resolve activities
-    ).property('name')
+  # activities: (->
+  #   return DS.PromiseObject.create promise: 
+  #     new Em.RSVP.Promise (resolve, reject) =>
+  #       @get('controllers.sections').get('activities').then (activities)->
+  #         resolve activities.filterProperty("display", true)
+  #         # resolve activities
+  #   ).property('name')
   
   nextAct: (act) ->
     @hash().then (h)=>

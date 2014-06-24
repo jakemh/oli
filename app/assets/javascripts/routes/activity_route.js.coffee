@@ -46,8 +46,8 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
         @set('controller.video', null)
 
     didTransition: -> 
-      if @modelFor("activities").get('display') == false
-        @get('controller').hash()
+      # if @modelFor("activities").get('display') == false
+      #   @get('controller').hash()
       # bind submit form action to button for child controllers
       childController = @get('childControllers')[@get('controller.content.template')]
       @get('controller').on("buttonPressed", childController, childController.submitForm)
