@@ -75,6 +75,8 @@ Oli.Droppable = Ember.Mixin.create(
     view.get('originalView').notifyPropertyChange("hasWord")
     oldList.removeAt(deleteIndex)
     newList.pushObject(view.value)
+
+
     if typeof oldList.save == 'function'
       oldList.save()
     # alert typeof newList.save

@@ -23,6 +23,7 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     @get('activityController').boxUpdated()
     @notifyPropertyChange('listsExceptLast')
     @notifyPropertyChange('lastList')
+
     ).observes("lists.@each")
 
   setLists: ->
@@ -34,7 +35,7 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
             do (box, i)=>
               # alert @get('lists')[i] + "  :  " + box.get('words')
               box.get('words').then (b)=>
-                @get('lists')[i] = b.filterProperty('selected', true)
+                @get('lists')[i] = b
                 @notifyPropertyChange('lists.@each')
           
 

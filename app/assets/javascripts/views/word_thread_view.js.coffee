@@ -12,12 +12,13 @@ Oli.DropTarget = Ember.View.extend Oli.Droppable,
   classNameBindings: ["hasWord:drop-box-not-empty"]
 
   hasWord: (->
-    if @get('controller.lists')[@get('index')] and @get('controller.lists')[@get('index')].get('length') > 0
-      return true
-    else 
-      console.log "FALSE"
-
-      false
+    list =  @get('controller.lists')[@get('index')]
+    if list
+      filteredList = list.filterProperty('selected', true)
+      if filteredList.get('length') > 0
+        return true
+      else 
+        false
     ).property("controller.lists.@each")
 
   makeActive: ->
