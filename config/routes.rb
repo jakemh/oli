@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get '/activities/:id', :to => 'activity#list'
   get '/courses/:id', :to => 'courses#get'
   get '/components/', :to => 'components#list'
-  get '/components/:id', :to => 'components#list'
+  get '/components/:id', :to => 'components#show'
   put '/components/:id', :to => 'components#update'
   get '/words/', :to => 'words#list'
 

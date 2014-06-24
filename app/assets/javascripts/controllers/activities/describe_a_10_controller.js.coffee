@@ -12,26 +12,6 @@ Oli.DescribeA10Controller = Oli.ActivityBaseController.extend
   threadUpdater: ->
     @notifyPropertyChange("thread")
 
-  thread: (->
-    return DS.PromiseObject.create promise: 
-      new Em.RSVP.Promise (resolve, reject) =>
-        @get('activity').get('box_dependencies').then (box)->
-          box.get('firstObject').get('words').then (words)->
-            resolve words.toArray()
-    ).property("boxUpdated")
-
-  joinedThread: (->
-    return DS.PromiseObject.create promise: 
-      new Em.RSVP.Promise (resolve, reject) =>
-        @get('thread').then (t)->
-          mapped = t.map((item, index) ->
-            item.get('word')
-            )
-          resolve mapped.join(", ")
-
-  ).property("thread")
-
-
   input1: null
   input2: null
 
