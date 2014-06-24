@@ -1,10 +1,11 @@
 Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
+  
   setup: ->
     @threadUpdater()
-    @notifyPropertyChange("box")
+    @notifyPropertyChange("box") 
+    @notifyPropertyChange("buttons") #force buttons to reload
     @notifyPropertyChange("isSelected")
     @notifyPropertyChange("isSelected2")
-  
 
   threadUpdater: ->
     @notifyPropertyChange("thread")
@@ -14,7 +15,7 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
       new Em.RSVP.Promise (resolve, reject) =>
         @get('activity').get('box_dependencies').then (box)->
           box.get('firstObject').get('words').then (words)->
-            resolve words.toArray()
+            resolve words.filterProperty('selected', true)
     ).property("boxUpdated")
 
   joinedThread: (->
@@ -41,6 +42,7 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
         @get('box').then (box)->
           box.get('ratings').then (ratings)->
             ratings = ratings.filterProperty("context", context)
+
             if ratings.length > 0
               rating = ratings[ratings.length - 1]
               resolve rating.get('value')
@@ -48,21 +50,14 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
 
 
   isSelected: (->
-    @ratingBase("current")
+    # alert "TEST"
+    @ratingBase("thread_rating_1")
     ).property("")
 
   isSelected2: (->
-    @ratingBase("future")
+    @ratingBase("thread_rating_2")
     ).property("")
-
-  ratingChanged1: (->
-    @ratingChangedBase("current", @get('isSelected.content'))
-    ).observes('isSelected.content')
-
-  ratingChanged2: (->
-    @ratingChangedBase("future", @get('isSelected2.content'))
-    ).observes('isSelected2.content')
-
+  
   ratingChangedBase: (context, value)->
     @get('box').then (box)=>
       rating = @store.createRecord('rating', 
@@ -75,13 +70,14 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
         ratings.pushObject(rating)
         rating.save().then (newRating)->
 
+  buttonClicked: (view)->
+    @ratingChangedBase(view.get('name'), view.get('value'))
+  
   buttons: (->
     a = new Array(10)
     for index, i in a
       a[i] = i+1
     ).property()
-
- 
 
   component1: (->
     @component("thread_rating_1")

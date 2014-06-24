@@ -23,8 +23,9 @@ class Word < ActiveRecord::Base
     box = options[:box]
 
     if box
-      self.update_attributes(:box_id => box)
+      self.box_id = box
     end
+
 
     selection = self.selections.where(:user => current_user).first
     if selection
@@ -32,6 +33,8 @@ class Word < ActiveRecord::Base
     else 
       self.selections << Selection.new(:user => current_user, :status => selected)
     end
+
+    self.save
   end
 
   def self.create_for_user(attributes)

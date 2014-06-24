@@ -39,10 +39,7 @@
 }
 
 .email-field{
-  @include oli-box;
-  padding-top: 5px;
-  width: 50%;
-  padding-bottom: 5px;
+  @include oli-form-field;
 }
 
 .subject-field{

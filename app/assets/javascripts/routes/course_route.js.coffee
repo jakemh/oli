@@ -32,7 +32,13 @@ Oli.CourseRoute = Ember.Route.extend({
       controller: activitiesController 
       })
 
+    
+    @render('status', {
+      outlet: 'status', 
+      into: 'activity',
 
+      controller: activitiesController 
+      })
    
 
     @render('tip', {

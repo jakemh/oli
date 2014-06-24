@@ -95,6 +95,17 @@ $levels-height: 45px;
   color: rgba(0,0,0,.9) !important;
 }
 
+@mixin oli-form-field{
+  @include oli-box;
+  padding-top: 5px;
+  width: 50%;
+  padding-bottom: 5px;
+}
+
+.oli-form-field{
+  @include oli-form-field;
+}
+
 .component-title{
   @include oli-bold;
   font-size: 1.15em;
@@ -102,6 +113,11 @@ $levels-height: 45px;
 
 .oli-box{
   @include oli-box;
+}
+
+.oli-box-large{
+  @include oli-box;
+  height: 100px;
 }
 
 .oli-semibold{
@@ -117,3 +133,5 @@ $levels-height: 45px;
 .oli-text-smaller{
   @include oli-text-smaller;
 }
+
+

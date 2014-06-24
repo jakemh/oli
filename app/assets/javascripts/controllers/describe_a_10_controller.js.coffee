@@ -17,7 +17,7 @@ Oli.DescribeA10Controller = Oli.ActivityBaseController.extend
       new Em.RSVP.Promise (resolve, reject) =>
         @get('activity').get('box_dependencies').then (box)->
           box.get('firstObject').get('words').then (words)->
-            resolve words.toArray()
+            resolve words.filterProperty('selected', true)
     ).property("boxUpdated")
 
   joinedThread: (->

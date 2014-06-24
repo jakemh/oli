@@ -28,13 +28,14 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
   setLists: ->
     # @get('allWords').then (all)=>
     @component("word_thread").then (c)=>
-      c.get('boxes').then (bxs)=>
-        for box, i in bxs.toArray()
-          do (box, i)=>
-            # alert @get('lists')[i] + "  :  " + box.get('words')
-            box.get('words').then (b)=>
-              @get('lists')[i] = b
-              @notifyPropertyChange('lists.@each')
+      if c
+        c.get('boxes').then (bxs)=>
+          for box, i in bxs.toArray()
+            do (box, i)=>
+              # alert @get('lists')[i] + "  :  " + box.get('words')
+              box.get('words').then (b)=>
+                @get('lists')[i] = b.filterProperty('selected', true)
+                @notifyPropertyChange('lists.@each')
           
 
 

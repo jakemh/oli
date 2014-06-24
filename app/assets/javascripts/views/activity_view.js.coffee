@@ -15,13 +15,6 @@ Oli.ActivityView = Em.View.extend({
   #   @$().fadeTo 500, 0, done
   #   return
 });
-
-  
-Oli.EmptyView = Em.View.extend({
-  didInsertElement: ->
-    @get('controller').set("status", "")
-})
-
   
 Oli.StatusView = Ember.View.extend({
   statusBinding: "controller.status"
@@ -32,23 +25,3 @@ Oli.StatusView = Ember.View.extend({
   ).observes('templateName')
 
 })
-
-Oli.RadioButton = Ember.Component.extend(
-  tagName: "input"
-  type: "radio"
-  attributeBindings: [
-    "name"
-    "type"
-    "value"
-    "checked:checked"
-  ]
-
-  click: ->
-    @set "selection", @$().val()
-    return
-
-  checked: (->
-    @get("value") is @get("selection")
-  ).property("selection")
-)
-Em.Handlebars.helper "radio-button", Oli.RadioButton

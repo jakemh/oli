@@ -1,4 +1,4 @@
-Oli.NewWordController = Ember.ObjectController.extend(Ember.Evented,{
+Oli.NewWordController = Ember.ObjectController.extend Ember.Evented,
   needs: ['activities']
   currentWord: null
 
@@ -7,4 +7,3 @@ Oli.NewWordController = Ember.ObjectController.extend(Ember.Evented,{
 
   currentWordChanged: (->
   ).property('currentWord')
-})
