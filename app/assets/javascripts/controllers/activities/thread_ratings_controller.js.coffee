@@ -1,4 +1,4 @@
-Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
+Oli.ThreadRatingsController = Oli.ActivityBaseController.extend Oli.Threadable,
   
   setup: ->
     @get('activityController').on('threadUpdater', @, @threadUpdater)
@@ -10,29 +10,6 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
 
   threadUpdater: ->
     @notifyPropertyChange("thread")
-
-  thread: (->
-    console.log("THREAD0")
-    return DS.PromiseObject.create promise: 
-      new Em.RSVP.Promise (resolve, reject) =>
-        @get('activity').get('box_dependencies').then (box)->
-          box.get('firstObject').get('words').then (words)->
-            console.log("THREAD: " + words.filterProperty('selected', true))
-            filteredWords = words.filterProperty('selected', true)
-            resolve filteredWords
-    ).property("boxUpdated")
-
-  joinedThread: (->
-    return DS.PromiseObject.create promise: 
-      new Em.RSVP.Promise (resolve, reject) =>
-        @get('thread').then (t)->
-          console.log("JOINED THREAD: " + JSON.stringify t)
-          mapped = t.map((item, index) ->
-            item.get('word')
-            )
-          resolve mapped.join(", ")
-
-  ).property("thread")
 
   box: (->
     return DS.PromiseObject.create promise: 
