@@ -1,4 +1,0 @@
-Oli.Selection = DS.Model.extend({
-  status: DS.attr('boolean')
-  word: DS.belongsTo('word', {async: true})
-});
