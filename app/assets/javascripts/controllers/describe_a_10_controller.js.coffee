@@ -26,8 +26,8 @@ Oli.DescribeA10Controller = Oli.ActivityBaseController.extend
   joinedThread: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
-        @get('thread2').then (t)->
-          console.log("JOINED THREAD: " + JSON.stringify t)
+        @get('thread').then (t)->
+          console.log("JOINED THREAD2: " + JSON.stringify t)
           mapped = t.map((item, index) ->
             item.get('word')
             )
