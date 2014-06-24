@@ -12,6 +12,7 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend
     @notifyPropertyChange("thread")
 
   thread: (->
+    console.log ("THREAD0")
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
         @get('activity').get('box_dependencies').then (box)->
