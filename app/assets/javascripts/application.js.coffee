@@ -15,7 +15,6 @@
 #= require underscore
 #= require bootstrap
 #= require bootstrap-datepicker
-#= require add-this-event
 #= require browser_selector
 #= require moment
 #= require spin

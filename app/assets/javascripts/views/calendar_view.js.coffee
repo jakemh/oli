@@ -1,5 +1,6 @@
 Oli.CalendarView = Em.View.extend
   didInsertElement: -> 
+    
     $('#date-picker-field').datepicker({
       orientation: "top left"
       autoclose: true

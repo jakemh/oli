@@ -37,8 +37,6 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
               box.get('words').then (b)=>
                 @get('lists')[i] = b
                 @notifyPropertyChange('lists.@each')
-          
-
 
   listsExceptLast: (->
     if @get('lists')
