@@ -1,1 +1,34 @@
-TAKE ACTION!
+{{#view Oli.CalendarView}}
+  {{partial "activities/partials/description"}}
+
+  <div class="oli-text rating-section-container">
+  {{controller.component1.content.content}}
+  {{input class="oli-form-field"
+    value=controller.input1
+    placeholder="Enter text"
+  }}
+  </div>
+
+  <div class="oli-text rating-section-container">
+  {{controller.component2.content.content}}
+  {{input id="date-picker-field" class="oli-form-field"
+    placeholder= "MM/DD/YYYY"
+    valueBinding=controller.date}}
+  </div>
+
+  <div class="middle-button-container">
+    <button {{bind-attr class=":middle-button buttonDisabled:oli-inactive" disabled=buttonDisabled}} {{action "addAction" this on="click"}}>
+      <span class="ladda-label"></span>
+      Add Action
+    {{!-- {{controller.buttonText}} --}}
+    </button>
+  </div>
+
+  <div class="actions-box">
+    <ul class="actions-list">
+      {{#each item in controller.actionsList.content}}
+        <li>{{item}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/view}}

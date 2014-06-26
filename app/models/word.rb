@@ -1,17 +1,20 @@
 class Word < ActiveRecord::Base
   # has_many :component
+  has_many :boxables
   belongs_to :word_selection
   has_many :selections, dependent: :destroy
   belongs_to :user
-  belongs_to :box
+  has_many :boxes, through: :boxable
   validates :word, :uniqueness => true
 
   def self.all_for_user(current_user)
-    Word.where("user_id = ? OR all_users = ?", current_user.id, true)
+    Word.where("words.user_id = ? OR all_users = ?", current_user.id, true)
   end
 
   def self.all_for_box(current_user, box)
-    self.all_for_user(current_user).where(:box => box)
+    # self.all_for_user(current_user).where(:box => box)
+    #.joins(:selections).where('selections.status' => true)
+    self.all_for_user(current_user).joins(:boxables).where('boxables.box_id' => box.id, 'boxables.user_id' => current_user.id)
   end
 
   def self.find_for_user(ids, current_user)
@@ -27,7 +30,21 @@ class Word < ActiveRecord::Base
     box = options[:box]
 
     if box
-      self.box_id = box
+      # self.box_id = box
+      boxable = Boxable.where(:user => current_user, :word => self).last
+      if boxable
+        boxable.update_attributes(:box_id => box)
+      else Boxable.create(:user => current_user, :box_id => box, :word => self)
+      end
+
+
+    end
+
+    if selected == false
+      boxable = Boxable.where(:user => current_user, :word => self).last
+      if boxable
+        boxable.destroy
+      end
     end
 
 

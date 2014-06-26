@@ -5,5 +5,7 @@ Oli.Component = DS.Model.extend
   activity: DS.belongsTo('activity', async: true)
   userContent: DS.attr('string')
   entries: DS.hasMany('entry', async: true)
+  userCalendarEntries: DS.hasMany('userCalendarEntry', async: true)
+
   words: DS.hasMany('word', async: true)
   boxes: DS.hasMany('box', async: true)

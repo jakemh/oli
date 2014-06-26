@@ -1,22 +1,23 @@
-{{#view Oli.QuestionAnswerView}}
+{{partial "activities/partials/description"}}
+{{partial "activities/partials/thread"}}
 
-  <div class="description-box oli-text">
-    {{controller.controllers.activities.description}}
-  </div>
+<div class="oli-text rating-section-container">
 
-  {{partial "activities/partials/thread"}}
+    {{controller.component1.content.content}}
+  {{input class="oli-form-field"
+  value=controller.input1}}
+</div>
 
-  <div class="oli-text rating-section-container">
+<div class="oli-text rating-section-container">
 
-      {{controller.component1.content.content}}
-    {{input class="oli-form-field"
-    value=controller.input1}}
-  </div>
+    {{controller.component2.content.content}}
+  {{input class="oli-form-field"
+  value=controller.input2}}
+</div>
 
-  <div class="oli-text rating-section-container">
+<div class="oli-text rating-section-container">
 
-      {{controller.component2.content.content}}
-    {{textarea class="oli-box-large"
-    value=controller.input2}}
-  </div>
-{{/view}}
+    {{controller.component2.content.content}}
+  {{textarea class="oli-box-large"
+  value=controller.input2}}
+</div>

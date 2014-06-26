@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624025138) do
+ActiveRecord::Schema.define(version: 20140626003521) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20140624025138) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "box_id"
+  end
+
+  create_table "boxables", force: true do |t|
+    t.string   "user_id"
+    t.string   "integer"
+    t.integer  "box_id"
+    t.integer  "word_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "boxes", force: true do |t|
@@ -128,6 +137,18 @@ ActiveRecord::Schema.define(version: 20140624025138) do
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "course_id"
+  end
+
+  create_table "user_calendar_entries", force: true do |t|
+    t.date     "date"
+    t.text     "entry"
+    t.boolean  "active"
+    t.boolean  "added_to_calendar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "context"
+    t.integer  "component_id"
+    t.integer  "user_id"
   end
 
   create_table "user_entries", force: true do |t|

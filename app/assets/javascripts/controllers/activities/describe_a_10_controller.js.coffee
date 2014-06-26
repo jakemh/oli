@@ -1,4 +1,4 @@
-Oli.DescribeA10Controller = Oli.ActivityBaseController.extend
+Oli.DescribeA10Controller = Oli.ActivityBaseController.extend Oli.Threadable,
   setup: ->
     @get('activityController').on('threadUpdater', @, @threadUpdater)
     @threadUpdater()

@@ -48,6 +48,11 @@ Rails.application.routes.draw do
   get 'ratings', :to => 'ratings#list'
   post 'ratings', :to => 'ratings#new'
 
+  get '/userCalendarEntries/:id', :to => 'user_calendar_entries#show'
+  get '/userCalendarEntries', :to => 'user_calendar_entries#list'
+  post '/userCalendarEntries', :to => 'user_calendar_entries#create'
+
+  post '/userCalendarEntries', :to => 'user_calendar_entries#create'
   delete '/words/:id', :to => 'words#destroy'
 
   put '/statuses/:id', :to => 'statuses#update'

@@ -25,6 +25,10 @@ $levels-height: 45px;
   @return rgba(38, 109, 191, $a); 
 }
 
+@function oli-dark-gray($a){
+  @return rgba(180, 180, 179, $a); 
+}
+
 
 @mixin oli-font{
   font-family: pn-light;
@@ -43,6 +47,7 @@ $levels-height: 45px;
 }
 @mixin scrollable-box{
   overflow: scroll;
+  overflow-x:hidden;
   @include oli-font;
   @include oli-box;
 
@@ -60,7 +65,8 @@ $levels-height: 45px;
 
 @mixin oli-button{
   border: none;  
-  
+  height: 30px;
+  width: 120px;
   border-radius: 20px;
   margin-top: 10px;
   background-color: oli-blue(1);
@@ -115,9 +121,19 @@ $levels-height: 45px;
   @include oli-box;
 }
 
+.oli-scrollable{
+  @include scrollable-box;
+}
+
 .oli-box-large{
   @include oli-box;
   height: 100px;
+}
+
+.oli-inactive{
+  background-color: oli-dark-gray(1);
+  box-shadow: 0 1px 3px oli-dark-gray(.3); 
+
 }
 
 .oli-semibold{

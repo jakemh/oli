@@ -51,6 +51,11 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
       # @get('lists').get('lastObject')
     ).property('lists.@each')
 
+  addWordToBox: (word, box, lastBox)->
+    lastBox.get('words').then (wx)=>
+        wx.pushObject(word)
+        @setLists()
+
   dependentWords: ->
     @component("word_thread").then (c)=>
       c.get('boxes').then (bs)=>
@@ -63,9 +68,11 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
                   do (word) =>
                     box = word.get('box')
                     if box == null
-                      lastBox.get('words').then (wx)=>
-                        wx.pushObject(word)
-                        @setLists()
+                      @addWordToBox(word, box, lastBox)
+                    else 
+                      word.get('box').then (box)=>
+                        if box == null
+                          @addWordToBox(word, box, lastBox)
 
   submitForm: (callback) -> 
 

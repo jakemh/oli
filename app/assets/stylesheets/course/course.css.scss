@@ -2,9 +2,6 @@
 
 .smaller-button{
   @include oli-button;
-
-  height: 30px;
-  width: 100px;
   float: right;
 }
 

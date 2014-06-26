@@ -105,7 +105,6 @@ CSV.foreach(file, options) do |row|
   end
 end
 
-User.find([1,2,3]).each{|u| u.courses << Course.first}
 
 # admin = Role.create(:name => "admin")
 # super_admin = Role.create(:name => "super_admin")
@@ -135,4 +134,5 @@ User.find([1,2,3]).each{|u| u.courses << Course.first}
 # bob.courses << Course.first
 # jake.courses << Course.first
 
+User.find([1,2,3]).each{|u| u.courses << Course.first}
 

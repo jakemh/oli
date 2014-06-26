@@ -14,11 +14,13 @@
 #= require jquery_ujs
 #= require underscore
 #= require bootstrap
+#= require bootstrap-datepicker
+#= require add-this-event
 #= require browser_selector
+#= require moment
 #= require spin
 #= require ladda.min
 #= require oli-content
-#= require jquery
 #= require handlebars
 #= require ember
 #= require ember-data
