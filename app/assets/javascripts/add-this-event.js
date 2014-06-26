@@ -2,6 +2,7 @@
     AddThisEvent v1.5.7 <http://addthisevent.com>
     Copyright (c) 2012-2014 Michael Nilsson
 */
+
 function $d(d) {
     return document.getElementById(d)
 }
@@ -281,23 +282,12 @@ var addthisevent = function () {
                 }
             }
         },
+
+            
+
         applycss: function (a) {
             var b;
-            b = '.addthisevent-drop {}';
-            b += '.addthisevent-selected {background-color:#f7f7f7;}';
-            if (a) {
-                b += '.addthisevent_dropdown {width:200px;position:absolute;z-index:250;padding:0px 0px 0px 0px;background:#fff;text-align:left;display:none;margin-top:200px;margin-left:-1px;border-top:1px solid #c8c8c8;border-right:1px solid #bebebe;border-bottom:1px solid #a8a8a8;border-left:1px solid #bebebe;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:1px 3px 6px rgba(0,0,0,0.15);-moz-box-shadow:1px 3px 6px rgba(0,0,0,0.15);box-shadow:1px 3px 6px rgba(0,0,0,0.15);}'
-            } else {
-                b += '.addthisevent_dropdown {width:200px;position:absolute;z-index:250;padding:6px 0px 0px 0px;background:#fff;text-align:left;display:none;margin-top:200px;margin-left:-1px;border-top:1px solid #c8c8c8;border-right:1px solid #bebebe;border-bottom:1px solid #a8a8a8;border-left:1px solid #bebebe;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:1px 3px 6px rgba(0,0,0,0.15);-moz-box-shadow:1px 3px 6px rgba(0,0,0,0.15);box-shadow:1px 3px 6px rgba(0,0,0,0.15);}'
-            }
-            b += '.addthisevent_dropdown span {width:175px;display:block;cursor:pointer;line-height:110%;background:#fff;text-decoration:none;font-size:12px;color:#6d84b4;padding:8px 10px 9px 15px;}';
-            b += '.addthisevent_dropdown span:hover {background:#f4f4f4;color:#6d84b4;text-decoration:none;font-size:12px;}';
-            b += '.addthisevent span {display:none!important;}';
-            b += '.addthisevent-drop ._url,.addthisevent-drop ._start,.addthisevent-drop ._end,.addthisevent-drop ._zonecode,.addthisevent-drop ._summary,.addthisevent-drop ._description,.addthisevent-drop ._location,.addthisevent-drop ._organizer,.addthisevent-drop ._organizer_email,.addthisevent-drop ._facebook_event,.addthisevent-drop ._all_day_event {display:none!important;}';
-            b += '.addthisevent_dropdown .copyx {width:200px;height:21px;display:block;position:relative;cursor:default;}';
-            b += '.addthisevent_dropdown .brx {width:180px;height:1px;overflow:hidden;background:#e0e0e0;position:absolute;z-index:100;left:10px;top:9px;}';
-            b += '.addthisevent_dropdown .frs {position:absolute;top:5px;cursor:pointer;right:10px;padding-left:10px;font-style:normal;font-weight:normal;text-align:right;z-index:101;line-height:110%;background:#fff;text-decoration:none;font-size:9px;color:#cacaca;}';
-            b += '.addthisevent_dropdown .frs:hover {color:#6d84b4;}';
+
             var c = document.createElement("style");
             c.type = "text/css";
             if (c.styleSheet) {
@@ -657,3 +647,5 @@ if (window.addEventListener) {
 } if (!_d_rd) {
     setTimeout("addthisevent.trycss();addthisevent.generate();", 20)
 }
+
+
