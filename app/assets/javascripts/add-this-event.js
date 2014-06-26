@@ -1,6 +1,6 @@
 /* 
-  AddThisEvent v1.5.7 <http://addthisevent.com>
-  Copyright (c) 2012-2014 Michael Nilsson
+    AddThisEvent v1.5.7 <http://addthisevent.com>
+    Copyright (c) 2012-2014 Michael Nilsson
 */
 function $d(d) {
     return document.getElementById(d)
@@ -26,7 +26,7 @@ var _ate_show_facebook = true;
 var _d_rd = false;
 var addthisevent = function () {
     var C = false,
-        dropzind = 999999,
+        dropzind = 750,
         dropzcx = 1,
         olddrop = '',
         dropmousetim;
@@ -283,14 +283,12 @@ var addthisevent = function () {
         },
         applycss: function (a) {
             var b;
-            b = '.addthisevent-drop {display:inline-block;position:relative;font-family:arial;color:#333!important;background:#f4f4f4 url(' + _image_path + ') no-repeat 9px 50%;text-decoration:none!important;border:1px solid #d9d9d9;color:#555;font-weight:bold;font-size:14px;text-decoration:none;padding:9px 12px 8px 35px;-moz-border-radius:2px;-webkit-border-radius:2px;}';
-            b += '.addthisevent-drop:hover {border:1px solid #aab9d4;color:#555;font-weight:bold;font-size:14px;text-decoration:none!important;}';
-            b += '.addthisevent-drop:active {top:1px;}';
+            b = '.addthisevent-drop {}';
             b += '.addthisevent-selected {background-color:#f7f7f7;}';
             if (a) {
-                b += '.addthisevent_dropdown {width:200px;position:absolute;z-index:99999;padding:0px 0px 0px 0px;background:#fff;text-align:left;display:none;margin-top:-2px;margin-left:-1px;border-top:1px solid #c8c8c8;border-right:1px solid #bebebe;border-bottom:1px solid #a8a8a8;border-left:1px solid #bebebe;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:1px 3px 6px rgba(0,0,0,0.15);-moz-box-shadow:1px 3px 6px rgba(0,0,0,0.15);box-shadow:1px 3px 6px rgba(0,0,0,0.15);}'
+                b += '.addthisevent_dropdown {width:200px;position:absolute;z-index:250;padding:0px 0px 0px 0px;background:#fff;text-align:left;display:none;margin-top:200px;margin-left:-1px;border-top:1px solid #c8c8c8;border-right:1px solid #bebebe;border-bottom:1px solid #a8a8a8;border-left:1px solid #bebebe;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:1px 3px 6px rgba(0,0,0,0.15);-moz-box-shadow:1px 3px 6px rgba(0,0,0,0.15);box-shadow:1px 3px 6px rgba(0,0,0,0.15);}'
             } else {
-                b += '.addthisevent_dropdown {width:200px;position:absolute;z-index:99999;padding:6px 0px 0px 0px;background:#fff;text-align:left;display:none;margin-top:-2px;margin-left:-1px;border-top:1px solid #c8c8c8;border-right:1px solid #bebebe;border-bottom:1px solid #a8a8a8;border-left:1px solid #bebebe;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:1px 3px 6px rgba(0,0,0,0.15);-moz-box-shadow:1px 3px 6px rgba(0,0,0,0.15);box-shadow:1px 3px 6px rgba(0,0,0,0.15);}'
+                b += '.addthisevent_dropdown {width:200px;position:absolute;z-index:250;padding:6px 0px 0px 0px;background:#fff;text-align:left;display:none;margin-top:200px;margin-left:-1px;border-top:1px solid #c8c8c8;border-right:1px solid #bebebe;border-bottom:1px solid #a8a8a8;border-left:1px solid #bebebe;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-box-shadow:1px 3px 6px rgba(0,0,0,0.15);-moz-box-shadow:1px 3px 6px rgba(0,0,0,0.15);box-shadow:1px 3px 6px rgba(0,0,0,0.15);}'
             }
             b += '.addthisevent_dropdown span {width:175px;display:block;cursor:pointer;line-height:110%;background:#fff;text-decoration:none;font-size:12px;color:#6d84b4;padding:8px 10px 9px 15px;}';
             b += '.addthisevent_dropdown span:hover {background:#f4f4f4;color:#6d84b4;text-decoration:none;font-size:12px;}';

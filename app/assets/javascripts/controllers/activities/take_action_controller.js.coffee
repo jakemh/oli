@@ -14,14 +14,6 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
   actionDateChanged: (date)->
     @set('lastDate', date)
 
-  # actionField: ->
-  #   return DS.PromiseObject.create promise: 
-  #     new Em.RSVP.Promise (resolve, reject) =>
-  #       @entry("take_action_1", "take_action_1").then (entries)->
-  #         if entries.length > 0
-  #           e = entries[entries.length - 1].get('post')
-  #           resolve e
-  #         else resolve null
   calendarEntry: (componentContext, entryContext, activity)->
       return DS.PromiseObject.create promise: 
         new Em.RSVP.Promise (resolve, reject) =>
@@ -36,10 +28,11 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
         @calendarEntry("take_action_1", "take_action_1").then (list)=>
-          resolve list.reverse().map (item, index)->
+          list = list.reverse().map (item, index)->
             date = item.get('date')
             text = item.get('entry')
-            string = moment(date).format("MMMM Do, YYYY") + " - " + text
+            {date: moment(date).format("MMMM Do, YYYY"), description: text}
+          resolve list
     ).property("")
 
   commitCalendarEntry: (componentContext, entryContext, message, date, callback)->
@@ -66,8 +59,6 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
       return true
     else false
     ).property("date","input1")
-
-
 
   calendarField: ->
     return DS.PromiseObject.create promise: 

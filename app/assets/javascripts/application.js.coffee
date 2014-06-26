@@ -17,6 +17,7 @@
 #= require bootstrap-datepicker
 #= require browser_selector
 #= require moment
+#= require add-this-event
 #= require spin
 #= require ladda.min
 #= require oli-content

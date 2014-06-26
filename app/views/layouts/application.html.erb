@@ -17,7 +17,6 @@
   ga('send', 'pageview');
 
 </script>
-<script type="text/javascript" src="http://js.addthisevent.com/atemay.js"></script>
 
 <meta property="fb:app_id"          content="1452435865004111
 " /> 
@@ -31,7 +30,21 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
+ <script type="text/javascript">
+addthisevent.settings({
+  mouse   : false,
+  css     : false,
+  outlook   : {show:true, text:"Outlook Calendar"},
+  google    : {show:true, text:"Google Calendar"},
+  yahoo   : {show:true, text:"Yahoo Calendar"},
+  ical    : {show:true, text:"iCal Calendar"},
+  hotmail   : {show:true, text:"Hotmail Calendar"},
+  facebook  : {show:true, text:"Facebook Calendar"}
+});
+</script>
+  
 
+  
 </head>
 <body>
   <p class="notice-oli"><%= notice %></p>
