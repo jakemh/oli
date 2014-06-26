@@ -29,9 +29,10 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
       new Em.RSVP.Promise (resolve, reject) =>
         @calendarEntry("take_action_1", "take_action_1").then (list)=>
           list = list.reverse().map (item, index)->
-            date = item.get('date')
+            date = moment(item.get('date')).format("MMMM Do, YYYY")
             text = item.get('entry')
-            {date: moment(date).format("MMMM Do, YYYY"), description: text}
+            dateForExt = moment(item.get('date')).format("MM-DD-YYYY")
+            {date: date, dateForExt: dateForExt, description: text}
           resolve list
     ).property("")
 
