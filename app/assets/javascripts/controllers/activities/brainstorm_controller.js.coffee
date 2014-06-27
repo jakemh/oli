@@ -1,7 +1,7 @@
 Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable,
   setup: ->
     @setFields()
-
+    @set('threadsList', [])
     @get('activity.dependencies').then (actDs)=>
       @boxesForActivity(actDs.get('firstObject'), 'word_thread').then (boxes)=>
         for box in boxes.toArray()
