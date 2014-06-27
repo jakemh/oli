@@ -1,6 +1,9 @@
 {{partial "activities/partials/description"}}
-
-
+<div class="oli-text-smaller brainstorm-threads-container">
+  {{#each thread in controller.threadsList}}
+    {{thread}}<br>
+  {{/each}}
+</div>
 <div class="task-list-container">
   {{#each item in controller.list}}
     <div class="task-container">

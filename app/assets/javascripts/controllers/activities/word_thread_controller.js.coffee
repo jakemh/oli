@@ -12,7 +12,9 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     ).property("")
 
   dependentActivity: (->
-    @get('activity.dependencies')
+    new Em.RSVP.Promise (resolve, reject) =>
+      resolve @get('activity.dependencies')
+
     ).property()
 
   lists: (->
@@ -58,19 +60,20 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     @component("word_thread").then (c)=>
       c.get('boxes').then (bs)=>
         lastBox = bs.get('lastObject')
-        for dAct in @get('dependentActivity').toArray()
-          do (dAct)=>
-            @componentArray(["questions_values", "word_select"], dAct).then (c)=>
-              c.get('words').then (ws)=>
-                for word in ws.filterProperty('selected', true)
-                  do (word) =>
-                    box = word.get('box')
-                    if box == null
-                      @addWordToBox(word, box, lastBox)
-                    else 
-                      word.get('box').then (box)=>
-                        if box == null
-                          @addWordToBox(word, box, lastBox)
+        @get('dependentActivity').then (dActs)=>
+          for dAct in dActs.toArray()
+            do (dAct)=>
+              @componentArray(["questions_values", "word_select"], dAct).then (c)=>
+                c.get('words').then (ws)=>
+                  for word in ws.filterProperty('selected', true)
+                    do (word) =>
+                      box = word.get('box')
+                      if box == null
+                        @addWordToBox(word, box, lastBox)
+                      else 
+                        word.get('box').then (box)=>
+                          if box == null
+                            @addWordToBox(word, box, lastBox)
 
   submitForm: (callback) -> 
 

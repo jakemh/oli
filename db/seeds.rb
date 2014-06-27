@@ -95,13 +95,15 @@ file = [File.dirname(__FILE__), 'additional_info.csv' ].join("/")
 CSV.foreach(file, options) do |row|
   
   if row["box_id"]
-    real_id = id_hash[row["activity_id"]]
-    activity = Activity.find(real_id)
-    real_row_dependency_id = id_hash[row["dependency"]].to_i
-    dependeded_on_activity = Activity.find(real_row_dependency_id)
-    dep = activity.activity_dependencies.where(:dependent_activity_id => real_row_dependency_id).first
-    dep.box_id = dependeded_on_activity.components.first.boxes.limit(1).offset(row["box_id"].to_i - 1).first.id
-    dep.save
+    row["box_id"].split(",").each do |id|
+      real_id = id_hash[row["activity_id"]]
+      activity = Activity.find(real_id)
+      real_row_dependency_id = id_hash[row["dependency"]].to_i
+      dependeded_on_activity = Activity.find(real_row_dependency_id)
+      dep = activity.activity_dependencies.where(:dependent_activity_id => real_row_dependency_id).first
+      dep.box_id = dependeded_on_activity.components.first.boxes.limit(1).offset(id.to_i - 1).first.id
+      dep.save
+    end
   end
 end
 

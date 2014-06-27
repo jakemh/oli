@@ -2,6 +2,13 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable,
   setup: ->
     @setFields()
 
+    @get('activity.dependencies').then (actDs)=>
+      @boxesForActivity(actDs.get('firstObject'), 'word_thread').then (boxes)=>
+        for box in boxes.toArray()
+          @joinedThread2(box).then (thread)=>
+            if thread != ""
+              @get('threadsList').pushObject thread
+
   minimumFields: 3
 
   component1: (->
@@ -10,7 +17,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable,
 
 
   list: []
-
+  threadsList: []
 
   newObj: {text: null, saved:false}
   setFields: ->
@@ -44,3 +51,4 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable,
     for item in @get('list').filterProperty("saved", false)
       @commitEntry("brainstorm", "brainstorm", item.text)
       item.saved = true
+    callback()

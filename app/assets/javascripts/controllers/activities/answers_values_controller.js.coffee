@@ -44,7 +44,8 @@ Oli.AnswersValuesController  = Oli.ActivityBaseController.extend
   dependentActivity: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) => 
-        resolve @get('activity.dependencies').toArray()[0]
+        @get('activity.dependencies').then (dActs)->
+          resolve dActs.get('firstObject')
 
     ).property()
 
