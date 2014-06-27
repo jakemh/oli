@@ -1,0 +1,19 @@
+@import "oli-root";
+
+.task-container{
+  margin: 20px 0;
+}
+
+.task-list-container{
+  @include scrollable-box;
+  height: 180px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.add-task-box{
+  @include oli-box;
+  height: 50px;
+  text-align: center;
+}

@@ -1,14 +1,15 @@
 class UserCalendarEntriesController < ApplicationController
   
   def list
-    render :json => UserCalendarEntry.where(:user => current_user, :id => params[:ids]), :root => "userCalendarEntries"
+    render :json => current_user.user_calendar_entries.where(:id => params[:ids]), :root => "userCalendarEntries"
+    # render :json => UserCalendarEntry.where(:user => current_user, :id => params[:ids]), :root => "userCalendarEntries"
   end
 
   def update
   end
 
   def show
-    render :json => UserCalendarEntry.where(:user => current_user, :id => params[:id]), :root => "userCalendarEntry"
+    render :json => current_user.user_calender_entries.where(:id => params[:id]), :root => "userCalendarEntries"
   end
 
   def create

@@ -1,0 +1,17 @@
+{{partial "activities/partials/description"}}
+
+
+<div class="task-list-container">
+  {{#each item in controller.list}}
+    <div class="task-container">
+      {{controller.component1.content.content}}
+      {{input class="oli-form-field-long"
+        placeholder="Write task"
+        value=item.text}}
+    </div>
+  {{/each}}
+</div>
+
+<div class="add-task-box" {{action "addTask" this on="click"}}>
+Add Task
+</div>

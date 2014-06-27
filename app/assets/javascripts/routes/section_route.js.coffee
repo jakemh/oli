@@ -30,7 +30,7 @@ Oli.SectionsRoute = Ember.Route.extend
       else if model.get('name') == "Level 2"
         @transitionTo("activities", "Rate Thread 1")
       else if model.get('name') == "Level 3"
-        @transitionTo("activities", "Take Action!")
+        @transitionTo("activities", "Brainstorm Actions")
 
   model: (params) -> 
     topic = @modelFor('topics')

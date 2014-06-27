@@ -7,7 +7,7 @@ class ComponentSerializer < ActiveModel::Serializer
     object.user_entries.where(:user => current_user)
   end
 
-  def user_entries
+  def user_calendar_entries
     object.user_calendar_entries.where(:user => current_user)
   end
 

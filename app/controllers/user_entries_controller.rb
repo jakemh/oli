@@ -1,6 +1,6 @@
 class UserEntriesController < ApplicationController
   def list
-    render :json => UserEntry.find(params[:ids]), root: "entries"
+    render :json => current_user.user_entries.find(params[:ids]), root: "entries"
   end
 
   def update
@@ -8,7 +8,7 @@ class UserEntriesController < ApplicationController
 
   def create
     permit = params[:entry].permit(:post, :component, :context)
-    UserEntry.create!(:user => current_user, :component_id => permit[:component], :post => permit[:post], :context => permit[:context])
+    current_user.user_entries << UserEntry.create!(:component_id => permit[:component], :post => permit[:post], :context => permit[:context])
     render :json => nil
   end
 end

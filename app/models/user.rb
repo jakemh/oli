@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
   has_many :courses, :through => :sign_ups
   has_many :statuses
   has_many :components
+  has_many :user_entries
+  has_many :user_calendar_entries
+  has_many :ratings
+  has_many :selections
+  has_many :words
   
   validate :name, :presence => true
   devise :database_authenticatable, :registerable,
