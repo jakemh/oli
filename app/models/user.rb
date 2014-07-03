@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
 
 
   def role
-    self.roles.first.name
+    role = self.roles.first
+    self.roles.first.name if role
   end
 
   def role?(role)
