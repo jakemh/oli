@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get '/courses/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
   get '/welcome/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
   get '/welcome', :to => 'ember#index', :constraints => FormatTest.new(:html)
-  get '/me', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/me', :to => 'ember#index', :constraints => FormatTest.new(:html), :as => :my_page
   get '/me/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
 
   get '/topics', :to => 'topics#list'
