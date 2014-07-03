@@ -24,7 +24,7 @@ Oli.BarView = Em.View.extend({
         @get('controller').progress.grow(relID, callback)
 
   click: ->
-    console.log(@get('controller').get('name'))
+  
     @get('controller').send('moveArrow', @);
 
   children: ->
@@ -40,7 +40,7 @@ Oli.NotchView = Em.View.extend({
 
   didInsertElement: ->
     # @.$().width(Math.floor($("#thin-bar").width() / @get('controller.activities').get('length')))
-    actNum =  @get('controller.activities').get('length')
+    actNum =  @get('controller.notchBarLength')
     totalWidth = $(".thin-bar-wrapper").innerWidth()
     newWidth = Math.floor(totalWidth / actNum)
     adj = totalWidth - (newWidth) * actNum
@@ -48,23 +48,25 @@ Oli.NotchView = Em.View.extend({
 
     last = $('.notch-ember .notch').last()
     last.width(last.width() + adj)
-    @$().hoverIntent (=>
-      oBox = @hoverBox().offset()
-      oNotch = @$().offset()
-      pBox = @hoverBox().position()
-      pNotch = @$().position()
-      if @hoverBox().is(":hidden")
-        @hoverBox().stop().fadeIn("fast")
-        @hoverBox().offset({top: oNotch.top, left:oNotch.left})
-      else 
-        @hoverBox().animate({top: pBox.top, left:pNotch.left })
 
-      @get('controller').send('hover', @get('title'));
-    ), ->
+    if @get('controller.noHover') != true
+      @$().hoverIntent (=>
+        oBox = @hoverBox().offset()
+        oNotch = @$().offset()
+        pBox = @hoverBox().position()
+        pNotch = @$().position()
+        if @hoverBox().is(":hidden")
+          @hoverBox().stop().fadeIn("fast")
+          @hoverBox().offset({top: oNotch.top, left:oNotch.left})
+        else 
+          @hoverBox().animate({top: pBox.top, left:pNotch.left })
+
+        @get('controller').send('hover', @get('title'));
+      ), ->
       # handled in BarView class
 
   click: ->
-    @get('controller').send('goHere', @get('title').get('name'));
+    @get('controller').send('goHere', @get('title').name);
 
   hoverBox: ->
     $('#hover-box')
@@ -72,31 +74,36 @@ Oli.NotchView = Em.View.extend({
 });
 
 Oli.TriangleView = Em.View.extend({
-  classNameBindings: ['thinBarArrow'],
+  classNameBindings: ["thinBarArrow", "displayNone:display-none"],
   thinBarArrow: true
-  
 
   didInsertElement: ->
-    @get('controller').on('delegate.setArrow', @, @delegate.setArrow);
-    @get('delegate.setArrow')(@get('controller'))
+    if @get('controller.notchBarLength') > 1
+      @get('controller').on('delegate.setArrow', @, @delegate.setArrow);
+      @get('delegate.setArrow')(@get('controller'))
+
+  displayNone: (->
+    @get('controller.displayNoArrow') || false
+    ).property()
 
   delegate:
     setArrow: (controller) ->
       triangle = $('#triangle')
-      controller.get('activities').then (acts)=>
-        hash = controller.hash().then (h) =>          
-          oTri = triangle.offset()
-          # console.log("HASH: " + JSON.stringify(h))
-          # console.log("CONT: " + controller.content)
-          index = h[controller.content]
-          thinBar = $('#thin-bar')
-          oThin = thinBar.offset()
-          hoverBox = $('#hover-box')
-          bar = $('#thin-bar')
-          notchLength = bar.children('.notch-ember').eq(0).width()
-          triangle.animate({
-            top: oTri.top - oThin.top
-            left: ((index - 1) * notchLength)
-            })
+      hash = controller.hash().then (h) => 
+        oTri = triangle.offset()
+        # console.log("HASH: " + JSON.stringify(h))
+        # console.log("CONT: " + controller.content)
+        # alert controller.content
+        # alert controller
+        index = h[controller.content]
+        thinBar = $('#thin-bar')
+        oThin = thinBar.offset()
+        hoverBox = $('#hover-box')
+        bar = $('#thin-bar')
+        notchLength = bar.children('.notch-ember').eq(0).width()
+        triangle.animate({
+          top: oTri.top - oThin.top
+          left: ((index - 1) * notchLength)
+          })
       
 });

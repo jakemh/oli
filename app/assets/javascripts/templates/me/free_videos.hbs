@@ -1,0 +1,7 @@
+{{#each video in videos.content}}
+  
+  <div class="free-video">
+
+    {{#link-to 'free_videos' video.id}} {{video.name}} {{/link-to}}
+  </div>
+{{/each}}

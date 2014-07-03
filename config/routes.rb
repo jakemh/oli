@@ -20,13 +20,20 @@ Rails.application.routes.draw do
   end
   root to: 'oli#landing'
 
-  match "/me" => "users#show", via: :get, :as => :my_page
+  # match "/me" => "users#show", via: :get, :as => :my_page
 
   devise_for :users
+
+  get "/users" => "users#user"
   match "/landing" => "oli#landing", via: :get
   match "/landing" => "oli#subscribe", via: :post
 
   get '/courses/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/welcome/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/welcome', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/me', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/me/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
+
   get '/topics', :to => 'topics#list'
   get '/sections', :to => 'sections#list'
   get '/activities', :to => 'activity#list'
@@ -51,15 +58,29 @@ Rails.application.routes.draw do
   get '/userCalendarEntries/:id', :to => 'user_calendar_entries#show'
   get '/userCalendarEntries', :to => 'user_calendar_entries#list'
   post '/userCalendarEntries', :to => 'user_calendar_entries#create'
-
   post '/userCalendarEntries', :to => 'user_calendar_entries#create'
+
+  get '/actionEntries/:id', :to => 'action_entries#show'
+  get '/actionEntries', :to => 'action_entries#list'
+  post '/actionEntries', :to => 'action_entries#create'
+
+  get '/boxEntries/:id', :to => 'box_entries#show'
+  get '/boxEntries', :to => 'box_entries#list'
+  post '/boxEntries', :to => 'box_entries#create'
+  post '/boxEntries', :to => 'box_entries#create'
+
+
   delete '/words/:id', :to => 'words#destroy'
 
   put '/statuses/:id', :to => 'statuses#update'
   put '/activities/:id', :to => 'activities#update'
   post '/entries', :to => 'user_entries#create'
   get '/entries', :to => 'user_entries#list'
+  get '/entries/:id', :to => 'user_entries#show'
+
   post '/send_mail', :to => 'mailer#mail'
+
+  get '/action_entries/', :to => 'action_entries#list'
 
   resources :courses do
     resources :topics do

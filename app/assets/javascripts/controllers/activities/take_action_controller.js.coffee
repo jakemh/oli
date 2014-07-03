@@ -1,15 +1,37 @@
 Oli.TakeActionController = Oli.ActivityBaseController.extend
   setup: ->
-    # @actionField().then (t1)=>
-    #   @set('input1', t1)
-
-    # @actionField().then (t1)=>
-    #   @set('input2', t1)
+    @notifyPropertyChange("dependentTasks")
 
   lastDate: null
 
   input1: null
   input2: null
+  prompt: "Please select a task"
+  dependentActivities: (->
+    new Em.RSVP.Promise (resolve, reject) => 
+      @get('controllers.activities.dependencies').then (dependents)=>
+        resolve dependents
+    ).property('controllers.activities.content')
+
+
+  dependentTasks: (->
+    new Em.RSVP.Promise (resolve, reject) =>
+      @get('dependentActivities').then (act)=>
+        @component("brainstorm", act.get('firstObject')).then (comp)=>
+          comp.get('entries').then (entries)=>
+            resolve(entries)
+    ).property("")
+
+  selectedTask: null
+
+  dependentTasksMapped: (->
+    return DS.PromiseObject.create promise: 
+      new Em.RSVP.Promise (resolve, reject) =>
+        @get('dependentTasks').then (tasks)->
+          resolve tasks.map((item, index) ->
+            item.get('post') 
+            )
+    ).property("dependentTasks")
 
   actionDateChanged: (date)->
     @set('lastDate', date)
@@ -56,10 +78,10 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
   date: null
 
   buttonDisabled: (->
-    if @get('date') == "" || @get('date') == null || @get('input1') == "" || @get('input1') == null
+    if @get('date') == "" || @get('date') == null || @get('selectedTask') == "" || @get('selectedTask') == null
       return true
     else false
-    ).property("date","input1")
+    ).property("date","selectedTask")
 
   calendarField: ->
     return DS.PromiseObject.create promise: 
@@ -81,8 +103,8 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
 
   actions: 
     addAction: -> 
-      @commitCalendarEntry("take_action_1", "take_action_1", @get('input1'), @get('input2'))
+      @commitCalendarEntry("take_action_1", "take_action_1", @get('selectedTask'), @get('input2'))
       @notifyPropertyChange('actionsList')
       @set('date', "")
-      @set('input1', "")
+      @set('selectedTask', null)
 

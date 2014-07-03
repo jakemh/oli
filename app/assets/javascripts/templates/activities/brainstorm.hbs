@@ -1,20 +1,47 @@
-{{partial "activities/partials/description"}}
-<div class="oli-text-smaller brainstorm-threads-container">
-  {{#each thread in controller.threadsList}}
-    {{thread}}<br>
-  {{/each}}
-</div>
-<div class="task-list-container">
-  {{#each item in controller.list}}
-    <div class="task-container">
-      {{controller.component1.content.content}}
-      {{input class="oli-form-field-long"
-        placeholder="Write task"
-        value=item.text}}
-    </div>
-  {{/each}}
-</div>
+  {{partial "activities/partials/description"}}
+  <div class="oli-text-smaller brainstorm-threads-container">
+  
+  </div>
+  <div class="task-list-container">
+    {{#each item in controller.list}}
+      {{#view Oli.BrainstormItemView}}
 
-<div class="add-task-box" {{action "addTask" this on="click"}}>
-Add Task
-</div>
+      <div class="task-container">
+        <div class="row">
+          <div class="col-xs-3">
+            {{controller.component1.content.content}}
+           </div> {{!-- </col-xs-3>  --}}
+          <div class="col-xs-8">
+            {{input class="oli-form-field-long no-margin full-width"
+            placeholder="Write ask"
+            value=item.text}}
+          </div>{{!-- </col-xs-8>  --}}
+        </div>{{!-- </row>  --}}
+
+        
+        <div class="row margin-top">
+          <div class="col-xs-3">
+            Because I value:
+          </div> {{!-- </col-xs-3>  --}}
+          <div class="col-xs-8">
+            {{view Ember.Select 
+            multiple="true"    
+            class="thread-dropdown"
+            contentBinding="threadsList.content"
+            optionValuePath="content.value"
+            optionLabelPath="content.label"
+            selectionBinding="item.selections"
+          }}
+          {{#each item.selections}}
+            {{this.value}}
+          {{/each}}
+          </div>{{!-- </col-xs-8>  --}}
+        </div>{{!-- </row>  --}}
+      </div>{{!-- </task-container>  --}}
+      {{/view}}
+    {{/each}}
+  </div>{{!-- </task-list-container>  --}}
+
+  <div class="add-task-box" {{action "addTask" this on="click"}}>
+    Add Task
+  </div>

@@ -9,15 +9,20 @@ class User < ActiveRecord::Base
   has_many :components
   has_many :user_entries
   has_many :user_calendar_entries
+  has_many :action_entries
   has_many :ratings
   has_many :selections
   has_many :words
+  has_many :boxables 
   
   validate :name, :presence => true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
 
+  def role
+    self.roles.first.name
+  end
 
   def role?(role)
     return self.roles.pluck(:name).include? role

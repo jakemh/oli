@@ -16,12 +16,22 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
     @content.get('tip')
     ).property("content")
 
+  barContent: (->
+    @get('activities').map((item, index) ->
+      {name: item.get('name'), completed: item.get('completed')}
+      )
+    ).property('activities')
+
   boxUpdated: ->
     @trigger('threadUpdater')
 
   status: (()->
     
   ).property()
+
+  notchBarLength: (->
+    @get('activities.length')
+    ).property('activities')
 
   handleDelimeter: ->
     alert("TEST")

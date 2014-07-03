@@ -3,10 +3,12 @@
 
   <div class="oli-text rating-section-container">
   {{controller.component1.content.content}}
-  {{input class="oli-form-field"
+ {{!--  {{input class="oli-form-field"
     value=controller.input1
     placeholder="Enter text"
-  }}
+  }} --}}
+      {{view Ember.Select content=dependentTasksMapped.content id="task-selector" value=selectedTask prompt=prompt }}
+
   </div>
 
   <div class="oli-text rating-section-container">
@@ -14,6 +16,7 @@
   {{input id="date-picker-field" class="oli-form-field"
     placeholder= "MM/DD/YYYY"
     valueBinding=controller.date}}
+
   </div>
 
   <div class="middle-button-container">

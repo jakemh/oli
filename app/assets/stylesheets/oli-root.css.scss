@@ -56,10 +56,15 @@ $levels-height: 45px;
 @mixin oli-box{
   width: 100%;
   @include oli-text;
-  border: 1px solid oli-gray(1);
+  @include oli-border;
   padding: 10px;
   resize: none;
   outline: none;
+  border-radius: 3px;
+}
+
+@mixin oli-border{
+  border: 1px solid oli-gray(1);
   border-radius: 3px;
 }
 
@@ -144,10 +149,24 @@ $levels-height: 45px;
 
 }
 
+.oli-selector{
+  width: 90%;
+  @include oli-border;
+}
+
+.oli-selector-large{
+  width: 100%;
+  @include oli-border;
+}
+
 .oli-semibold{
   font-family: pn-semibold;
   font-size: .85em;
   color: rgba(0,0,0,.9) !important;
+}
+
+.oli-bold{
+  @include oli-bold;
 }
 
 .oli-text{
@@ -158,4 +177,19 @@ $levels-height: 45px;
   @include oli-text-smaller;
 }
 
+.no-margin{
+  margin: 0;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.margin-top{
+  margin-top: 5px;
+}
+
+.display-none{
+  display: none;
+}
 

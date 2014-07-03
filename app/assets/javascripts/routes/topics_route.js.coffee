@@ -5,7 +5,7 @@ Oli.TopicsRoute = Ember.Route.extend({
 
   model: (params) -> 
 
-    course = @modelFor('course')
+    course = @modelFor('courses')
     course.get('topics').then (topics) ->
       for t in topics.toArray()
         return t if t.get('name') == params.topic

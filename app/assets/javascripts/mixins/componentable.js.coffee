@@ -83,8 +83,8 @@ Oli.Componentable = Ember.Mixin.create
 
       c.get('entries').then (ues)=>
         ues.pushObject(entry1)
-        entry1.save()
-        if callback
-          callback()
+        entry1.save().then (response)=>
+          if callback
+            callback(response)
 
 

@@ -4,5 +4,6 @@ Oli.VideoView = Em.View.extend
     player = videojs("MY_VIDEO_1", { "controls": true, "autoplay": false, "preload": "none" }, ->
     )
 
-    @set('controller.controllers.activities.video', player)
-    @set('controller.controllers.activities.status', "")
+    @get('controller').handleVideoDispose(player)
+    # @set('controller.controllers.activities.video', player)
+    # @set('controller.controllers.activities.status', "")

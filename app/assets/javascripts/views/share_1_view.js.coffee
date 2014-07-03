@@ -10,6 +10,7 @@ Oli.Share1View = Em.View.extend
     obj = "http://getoli.com"
 
     window.fbAsyncInit = ->
+      alert "TEST"
       FB.init
         appId: fbAppId 
         status: true

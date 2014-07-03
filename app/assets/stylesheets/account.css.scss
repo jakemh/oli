@@ -1,0 +1,29 @@
+@import "oli-root";
+
+.info-bar-account{
+  display: inline-block;
+  height: 400px;
+  width: 24%;
+  overflow: scroll;
+  overflow-x:hidden;
+  padding: 5px;
+
+}
+
+.user-info-account{
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  top: 10%;
+
+}
+
+.content-container-account{
+  display: inline-block;
+  height: 400px;
+  width: 74%;
+  overflow: scroll;
+  overflow-x:hidden;
+  position: relative;
+
+}

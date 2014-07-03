@@ -27,7 +27,7 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
     "describe_a_10" : @controllerFor('describeA10')
     "calendar" : @controllerFor('takeAction')
     "brainstorm" : @controllerFor('brainstorm')
-
+    
     ).property()
 
   template: ->

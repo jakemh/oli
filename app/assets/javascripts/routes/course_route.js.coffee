@@ -1,4 +1,4 @@
-Oli.CourseRoute = Ember.Route.extend({
+Oli.CoursesRoute = Ember.Route.extend({
   setupController: (controller, model) ->
     console.log("MODEL: " + model)
     controller.set('content', model)
@@ -9,14 +9,21 @@ Oli.CourseRoute = Ember.Route.extend({
     sectionsController = @controllerFor('sections');
     activitiesController = @controllerFor('activities');
     topicsController = @controllerFor('topics');
-    courseController = @controllerFor('course');
+    courseController = @controllerFor('courses');
     tipsController = @controllerFor('tips');
 
     @render('nav', {
       outlet: 'nav',
-      controller: courseController
+    });
+
+    @render('navContents', {
+      outlet: 'navContents',
+      into: 'nav',
+      controller: courseController 
+
     });
       
+   
     @render('levels', {
       outlet: 'levels', 
       controller: topicsController 

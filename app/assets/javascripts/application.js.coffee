@@ -16,6 +16,7 @@
 #= require bootstrap
 #= require bootstrap-datepicker
 #= require browser_selector
+#= require select2
 #= require moment
 #= require add-this-event
 #= require spin

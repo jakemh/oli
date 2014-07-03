@@ -11,7 +11,13 @@ class ComponentSerializer < ActiveModel::Serializer
     object.user_calendar_entries.where(:user => current_user)
   end
 
+  def action_entries
+    current_user.action_entries.where(:component => object)
+  end
+
   has_many :user_entries, key: :entries
+  has_many :action_entries, key: :actionEntries
+
   has_many :boxes, key: :boxes
   has_many :user_calendar_entries, :key => "userCalendarEntries"
 

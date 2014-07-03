@@ -1,24 +1,11 @@
 require 'csv'
 
-id_hash = {} #csv_id => actual_id
+@id_hash = {} #csv_id => actual_id
 
-options = {:encoding => 'UTF-8', :skip_blanks => true, :headers => true}
-file = [File.dirname(__FILE__), 'structure.csv' ].join("/")
-
-
-#build structure
-CSV.foreach(file, options) do |row|
-  course = Course.find_or_create_by(:name => row["course"])
-  topic = Topic.find_or_create_by(:course => course, :name => row["topic"]) 
-  section = Section.find_or_create_by(:topic => topic, :name => row["section"])
-end
-
-#build activities
-CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row, i|
-
-  course = Course.where(:name => row["course"]).first
-  topic = Topic.where(:name => row["topic"], :course => course).first
-  section = Section.where(:name => row["section"], :topic => topic).first
+def parse_activity(row)
+  course = Course.where(:name => row["course"]).first if row["course"]
+  topic = Topic.where(:name => row["topic"], :course => course).first if row["topic"]
+  section = Section.where(:name => row["section"], :topic => topic).first if row["section"]
   display = row["display"].to_i == 1 ? true : false 
   components = []
   dependencies = []
@@ -63,12 +50,12 @@ CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row
     )
 
   a.components << components
-  id_hash[row["id"]] = a.id
+  @id_hash[row["id"]] = a.id
 
   if row["dependencies"]
     row["dependencies"].split(",").each do |id|
       dependencies << ActivityDependency.create(
-        :dependent_activity_id => id_hash[id]
+        :dependent_activity_id => @id_hash[id]
         )
     end
   end
@@ -81,30 +68,52 @@ CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row
   end
 end
 
+options = {:encoding => 'UTF-8', :skip_blanks => true, :headers => true}
+file = [File.dirname(__FILE__), 'structure.csv' ].join("/")
+
+
+#build structure
+CSV.foreach(file, options) do |row|
+  course = Course.find_or_create_by(:name => row["course"])
+  topic = Topic.find_or_create_by(:course => course, :name => row["topic"]) 
+  section = Section.find_or_create_by(:topic => topic, :name => row["section"])
+end
+
+#build activities
+CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row, i|
+  parse_activity(row)
+end
+
 #build words
 file = [File.dirname(__FILE__), 'words.csv' ].join("/")
 
 CSV.foreach(file, options) do |row|
-  activity = Activity.find(id_hash[row["activity_id"]])
+  activity = Activity.find(@id_hash[row["activity_id"]])
   activity.components.first.words << Word.create(:word => row["word"], :all_users => true)
 end
 
-file = [File.dirname(__FILE__), 'additional_info.csv' ].join("/")
 
 #misc stuff
+file = [File.dirname(__FILE__), 'additional_info.csv' ].join("/")
 CSV.foreach(file, options) do |row|
   
   if row["box_id"]
     row["box_id"].split(",").each do |id|
-      real_id = id_hash[row["activity_id"]]
+      real_id = @id_hash[row["activity_id"]]
       activity = Activity.find(real_id)
-      real_row_dependency_id = id_hash[row["dependency"]].to_i
+      real_row_dependency_id = @id_hash[row["dependency"]].to_i
       dependeded_on_activity = Activity.find(real_row_dependency_id)
       dep = activity.activity_dependencies.where(:dependent_activity_id => real_row_dependency_id).first
       dep.box_id = dependeded_on_activity.components.first.boxes.limit(1).offset(id.to_i - 1).first.id
       dep.save
     end
   end
+end
+
+#free videos
+file = [File.dirname(__FILE__), 'free_videos.csv' ].join("/")
+CSV.foreach(file, options) do |row|
+  parse_activity(row)
 end
 
 

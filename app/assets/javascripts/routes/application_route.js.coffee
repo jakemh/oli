@@ -1,3 +1,7 @@
-Oli.ApplicationRoute = Ember.Route.extend({
+Oli.IndexRoute = Ember.Route.extend({
   model: (param)->
+
+  renderTemplate: ->
+   
+      
 });

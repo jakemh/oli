@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626170655) do
+ActiveRecord::Schema.define(version: 20140703041219) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20140626170655) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "box_id"
+  end
+
+  create_table "boxable_entries", force: true do |t|
+    t.integer  "boxable_id"
+    t.integer  "action_entry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "boxables", force: true do |t|
@@ -158,6 +165,8 @@ ActiveRecord::Schema.define(version: 20140626170655) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "context"
+    t.boolean  "is_active"
+    t.string   "type"
   end
 
   create_table "users", force: true do |t|
@@ -174,6 +183,7 @@ ActiveRecord::Schema.define(version: 20140626170655) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "account_type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

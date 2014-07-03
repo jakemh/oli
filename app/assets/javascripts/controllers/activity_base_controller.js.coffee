@@ -13,3 +13,9 @@ Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable, Em
   activityController: (->
     @get('controllers.activities')
     ).property()
+
+  dependentActivities: (->
+    new Em.RSVP.Promise (resolve, reject) => 
+      @get('controllers.activities.dependencies').then (dependents)=>
+        resolve dependents
+    ).property('controllers.activities.content')
