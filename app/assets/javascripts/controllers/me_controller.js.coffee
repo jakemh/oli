@@ -1,12 +1,12 @@
 Oli.MeController = Ember.ObjectController.extend Ember.Evented,
-  hash: (->
-    {"videos" : 1, "account" : 2}
-    ).property() 
-
   hash: ->
     new Em.RSVP.Promise (resolve, reject) =>
-      resolve {"free_videos":1, "account":2}
-
+      hash = {}
+      for item, index in @get('barContent')
+        hash[item.name] = index + 1
+        
+      resolve hash
+  p: "TEST"
   user: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
@@ -14,15 +14,38 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
           resolve users.get('firstObject')
     ).property()
 
-  notchBarLength: 2
-  noHover: false
-  displayNoArrow: false
-  hovering: null
+  paid: true
 
-  barContent: (->
-    [{name: "free_videos"}, {name: "account"}]
+  notchBarLength: (->
+    @get('barContent.length')
     ).property()
 
+  noHover: true
+  displayNoArrow: false
+  hovering: null
+  notchGap: false
+  barContent: (->
+    if @get("paid") == true
+      @get('barContentPaid')
+    else
+      @get('barContentFree')
+    ).property()
+
+  barContentFree: (->
+    [
+      {displayName: "Free Videos", name: "free_videos", class: "oli-yellow"}, 
+      {displayName: "Account", name: "account", class: "oli-red"}
+    ]
+    ).property()
+
+  barContentPaid: (->
+    [
+      {displayName: "Course Info", name: "course_info", class: "oli-yellow"}, 
+      {displayName: "Resources", name: "resources", class: "oli-orange"}
+      {displayName: "Marketplace", name: "marketplace", class: "oli-red"}
+      {displayName: "Account", name: "account", class: "oli-blue"}
+    ]
+    ).property()
   
 
   actions:
@@ -38,4 +61,4 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
 
     goHere: (act) ->
       if act != undefined
-        @transitionToRoute('me',act)
+        @transitionToRoute(act)

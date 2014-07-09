@@ -5,6 +5,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
   progress: null
   status: ""
   template: null
+  notchGap: true
   templateName: (->
     "status"
     ).property()

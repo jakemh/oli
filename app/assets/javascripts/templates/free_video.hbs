@@ -1,10 +1,11 @@
 
 <div id="fb-root"></div>
 
-
-
 {{#view Oli.FreeVideosView}}
   {{partial 'bar'}}
   {{partial 'activities/video'}}
-  <div class="fb-comments" data-href="http://getoli.com" data-numposts="10" data-colorscheme="light"></div>
+  {{partial 'forwardButton'}}
+  <div id="fb-comments" class="fb-free-video">
+    <div  class="fb-comments" data-href="http://example.com/comments" data-numposts="5" data-colorscheme="light"></div>
+  </div>
 {{/view}}

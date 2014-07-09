@@ -1,7 +1,30 @@
-{{#each video in videos.content}}
+<div class="oli-bold oli-container">
+  Free Video Content
+</div>
+{{#each video in videosFormatted.content}}
   
-  <div class="free-video">
+  <div {{action goToVideo video}} class="free-video video-container-free-videos oli-text-smaller">
+   
+    <div class="thumb-free-videos">
+      <div class="play-free-videos">
+        <div class="circle-free-videos">        
+          <div class="arrow-free-videos"></div>
+        </div>
+      </div>
 
-    {{#link-to 'free_videos' video.id}} {{video.name}} {{/link-to}}
+      {{video-player 
+      width=video.width
+       height=video.height
+        source=video.source
+        controls=false}}
+
+    </div>
+
+    {{#link-to 'free_videos_select' video.id}} {{video.title}} {{/link-to}}
+
+    <div class="description-free-videos">
+      {{video.description}}
+    </div>
   </div>
 {{/each}}
+

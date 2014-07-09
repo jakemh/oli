@@ -1,0 +1,30 @@
+@import "oli-root";
+
+  .input-container-acknowlegement{
+    width: 85%;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.button-container-acknowlegement{
+    
+    text-align: center;
+    margin-top: 3px;
+}
+
+.button-acknowlegement{
+   @include oli-button;
+   height: 28px;
+   width: 60px;
+   margin: 5px auto;
+}
+
+.yes-no-button-container{
+  display: inline-block;
+  width: 75px;
+}
+
+.content-container-ack{
+  overflow: hidden;
+  height: 55px;
+}

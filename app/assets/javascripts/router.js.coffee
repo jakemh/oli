@@ -6,16 +6,27 @@ Oli.Router.map ()->
 
   # @route('course', {path: "/courses/*wildcard"})
   @resource('welcome', ->
-    @resource('free_videos_separate', {path: "/:id"})
+    @resource('free_video', {path: "/:id"})
     )
   @route('home', {path: "/home/"})
 
-  @resource('meIndex', {path: "/me"})
-  @resource('me', {path: "/me/:location"}, ->
-    @resource('free_videos', {path: "/:id"})
-    @route('account', {path: "/account/"})
+  @resource('me', ->
+    @resource('me', path: "/:opt")
+    @resource('free_videos', ->
+      @resource('free_videos_select', path: "/:id")
+    )
+    @resource('course_info')
+    @resource('marketplace')
+    @resource('resources')
+    @resource('account')
   )
 
+  # @resource('meIndex', {path: "/me"})
+  # @resource('me', {path: "/me/:location"}, ->
+  #   @resource('free_videos_index')
+  #   @resource('free_videos', {path: "/:id"})
+  #   @route('account', {path: "/account/"})
+  # )
 
   @resource('courses', {path: "/courses/:id"}, -> 
     @resource('topics', {path: "/topics/:topic"}, ->

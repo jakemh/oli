@@ -1,9 +1,9 @@
-<div class="info-bar-account">
-  <div class="user-info-account oli-bold">
-    {{user.name}}
+{{outlet meCollapse}}
+
+<div class="container-account">
+  {{partial 'me/accountBar'}}
+  <div class="content-container-account">
+    {{partial 'bar'}}
+    {{outlet 'template'}}
   </div>
-</div>
-<div class="content-container-account">
-  {{partial 'bar'}}
-  {{outlet template}}
 </div>

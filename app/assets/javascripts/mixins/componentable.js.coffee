@@ -73,7 +73,7 @@ Oli.Componentable = Ember.Mixin.create
         if callback
           callback()
 
-   commitEntry: (componentContext, entryContext, message, callback)->
+  commitEntry: (componentContext, entryContext, message, callback)->
     @component(componentContext).then (c)=>
       entry1 = @get('store').createRecord('entry', {
           component: c
@@ -86,5 +86,22 @@ Oli.Componentable = Ember.Mixin.create
         entry1.save().then (response)=>
           if callback
             callback(response)
+
+  commitBasicEntry: (entryContext, message) ->
+    new Em.RSVP.Promise (resolve, reject) =>
+      entry1 = @get('store').createRecord('entry', {
+          component: null
+          post: message
+          context: entryContext
+        })
+
+      entry1.save().then (response)=>
+        resolve response
+
+  videoComp: (activity)->
+    new Em.RSVP.Promise (resolve, reject) =>
+      activity.get('components').then (comps)->
+        video = comps.filterProperty("context", "video")[0]
+        resolve video
 
 

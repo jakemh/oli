@@ -1,0 +1,21 @@
+<div class="yes-no-button-container">
+  <button 
+    {{bind-attr 
+    class=":button-acknowlegement" 
+     }}
+    
+    {{action "yesButtonPressed" this.typeLower on="click"}}
+    >Yes
+  </button>
+</div>
+
+<div class="yes-no-button-container">
+  <button 
+    {{bind-attr 
+    class=":button-acknowlegement" 
+    }}
+    
+    {{action "noButtonPressed" this.typeLower on="click"}}
+    >No
+  </button>
+</div>

@@ -29,7 +29,33 @@ $levels-height: 45px;
   @return rgba(180, 180, 179, $a); 
 }
 
+.oli-yellow{
+  background: oli-yellow(1);
+}
 
+.oli-orange{
+  background: oli-orange(1);
+}
+
+.oli-red{
+  background: oli-red(1);
+}
+
+
+.oli-blue{
+  background: oli-blue(1);
+}
+
+@mixin oli-circle($dem, $mult){
+  background: #fbf5f2 image-url("tip-logo-big.png") center no-repeat;
+  background-size: 57*$mult 108*$mult;
+  margin: 0 auto;
+  border-radius: 50px;
+  height: $dem;
+  width: $dem;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0,0,0,.12); 
+}
 @mixin oli-font{
   font-family: pn-light;
   color: #696969;
@@ -119,6 +145,7 @@ $levels-height: 45px;
   @include oli-form-field;
 }
 
+
 .oli-form-field-long{
   @include oli-form-field;
   width: 90%;
@@ -177,6 +204,11 @@ $levels-height: 45px;
   @include oli-text-smaller;
 }
 
+.oli-text-small{
+  @include oli-text-smaller;
+  font-size: .80em;
+}
+
 .no-margin{
   margin: 0;
 }
@@ -189,7 +221,28 @@ $levels-height: 45px;
   margin-top: 5px;
 }
 
+.margin-left{
+  margin-top: 10px;
+}
+
+.padding-top{
+  padding-top: 15px;
+}
+
+.center{
+  text-align: center;
+  margin: auto;
+}
+
 .display-none{
   display: none;
+}
+
+.oli-container{
+  margin: 10px;
+}
+
+.oli-container-small{
+  margin: 2px;
 }
 

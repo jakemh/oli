@@ -1,14 +1,16 @@
-  <div id="hover-box" class="test-hover" >
+  
+
+  <div class="thin-bar-wrapper" id="thin-bar">
+    <div id="hover-box" class="test-hover" >
     {{hovering.name}}<br>
     {{#if hovering.completed}}
         DONE
     {{/if}}
     
   </div>
-
-  <div class="thin-bar-wrapper" id="thin-bar">
     {{#each item in controller.barContent}}{{#view Oli.NotchView titleBinding="item"}}
-      <div class="notch"></div>
+    <div class="notch-text ">{{item.displayName}}</div>
+      <div {{bind-attr class=":notch controller.notchGap:gap-notch item.class"}}></div>
       {{/view}}{{else}}
       {{#view Oli.NotchView titleBinding="item"}}
       <div class="notch"></div>

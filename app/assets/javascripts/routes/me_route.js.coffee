@@ -1,37 +1,126 @@
 Oli.MeRoute = Ember.Route.extend Ember.Evented,
 
-  setupController: (controller, model) ->
-    controller.set('content', model)
-    controller.send('trans', model)
+  setupController: (controller, model, queryParams) ->
 
-  childControllers: (->
-    "account" : @controllerFor('account')
-    "free_videos" : @controllerFor('selectFreeVideos')
+  ackController: (->
+    @controllerFor('acknowledgement')
     ).property()
+
+
+  afterModel: ->
+    if @controllerFor('me').get('paid') == true
+      @transitionTo('course_info')
+    else @transitionTo("free_videos")
+  
+  renderAckSelection: ->
+    @render('me/' + "gratackPrompt", {
+      outlet: 'gratackContent'
+      into: 'me/gratackContainer'
+      controller: @get('ackController')
+      })
+
+    @render('me/' + "gratackButtonsYesNo", {
+      outlet: 'gratackButton'
+      into: 'me/gratackContainer'
+      controller: @get('ackController')
+      })
+
+
+  events:
+    acknowledgementButtonPressed: (type)->
+      @get('ackController').saveEntry(type).then (response)=>
+        @renderAckSelection()
+        @get('ackController').set("input", null)
+
+    yesButtonPressed: (type)->
+      @get('ackController').setContent(type)
+
+   
+      @render('me/' + "gratackInput", {
+        outlet: 'gratackContent'
+        into: 'me/gratackContainer'
+        controller: @get('ackController')
+        })
+
+      @render('me/' + "gratackButtonsSave", {
+        outlet: 'gratackButton'
+        into: 'me/gratackContainer'
+        controller: @get('ackController')
+        })
+
+
+    noButtonPressed: (type)->
+      # @get('ackController').setContent(type)
+      if type == "gratitude"
+        @get('ackController').setContent("quote")
+
+        @render('me/' + "quote", {
+          outlet: 'gratackContainer'
+          into: 'me/acknowledgement'
+          controller: @get('ackController')
+          })
+
+
+      else
+        @get('ackController').setContent("gratitude")
+
+        @render('me/' + "gratackInput", {
+          outlet: 'gratackContent'
+          into: 'me/gratackContainer'
+          controller: @get('ackController')
+          })
+
+        @render('me/' + "gratackButtonsSave", {
+          outlet: 'gratackButton'
+          into: 'me/gratackContainer'
+          controller: @get('ackController')
+          })
+
+      # this.get('target').render('test', {into: 'me', outlet:'template'});
 
   renderTemplate: ->
     @render('nav', {
       outlet: 'nav',
     });
   
-
     template = @modelFor("me")
     @render('me', {
       outlet: 'me'
       controller: @controllerFor('me')
       })
 
-    @render('me/' + template, {
-      outlet: 'template'
+    @render('me/' + "meCollapse", {
+      outlet: 'meCollapse'
       into: 'me'
-      controller: @get('childControllers')[template] 
+      controller: @controllerFor("meCollapse")
       })
 
-    # @render('account', {
-    #   outlet: 'account',
-    #   controller: @controllerFor('me') 
+    @get('ackController').setContent("acknowledgement")
 
-    # });
+    @render('me/' + "acknowledgement", {
+      outlet: 'contentCollapse'
+      into: 'me/meCollapse'
+      controller: @get('ackController')
+      })
+
+    @render('me/' + "gratackContainer", {
+      outlet: 'gratackContainer'
+      into: 'me/acknowledgement'
+      controller: @get('ackController')
+      })
+
+    @render('me/' + "gratackInput", {
+      outlet: 'gratackContent'
+      into: 'me/gratackContainer'
+      controller: @get('ackController')
+      })
+
+    @render('me/' + "gratackButtonsSave", {
+      outlet: 'gratackButton'
+      into: 'me/gratackContainer'
+      controller: @get('ackController')
+      })
+
 
   
 

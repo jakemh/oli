@@ -1,0 +1,10 @@
+
+  <button 
+    {{bind-attr 
+    class=":button-acknowlegement buttonDisabled:oli-inactive" 
+    disabled=buttonDisabled }}
+    {{action "acknowledgementButtonPressed" this.typeLower on="click"}}
+
+    >
+    Save
+  </button>

@@ -1,6 +1,7 @@
-Oli.FreeVideosSeparateRoute = Ember.Route.extend({
+Oli.FreeVideoRoute = Ember.Route.extend({
   setupController: (controller, model) ->
-  
+    @get('controller').set('content', model)
+
   renderTemplate: ->
     freeVideoController = @controllerFor('freeVideo');
     baseController = @controllerFor('base');
@@ -20,8 +21,14 @@ Oli.FreeVideosSeparateRoute = Ember.Route.extend({
       controller: freeVideoController
     });
 
-    
-  
   model: (params) -> 
+    @controllerFor('freeVideos').videoByRelativeId(params.id)
 
+  actions: 
+    willTransition: ->
+      c = @controllerFor('freeVideo');
+      # video.js require video to be disposed between transitions
+      if c.get('video')
+        c.get('video').dispose()
+        c.set('video', null)
 });

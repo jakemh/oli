@@ -24,7 +24,6 @@ Oli.BarView = Em.View.extend({
         @get('controller').progress.grow(relID, callback)
 
   click: ->
-  
     @get('controller').send('moveArrow', @);
 
   children: ->

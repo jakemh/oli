@@ -1,0 +1,1 @@
+Oli.VideoPlayerComponent = Ember.Component.extend()

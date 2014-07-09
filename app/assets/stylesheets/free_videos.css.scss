@@ -1,0 +1,43 @@
+@import "oli-root";
+
+.thumb-free-videos{
+  cursor: pointer;
+  float: left;
+  // background: image-url("vid_thumb_3.png") no-repeat center;
+  background-size: 121*1px 67*1px;
+  width: 121*1px;
+  height: 67*1px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.video-container-free-videos{
+  height: 100px;
+}
+
+.circle-free-videos{
+  margin: 10px 0px 0 40px;
+  background: oli-yellow(1);
+  height: 35px;
+  width: 35px;
+  border-radius: 50px;
+  position: relative;
+}
+
+.arrow-free-videos{
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 10px;
+  border-color: transparent transparent transparent white;
+  border-radius: 3px;
+}
+
+.play-free-videos{
+  position: absolute;
+  z-index: 100;
+
+}

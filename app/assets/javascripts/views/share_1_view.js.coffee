@@ -31,4 +31,4 @@ Oli.Share1View = Em.View.extend
       return
     ) document, "script", "facebook-jssdk"
 
-    # FB.XFBML.parse();
+    FB.XFBML.parse();

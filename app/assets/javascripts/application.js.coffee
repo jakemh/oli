@@ -24,6 +24,7 @@
 #= require oli-content
 #= require handlebars
 #= require ember
+#= require ember-state
 #= require ember-data
 #= require ember-animate
 #= require video

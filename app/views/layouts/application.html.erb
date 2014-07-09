@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <!-- <link href="http://vjs.zencdn.net/4.6/video-js.css" rel="stylesheet"> -->
 <!-- <link href="/assets/video-js.css" rel="stylesheet">
@@ -16,6 +16,7 @@
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
 
+ 
 </script>
 
 <meta property="fb:app_id"          content="1452435865004111
@@ -44,9 +45,45 @@ addthisevent.settings({
 </script>
   
 
+
+
   
 </head>
 <body>
+  <script>
+var error, fbAppId, obj;
+
+fbAppId = 1452435865004111;
+
+obj = "http://getoli.com";
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId: fbAppId,
+    status: true,
+    cookie: true,
+    xfbml: true,
+    version: "v2.0"
+  });
+};
+
+(function(d, s, id) {
+  var fjs, js;
+  js = void 0;
+  fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {
+    return;
+  }
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1452435865004111&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
+
+
+
+</script>
+
   <p class="notice-oli"><%= notice %></p>
   <p class="alert-oli"><%= alert %></p>
 <%= yield %>
