@@ -20,4 +20,4 @@
 /config/secrets.yml
 deploy.sh
 
-/public/assets/videos
+/public/videos
