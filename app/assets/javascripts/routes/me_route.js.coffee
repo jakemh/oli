@@ -1,16 +1,16 @@
 Oli.MeRoute = Ember.Route.extend Ember.Evented,
-
+  
   setupController: (controller, model, queryParams) ->
+    controller.set('user', model)
 
   ackController: (->
     @controllerFor('acknowledgement')
     ).property()
 
 
-  afterModel: ->
-    if @controllerFor('me').get('paid') == true
-      @transitionTo('course_info')
-    else @transitionTo("free_videos")
+  afterModel: (model)->
+    # if model.get('isFree')
+    #   @transitionTo('free_videos')
   
   renderAckSelection: ->
     @render('me/' + "gratackPrompt", {
@@ -125,4 +125,7 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
   
 
   model: (params)->
-    return params.location
+    @store.find('user').then (user)->
+
+      user.get('firstObject')
+

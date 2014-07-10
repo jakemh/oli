@@ -6,6 +6,18 @@
   float: none !important;
 }
 
+.nav-contents-container{
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+
+}
+
+.nav-contents-container-secondary{
+  float: right;
+  
+}
+
 .navbar-text{
   float: none;
 
@@ -16,7 +28,7 @@
 }
 
 .navbar .navbar-collapse {
-  text-align: center;
+  text-align: left !important;
   margin:0 auto;
 }
 

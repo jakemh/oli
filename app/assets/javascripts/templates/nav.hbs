@@ -12,10 +12,22 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse  navbar-text" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav ">
-        <li>{{#link-to 'home'}}Home{{/link-to}}</li>
-        {{outlet navContents}}
-      </ul>
+      <div class="nav-contents-container">
+        <ul class="nav navbar-nav ">
+          <li>
+            {{#link-to 'home'}}Home{{/link-to}}</li>
+          {{outlet navContents}}
+        </ul>
+        <div class="nav-contents-container-secondary">
+          <ul class="nav navbar-nav ">
+           {{!--  <li>{{#link-to 'users.logout'}}Log out{{/link-to}}</li> --}}
+            <li>
+              {{#link-to 'free_video' 1}}Log out{{/link-to}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

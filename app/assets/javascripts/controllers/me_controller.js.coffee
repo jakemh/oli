@@ -1,4 +1,6 @@
 Oli.MeController = Ember.ObjectController.extend Ember.Evented,
+  queryParams: ['test']
+  test: null
   hash: ->
     new Em.RSVP.Promise (resolve, reject) =>
       hash = {}
@@ -6,7 +8,7 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
         hash[item.name] = index + 1
         
       resolve hash
-  p: "TEST"
+
   user: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
@@ -14,7 +16,14 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
           resolve users.get('firstObject')
     ).property()
 
-  paid: true
+  accountLevel: (->
+    @get('user.accountType')
+    ).property()
+
+  paid: (->
+    @get('user')
+    !@get('user.isFree')
+    ).property()
 
   notchBarLength: (->
     @get('barContent.length')

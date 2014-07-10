@@ -2,8 +2,8 @@ Oli.WelcomeRoute = Ember.Route.extend({
   setupController: (controller, model) ->
   
   afterModel: (model, transition)->
-    if transition.targetName == "welcome.index"
-      @transitionTo('free_videos_separate', 1)
+    # if transition.targetName == "welcome.index"
+    #   @transitionTo('free_videos_separate', 1)
 
   renderTemplate: ->
     freeVideosController = @controllerFor('freeVideos');
@@ -19,11 +19,14 @@ Oli.WelcomeRoute = Ember.Route.extend({
       controller: baseController 
     });
       
-    @render('freeVideo', {
-      outlet: 'freeVideo',
-      controller: freeVideosController
-    });
-
+    # @render('freeVideo', {
+    #   outlet: 'freeVideo',
+    #   controller: freeVideosController
+    # });
+    
+  actions:
+    willTransition: ->
+      alert "welcomeroute"
 
   
   model: (params) -> 

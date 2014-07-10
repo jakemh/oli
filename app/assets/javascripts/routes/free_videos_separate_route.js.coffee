@@ -1,25 +1,24 @@
 Oli.FreeVideoRoute = Ember.Route.extend({
   setupController: (controller, model) ->
-    @get('controller').set('content', model)
-
+    controller.set('content', model)
+    
   renderTemplate: ->
     freeVideoController = @controllerFor('freeVideo');
     baseController = @controllerFor('base');
 
-    @render('nav', {
-      outlet: 'nav',
-    });
+  
 
-    @render('navContents', {
-      outlet: 'navContents',
-      into: 'nav',
-      controller: baseController 
-    });
+    # @render('navContents', {
+    #   outlet: 'navContents',
+    #   into: 'nav',
+    #   controller: baseController 
+    # });
       
     @render('freeVideo', {
       outlet: 'freeVideo',
       controller: freeVideoController
     });
+  
 
   model: (params) -> 
     @controllerFor('freeVideos').videoByRelativeId(params.id)

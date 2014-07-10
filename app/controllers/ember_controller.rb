@@ -1,1 +1,4 @@
-class EmberController < ApplicationController; end
+class EmberController < ApplicationController
+  def index
+  end
+end

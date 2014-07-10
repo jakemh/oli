@@ -1,5 +1,4 @@
 # For more information see: http://emberjs.com/guides/routing/
-
 Oli.Router.map ()->
 
   
@@ -10,11 +9,15 @@ Oli.Router.map ()->
     )
   @route('home', {path: "/home/"})
 
+  @resource('users', ->
+    @resource('users.logout', path: '/sign_out')
+    )
   @resource('me', ->
     @resource('me', path: "/:opt")
     @resource('free_videos', ->
       @resource('free_videos_select', path: "/:id")
     )
+
     @resource('course_info')
     @resource('marketplace')
     @resource('resources')
@@ -34,9 +37,7 @@ Oli.Router.map ()->
         @resource('activities', {path: "/activities/:activity"}))))
 
 
-
-Oli.Router.reopen({
+Oli.Router.reopen
   location: 'history'
-  rootURL: '/'
-});
+
 

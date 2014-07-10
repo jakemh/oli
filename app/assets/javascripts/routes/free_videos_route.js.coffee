@@ -11,6 +11,8 @@ Oli.FreeVideosRoute = Ember.Route.extend Ember.Evented,
       into: "me"
     });
 
+
+
   afterModel: (model)-> 
     # @transitionTo('free_video', model.id)
 
