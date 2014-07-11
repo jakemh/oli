@@ -9,8 +9,8 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
 
 
   afterModel: (model)->
-    # if model.get('isFree')
-    #   @transitionTo('free_videos')
+    if model.get('isFree')
+      @transitionTo('free_videos')
   
   renderAckSelection: ->
     @render('me/' + "gratackPrompt", {
