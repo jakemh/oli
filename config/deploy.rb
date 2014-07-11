@@ -88,7 +88,7 @@ namespace :deploy do
       within current_path do
         puts "SYM LINKING"
         execute "ln -sf #{root}/application.yml #{working_directory}/config/application.yml"
-        execute "ln -s #{root}/public/videos #{working_directory}/current/public/videos"
+        execute "ln -s #{root}/public/videos #{working_directory}/public/videos"
 
       end
     end
