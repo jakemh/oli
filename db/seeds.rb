@@ -40,9 +40,6 @@ CSV.foreach(file, options) do |row|
 end
 
 
-# admin = Role.create(:name => "admin")
-# super_admin = Role.create(:name => "super_admin")
-# customer = Role.create(:name => "customer")
 
 # ahalya = User.create(:name => "ahalya", :email => "ahalya@ahalyakumaran.com", :password => "inneroli2014")
 # jake = User.create(:name => "jake", :email => "jakemh@gmail.com", :password => "inneroli2014")
@@ -58,6 +55,11 @@ end
 # stat1 = Status.create(:activity => first_act, :user => jake, :completed => true)
 # stat2 = Status.create(:activity => second_act, :user => jake, :completed => true)
 # stat3 = Status.create(:activity => third_act, :user => jake, :completed => true)
+
+
+# admin = Role.create(:name => "admin")
+# super_admin = Role.create(:name => "super_admin")
+# customer = Role.create(:name => "customer")
 
 # ahalya.roles << super_admin
 # jake.roles << super_admin

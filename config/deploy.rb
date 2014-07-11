@@ -86,8 +86,10 @@ namespace :deploy do
   task :finalize do
     on roles(:web) do
       within current_path do
-        puts "SYM LINKING APPLICATION.YML"
+        puts "SYM LINKING"
         execute "ln -sf #{root}/application.yml #{working_directory}/config/application.yml"
+        execute "ln -s #{root}/public/videos #{working_directory}/current/public/videos"
+
       end
     end
 
