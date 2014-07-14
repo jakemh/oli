@@ -6,6 +6,10 @@ class CoursesController < ApplicationController
     @courses = Course.all
 
   end
+  def list
+    render :json => Course.find(params[:ids])
+  end
+
 
   def get
     @course = Course.find(params[:id])

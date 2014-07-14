@@ -2,7 +2,7 @@ Oli.AccountRoute = Ember.Route.extend Ember.Evented,
   
   setupController: (controller, model) ->
     me = @get('controller.controllers.me')
-    me.set('content', 'account')
+    me.set('notchBarContent', 'account')
     me.send('trans', "account")
 
   renderTemplate: ->

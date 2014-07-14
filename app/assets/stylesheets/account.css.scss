@@ -1,14 +1,20 @@
 @import "oli-root";
 
-.info-bar-account{
+.container-info-bar-account{
+  position: absolute;
   display: inline-block;
-  height: 400px;
+}
+
+.info-bar-account{
+  position: relative;
+  float: left;
+  height: 500px;
   width: 19%;
   overflow: scroll;
   overflow-x:hidden;
   padding: 5px;
-  position: relative;
-
+  margin: 0;
+  line-height: 1em !important;
 }
 
 .name-container-account{
@@ -27,13 +33,13 @@
   position: absolute;
   margin: auto;
   text-align: center;
-  top: 10%;
+  top: 30px;
 
 }
 
 .content-container-account{
   display: inline-block;
-  height: 400px;
+  min-height: 400px;
   width: 80%;
   overflow: scroll;
   overflow-x:hidden;

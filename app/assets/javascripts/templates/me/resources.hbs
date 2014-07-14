@@ -1,1 +1,18 @@
-Resources
+<div class="container-me">
+  {{#each item in items}}
+    {{#view Oli.ResourceItemView}}
+    <div class="oli-bold oli-font-bigger item-resources">
+      {{item.name}}
+
+      <div class="divider-resources">
+        <span class="icon-resources">
+          <i class="icon-angle-up"></i>
+        </span>
+      </div>
+    </div>
+    <div class="expand-resource">
+      {{partial item.template}}
+    </div>
+    {{/view}}
+  {{/each}}
+</div>

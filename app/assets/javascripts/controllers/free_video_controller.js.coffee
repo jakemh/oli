@@ -15,8 +15,9 @@ Oli.FreeVideoController = Ember.ObjectController.extend Ember.Evented, Oli.Compo
     return DS.PromiseObject.create promise:
       new Em.RSVP.Promise (resolve, reject) =>
         @videoComp(@get('content')).then (vid)->
-          resolve '/videos/' + vid.get('data')
-    ).property()
+          alert vid.get('c')
+          resolve '/videos/' + vid.get('file_name')
+    ).property("content")
 
   width: "549"
   height: "320"

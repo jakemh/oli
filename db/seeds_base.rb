@@ -26,11 +26,12 @@ module SeedsBase
 
    
 
+    puts row["c_1_file_name"]
     if row["c_1_name"]
       components << self.component_constant(row["c_1_type"]).create!(
         :context => row["c_1_name"],
         :content => row["sub_text_1"],
-        :data => row["c_1_data"]
+        :file_name => row["c_1_file_name"]
         )
     end
 
@@ -38,7 +39,7 @@ module SeedsBase
       components << self.component_constant(row["c_2_type"]).create!(
         :context => row["c_2_name"], 
         :content => row["sub_text_2"],
-        :data => row["c_2_data"]
+        :file_name => row["c_2_file_name"]
 
         )
     end
@@ -47,7 +48,7 @@ module SeedsBase
       components << self.component_constant(row["c_3_type"]).create!(
         :context => row["c_3_name"], 
         :content => row["sub_text_3"],
-        :data => row["c_3_data"]
+        :file_name => row["c_3_file_name"]
 
         )
     end

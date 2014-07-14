@@ -30,7 +30,8 @@ Oli.BarView = Em.View.extend({
     this.$().children()
 
   mouseLeave: ->
-    $(@children()[0]).stop().fadeOut("fast")
+    $('#hover-box').stop().fadeOut("fast")
+    # $(@children()[0]).stop().fadeOut("fast")
 });
 
 Oli.NotchView = Em.View.extend({
@@ -94,7 +95,7 @@ Oli.TriangleView = Em.View.extend({
         # console.log("CONT: " + controller.content)
         # alert controller.content
         # alert controller
-        index = h[controller.content]
+        index = h[controller.get('notchBarContent')]
         thinBar = $('#thin-bar')
         oThin = thinBar.offset()
         hoverBox = $('#hover-box')

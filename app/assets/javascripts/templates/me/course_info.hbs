@@ -1,1 +1,27 @@
-Course Info
+<div class="container-me">
+  <div class="oli-bold oli-font-bigger"> 
+    Progress
+  </div>
+  <div class="inner-course-info">
+    <div class="select-course-info oli-bold">
+      Select to enter course
+    </div>
+
+    {{#each topic in topics}}
+      <div class="item-course-info">
+        <div class="logo-course-info"></div>
+        {{#link-to 'topics' content.id topic.name}}{{topic.name}}{{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="oli-bold oli-font-bigger badges-container-course-info"> 
+    Badges
+  </div>
+    <div class="inner-course-info">
+      {{#each controller.badgeCount}}
+        <div class="badge-circle-course-info">
+        </div>
+      {{/each}}
+    </div>
+</div>

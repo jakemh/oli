@@ -2,7 +2,7 @@ Oli.MarketplaceRoute = Ember.Route.extend Ember.Evented,
   
   setupController: (controller, model) ->
     me = @get('controller.controllers.me')
-    me.set('content', 'marketplace')
+    me.set('notchBarContent', 'marketplace')
     me.send('trans', "marketplace")
 
   renderTemplate: ->

@@ -17,6 +17,10 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
     @content.get('tip')
     ).property("content")
 
+  notchBarContent: (->
+    @get('content')
+    ).property('content')
+
   barContent: (->
     @get('activities').map((item, index) ->
       {name: item.get('name'), completed: item.get('completed')}

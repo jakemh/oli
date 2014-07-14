@@ -29,6 +29,8 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
     @get('barContent.length')
     ).property()
 
+  notchBarContent: null
+  
   noHover: true
   displayNoArrow: false
   hovering: null

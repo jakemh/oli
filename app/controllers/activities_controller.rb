@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
-  
+ 
+
   def list
     render :json => Activity.find(params[:ids])
   end

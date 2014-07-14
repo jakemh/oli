@@ -1,0 +1,58 @@
+@import "oli-root";
+@import "me";
+
+// .container-course-info{
+//   margin-left: 20px;
+//   margin-top: 20px;
+// }
+
+.inner-course-info{
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.select-course-info{
+  font-size: .7em
+}
+
+.item-course-info{
+  @include oli-bold;
+  margin-top: 10px;
+  
+  cursor: pointer;
+  
+
+  
+}
+
+.item-course-info a{
+  color: oli-dark-gray(1) !important;
+  font-size: .9em;
+  &:hover{
+    color: oli-yellow(1) !important;
+  }
+}
+
+.logo-course-info{
+  display: inline-block;
+  $mult: .6px;
+  background: image-url("small-logo-gray.png");
+  height: 29*$mult;
+  width: 32*$mult;
+
+  background-size:29*$mult 32*$mult;
+}
+
+.badges-container-course-info{
+  margin-top: 30px;
+}
+
+.badge-circle-course-info{
+  display: inline-block;
+  margin-right: 35px;
+  height: 60px;
+  width: 60px;
+  border: 1px dashed oli-dark-gray(1);
+  border-radius: 50px;
+
+}

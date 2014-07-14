@@ -1,7 +1,7 @@
 class VideoComponent < Component
 
   def video
-    self.data
+    self.file_name
   end
 
 end

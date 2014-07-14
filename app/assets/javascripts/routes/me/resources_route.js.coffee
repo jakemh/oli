@@ -2,7 +2,7 @@ Oli.ResourcesRoute = Ember.Route.extend Ember.Evented,
   
   setupController: (controller, model) ->
     me = @get('controller.controllers.me')
-    me.set('content', 'resources')
+    me.set('notchBarContent', 'resources')
     me.send('trans', "resources")
 
   renderTemplate: ->

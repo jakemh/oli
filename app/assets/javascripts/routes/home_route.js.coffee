@@ -10,4 +10,4 @@ Oli.HomeRoute = Ember.Route.extend Ember.Evented,
       outlet: "home"
     });
 
-    debugger
+    

@@ -2,16 +2,19 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
   
   setupController: (controller, model, queryParams) ->
     controller.set('user', model)
+    controller.set('content', model)
 
   ackController: (->
     @controllerFor('acknowledgement')
     ).property()
 
 
-  afterModel: (model)->
-    if model.get('isFree')
-      @transitionTo('free_videos')
-  
+  afterModel: (model, transition)->
+    if transition.targetName == "me.index"
+      if model.get('isFree')
+        @transitionTo('free_videos')
+      else @transitionTo('course_info')
+
   renderAckSelection: ->
     @render('me/' + "gratackPrompt", {
       outlet: 'gratackContent'
@@ -31,6 +34,8 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
       @get('ackController').saveEntry(type).then (response)=>
         @renderAckSelection()
         @get('ackController').set("input", null)
+        @controllerFor('resources').notifyPropertyChange('acknowledgements', 'gratitudes')
+        @controllerFor('resources').notifyPropertyChange('gratitudes')
 
     yesButtonPressed: (type)->
       @get('ackController').setContent(type)
@@ -126,6 +131,5 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
 
   model: (params)->
     @store.find('user').then (user)->
-
       user.get('firstObject')
 

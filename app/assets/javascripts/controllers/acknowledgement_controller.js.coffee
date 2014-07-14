@@ -1,6 +1,6 @@
 Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
   needs: ["me"]
-  input: null
+  # input: null
 
   setContent: (type)->
     if type == "acknowledgement"
@@ -10,15 +10,16 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
     else if type == "quote"
       @set('content', @get('quote'))
 
+ 
 
   ack: (-> 
-    type: "Acknowlegement"
-    typeLower: "acknowlegement"
-    typePlural: "acknowlegements"
-    title: "Daily Acknowlegement"
+    type: "Acknowledgement"
+    typeLower: "acknowledgement"
+    typePlural: "acknowledgements"
+    title: "Daily Acknowledgement"
     subtext: "Record an acknowledgement today!"
     placeholder: "I acknowledge that I..."
-
+    input: "I acknowledge that I "
     ).property()
 
   grat: (-> 
@@ -26,8 +27,10 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
     typeLower: "gratitude"
     typePlural: "gratitudes"
     title: "Daily Gratitude"
-    subtext: "Record an gratitude today!"
+    subtext: "Capture what you're grateful for today!"
     placeholder: "I am grateful for..."
+    input: "I am grateful for "
+
     ).property()
 
   quote: (->

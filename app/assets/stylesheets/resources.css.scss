@@ -1,0 +1,36 @@
+@import "oli-root";
+.item-resources{
+  line-height: .8em;
+  position: relative;
+  width: 94%;
+  border-bottom: 1px solid black;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.gratack-item-resources{
+  margin-left: 30px;
+}
+
+.gratack-item-date-resources{
+  margin-right: 30px;
+}
+
+.gratack-item-post-resources{
+
+}
+
+.icon-resources{
+  position: absolute;
+  right: -3px;
+  top: -3px;
+}
+
+.expand-resource{
+  display: none;
+  overflow: scroll;
+  overflow-x:hidden;
+  margin-bottom: 25px;
+  height: 250px;
+  width: 100%;
+}

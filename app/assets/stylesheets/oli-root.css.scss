@@ -71,6 +71,11 @@ $levels-height: 45px;
   font-size: .85em;
 
 }
+
+.oli-font-bigger{
+  font-size: 1.15em;
+
+}
 @mixin scrollable-box{
   overflow: scroll;
   overflow-x:hidden;

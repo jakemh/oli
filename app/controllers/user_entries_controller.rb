@@ -1,6 +1,12 @@
 class UserEntriesController < ApplicationController
   def list
-    render :json => current_user.user_entries.find(params[:ids]), root: "entries"
+    # render :json => current_user.user_entries.find(params[:ids]), root: "entries"
+    if params[:ids]
+      render :json => current_user.user_entries.find(params[:ids]), root: "entries"
+    else
+      params.delete("controller"); params.delete("action")
+      render :json => current_user.user_entries.where(params), root: "entries"
+    end
   end
 
   def show

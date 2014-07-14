@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709204031) do
+ActiveRecord::Schema.define(version: 20140714050057) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140709204031) do
     t.boolean  "is_completed"
     t.string   "context"
     t.string   "title"
-    t.string   "data"
+    t.string   "file_name"
   end
 
   create_table "courses", force: true do |t|
