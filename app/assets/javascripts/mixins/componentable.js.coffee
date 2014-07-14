@@ -54,7 +54,6 @@ Oli.Componentable = Ember.Mixin.create
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
         @component(componentContext, activity).then (c)=>
-          debugger
           c.get('entries').then (es)->
 
             current = es.filterProperty("context", entryContext)

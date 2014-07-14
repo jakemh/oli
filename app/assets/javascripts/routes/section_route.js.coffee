@@ -23,7 +23,7 @@ Oli.SectionsRoute = Ember.Route.extend
             # window.history.back()
 
   afterModel: (model, transition) -> 
-    console.log("TRANS: " + transition)
+    console.log("aftermodel: " + transition)
     if (transition.targetName == "sections.index") 
       if model.get('name') == "Level 1"
         @transitionTo("activities", "Intro")

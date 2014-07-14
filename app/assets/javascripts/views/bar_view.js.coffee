@@ -24,6 +24,7 @@ Oli.BarView = Em.View.extend({
         @get('controller').progress.grow(relID, callback)
 
   click: ->
+
     @get('controller').send('moveArrow', @);
 
   children: ->
@@ -90,8 +91,9 @@ Oli.TriangleView = Em.View.extend({
     setArrow: (controller) ->
       triangle = $('#triangle')
       hash = controller.hash().then (h) => 
+
         oTri = triangle.offset()
-        # console.log("HASH: " + JSON.stringify(h))
+        console.log("HASH: " + JSON.stringify(h))
         # console.log("CONT: " + controller.content)
         # alert controller.content
         # alert controller

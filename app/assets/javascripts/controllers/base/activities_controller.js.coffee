@@ -63,7 +63,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
 
   activities:  ((model, obj) ->
     @get('controllers.sections').get('activities')
-    ).property('name')
+    ).property('controllers.sections.activities')
   
 
   # activities: (->
@@ -107,8 +107,8 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
     
     updateContent: ->
 
-    moveArrow: (element) ->
-      @trigger('delegate.setArrow', @) 
+    # moveArrow: (element) ->
+      # @trigger('delegate.setArrow', @) 
 
     trans: (m)->
       @trigger('delegate.setArrow', @) 
@@ -125,7 +125,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
       console.log "MOVE ARROW"
       console.log @content.get("name")
       @set('hovering', @content);
-      @trigger('delegate.setArrow', @) 
+      # @trigger('delegate.setArrow', @) 
 
  
     goHere: (act) ->

@@ -2,7 +2,8 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
   setupController: (controller, model) ->
     controller.set('content', model);
     controller.send('trans', model)
-    controller.notifyPropertyChange('hash')
+
+    # controller.notifyPropertyChange('hash')
     controller.set('template', @template())
     @get('childControllers')[@template()].setup()
 

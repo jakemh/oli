@@ -5,7 +5,7 @@ Oli.ResourcesController = Ember.ObjectController.extend Ember.Evented,
         [
           {name: "Course Report", template: "me/partials/courseReport", object: null}
           {name: "Links", template: "me/partials/links", object: null}
-          {name: "Daily Acknowlegements", template: "me/partials/acknowledgements", object: @get('acknowlegements')}
+          {name: "Daily Acknowledgments", template: "me/partials/acknowledgements", object: @get('acknowlegements')}
           {name: "Daily Gratitudes", template: "me/partials/gratitudes", object: @get('gratitudes')}
         ]
     ).property()
