@@ -5,7 +5,12 @@ Oli.VideoController = Ember.ObjectController.extend Ember.Evented, Oli.Component
     @component("video")
     ).property()
 
-  source: "/videos/video_1.mp4"
+  source: (->
+    return DS.PromiseObject.create promise:
+      new Em.RSVP.Promise (resolve, reject) =>
+        @videoComp(@get('controllers.activities.content')).then (vid)->
+          resolve '/videos/' + vid.get('file_name')
+    ).property("content")
 
   handleVideoDispose: (player)->
     @set('controllers.activities.video', player)
