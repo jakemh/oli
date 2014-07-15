@@ -7,6 +7,7 @@
 #= require_tree ./helpers
 #= require_tree ./components
 #= require_tree ./templates
+#= require_tree ./routes/base
 #= require_tree ./routes
 #= require ./router
 #= require_self

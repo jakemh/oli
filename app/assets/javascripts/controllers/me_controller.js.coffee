@@ -9,6 +9,13 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
         
       resolve hash
 
+  topics: [
+            {name: "About", link: "about"}
+            {name: "Pricing", link: "pricing"}
+            {name: "Contact", link: "contact"}
+            {name: "Blog", link: "blog"}
+          ]
+
   user: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>

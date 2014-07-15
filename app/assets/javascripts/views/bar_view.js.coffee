@@ -103,9 +103,10 @@ Oli.TriangleView = Em.View.extend({
         hoverBox = $('#hover-box')
         bar = $('#thin-bar')
         notchLength = bar.children('.notch-ember').eq(0).width()
-        triangle.animate({
-          top: oTri.top - oThin.top
-          left: ((index - 1) * notchLength)
-          })
+        if thinBar.length
+          triangle.animate({
+            top: oTri.top - oThin.top
+            left: ((index - 1) * notchLength)
+            })
       
 });

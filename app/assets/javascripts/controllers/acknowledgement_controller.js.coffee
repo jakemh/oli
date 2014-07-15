@@ -10,7 +10,8 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
     else if type == "quote"
       @set('content', @get('quote'))
 
- 
+  ackDefault: "I acknowledge that I "
+  ackDefault: "I am grateful for "
 
   ack: (-> 
     type: "Acknowledgement"
@@ -19,7 +20,7 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
     title: "Daily Acknowledgement"
     subtext: "Record an acknowledgement today!"
     placeholder: "I acknowledge that I..."
-    input: "I acknowledge that I "
+    input: @get('ackDefault')
     ).property()
 
   grat: (-> 
@@ -29,7 +30,7 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
     title: "Daily Gratitude"
     subtext: "Capture what you're grateful for today!"
     placeholder: "I am grateful for..."
-    input: "I am grateful for "
+    input: @get('gratDefault')
 
     ).property()
 
@@ -47,7 +48,8 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
 
   buttonDisabled: (->
     if @get('input') != null && @get('input') != ""
-      return false
+      if @get('input') != @get('ackDefault') && @get('input') != @get('gratDefault')
+        return false
     return true
     ).property("input")
 

@@ -7,7 +7,6 @@ Oli.Router.map ()->
   @resource('welcome', ->
     @resource('free_video', {path: "/:id"})
     )
-  @route('home', {path: "/home/"})
 
   @resource('users', ->
     @resource('users.logout', path: '/sign_out')
@@ -23,6 +22,11 @@ Oli.Router.map ()->
     @resource('resources')
     @resource('account')
   )
+
+  @resource('pricing')
+  @resource('about')
+  @resource('blog')
+  @resource('contact')
 
   # @resource('meIndex', {path: "/me"})
   # @resource('me', {path: "/me/:location"}, ->

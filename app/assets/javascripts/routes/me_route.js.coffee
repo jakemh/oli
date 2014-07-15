@@ -1,3 +1,10 @@
+Oli.MeIndexRoute = Ember.Route.extend
+  afterModel: (model, transition)->
+    if transition.targetName == "me.index"
+      if model.get('isFree')
+        @transitionTo('free_videos')
+      else @transitionTo('course_info')
+
 Oli.MeRoute = Ember.Route.extend Ember.Evented,
   
   setupController: (controller, model, queryParams) ->
@@ -28,7 +35,8 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
       controller: @get('ackController')
       })
 
-
+   
+      
   events:
     acknowledgementButtonPressed: (type)->
       @get('ackController').saveEntry(type).then (response)=>
@@ -87,7 +95,13 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
     @render('nav', {
       outlet: 'nav',
     });
-  
+    
+    @render('navContentsHome', {
+      outlet: 'navContents',
+      into: 'nav',
+      controller: @controllerFor("me") 
+      })
+
     template = @modelFor("me")
     @render('me', {
       outlet: 'me'
