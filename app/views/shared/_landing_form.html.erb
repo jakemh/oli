@@ -1,0 +1,14 @@
+<div class="oli-form">
+      <%= form_tag("/landing", method: "post", id: "oli-form") do %>
+      <%= text_field_tag(:name, nil, :placeholder => "Name", :class => "submit-field-name-oli") %>
+      <%= text_field_tag(:email, nil, :type => "email", :placeholder => "Email", :class => "submit-field-name-oli") %>
+      <%= text_field_tag(:email, nil, :type => "email", :placeholder => "password", :class => "submit-field-oli") %>
+
+        <button class="ladda-button submit-button-oli" data-style="zoom-out"><span class="ladda-label">SUBMIT</span></button>
+        <div class="signed-in-oli oli-text oli-small signed-in-oli">Already signed in? <%= link_to  "Sign in", new_user_session_path %> </div>
+        <div class="status-oli"> <%= flash.now[:notice] %></div>
+          
+
+      <% end %>
+      
+    </div> <!-- /oli-form -->

@@ -1,0 +1,31 @@
+ <div class="wrapper-oli">
+    <div class="logo-wrapper">
+      <div class="logo-oli"><%= image_tag "oli-no-flame.png" %></div>
+      <div class="logo-flame"><%= image_tag "flame.png" %></div>
+
+    </div>
+
+  <div class="header-text-oli">
+   <%=heading%>
+  </div>
+
+  <div class="info-oli">
+    <div class="body-text-oli text-content-oli">
+      <%= subtext %>
+    </div>
+    <div class="footer-text-oli text-content-oli">
+      <%= footer %>
+    </div>
+    <%= render :partial => landing_form_partial, :locals => 
+    {:button_text => "TSET"}
+ %>
+   
+  </div> <!-- /info -->
+
+    <div class="push-oli"></div>
+</div>
+
+<div class="footer-oli">
+  <div class="flames"></div>
+
+</div>

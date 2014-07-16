@@ -18,18 +18,18 @@ $(document ).ready(function() {
           }, 2000);
         }
 
-        $("#oli-form").submit(function() {
+        $("#new_user").submit(function() {
           laddaLoadingButton.start();
           $.ajax({
-          url: '/landing',
+          url: '/users',
           type: 'post',
           async: true,
-          data: $("#oli-form").serialize(),
+          data: $("#new_user").serialize(),
           dataType: 'script',
           beforeSend: function (xhr) {
             xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
           }
-          }).fail(function() {
+          }).fail(function(error) {
             failAnimation();
             laddaLoadingButton.stop();
 

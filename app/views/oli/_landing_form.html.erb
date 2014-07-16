@@ -1,0 +1,37 @@
+<div class="oli-form">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <%= f.text_field :name, autofocus: true, :class => "submit-field-name-oli", :placeholder => "Name" %>
+
+  <%= f.email_field :email, :class => "submit-field-name-oli", :placeholder => "Email"  %>
+
+    <%= f.password_field :password, autocomplete: "off", :class => "submit-field-oli", :placeholder => "Password"  %>
+
+
+  <button class="ladda-button submit-button-oli" data-style="zoom-out"><span class="ladda-label"><%= "Submit" %></span></button>
+  <div class="signed-in-oli oli-text oli-small signed-in-oli">Already registered? <%= link_to  "Sign in", new_user_session_path %> </div>
+  <div class="status-oli"> <%= flash.now[:notice] %></div>
+<% end %>
+
+</div>
+
+
+<% if false %>
+  <div class="oli-form">
+    <%= form_tag("/landing", method: "post", id: "oli-form") do %>
+    <%= text_field_tag(:name, nil, :placeholder => "Name", :class => "submit-field-name-oli") %>
+    <%= text_field_tag(:email, nil, :type => "email", :placeholder => "Email", :class => "submit-field-name-oli") %>
+    <%= text_field_tag(:email, nil, :type => "email", :placeholder => "Password", :class => "submit-field-oli") %>
+
+      <button class="ladda-button submit-button-oli" data-style="zoom-out"><span class="ladda-label"><%= "Submit" %></span></button>
+      <div class="signed-in-oli oli-text oli-small signed-in-oli">Already registered? <%= link_to  "Sign in", new_user_session_path %> </div>
+      <div class="status-oli"> <%= flash.now[:notice] %></div>
+        
+
+    <% end %>
+    
+  </div> <!-- /oli-form -->
+<% end %>

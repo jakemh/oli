@@ -79,6 +79,12 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
   }
 }
 
+.signed-in-oli{
+  text-align: center;
+  margin-top: 4px;
+  font-size: .8em !important;
+}
+
 .logo-oli{
   position: absolute;
   margin:0 auto;
@@ -187,7 +193,7 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
   opacity: .7;
 }
 
-.oli-form input[type=text], .oli-form input[type=email]{
+.oli-form input[type=text], .oli-form input[type=email], .oli-form input[type=password]{
   border: solid 1px rgba(0, 0, 0, .2);
   width: 65%;
   display: block;
@@ -211,7 +217,7 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 }
 
 .submit-field-name-oli{
-  margin-bottom: 15px !important;
+  margin-bottom: 10px !important;
 
 }
 

@@ -18,11 +18,15 @@ Rails.application.routes.draw do
       request.format == mime_type
     end
   end
-  root to: 'oli#landing'
+  # root to: 'oli#landing'
 
   # match "/me" => "users#show", via: :get, :as => :my_page
 
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'oli'}
+
+  devise_scope :user do
+    root to: 'oli#new'
+  end
 
   get "/users" => "users#user"
   match "/landing" => "oli#landing", via: :get

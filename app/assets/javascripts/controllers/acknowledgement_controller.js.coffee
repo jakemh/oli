@@ -11,7 +11,7 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
       @set('content', @get('quote'))
 
   ackDefault: "I acknowledge that I "
-  ackDefault: "I am grateful for "
+  gratDefault: "I am grateful for "
 
   ack: (-> 
     type: "Acknowledgement"

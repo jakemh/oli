@@ -101,7 +101,7 @@
 
 }
 
-input[type=checkbox] {
+.roundedOne input[type=checkbox] {
  display:none;
  }
 
@@ -137,4 +137,18 @@ input[type=checkbox] {
   height: 30px;
   width: 100px;
   float: right;
+}
+
+.remember-me-oli{
+  margin: 0 auto;
+  text-align: left;
+  width: 250px;
+
+  @include oli-text;
+  color: oli-dark-gray(1) !important;
+  font-size: .8em;
+}
+
+.password-recovery{
+  margin-left: 20px;
 }
