@@ -20,7 +20,10 @@ class ApplicationController < ActionController::Base
     # session[:previous_urls].unshift request.fullpath if session[:previous_urls].first != request.fullpath 
     session[:previous_urls].pop if session[:previous_urls].count > 2
   end
-  
+  def after_sign_out_path_for(resource_or_scope)
+     root_path
+   end
+   
   def after_inactive_sign_up_path_for(resource)
     my_page_path
   end

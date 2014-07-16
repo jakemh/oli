@@ -1,4 +1,3 @@
-
 Oli.User = DS.Model.extend
   name: DS.attr('string')
   photo: DS.attr('string')
@@ -6,14 +5,13 @@ Oli.User = DS.Model.extend
   courses: DS.hasMany('course', async: true)
   
   accountType: (->
-    console.log @get('role')
     if @get('isFree') == true
       "Free user"
     else 
       @get('role')
-    ).property()
+    ).property('role')
 
   isFree: (->
-    if @get('role') != "admin" && @get('role') != "super_admin" || @get('role')== "" || !@get('role') || @get('role') == null
+    if @get('role') != "customer" && @get('role') != "admin" && @get('role') != "super_admin" || @get('role')== "" || !@get('role') || @get('role') == null
         return true
-    ).property()
+    ).property('role')

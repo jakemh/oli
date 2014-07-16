@@ -11,4 +11,17 @@ class UsersController < ApplicationController
     @user = current_user 
     render json: @user  
   end
+
+  def update
+    @user = current_user 
+    permit = params[:user].permit(:role, :name, :photo)
+    puts "TEST: ", permit
+    @user.update_attributes(:name => permit[:name])
+
+    # permit = params[:user].permit(:role)
+    # puts permit
+    @user.roles << Role.create(:name => permit[:role])
+
+    render json: @user
+  end
 end

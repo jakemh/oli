@@ -19,7 +19,12 @@ Oli.FreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
         v = videos.objectAtContent(relativeId - 1)
         resolve v
 
-
+  buttonClicked: ->
+    user = @get('controllers.me.content')
+    user.set('role', "customer")
+    user.save().then (u)=>
+      @transitionTo('me')  
+        
   videosFormatted: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>

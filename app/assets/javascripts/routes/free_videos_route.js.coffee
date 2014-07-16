@@ -2,7 +2,7 @@ Oli.FreeVideosRoute = Ember.Route.extend Ember.Evented,
   setupController: (controller, model) ->
     @get('controller').set('content', model)
     me = @get('controller.controllers.me')
-    me.set('content', "free_videos")
+    me.set('notchBarContent', "free_videos")
     me.send('trans', "free_videos")
 
   renderTemplate: ->

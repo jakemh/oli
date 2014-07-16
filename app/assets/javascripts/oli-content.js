@@ -17,7 +17,7 @@ $(document ).ready(function() {
             _this.removeClass("fail-animation")
           }, 2000);
         }
-
+      if ($(".oli-form-register").length > 0){
         $("#new_user").submit(function() {
           laddaLoadingButton.start();
           $.ajax({
@@ -40,5 +40,6 @@ $(document ).ready(function() {
           });
         return false;
         })
-     } 
+      } 
+    }
   });

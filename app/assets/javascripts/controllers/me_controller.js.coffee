@@ -28,13 +28,12 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
     ).property()
 
   paid: (->
-    @get('user')
-    !@get('user.isFree')
-    ).property()
+    !@get('content.isFree')
+    ).property('content.isFree')
 
   notchBarLength: (->
     @get('barContent.length')
-    ).property()
+    ).property('barContent')
 
   notchBarContent: null
   
@@ -42,12 +41,13 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
   displayNoArrow: false
   hovering: null
   notchGap: false
+
   barContent: (->
     if @get("paid") == true
       @get('barContentPaid')
     else
       @get('barContentFree')
-    ).property()
+    ).property('content.role')
 
   barContentFree: (->
     [
