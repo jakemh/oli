@@ -3,7 +3,7 @@
   
   </div>
   <div class="task-list-container">
-    {{#each item in controller.list}}
+    {{#each item in controller.sortedList}}
       {{#view Oli.BrainstormItemView}}
 
       <div class="task-container">
@@ -13,7 +13,7 @@
            </div> {{!-- </col-xs-3>  --}}
           <div class="col-xs-8">
             {{input class="oli-form-field-long no-margin full-width"
-            placeholder="Write ask"
+            placeholder="Write Task"
             value=item.text}}
           </div>{{!-- </col-xs-8>  --}}
         </div>{{!-- </row>  --}}
@@ -24,16 +24,16 @@
             Because I value:
           </div> {{!-- </col-xs-3>  --}}
           <div class="col-xs-8">
-            {{view Ember.Select 
+            {{view Oli.BrainstormSelectView
+            item=item
             multiple="true"    
             class="thread-dropdown"
             contentBinding="threadsList.content"
             optionValuePath="content.value"
             optionLabelPath="content.label"
-            selectionBinding="item.selections"
+
           }}
           {{#each item.selections}}
-            {{this.value}}
           {{/each}}
           </div>{{!-- </col-xs-8>  --}}
         </div>{{!-- </row>  --}}

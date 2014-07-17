@@ -1,5 +1,8 @@
 Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Ember.Copyable,
+
+
   setup: ->
+    @setFields()
     @get('threadsList').then (list)->
 
     
@@ -9,7 +12,6 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
   minimumFields: 3
 
-  test: [{value: 57, label: "Word 9"}]
 
   actionEntry: (componentContext, entryContext, activity)->
     return DS.PromiseObject.create promise: 
@@ -20,6 +22,40 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
             if current
               resolve(current)
 
+  commitBoxEntry: (actionEntry, box_ids, callback) ->
+    new Em.RSVP.Promise (resolve, reject) =>
+      actionEntry.get('boxes').then (boxes) =>
+        boxes.clear()
+        for box_id, i in box_ids
+          box = @store.getById('box', box_id)
+          boxes.pushObject(box)
+          if i == box_ids.length - 1
+            actionEntry.save().then (response)=>
+              resolve 
+
+  # commitBoxEntry: (actionEntry, box_ids, callback) ->
+  #   new Em.RSVP.Promise (resolve, reject) =>
+
+  #     count = 0
+  #     for box_id in box_ids
+  #       do (box_id) =>
+  #         box =  @store.getById('box', box_id)
+  #         boxEntry = @get('store').createRecord('boxEntry', 
+  #           actionEntry: actionEntry
+  #           box_id: box.id
+  #         )
+  #         actionEntry.get('boxEntries').then (boxEntries) =>
+  #           boxEntries.pushObject(boxEntry)
+
+  #           # box.get('boxEntries').then (boxEntries) =>
+  #           #   boxEntries.pushObject(boxEntry)
+  #           #   alert "TEST"
+  #           boxEntry.get('actionEntry').then (ae)=>
+  #             boxEntry.save().then (response)=>
+  #               count += 1
+  #               if count == box_ids.length - 1
+  #                 resolve 
+
   commitActionEntry: (componentContext, entryContext, message, threads, callback)->
    @component(componentContext).then (c)=>
       actionEntry = @get('store').createRecord('actionEntry', {
@@ -28,15 +64,11 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
           context: entryContext
         })
 
-      actionEntry.get('boxes').then (boxes)=>
-        alert threads
-        for box_id in threads
-          boxes.pushObject(@store.find('box', box_id))
-        c.get('actionEntries').then (ues)=>
-          ues.pushObject(actionEntry)
-          actionEntry.save().then (response)=>
-            if callback
-              callback(response)
+      c.get('actionEntries').then (ues)=>
+        ues.pushObject(actionEntry)
+        actionEntry.save().then (response)=>
+          @commitBoxEntry(response, threads).then (response)=>
+
 
   component1: (->
     @component("brainstorm")
@@ -44,11 +76,12 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
 
   list: (->
-    [{entry_id: null, text: "dd", saved:false, selections: [{"value": "58", "label": "Word 9"}]},
-    {entry_id: null, text: "ee", saved:false, selections:[{"value": "58", "label": "Word 9"}]},
-    {entry_id: null, text: "ff", saved:false, selections:[{"value": "58", "label": "Word 9"}]}]
-
+    []
     ).property("")
+
+  sortedList: (->
+    @get('list').sortBy('createdAt').reverse()
+    ).property("list.@each")
 
   threadsList2: (->
     return DS.PromiseObject.create promise: 
@@ -94,17 +127,21 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
       new Em.RSVP.Promise (resolve, reject) =>
         @actionEntry("brainstorm", "brainstorm").then (entries)=>
           el = []
-            # if entries.length > 0
-            #   e = entries.map((item, index)->
-            #     {entry_id: item.id, text: item.get('post'), saved: true, selections: item.boxes || []}
-            #     )
-            #   resolve e
+       
           i = entries.length
           if entries.length > 0 
             for entry in entries
               do (entry) =>
                 entry.get('boxes').then (boxes)=>
-                  el.pushObject({entry_id: entry.id, text: entry.get('post'), saved: true, selections: @get('test') })
+                  boxesArray = boxes.map((item, index)-> {value: item.id})
+                  el.pushObject({
+                    entry_id: entry.id
+                    text: entry.get('post')
+                    saved: true
+                    selections: boxesArray
+                    createdAt: entry.get('created_at')
+                    })
+
                   i -= 1
                   resolve el.reverse() if i == 0
 
@@ -112,41 +149,31 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
   actions:
     addTask: ->
-      @get('list').insertAt(0, {entry_id: null, text: null, saved:false, selections: []})
+      @get('list').insertAt(0, {
+        entry_id: null
+        text: null 
+        saved:false
+        selections: []
+        createdAt: new Date()
+        })
 
-  commitBoxEntry: (actionEntry, box_ids, callback) ->
-
-    for box_id in box_ids
-      do (box_id) =>
-        box =  @store.getById('box', box_id)
-        boxEntry = @get('store').createRecord('boxEntry', 
-          actionEntry: actionEntry
-          box_id: box.id
-        )
-        actionEntry.get('boxEntries').then (boxEntries) =>
-          boxEntries.pushObject(boxEntry)
-
-          # box.get('boxEntries').then (boxEntries) =>
-          #   boxEntries.pushObject(boxEntry)
-          #   alert "TEST"
-          boxEntry.get('actionEntry').then (ae)=>
-            boxEntry.save().then (response)=>
-
-          
   submitForm: (callback)->
-    console.log $(".thread-dropdown").attr("selected", true)
     # for item in @get('list').filterProperty("saved", false)
     for item in @get('list')
       do (item)=>
         if item.saved == false
-          @commitActionEntry("brainstorm", "brainstorm", item.text, item.selections, (response)->
-            id = response.id
-            item.entry_id = id
-          )
-          item.saved = true
+          values = item.selections.map((item, index)-> item.value)
+          if item.text && values
+            @commitActionEntry("brainstorm", "brainstorm", item.text, values).then (response)=>
+              # id = response.id
+              # item.entry_id = id
+              item.saved = true
+          else 
+            #post or values are empty
         else
           @store.find('actionEntry', item.entry_id).then (actionEntry)=>
             values = item.selections.map((item, index)-> item.value)
+
             @commitBoxEntry(actionEntry, values)
 
-    # callback()
+    callback()

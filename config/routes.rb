@@ -72,6 +72,7 @@ Rails.application.routes.draw do
   get '/actionEntries/:id', :to => 'action_entries#show'
   get '/actionEntries', :to => 'action_entries#list'
   post '/actionEntries', :to => 'action_entries#create'
+  put '/actionEntries/:id', :to => 'action_entries#update'
 
   get '/boxEntries/:id', :to => 'box_entries#show'
   get '/boxEntries', :to => 'box_entries#list'

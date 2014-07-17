@@ -38,6 +38,7 @@ gem 'active_model_serializers'
 gem 'deep_cloneable' #phase this out
 gem 'sidekiq'
 gem 'stemmify'
+gem 'paypal-express'
 
 group :production do
   gem 'unicorn'

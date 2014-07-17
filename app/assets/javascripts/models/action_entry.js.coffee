@@ -4,3 +4,4 @@ Oli.ActionEntry = DS.Model.extend
   post: DS.attr('string', defaultValue: "")
   context: DS.attr('string')
   boxes: DS.hasMany('box', async: true)
+  created_at: DS.attr('date')
