@@ -91,6 +91,9 @@ Rails.application.routes.draw do
   post '/send_mail', :to => 'mailer#mail'
 
   get '/action_entries/', :to => 'action_entries#list'
+  
+  get '/payment', :to => 'paypal#make_payment'
+
 
   resources :courses do
     resources :topics do

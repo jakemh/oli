@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :selections
   has_many :words
   has_many :boxables 
+  has_many :payments
   
   validate :name, :presence => true
   devise :database_authenticatable, :registerable,
@@ -27,5 +28,15 @@ class User < ActiveRecord::Base
 
   def role?(role)
     return self.roles.pluck(:name).include? role
+  end
+
+  def purchase_course(item, confirmation, amount)
+    item.payments << Payment.create(
+      :user => self,
+      :confirmation => confirmation,
+      :amount => amount
+    )
+    self.courses << item
+    self.roles << Role.create(:name => Role::CUSTOMER)
   end
 end

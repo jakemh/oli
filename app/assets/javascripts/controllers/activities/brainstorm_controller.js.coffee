@@ -3,6 +3,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
   setup: ->
     @setFields()
+    @notifyPropertyChange("threadsList")
     @get('threadsList').then (list)->
 
     
@@ -33,29 +34,6 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
             actionEntry.save().then (response)=>
               resolve 
 
-  # commitBoxEntry: (actionEntry, box_ids, callback) ->
-  #   new Em.RSVP.Promise (resolve, reject) =>
-
-  #     count = 0
-  #     for box_id in box_ids
-  #       do (box_id) =>
-  #         box =  @store.getById('box', box_id)
-  #         boxEntry = @get('store').createRecord('boxEntry', 
-  #           actionEntry: actionEntry
-  #           box_id: box.id
-  #         )
-  #         actionEntry.get('boxEntries').then (boxEntries) =>
-  #           boxEntries.pushObject(boxEntry)
-
-  #           # box.get('boxEntries').then (boxEntries) =>
-  #           #   boxEntries.pushObject(boxEntry)
-  #           #   alert "TEST"
-  #           boxEntry.get('actionEntry').then (ae)=>
-  #             boxEntry.save().then (response)=>
-  #               count += 1
-  #               if count == box_ids.length - 1
-  #                 resolve 
-
   commitActionEntry: (componentContext, entryContext, message, threads, callback)->
    @component(componentContext).then (c)=>
       actionEntry = @get('store').createRecord('actionEntry', {
@@ -82,6 +60,10 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
   sortedList: (->
     @get('list').sortBy('createdAt').reverse()
     ).property("list.@each")
+
+  listChanged: (->
+    # alert JSON.stringify @get('sortedList').toArray()
+    ).observes("sortedList.@each")
 
   threadsList2: (->
     return DS.PromiseObject.create promise: 
@@ -112,7 +94,6 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
     ).property()
 
   # selectedThreads: null
-  newObj: {entry_id: null, text: null, saved:false, selections: [[{value: 58, label: "Word 9"}]]}
   
 
   setFields: ->

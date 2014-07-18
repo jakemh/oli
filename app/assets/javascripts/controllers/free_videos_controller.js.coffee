@@ -20,11 +20,26 @@ Oli.FreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
         resolve v
 
   buttonClicked: ->
-    user = @get('controllers.me.content')
-    user.set('role', "customer")
-    user.save().then (u)=>
-      @transitionTo('me')  
-        
+ 
+    laddaLoadingButton = Ladda.create( document.querySelector( '.ladda-button' ) );
+ 
+    laddaLoadingButton.start();
+
+    $.ajax(
+      url: "/payment"
+      type: "get"
+      dataType: "json"
+    ).fail((error) =>
+      laddaLoadingButton.stop()
+    ).success((response)=>
+      @store.push('user', response.user)
+      @transitionTo('me')
+      $('#myModal').modal()
+
+    ).always ->
+      laddaLoadingButton.stop()
+
+
   videosFormatted: (->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>

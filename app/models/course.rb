@@ -6,4 +6,6 @@ class Course < ActiveRecord::Base
   has_many :activities, :through => :sections
   has_many :components, :through => :activities
   has_many :user_entries, :through => :components
+
+  has_many :payments, as: :purchasable
 end
