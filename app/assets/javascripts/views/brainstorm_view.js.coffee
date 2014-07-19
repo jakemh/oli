@@ -31,11 +31,14 @@ Oli.BrainstormSelectView = Ember.Select.extend
     @updateMultipleSelection()
 
   updateMultipleSelection: ->
-    for selection, i in @item.selections
-      $('#' + @get('idVal') + " " + 'option[value="' + selection.value + '"]').attr('selected', 'selected')
-      if i == @item.selections.length - 1
-        $("select.thread-dropdown").select2({containerCssClass: "oli-selector-large"});
-        @set('observeSelection', true)
+    if @item.selections.length > 0
+      for selection, i in @item.selections
+        $('#' + @get('idVal') + " " + 'option[value="' + selection.value + '"]').attr('selected', 'selected')
+        if i == @item.selections.length - 1
+          $("select.thread-dropdown").select2({containerCssClass: "oli-selector-large"});
+          @set('observeSelection', true)
+    else 
+      @set('observeSelection', true)
 
   contentChanged: (->
     setTimeout (=>
