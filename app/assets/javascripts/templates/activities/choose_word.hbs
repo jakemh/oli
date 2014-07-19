@@ -1,26 +1,27 @@
 <div class="description-box oli-text">
-{{this.description}}
+  {{this.description}}
 </div>
 <div clas="row">
-{{#view Oli.WordSelectionView}}
-<div class="hidden">{{view.selected}}</div>
-<div class='select-word-container'>
-{{#each view.component.words}}
-<!-- Rounded ONE -->
-<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-5 description oli-text-smaller'>
-  <div class="roundedOne">
+  {{#view Oli.WordSelectionView}}
+    <div class="hidden">{{view.selected}}</div>
+    <div class='select-word-container'>
+      {{#each view.component.words}}
+        <!-- Rounded ONE -->
+        <div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-5 description oli-text-smaller'>
+          <div class="roundedOne">
 
-      {{view Ember.Checkbox checked=this.selected type="checkbox" name=check id=this.id class="roundedOne"}}
-      <label  {{bindAttr for="this.id"}} ></label>
-    </div><div class="select-word"> {{this.word}}
-  </div>
- </div>
+              {{view Ember.Checkbox checked=this.selected type="checkbox" name=check id=this.id class="roundedOne"}}
+              <label  {{bindAttr for="this.id"}} ></label>
+            </div><div class="select-word"> {{this.word}}
+          </div>
+         </div>
+      {{else}}
+        {{partial "loadingScreen"}}
+      {{/each }}
+      
+      {{outlet newWord}}
 
-  {{/each }}
-  
-    {{outlet newWord}}
 
-
-</div>
-{{/view}}
+    </div>
+  {{/view}}
 </div>

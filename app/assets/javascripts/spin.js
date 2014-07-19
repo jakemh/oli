@@ -203,8 +203,10 @@
 
         ;(function anim() {
           i++;
+
           for (var j = 0; j < o.lines; j++) {
             alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity)
+            console.log("ANIMATING")
 
             self.opacity(el, j * o.direction + start, alpha, o)
           }
