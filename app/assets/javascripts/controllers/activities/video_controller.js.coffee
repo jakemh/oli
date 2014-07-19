@@ -1,4 +1,9 @@
-Oli.VideoController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
+Oli.VideoController = Oli.ActivityBaseController.extend
+  
+  setup: ->
+    @notifyPropertyChange('transcript')
+    @notifyPropertyChange('source')
+
   needs: ['activities']
   preload: false
   transcript: (->

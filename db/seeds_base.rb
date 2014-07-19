@@ -69,6 +69,7 @@ module SeedsBase
 
     if row["dependencies"]
       row["dependencies"].split(",").each do |id|
+        puts self.id_hash
         dependencies << ActivityDependency.create(
           :dependent_activity_id => self.id_hash[id]
           )

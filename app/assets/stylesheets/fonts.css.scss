@@ -50,6 +50,16 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'plus';
+  src: url('plus.eot?96072753');
+  src: url('plus.eot?96072753#iefix') format('embedded-opentype'),
+       url('plus.woff?96072753') format('woff'),
+       url('plus.ttf?96072753') format('truetype'),
+       url('plus.svg?96072753#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
@@ -145,7 +155,6 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
   }
 }
 */
- 
  [class^="icon-angle-up"]:before, [class*=" icon-angle-up"]:before {
   font-family: "angle-up";
   font-style: normal;
@@ -176,5 +185,35 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
+ [class^="icon-plus"]:before, [class*=" icon-plus"]:before {
+  font-family: "plus";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
  
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon-plus:before { content: '\e800'; } /* '' */
 .icon-angle-up:before { content: '\e800'; } /* '' */

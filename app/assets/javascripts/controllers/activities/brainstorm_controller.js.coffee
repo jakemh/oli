@@ -24,6 +24,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
               resolve(current)
 
   commitBoxEntry: (actionEntry, box_ids, callback) ->
+    alert box_ids
     new Em.RSVP.Promise (resolve, reject) =>
       actionEntry.get('boxes').then (boxes) =>
         boxes.clear()
@@ -114,7 +115,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
             for entry in entries
               do (entry) =>
                 entry.get('boxes').then (boxes)=>
-                  boxesArray = boxes.map((item, index)-> {value: item.id})
+                  boxesArray = boxes.map((item, index)-> {value: item.id, label: "Achievement, Action, Adaptability, Affluence, Accountability"})
                   el.pushObject({
                     entry_id: entry.id
                     text: entry.get('post')

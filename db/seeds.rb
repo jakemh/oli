@@ -4,8 +4,11 @@ require_relative 'seeds_base'
 options = {:encoding => 'UTF-8', :skip_blanks => true, :headers => true}
 
 #build activities
+@count = 0
 CSV.foreach([File.dirname(__FILE__), 'content.csv' ].join("/"), options) do |row, i|
   SeedsBase.parse_activity(row)
+  @count += 1
+  puts @count
 end
 
 #build words
@@ -13,6 +16,7 @@ file = [File.dirname(__FILE__), 'words.csv' ].join("/")
 
 CSV.foreach(file, options) do |row|
   activity = Activity.find(SeedsBase.id_hash[row["activity_id"]])
+  puts activity.inspect
   activity.components.first.words << Word.create(:word => row["word"], :all_users => true)
 end
 

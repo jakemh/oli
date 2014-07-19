@@ -6,7 +6,7 @@
 
 .task-list-container{
   @include scrollable-box;
-  height: 180px;
+  height: 260px;
   border: none;
   margin: 0;
   padding: 0;
@@ -14,9 +14,11 @@
 
 .add-task-box{
   @include oli-box;
-  height: 50px;
+  height: 40px;
   text-align: center;
   cursor: pointer;
+  @include oli-font;
+  
 }
 
 .brainstorm-threads-container{
