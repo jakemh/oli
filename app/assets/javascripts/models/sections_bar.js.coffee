@@ -36,37 +36,39 @@ Oli.SectionsBar = Ember.Object.extend({
   filledSections: 0
   currentSection: 0
   currentProgress: .25
-
+  growDisabled: true
+  
   grow: (section_num, callback) ->
-    e = @get('element').children('.start-items').eq(section_num)
-    bar = e.find('.sections-progress-inner')
-    # e = @get('element').children('.start-items').children('.sections-progress-inner')
-    # curSect = @get('currentSection')
-    sectsPer = @get('sectionsPerSection')
-    numberSects = sectsPer.length
-    remainingSects = @get('remainingSectsPerSect')
-    remainingSects[section_num] -= 1
-    currentSect = sectsPer[section_num] - remainingSects[section_num]
-    console.log("INC: " +  remainingSects)
-    widthPer = @get('widthEachSection')
-    grow = Math.floor(widthPer[section_num] / sectsPer[section_num])
-    fix = 0
-    additionalOptions = {}
-    if remainingSects[section_num] == 0 
-      fix = widthPer[section_num] - (sectsPer[section_num] * grow)
-      if (numberSects - 1) == section_num 
-        additionalOptions['borderTopRightRadius'] = 100 + "px"
-        additionalOptions['borderBottomRightRadius'] = 100 + "px"
-        fix += 15
-    #   bar.animate({width: currentSect * grow + fix + 15 + "px", borderTopRightRadius: 100 + "px", borderBottomRightRadius: 100 + "px"}, ->
-    #   # console.log "GREW"
-    #     callback()
-    # );
-    finalHash = $.extend({width: currentSect * grow + fix + "px"}, additionalOptions)
-    console.log "FINAL: " + JSON.stringify finalHash
-    bar.animate(finalHash, ->
-      # console.log "GREW"
-      callback()
-    );
+    if !@get('growDisabled')
+      e = @get('element').children('.start-items').eq(section_num)
+      bar = e.find('.sections-progress-inner')
+      # e = @get('element').children('.start-items').children('.sections-progress-inner')
+      # curSect = @get('currentSection')
+      sectsPer = @get('sectionsPerSection')
+      numberSects = sectsPer.length
+      remainingSects = @get('remainingSectsPerSect')
+      remainingSects[section_num] -= 1
+      currentSect = sectsPer[section_num] - remainingSects[section_num]
+      console.log("INC: " +  remainingSects)
+      widthPer = @get('widthEachSection')
+      grow = Math.floor(widthPer[section_num] / sectsPer[section_num])
+      fix = 0
+      additionalOptions = {}
+      if remainingSects[section_num] == 0 
+        fix = widthPer[section_num] - (sectsPer[section_num] * grow)
+        if (numberSects - 1) == section_num 
+          additionalOptions['borderTopRightRadius'] = 100 + "px"
+          additionalOptions['borderBottomRightRadius'] = 100 + "px"
+          fix += 15
+      #   bar.animate({width: currentSect * grow + fix + 15 + "px", borderTopRightRadius: 100 + "px", borderBottomRightRadius: 100 + "px"}, ->
+      #   # console.log "GREW"
+      #     callback()
+      # );
+      finalHash = $.extend({width: currentSect * grow + fix + "px"}, additionalOptions)
+      console.log "FINAL: " + JSON.stringify finalHash
+      bar.animate(finalHash, ->
+        # console.log "GREW"
+        callback()
+      );
 
 })

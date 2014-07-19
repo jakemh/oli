@@ -129,9 +129,8 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
 
  
     goHere: (act) ->
-      console.log("TRANS: " + act)
       if act != undefined
-        @transitionToRoute('activities',act)
+        @transitionTo('activities',act)
 
     hover: (item)->
       console.log "HOVER: " + item

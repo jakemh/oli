@@ -26,7 +26,7 @@
 #= require ember
 #= require ember-state
 #= require ember-data
-#= require ember-animate
+#= require ember-animated-outlet
 #= require video
 #= require video-media-error
 #= require jquery.highlighttextarea
