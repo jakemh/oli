@@ -13,6 +13,10 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
   video: null
   buttonText: "Continue"
 
+  title: (->
+    @content.get('name')
+    ).property("content")
+
   tip: (->
     @content.get('tip')
     ).property("content")
@@ -73,7 +77,16 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
   #         resolve activities.filterProperty("display", true)
   #         # resolve activities
   #   ).property('name')
-  
+  previousAct: (act) ->
+    @hash().then (h)=>
+      newActInd = h[act] - 2
+      if newActInd >= 0
+        @get('activities').then (acts)=>
+          actsArray = acts.toArray()
+
+          newAct = actsArray[newActInd].get('name')
+          @transitionToRoute('activities',newAct)
+
   nextAct: (act) ->
     @hash().then (h)=>
       newActInd = h[act]
@@ -120,6 +133,14 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
         )
       else 
         @nextAct(act)
+
+    backButtonClicked: (act)->
+      if @has('buttonPressed')
+        @trigger('buttonPressed', =>
+          @previousAct(act)
+        )
+      else 
+        @previousAct(act)
 
     moveArrow: (element) ->
       console.log "MOVE ARROW"

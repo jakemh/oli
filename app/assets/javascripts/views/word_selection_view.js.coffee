@@ -33,7 +33,8 @@ Oli.WordSelectionView = Em.View.extend({
     @get('selectedItems').then (items)=>
       if items != undefined
         message = "Selected words: " + items
-        @get('controller').set("status", message)
+        if @get('controller')
+          @get('controller').set("status", message)
   ).property('component.words.@each.selected')
 
 

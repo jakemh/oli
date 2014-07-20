@@ -2,11 +2,12 @@ $(document ).ready(function() {
   if ($(".ladda-button").length > 0){
     var laddaLoadingButton = Ladda.create( document.querySelector( '.ladda-button' ) );
 
-        var successAnimation = function(){
+        var successAnimation = function(callback){
           var _this = $(".logo-flame")
           _this.addClass("success-animation");
           setTimeout(function() {
             _this.removeClass("success-animation")
+            callback()
           }, 2000);
         }
 
@@ -34,8 +35,11 @@ $(document ).ready(function() {
             laddaLoadingButton.stop();
 
           }).success(function(){
-            successAnimation();
             laddaLoadingButton.stop();
+            successAnimation(function(){
+              window.location.href = "/me"
+
+            });
 
           });
         return false;

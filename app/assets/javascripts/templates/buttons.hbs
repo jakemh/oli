@@ -1,0 +1,19 @@
+<div class="button-activity back-button-activity">
+  <button class="smaller-button" data-style="zoom-out" {{action "backButtonClicked" this on="click"}}>
+    <span class="ladda-label"></span>
+    Back
+  </button>
+
+</div>
+
+<div class="button-activity forward-button-activity">
+  <button class="smaller-button" data-style="zoom-out" {{action "buttonClicked" this on="click"}}>
+    <span class="ladda-label"></span>
+    {{controller.buttonText}}
+  </button>
+
+</div>
+
+<div class="activity-status oli-text-smaller">
+  {{outlet status}}
+</div>

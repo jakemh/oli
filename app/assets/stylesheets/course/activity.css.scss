@@ -1,5 +1,34 @@
 @import "oli-root";
 
+.title-activity{
+  margin-bottom: -20px;
+  @include black-bold-text;
+  text-align: left;
+  font-size: 1.1em;
+}
+
+.activity-status{
+  display: inline-block;
+  width: 140px;
+  line-height: 4.3em;
+  font-style: italic;
+}
+
+.button-activity{
+  display: inline-block;
+  margin:auto; 
+  margin-right:0;
+
+}
+
+.forward-button-activity{
+  float: right;
+}
+
+.back-button-activity{
+  float: left;
+}
+
 .outer-wrapper{
   margin: 0 auto;
   width: 820px;

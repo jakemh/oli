@@ -115,21 +115,6 @@
   background-color: oli-gray(1) !important; 
   }
 
-.activity-status{
-  display: inline;
-  width: 140px;
-  float: right;
-  line-height: 4.3em;
-  font-style: italic;
-}
-
-.forward-button-activity{
-  display: inline-block;
-  margin:auto; 
-  width: 100%;
-  margin-right:0;
-
-}
 
 .smaller-button{
   @include oli-button;
