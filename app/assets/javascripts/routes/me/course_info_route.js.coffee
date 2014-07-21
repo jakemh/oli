@@ -8,7 +8,6 @@ Oli.CourseInfoRoute = Ember.Route.extend Ember.Evented,
 
   renderTemplate: ->
     @render('me/course_info', {
-      outlet: "template"
       into: "me"
     });
 

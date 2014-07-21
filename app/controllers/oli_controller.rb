@@ -51,7 +51,7 @@ class OliController < Devise::RegistrationsController
       oauth.authorize_with_access(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
       aweber = AWeber::Base.new(oauth)
       new_subscriber = {"email" => params[:user][:email], "name" => params[:user][:name]}
-      aweber.account.lists.find_by_name(AWEBER_LIST).subscribers.create(new_subscriber)
+      # aweber.account.lists.find_by_name(AWEBER_LIST).subscribers.create(new_subscriber)
 
     rescue AWeber::CreationError => message
       if message.to_s.include? "email: Subscriber already subscribed."

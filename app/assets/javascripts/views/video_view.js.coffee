@@ -1,4 +1,5 @@
-Oli.VideoView = Em.View.extend
+Oli.VideoView = Em.View.extend Oli.AnimatedView,
+
   didInsertElement: ->
     # @get('controller').on('setup', @, )
     player = videojs("MY_VIDEO_1", { "controls": true, "autoplay": false, "preload": "none" }, ->
@@ -15,7 +16,9 @@ Oli.VideoView = Em.View.extend
   controlsOn: ->
     if @controller.get('controlsOn') != undefined
       @controller.get('controlsOn')
-    else true
+    else true 
+
+  
 
     
     # @set('controller.controllers.activities.video', player)

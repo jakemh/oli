@@ -8,8 +8,15 @@ Oli.FreeVideoController = Ember.ObjectController.extend Ember.Evented, Oli.Compo
   preload: "none" 
   hideButton: false
   buttonText: "Continue"
+
+
   handleVideoDispose: (player)->
     @set('video', player)
+
+
+  title: (->
+    @get('content.name')
+    ).property("content")
 
   source: (->
     return DS.PromiseObject.create promise:
@@ -23,4 +30,4 @@ Oli.FreeVideoController = Ember.ObjectController.extend Ember.Evented, Oli.Compo
 
   actions: 
     buttonClicked: ->
-      @transitionTo('free_videos')
+      @transitionTo('me.free_videos')

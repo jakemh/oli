@@ -1,0 +1,1 @@
+Oli.MeView = Em.View.extend()

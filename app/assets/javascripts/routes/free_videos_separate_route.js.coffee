@@ -15,13 +15,20 @@ Oli.FreeVideoRoute = Ember.Route.extend({
     # });
       
     @render('freeVideo', {
-      outlet: 'freeVideo',
+      outlet: 'appContent',
       controller: freeVideoController
     });
+
+    @render('activityTitle', {
+      outlet: 'activityTitle',
+      into: 'freeVideo'
+      controller: freeVideoController
+    });
+    
   
 
   model: (params) -> 
-    @controllerFor('freeVideos').videoByRelativeId(params.id)
+    @controllerFor('me.freeVideos').videoByRelativeId(params.id)
 
   actions: 
     willTransition: ->

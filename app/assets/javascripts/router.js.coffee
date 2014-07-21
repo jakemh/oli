@@ -12,10 +12,7 @@ Oli.Router.map ()->
     @resource('users.logout', path: '/sign_out')
     )
   @resource('me', ->
-    @resource('me', path: "/:opt")
-    @resource('free_videos', ->
-      @resource('free_videos_select', path: "/:id")
-    )
+    @resource('me.free_videos',path: '/free_videos')
 
     @resource('course_info')
     @resource('marketplace')

@@ -1,11 +1,12 @@
+<div class="course-wrapper">
 
 <div id="fb-root"></div>
 
-{{#view Oli.FreeVideosView}}
+  {{partial 'activityTitle'}}
   {{partial 'bar'}}
-  {{partial 'activities/video'}}
-  {{partial 'forwardButton'}}
+  {{partial 'video'}}
+  {{partial 'button'}}
   <div id="fb-comments" class="fb-free-video">
     <div  class="fb-comments" data-href="http://getoli.com" data-numposts="5" data-colorscheme="light"></div>
   </div>
-{{/view}}
+</div>

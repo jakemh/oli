@@ -1,4 +1,4 @@
-Oli.FreeVideosRoute = Ember.Route.extend Ember.Evented,
+Oli.MeFreeVideosRoute = Ember.Route.extend Ember.Evented,
   setupController: (controller, model) ->
     @get('controller').set('content', model)
     me = @get('controller.controllers.me')
@@ -6,12 +6,9 @@ Oli.FreeVideosRoute = Ember.Route.extend Ember.Evented,
     me.send('trans', "free_videos")
 
   renderTemplate: ->
-    @render('me/free_videos', {
-      outlet: "template"
+    @render('me/free_videos',
       into: "me"
-    });
-
-
+    );
 
   afterModel: (model)-> 
     # @transitionTo('free_video', model.id)

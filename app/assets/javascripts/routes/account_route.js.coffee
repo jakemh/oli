@@ -7,7 +7,6 @@ Oli.AccountRoute = Ember.Route.extend Ember.Evented,
 
   renderTemplate: ->
     @render('me/account', {
-      outlet: "template"
       into: "me"
     });
 

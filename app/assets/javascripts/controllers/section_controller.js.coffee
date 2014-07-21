@@ -59,7 +59,7 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
     @get('hash').then (h) =>
       ind = h[@content.get('name')]
       @get('sections').then (s) =>
-        @transitionToRoute('activities', s.toArray()[ind].get('name'), "Start")
+        @transitionToRoute('sections', s.toArray()[ind].get('name'))
         @content.set('ready', true)
     ).property('name')
   

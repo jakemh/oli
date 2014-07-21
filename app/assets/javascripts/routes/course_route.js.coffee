@@ -24,15 +24,6 @@ Oli.CoursesRoute = Ember.Route.extend({
     });
       
    
-    @render('levels', {
-      outlet: 'levels', 
-      controller: topicsController 
-      })
-
-    @render('bar', {
-      outlet: 'bar', 
-      controller: activitiesController 
-      })
 
     @render('activityTitle', {
       outlet: 'activityTitle', 
@@ -40,7 +31,7 @@ Oli.CoursesRoute = Ember.Route.extend({
       })
 
     @render('activity', {
-      outlet: 'activity', 
+      outlet: 'appContent', 
       controller: activitiesController 
       })
 
@@ -53,6 +44,17 @@ Oli.CoursesRoute = Ember.Route.extend({
       })
    
 
+    @render('levels', {
+      outlet: 'levels', 
+      into: 'activity',
+      controller: topicsController 
+      })
+
+    @render('bar', {
+      outlet: 'bar', 
+      into: 'activity',
+      controller: activitiesController 
+      })
     @render('tip', {
       outlet: 'tip', 
 

@@ -1,5 +1,14 @@
-<div class="activity-contents">
-  {{outlet template}}
-</div>
+<div class="course-wrapper">
+  {{outlet levels}}
+  {{#view Oli.ActivityView}}
 
-{{partial 'buttons'}}
+    {{outlet activityTitle}}
+    {{outlet bar}}
+    <div class="activity-contents">
+      {{!-- {{animated-outlet name="main"}} --}}
+      {{outlet}}
+    </div>
+
+    {{partial 'buttons'}}
+  {{/view}}
+</div>

@@ -16,7 +16,11 @@ class User < ActiveRecord::Base
   has_many :boxables 
   has_many :payments
   
-  validate :name, :presence => true
+  validates :name, {
+  :presence => true,
+  :allow_blank => false,
+  :allow_nil => false,
+}
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

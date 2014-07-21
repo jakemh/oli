@@ -7,7 +7,6 @@ Oli.ResourcesRoute = Ember.Route.extend Ember.Evented,
 
   renderTemplate: ->
     @render('me/resources', {
-      outlet: "template"
       into: "me"
     });
 

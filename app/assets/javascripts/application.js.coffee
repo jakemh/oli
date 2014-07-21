@@ -45,5 +45,10 @@ window.Oli = Em.Application.create({
   }
 });
 Em.run.backburner.DEBUG = true
-Em.TEMPLATES["skipActivity"] = Em.Handlebars.compile("{{#link-to 'activities' 'Share with a buddy!'}}Skip this{{/link-to}}");
+Em.TEMPLATES["skipActivity"] = Em.Handlebars.compile('''
+  <div >
+  <a href="#" {{action skipActivity content on="click"}}>Skip this</a>
+  </div>
+  '''
+);
 Em.TEMPLATES["status"] = Em.Handlebars.compile('{{view.status}}');

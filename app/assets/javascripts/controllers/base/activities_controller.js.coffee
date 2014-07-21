@@ -104,20 +104,22 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
         if newActInd < actsArray.length
           
           newAct = actsArray[newActInd].get('name')
-          @transitionToRoute('activities',newAct)
+          @transitionToRouteAnimated('activities', main: 'slowSlideLeft', newAct)
         
         else  
-          false
+          # false
           # @get('controllers.sections').get('sectionDone').then (done)=>
 
           #   if done
 
           #     @get('controllers.sections').get('nextLevel')
-
+          @get('controllers.sections').get('nextLevel')
 
  
   actions:
-    
+    skipActivity: (act)->
+      @nextAct(act)
+
     updateContent: ->
 
     # moveArrow: (element) ->
@@ -151,7 +153,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
  
     goHere: (act) ->
       if act != undefined
-        @transitionTo('activities',act)
+        @transitionToRouteAnimated('activities', main: 'slideLeft', act)
 
     hover: (item)->
       console.log "HOVER: " + item

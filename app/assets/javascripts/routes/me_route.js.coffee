@@ -99,12 +99,12 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
     @render('navContentsHome', {
       outlet: 'navContents',
       into: 'nav',
-      controller: @controllerFor("me") 
+      controller: @controllerFor("base") 
       })
 
     template = @modelFor("me")
     @render('me', {
-      outlet: 'me'
+      outlet: 'appContent'
       controller: @controllerFor('me')
       })
 

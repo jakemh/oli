@@ -63,7 +63,6 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
 
     template = @template()
     @render('activities/' + template, {
-      outlet: 'template'
       into: 'activity'
       controller: childControllers[template] 
       })

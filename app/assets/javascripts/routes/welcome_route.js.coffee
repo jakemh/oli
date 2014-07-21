@@ -6,14 +6,14 @@ Oli.WelcomeRoute = Ember.Route.extend({
     #   @transitionTo('free_videos_separate', 1)
 
   renderTemplate: ->
-    freeVideosController = @controllerFor('freeVideos');
+    # freeVideosController = @controllerFor('freeVideos');
     baseController = @controllerFor('base');
 
     @render('nav', {
       outlet: 'nav',
     });
 
-    @render('navContents', {
+    @render('navContentsHome', {
       outlet: 'navContents',
       into: 'nav',
       controller: baseController 

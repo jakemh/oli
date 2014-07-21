@@ -7,7 +7,6 @@ Oli.MarketplaceRoute = Ember.Route.extend Ember.Evented,
 
   renderTemplate: ->
     @render('me/marketplace', {
-      outlet: "template"
       into: "me"
     });
 

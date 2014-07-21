@@ -1,22 +1,14 @@
-Oli.ActivityView = Em.View.extend({
+Oli.ActivityView = Em.View.extend
   didInsertElement: -> 
-    # alert @get('controller.controllers.sections.activitiesPerSection')
 
-  # test: "TESTING"
-  # willAnimateIn: ->
-  #   @$().css "opacity", 0
-  #   return
 
-  # animateIn: (done) ->
-  #   @$().fadeTo 500, 1, done
-  #   return
+Oli.TemplateView = Em.View.extend
+  didInsertElement: ->
+    
+Oli.ActivitiesView = Em.View.extend
+  didInsertElement: ->
 
-  # animateOut: (done) ->
-  #   @$().fadeTo 500, 0, done
-  #   return
-});
-  
-Oli.StatusView = Ember.View.extend({
+Oli.StatusView = Ember.View.extend
   statusBinding: "controller.status"
   templateNameBinding: 'controller.templateName'
 
@@ -24,4 +16,4 @@ Oli.StatusView = Ember.View.extend({
     @rerender();
   ).observes('templateName')
 
-})
+

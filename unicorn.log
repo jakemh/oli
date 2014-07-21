@@ -1,0 +1,2439 @@
+I, [2014-07-20T12:38:02.855885 #24469]  INFO -- : inherited addr=/tmp/unicorn.projectname.sock fd=10
+I, [2014-07-20T12:38:02.856343 #24469]  INFO -- : worker=0 spawning...
+I, [2014-07-20T12:38:02.857274 #24469]  INFO -- : worker=1 spawning...
+I, [2014-07-20T12:38:02.858255 #24514]  INFO -- : worker=0 spawned pid=24514
+I, [2014-07-20T12:38:02.858471 #24514]  INFO -- : Refreshing Gem list
+I, [2014-07-20T12:38:02.863531 #24469]  INFO -- : master process ready
+I, [2014-07-20T12:38:02.864587 #24517]  INFO -- : worker=1 spawned pid=24517
+I, [2014-07-20T12:38:02.864780 #24517]  INFO -- : Refreshing Gem list
+I, [2014-07-20T12:38:08.061955 #24517]  INFO -- : worker=1 ready
+I, [2014-07-20T12:38:08.074198 #24514]  INFO -- : worker=0 ready
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:38:17 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (16.9ms)
+  Rendered shared/_oli_landing.html.erb (20.3ms)
+  Rendered oli/_modal.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 106ms (Views: 35.1ms | ActiveRecord: 8.6ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:38:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:38:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (14.8ms)
+  Rendered shared/_oli_landing.html.erb (18.0ms)
+  Rendered oli/_modal.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 84ms (Views: 25.9ms | ActiveRecord: 6.2ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:39:18 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.1ms)
+  Rendered shared/_oli_landing.html.erb (2.9ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:39:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:40:46 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:41:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.4ms)
+  Rendered shared/_oli_landing.html.erb (3.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:41:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:41:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:42:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:43:17 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:43:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:43:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:44:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.1ms)
+  Rendered shared/_oli_landing.html.erb (2.8ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:44:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:45:47 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:46:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:46:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:46:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:47:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:48:18 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:48:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:48:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:49:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:49:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:50:47 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:51:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:51:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:51:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:52:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:53:17 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:53:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:53:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:54:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:54:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:55:46 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:56:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.4ms)
+  Rendered shared/_oli_landing.html.erb (4.6ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 23ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:56:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.9ms)
+  Rendered shared/_oli_landing.html.erb (4.0ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 17ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:56:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:57:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 12:57:59 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 12:58:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 12:58:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.2ms)
+  Rendered shared/_oli_landing.html.erb (3.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 12:58:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 12:59:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 12:59:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:00:47 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/" for 202.46.55.58 at 2014-07-20 13:00:51 -0400
+Processing by OliController#new as HTML
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:01:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:01:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 119.63.193.194 at 2014-07-20 13:01:47 -0400
+Processing by OliController#new as HTML
+  Rendered oli/_landing_form.html.erb (3.1ms)
+  Rendered shared/_oli_landing.html.erb (4.2ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:01:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:02:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.8ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 13ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:02:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:03:17 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:03:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:03:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:03:49 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:04:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.8ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:04:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:05:10 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:05:48 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:06:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:06:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:06:30 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:06:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (5.2ms)
+  Rendered shared/_oli_landing.html.erb (5.9ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 30ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:07:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:07:49 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:08:20 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:08:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.1ms)
+  Rendered shared/_oli_landing.html.erb (3.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 21ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:08:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (4.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:09:10 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:09:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:09:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.5ms)
+  Rendered shared/_oli_landing.html.erb (4.9ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:10:29 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:10:53 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:11:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:11:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:11:40 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.4ms)
+  Rendered shared/_oli_landing.html.erb (4.7ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 20ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:11:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.2ms)
+  Rendered shared/_oli_landing.html.erb (3.0ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 13ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:12:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:13:09 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:13:21 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:13:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:13:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:14:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:14:39 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:15:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:15:50 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:15:54 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.0ms)
+  Rendered shared/_oli_landing.html.erb (4.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:16:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:16:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:16:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:17:10 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:17:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:18:23 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:18:32 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:18:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:18:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.0ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:19:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.0ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:19:53 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:20:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:20:52 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:21:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:21:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:21:12 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:21:55 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:22:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:22:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:23:22 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:23:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:23:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:24:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:24:25 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:25:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:25:24 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:26:01 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:26:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:26:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:26:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.8ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:26:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:27:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 13:28:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:28:32 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.3ms)
+  Rendered shared/_oli_landing.html.erb (3.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 15ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:28:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:28:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:29:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:30:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:31:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.6ms)
+  Rendered shared/_oli_landing.html.erb (3.6ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:31:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:31:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:31:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:32:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:33:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:33:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:33:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:34:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:35:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:36:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:36:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:36:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:36:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:37:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.2ms)
+  Rendered shared/_oli_landing.html.erb (3.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:38:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:38:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:38:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.6ms)
+  Rendered shared/_oli_landing.html.erb (3.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:39:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:40:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:41:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 18ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:41:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:41:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:41:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:42:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:43:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.7ms)
+  Rendered shared/_oli_landing.html.erb (3.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:43:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:43:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:44:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:45:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:46:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:46:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:46:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:46:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:47:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:48:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:48:34 -0400
+Processing by OliController#new as */*
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:48:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 19ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  Rendered oli/_landing_form.html.erb (4.8ms)
+  Rendered shared/_oli_landing.html.erb (5.6ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 26ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:49:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:50:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:51:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:51:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.9ms)
+  Rendered shared/_oli_landing.html.erb (4.0ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:51:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:51:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:52:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (3.0ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 15ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:53:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.8ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 12ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:53:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:53:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:54:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.5ms)
+  Rendered shared/_oli_landing.html.erb (4.7ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:55:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:56:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.0ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:56:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:56:07 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 12ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:56:57 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 13:57:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 13:58:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 15ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 13:58:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 13:58:50 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.5ms)
+  Rendered shared/_oli_landing.html.erb (3.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 13:59:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:00:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:01:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:01:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:01:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:01:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:02:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:03:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.2ms)
+  Rendered shared/_oli_landing.html.erb (2.9ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:03:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:03:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:04:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:05:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:06:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:06:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:06:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:06:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:07:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:08:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:08:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:08:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:09:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.3ms)
+  Rendered shared/_oli_landing.html.erb (3.3ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:10:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:11:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.1ms)
+  Rendered shared/_oli_landing.html.erb (3.0ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:11:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:11:15 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:11:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:12:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:13:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:13:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:13:46 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:14:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:15:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:16:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:16:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:16:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.2ms)
+  Rendered shared/_oli_landing.html.erb (4.4ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 18ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:16:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:17:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:18:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:18:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 24ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:18:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:19:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:20:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:21:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.6ms)
+  Rendered shared/_oli_landing.html.erb (3.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 14ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:21:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:21:15 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:21:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:22:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:23:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:23:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:23:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 13ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:24:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:25:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:26:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.1ms)
+  Rendered shared/_oli_landing.html.erb (3.0ms)
+  Rendered oli/_modal.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:26:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:26:15 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:26:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:27:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:28:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:28:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:28:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:29:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:30:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:31:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:31:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:31:15 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:31:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:31:58 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:32:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:33:17 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.8ms)
+  Rendered shared/_oli_landing.html.erb (3.8ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 14ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:33:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:33:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:33:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:34:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:35:01 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:35:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:36:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:36:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.4ms)
+  Rendered shared/_oli_landing.html.erb (3.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:36:12 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:36:15 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:36:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:37:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 13ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:37:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (3.1ms)
+  Rendered shared/_oli_landing.html.erb (4.3ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:38:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:38:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:38:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:39:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:39:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:40:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:40:14 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:41:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:41:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:41:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:41:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (3.8ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:41:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:42:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.8ms)
+  Rendered shared/_oli_landing.html.erb (3.8ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 16ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:42:54 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:43:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:43:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:43:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:44:18 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:44:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:45:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:45:42 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:46:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:46:04 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:46:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:46:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:47:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:48:20 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:48:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:48:34 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.5ms)
+  Rendered shared/_oli_landing.html.erb (3.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:48:46 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:49:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:49:52 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:50:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:51:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:51:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:51:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:51:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:52:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:52:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:53:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:53:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:53:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:54:08 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:54:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for 173.3.241.219 at 2014-07-20 14:54:38 -0400
+Processing by OliController#new as HTML
+Redirected to http://getoli.com/me
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 2.3ms)
+Started GET "/me" for 173.3.241.219 at 2014-07-20 14:54:38 -0400
+Processing by EmberController#index as HTML
+  Rendered ember/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 4.1ms | ActiveRecord: 3.2ms)
+Started GET "/users" for 173.3.241.219 at 2014-07-20 14:54:40 -0400
+Processing by UsersController#user as JSON
+Completed 200 OK in 47ms (Views: 25.4ms | ActiveRecord: 6.7ms)
+Started GET "/users" for 173.3.241.219 at 2014-07-20 14:54:41 -0400
+Processing by UsersController#user as JSON
+Completed 200 OK in 23ms (Views: 10.9ms | ActiveRecord: 4.3ms)
+Started GET "/courses?ids%5B%5D=125" for 173.3.241.219 at 2014-07-20 14:54:41 -0400
+Processing by CoursesController#list as JSON
+  Parameters: {"ids"=>["125"]}
+Completed 200 OK in 25ms (Views: 11.6ms | ActiveRecord: 3.8ms)
+Started GET "/topics?ids%5B%5D=518&ids%5B%5D=519&ids%5B%5D=520&ids%5B%5D=521&ids%5B%5D=522" for 173.3.241.219 at 2014-07-20 14:54:41 -0400
+Processing by TopicsController#list as JSON
+  Parameters: {"ids"=>["518", "519", "520", "521", "522"]}
+Completed 200 OK in 33ms (Views: 15.6ms | ActiveRecord: 6.4ms)
+Started GET "/users" for 173.3.241.219 at 2014-07-20 14:54:44 -0400
+Processing by UsersController#user as JSON
+Completed 200 OK in 14ms (Views: 4.0ms | ActiveRecord: 1.6ms)
+Started DELETE "/users/sign_out" for 173.3.241.219 at 2014-07-20 14:54:44 -0400
+Processing by Devise::SessionsController#destroy as JSON
+Completed 204 No Content in 22ms (ActiveRecord: 3.1ms)
+Started GET "/users/sign_in" for 173.3.241.219 at 2014-07-20 14:54:44 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered shared/_sign_in.html.erb (3.2ms)
+  Rendered shared/_oli_landing.html.erb (4.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 36ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+Started GET "/me" for 173.3.241.219 at 2014-07-20 14:54:48 -0400
+Processing by EmberController#index as HTML
+  Rendered ember/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started GET "/users" for 173.3.241.219 at 2014-07-20 14:54:49 -0400
+Processing by UsersController#user as JSON
+Completed 401 Unauthorized in 6ms
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:55:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:55:37 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.7ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:56:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:56:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.1ms)
+  Rendered shared/_oli_landing.html.erb (3.0ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 14ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:56:15 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.5ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started GET "/" for 50.31.164.139 at 2014-07-20 14:56:37 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:56:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 14:57:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.2ms)
+  Rendered shared/_oli_landing.html.erb (3.1ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+Started GET "/" for 202.46.51.43 at 2014-07-20 14:57:51 -0400
+Processing by OliController#new as HTML
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 14:58:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.1ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 14:58:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/" for 119.63.193.132 at 2014-07-20 14:58:38 -0400
+Processing by OliController#new as HTML
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 14:58:46 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 14:59:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 15:00:06 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 15:01:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 15:01:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 15:01:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (5.9ms)
+  Rendered shared/_oli_landing.html.erb (6.6ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 15:01:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (2.0ms)
+  Rendered shared/_oli_landing.html.erb (2.9ms)
+  Rendered oli/_modal.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 25ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 15:02:36 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 15:03:33 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.9ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 15:03:35 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.8ms)
+  Rendered shared/_oli_landing.html.erb (2.5ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 15:03:45 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 15:04:26 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.4ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 184.73.237.85 at 2014-07-20 15:05:18 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.248.250.232 at 2014-07-20 15:06:03 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.247.188.179 at 2014-07-20 15:06:05 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.2ms)
+  Rendered oli/_modal.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 50.112.95.211 at 2014-07-20 15:06:16 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.7ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started HEAD "/" for 54.251.34.67 at 2014-07-20 15:06:56 -0400
+Processing by OliController#new as */*
+  Rendered oli/_landing_form.html.erb (1.6ms)
+  Rendered shared/_oli_landing.html.erb (2.3ms)
+  Rendered oli/_modal.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.0ms)

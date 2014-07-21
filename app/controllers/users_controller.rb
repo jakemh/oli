@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   def user
     @user = current_user 
     render json: [@user], :key => :users  
+
+    
   end
   
   def show

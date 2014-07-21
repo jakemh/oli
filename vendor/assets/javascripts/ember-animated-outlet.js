@@ -34,10 +34,12 @@ Ember.AnimatedContainerView = Ember.ContainerView.extend({
     }, 'currentView'),
 
     _currentViewDidChange: Ember.observer(function() {
+        
         var newView = Ember.get(this, 'currentView'),
             oldView = Ember.get(this, 'oldView'),
             name = this.get('name'),
             effect = null;
+        
         if (newView) {
             if (oldView) {
                 Ember.assert('Ember.AnimatedContainerView can only animate non-virtual views. You need to explicitly define your view class.', !oldView.isVirtual);

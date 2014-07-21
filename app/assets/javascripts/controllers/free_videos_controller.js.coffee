@@ -1,4 +1,4 @@
-Oli.FreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
+Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
   needs: ["me"]
   video: null
   notchGap: false
@@ -74,4 +74,6 @@ Oli.FreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
 
   actions:
     goToVideo: (video)->
-      @transitionTo('free_video', video.index)
+      @transitionToRouteAnimated('free_video', main2: 'slowSlideLeft', video.index)
+
+      # @transitionTo('free_video', video.index)
