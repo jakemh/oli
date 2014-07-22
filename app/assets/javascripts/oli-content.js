@@ -13,7 +13,7 @@ $(document ).ready(function() {
           setTimeout(function() {
             _this.removeClass("success-animation")
             callback()
-          }, 2000);
+          }, 750);
         }
 
         var failAnimation = function(){
