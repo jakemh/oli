@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
+  include Sidekiq::Worker
   default from: "notification@getoli.com"
-  # :reply_to => current_user.email
-  @queue = :file_serve
+  sidekiq_options :retry => 3 # Only five retries and then to the Dead Job Queue
 
   def send_mail(opt = {})
     mail({
@@ -11,8 +11,8 @@ class UserMailer < ActionMailer::Base
       })
   end
 
-  def self.perform(opt = {})
-    self.send_mail(opt)
+  def perform(opt = {})
+    send_mail(opt)
   end
 
 end

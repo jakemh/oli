@@ -4,6 +4,8 @@ Oli.EmailFormController = Oli.ActivityBaseController.extend
     # @get('controllers.activities').on("buttonPressed", @, @submitForm)
 
   submitForm: (callback)->
+    laddaLoadingButton = Ladda.create( document.querySelector('.ladda-button' ) );
+    laddaLoadingButton.start();
 
     @saveEntry("email_address", @get("addressEntry.content"))
     @saveEntry("email_subject",  @get("subjectEntry.content"))
@@ -18,7 +20,10 @@ Oli.EmailFormController = Oli.ActivityBaseController.extend
         body: @get("bodyEntry.content")
       )
     ).always (response) ->
+      laddaLoadingButton.stop();
+
       callback()
+
       return
 
   addressEntry: (->
