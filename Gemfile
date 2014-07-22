@@ -37,6 +37,8 @@ gem 'rack-rewrite' # for the actual rewriting
 gem 'active_model_serializers'
 gem 'deep_cloneable' #phase this out
 gem 'sidekiq'
+gem "resque"
+gem 'resque_mailer'
 gem 'stemmify'
 gem 'paypal-sdk-adaptivepayments'
 
