@@ -5,5 +5,24 @@
   <div class="content-container-account">
     {{partial 'bar'}}
     {{outlet}}
+    {{modal-view
+      idVal="myModal" 
+      title="Congratulations"
+      text="<p>This is your first step toward finding your  OLI.</p>
+            <p>Enjoy the course and have lots of fun!</p>
+          "
+      modalCallback=purchaseTransition
+    }}
+
+    {{modal-view
+      idVal="firstTimeModal" 
+      title="Welcome!"
+      text="<p>Here is your user profile. Enjoy the free videos!</p>
+            <p>Buy the course if you enjoy the content!</p>
+          "
+      modalCallback=purchaseTransition
+    }}
+
   </div>
 </div>
+

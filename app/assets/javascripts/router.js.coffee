@@ -18,6 +18,8 @@ Oli.Router.map ()->
     @resource('marketplace')
     @resource('resources')
     @resource('account')
+    @resource('purchase')
+    @resource('first_login')
   )
 
   @resource('pricing')

@@ -1,5 +1,9 @@
 Oli.CourseInfoRoute = Ember.Route.extend Ember.Evented,
   
+ 
+  beforeModel: (model, trans) ->
+   
+
   setupController: (controller, model) ->
     controller.set('content', model)
     me = @get('controller.controllers.me')

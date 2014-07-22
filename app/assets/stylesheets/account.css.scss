@@ -6,6 +6,7 @@
 }
 
 .info-bar-account{
+  text-align: center;
   position: relative;
   float: left;
   height: 500px;
@@ -18,7 +19,7 @@
 }
 
 .name-container-account{
-  margin-top: 5px;
+  margin: 5px auto;
 }
 
 .user-level-account{
@@ -50,6 +51,7 @@
 .upload-image-container-account{
   height: 60px;
   width: 60px;
+  margin: auto;
 }
 
 .upload-image-circle-account{

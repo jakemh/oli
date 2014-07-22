@@ -1,0 +1,17 @@
+<div class="modal fade" id="{{unbound idVal}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-oli">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title modal-title-oli" id="myModalLabel">{{title}}</h4>
+      </div>
+      <div class="modal-body">
+                {{{text}}}
+
+      <div class="modal-footer">
+        <button id="<%= id_val ||= 'modal-button' %>" type="button" class="btn btn-default" data-dismiss="modal" 
+           {{action modalCallback on="click"}}>Close</button>
+      </div>
+    </div>
+  </div>
+</div>

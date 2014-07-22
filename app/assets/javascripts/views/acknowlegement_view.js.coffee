@@ -4,3 +4,6 @@ Oli.AcknowledgementView = Ember.View.extend
   buttonDisabled: (->
     @get('controller.buttonDisabled')
     ).property()
+
+
+

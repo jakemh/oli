@@ -1,4 +1,9 @@
 $(document ).ready(function() {
+
+  // $('#register-modal').on('click', function(){
+  //   window.location.href = "/me"
+  // })
+  
   if ($(".ladda-button").length > 0){
     var laddaLoadingButton = Ladda.create( document.querySelector( '.ladda-button' ) );
 
@@ -37,7 +42,7 @@ $(document ).ready(function() {
           }).success(function(){
             laddaLoadingButton.stop();
             successAnimation(function(){
-              window.location.href = "/me"
+              window.location.href = "/me/first_login"
 
             });
 

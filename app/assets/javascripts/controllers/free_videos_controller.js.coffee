@@ -19,6 +19,9 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
         v = videos.objectAtContent(relativeId - 1)
         resolve v
 
+  purchaseTransition: (->
+   
+  ).property()
   buttonClicked: ->
  
     laddaLoadingButton = Ladda.create( document.querySelector( '.ladda-button' ) );
@@ -33,9 +36,9 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
       laddaLoadingButton.stop()
     ).success((response)=>
       @store.push('user', response.user)
-      @transitionTo('me')
-      $('#myModal').modal()
 
+      @transitionTo('course_info')
+      $('#myModal').modal()
     ).always ->
       laddaLoadingButton.stop()
 
@@ -74,6 +77,4 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
 
   actions:
     goToVideo: (video)->
-      @transitionToRouteAnimated('free_video', main2: 'slowSlideLeft', video.index)
-
-      # @transitionTo('free_video', video.index)
+      @transitionTo('free_video', video.index)
