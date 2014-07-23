@@ -46,7 +46,7 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
 
   barContentFree: (->
     [
-      {displayName: "Free Videos", name: "free_videos", class: "oli-yellow"}, 
+      {displayName: "Free Videos", name: "me.free_videos", class: "oli-yellow"}, 
       {displayName: "Account", name: "account", class: "oli-red"}
     ]
     ).property()
