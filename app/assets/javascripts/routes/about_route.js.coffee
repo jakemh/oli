@@ -19,7 +19,7 @@ Oli.AboutRoute = Ember.Route.extend
     @render('navContentsHome', {
       outlet: 'navContents',
       into: 'nav',
-      controller: @controllerFor("me") 
+      controller: @controllerFor("base") 
       })
 
 Oli.PricingRoute = Ember.Route.extend
@@ -31,7 +31,7 @@ Oli.PricingRoute = Ember.Route.extend
     @render('navContentsHome', {
       outlet: 'navContents',
       into: 'nav',
-      controller: @controllerFor("me") 
+      controller: @controllerFor("base") 
       })
 
 Oli.BlogRoute = Ember.Route.extend
@@ -43,7 +43,7 @@ Oli.BlogRoute = Ember.Route.extend
     @render('navContentsHome', {
       outlet: 'navContents',
       into: 'nav',
-      controller: @controllerFor("me") 
+      controller: @controllerFor("base") 
       })
 
 Oli.ContactRoute = Ember.Route.extend
@@ -55,6 +55,6 @@ Oli.ContactRoute = Ember.Route.extend
     @render('navContentsHome', {
       outlet: 'navContents',
       into: 'nav',
-      controller: @controllerFor("me") 
+      controller: @controllerFor("base") 
       })
 
