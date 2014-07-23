@@ -1,3 +1,4 @@
+
 Oli.BaseController = Ember.ObjectController.extend
   topics: [
             {name: "About", link: "about"}
@@ -5,3 +6,6 @@ Oli.BaseController = Ember.ObjectController.extend
             {name: "Contact", link: "contact"}
             {name: "Blog", link: "blog"}
           ]
+
+
+# Oli.AboutController = Oli.BaseController.extend

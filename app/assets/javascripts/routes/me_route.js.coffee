@@ -1,5 +1,4 @@
 Oli.MeIndexRoute = Ember.Route.extend
-
   afterModel: (model, transition)->
     if transition.targetName == "me.index"
       if model.get('isFree')
@@ -7,7 +6,7 @@ Oli.MeIndexRoute = Ember.Route.extend
       else @transitionTo('course_info')
 
 Oli.MeRoute = Ember.Route.extend Ember.Evented,
-
+  
   setupController: (controller, model, queryParams) ->
     controller.set('user', model)
     controller.set('content', model)
@@ -39,9 +38,6 @@ Oli.MeRoute = Ember.Route.extend Ember.Evented,
    
       
   events:
-    willTransition: (parms)->
-      alert JSON.stringify parms
-
     acknowledgementButtonPressed: (type)->
       @get('ackController').saveEntry(type).then (response)=>
         @renderAckSelection()
