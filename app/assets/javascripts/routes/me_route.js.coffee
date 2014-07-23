@@ -8,9 +8,6 @@ Oli.MeIndexRoute = Ember.Route.extend
 
 Oli.MeRoute = Ember.Route.extend Ember.Evented,
 
-  actions: 
-    willTransition: (parms)->
-      alert JSON.stringify parms
   setupController: (controller, model, queryParams) ->
     controller.set('user', model)
     controller.set('content', model)
