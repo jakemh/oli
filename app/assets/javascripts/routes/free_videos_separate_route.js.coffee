@@ -1,7 +1,9 @@
 Oli.FreeVideoRoute = Ember.Route.extend({
   setupController: (controller, model) ->
     controller.set('content', model)
-    
+  
+  beforeModel: ->
+
   renderTemplate: ->
     freeVideoController = @controllerFor('freeVideo');
     baseController = @controllerFor('base');
@@ -37,4 +39,7 @@ Oli.FreeVideoRoute = Ember.Route.extend({
       if c.get('video')
         c.get('video').dispose()
         c.set('video', null)
+        
+    didTransition: ->
+      # alert "TEST"
 });

@@ -5,6 +5,9 @@ Oli.MeFreeVideosRoute = Ember.Route.extend Ember.Evented,
     me.set('notchBarContent', "free_videos")
     me.send('trans', "free_videos")
 
+  beforeModel: ->
+    # alert "TEST"
+
   renderTemplate: ->
     @render('me/free_videos',
       into: "me"
@@ -13,7 +16,11 @@ Oli.MeFreeVideosRoute = Ember.Route.extend Ember.Evented,
   afterModel: (model)-> 
     # @transitionTo('free_video', model.id)
 
-  
+  actions: 
+    willTransition: (trans)->
+      @refresh()
+      # alert JSON.stringify trans.targetName
+
   model: (params) -> 
     @store.find("activity", {template: "free_video"}).then (videos)->
       return videos

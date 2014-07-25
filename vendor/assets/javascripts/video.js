@@ -3,10 +3,6 @@
  */
 
 // HTML5 Shiv. Must be in <head> to support older browsers.
-document.createElement('video');
-document.createElement('audio');
-document.createElement('track');
-
 /**
  * Doubles as the main function for users to create a player instance and also
  * the main library object.
@@ -3000,6 +2996,7 @@ vjs.MenuButton.prototype.unpressButton = function(){
  */
 vjs.MediaError = function(code){
   $('#videoErrorModal').modal()
+
   if (typeof code === 'number') {
     this.code = code;
   } else if (typeof code === 'string') {

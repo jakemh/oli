@@ -25,3 +25,4 @@ Oli.VideoController = Oli.ActivityBaseController.extend
 
   submitForm: (callback) -> 
     callback()
+

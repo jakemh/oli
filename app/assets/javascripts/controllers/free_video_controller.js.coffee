@@ -30,4 +30,4 @@ Oli.FreeVideoController = Ember.ObjectController.extend Ember.Evented, Oli.Compo
 
   actions: 
     buttonClicked: ->
-      @transitionTo('me.free_videos')
+      @transitionToRoute('me.free_videos')
