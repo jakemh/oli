@@ -4,7 +4,35 @@
 
   {{partial 'activityTitle'}}
   {{partial 'bar'}}
-  {{partial 'activities/video'}}
+  
+  {{#view Oli.VideoView source=controller.source autoplay=true preload=true}}
+  {{video-player width=controller.width 
+  height=controller.height
+  source=controller.source
+  controls=true}}
+  <div class="transcript">
+    {{{controller.transcript.content.content}}}
+  </div>
+{{/view}}
+{{controller.source.content}}
+<div class="modal fade" id="videoErrorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-oli">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title modal-title-oli" id="myModalLabel">Sorry!</h4>
+      </div>
+      <div class="modal-body">
+        <p>This content hasn't been added yet.</p>
+        <p> We'll fix it as soon as possible!</p>
+              </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   {{partial 'button'}}
   <div id="fb-comments" class="fb-free-video">
     <div  class="fb-comments" data-href="http://getoli.com" data-numposts="5" data-colorscheme="light"></div>

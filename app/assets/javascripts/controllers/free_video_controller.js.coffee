@@ -5,7 +5,7 @@ Oli.FreeVideoController = Ember.ObjectController.extend Ember.Evented, Oli.Compo
   displayNoArrow: true
   hovering: null
   video: null
-  preload: "none" 
+  preload: false
   hideButton: false
   buttonText: "Continue"
 
