@@ -77,5 +77,6 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
 
   actions:
     goToVideo: (video)->
-      @transitionTo('free_video', video.index)
-      @refresh()
+      window.location.href = "/welcome/" + video.index
+
+      # @transitionTo('free_video', video.index)

@@ -2999,6 +2999,9 @@ vjs.MenuButton.prototype.unpressButton = function(){
  * @param {Number} code The media error code
  */
 vjs.MediaError = function(code){
+  if (code === 4){
+    $('#videoErrorModal').modal()
+  }
   if (typeof code === 'number') {
     this.code = code;
   } else if (typeof code === 'string') {

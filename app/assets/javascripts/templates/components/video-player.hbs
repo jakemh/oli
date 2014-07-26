@@ -5,10 +5,11 @@
     width=width
     height=height
     controls=controls
+    src=source.content
     }} 
    >
 
-      <source id="my_source" src="/videos/free_video_3.mp4" type="video/mp4">
-     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+      <source id="my_source" {{bind-attr src=source.content}} type="video/mp4">
+     <p class="vjs-no-js">Tunboundo view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
     </video>
 </div>
