@@ -99,7 +99,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
             # console.log "COMPLETED"
           ) 
           act.set('completed', true)
-          console.log "ACT: " + act
           act.save()
         if newActInd < actsArray.length
           

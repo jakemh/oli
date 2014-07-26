@@ -2,17 +2,19 @@ Oli.BarView = Em.View.extend({
 
   didInsertElement: ->
     @get('controller').on('delegate.increaseProgress', @, @delegate.increaseProgress);
-    @get('controller.controllers.sections.activitiesPerSection').then (aps) =>
-      @set('activitiesPerSection', aps)
-      @get('drawBar')
+    # @get('controller.controllers.sections.activitiesPerSection').then (aps) =>
+    #   @set('activitiesPerSection', aps)
+    @get('drawBar')
 
   activitiesPerSection: null
   drawBar: (->
-    @get('controller').set('progress', Oli.SectionsBar.create({
-          element: $('#sections-row-oli')
-          colors: ["oli-yellow", "oli-orange", "oli-red"]
-          sectionsPerSection: @get('activitiesPerSection')
-          }))
+    @get('controller.controllers.sections.activitiesPerSection').then (aps)=>
+      @get('controller').set('progress', Oli.SectionsBar.create({
+            element: $('#sections-row-oli')
+            colors: ["oli-yellow", "oli-orange", "oli-red"]
+            sectionsPerSection: aps.map((item) -> item.length)
+            completed: aps.map((item) -> item.completed)
+            }))
   ).property()
 
   delegate:
