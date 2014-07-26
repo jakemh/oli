@@ -24,7 +24,7 @@ Oli.AcknowledgementController = Ember.ObjectController.extend Ember.Evented, Oli
     ).property()
 
   grat: (-> 
-    type: "Gratidude"
+    type: "Gratitude"
     typeLower: "gratitude"
     typePlural: "gratitudes"
     title: "Daily Gratitude"
