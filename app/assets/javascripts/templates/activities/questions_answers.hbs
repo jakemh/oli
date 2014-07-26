@@ -1,12 +1,14 @@
-<div class="description-box oli-text">
-    {{controller.controllers.activities.description}}
-</div>
-<div class="component-title qa-title">
-  {{controller.comp.content.title}}
-</div>
+{{#view Oli.QuestionsAnswersView}}
+  <div class="description-box oli-text">
+      {{controller.controllers.activities.description}}
+  </div>
+  <div class="component-title qa-title">
+    {{controller.comp.content.title}}
+  </div>
 
-{{textarea class="answer-box-large"
-  value=controller.questionEntry.content
+  {{textarea class="answer-box-large"
+    value=controller.questionEntry.content
 
-}}
+  }}
 
+{{/view}}

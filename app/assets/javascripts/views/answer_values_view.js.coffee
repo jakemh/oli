@@ -1,6 +1,6 @@
 Oli.AnswerValuesView = Em.View.extend
   didInsertElement: ->
-    @.$().find('.answer-box-large').focus();
+    $('#values-box').focus();
 
   becomeFocused: (->
     ).on('didInsertElement')

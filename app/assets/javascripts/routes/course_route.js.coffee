@@ -25,17 +25,18 @@ Oli.CoursesRoute = Ember.Route.extend({
       
    
 
-    @render('activityTitle', {
-      outlet: 'activityTitle', 
-      controller: activitiesController 
-      })
-
+   
     @render('activity', {
       outlet: 'appContent', 
       controller: activitiesController 
       })
 
-    
+    @render('activityTitle', {
+      outlet: 'activityTitle', 
+      into: 'activity'
+      controller: activitiesController 
+      })
+
     @render('status', {
       outlet: 'status', 
       into: 'activity',
