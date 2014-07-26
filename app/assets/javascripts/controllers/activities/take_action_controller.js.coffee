@@ -1,6 +1,7 @@
 Oli.TakeActionController = Oli.ActivityBaseController.extend
   setup: ->
     @notifyPropertyChange("dependentTasks")
+    @notifyPropertyChange("dependentTasksMapped")
 
   lastDate: null
 
@@ -18,7 +19,7 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
     new Em.RSVP.Promise (resolve, reject) =>
       @get('dependentActivities').then (act)=>
         @component("brainstorm", act.get('firstObject')).then (comp)=>
-          comp.get('entries').then (entries)=>
+          comp.get('actionEntries').then (entries)=>
             resolve(entries)
     ).property("")
 
