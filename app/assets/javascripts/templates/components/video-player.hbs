@@ -1,14 +1,14 @@
 <div class="video-container">
   <video id="my_video"
-  {{bind-attr class=":video-js :vjs-default-skin :vjs-big-play-centered hideButton:hide-button"
+    {{bind-attr class=":video-js :vjs-default-skin :vjs-big-play-centered hideButton:hide-button"
 
-  width=width
-  height=height
-  controls=controls
-  src=source.content
-  }} 
- >
-    <source {{bind-attr src=source.content}} type="video/mp4">
-   <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-  </video>
+    width=width
+    height=height
+    controls=controls
+    }} 
+   >
+
+      <source id="my_source" src="/videos/free_video_3.mp4" type="video/mp4">
+     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
 </div>

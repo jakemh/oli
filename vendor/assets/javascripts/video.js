@@ -3,6 +3,10 @@
  */
 
 // HTML5 Shiv. Must be in <head> to support older browsers.
+document.createElement('video');
+document.createElement('audio');
+document.createElement('track');
+
 /**
  * Doubles as the main function for users to create a player instance and also
  * the main library object.
@@ -2995,8 +2999,6 @@ vjs.MenuButton.prototype.unpressButton = function(){
  * @param {Number} code The media error code
  */
 vjs.MediaError = function(code){
-  $('#videoErrorModal').modal()
-
   if (typeof code === 'number') {
     this.code = code;
   } else if (typeof code === 'string') {
@@ -6264,7 +6266,7 @@ vjs.Flash = vjs.MediaTechController.extend({
   /** @constructor */
   init: function(player, options, ready){
     vjs.MediaTechController.call(this, player, options, ready);
-
+    
     var source = options['source'],
 
         // Which element to embed in
@@ -6321,6 +6323,8 @@ vjs.Flash = vjs.MediaTechController.extend({
         flashVars['rtmpStream'] = encodeURIComponent(parts.stream);
       }
       else {
+        alert(JSON.stringify(source))
+
         flashVars['src'] = encodeURIComponent(vjs.getAbsoluteURL(source.src));
       }
     }
@@ -6516,6 +6520,7 @@ vjs.Flash.prototype.src = function(src){
     this.setRtmpStream(src.stream);
   } else {
     // Make sure source URL is abosolute.
+
     src = vjs.getAbsoluteURL(src);
     this.el_.vjs_src(src);
   }
