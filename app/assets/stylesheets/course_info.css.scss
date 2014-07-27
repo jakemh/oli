@@ -21,15 +21,20 @@
   
   cursor: pointer;
   
-
+  
   
 }
 
+.active-course-info a{
+    color: oli-yellow(1) !important;
+
+  
+}
 .item-course-info a{
-  color: oli-dark-gray(1) !important;
+  color: oli-dark-gray(1);
   font-size: .9em;
   &:hover{
-    color: oli-yellow(1) !important;
+    text-decoration: unerline;
   }
 }
 

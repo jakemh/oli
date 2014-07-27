@@ -7,10 +7,11 @@
       Select to enter course
     </div>
 
-    {{#each topic in topics}}
-      <div class="item-course-info">
-        <div class="logo-course-info"></div>
-        {{#link-to 'topics' content.id topic.name}}{{topic.name}}{{/link-to}}
+    {{#each obj in topicsView.content}}
+      <div {{bindAttr class=":item-course-info obj.available:active-course-info"}}>
+        <div {{bindAttr class=":logo-course-info"}}></div>
+        {{#link-to  'topics' content.id obj.name class=obj.available:active-course-info}}{{obj.name}}{{/link-to}}
+
       </div>
     {{/each}}
   </div>
