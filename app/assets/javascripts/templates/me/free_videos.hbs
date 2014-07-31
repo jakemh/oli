@@ -21,7 +21,7 @@
 
     </div>
 
-    {{#link-to 'free_video' video.id}} {{video.title}} {{/link-to}}
+    <a href="#" {{action "buttonClicked" this on="click"}}>{{video.title}}</a>
 
     <div class="description-free-videos">
       {{video.description}}
