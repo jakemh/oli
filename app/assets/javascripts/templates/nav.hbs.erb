@@ -27,14 +27,17 @@
         </ul>
         <div class="nav-contents-container-secondary">
           <ul class="nav navbar-nav ">
-           {{!--  <li>{{#link-to 'users.logout'}}Log out{{/link-to}}</li> --}}
             <li>
               {{#link-to 'users.logout'}}Log out{{/link-to}}
+            </li>
+            <li>
+              <a href="#" {{action "addBug" on="click"}}>Report bug</a>            
             </li>
           </ul>
         </div>
       </div>
-      
+     
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -43,3 +46,12 @@
 
   <div class=".col-md-3"> </div>
 </div> <!-- /.row --> 
+
+{{modal-view 
+  input=controllers.bugs.input
+  inputBool=controllers.bugs.modal.inputBool
+  idVal=controllers.bugs.modal.id
+  title=controllers.bugs.modal.title
+  text=controllers.bugs.modal.text
+  submitModal=controllers.bugs.modal.submit
+}}

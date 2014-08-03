@@ -6,11 +6,21 @@
         <h4 class="modal-title modal-title-oli" id="myModalLabel">{{title}}</h4>
       </div>
       <div class="modal-body">
-                {{{text}}}
+        {{{text}}}
 
-      <div class="modal-footer">
-        <button id="<%= id_val ||= 'modal-button' %>" type="button" class="btn btn-default" data-dismiss="modal" 
-           {{action modalCallback on="click"}}>Close</button>
+      {{#if inputBool}}
+        {{textarea class="box-bugs" value=input}}
+      {{/if}}
+        <div class="modal-footer">
+          {{#if inputBool}}
+            <button id="<%= id_val ||= 'modal-button' %>" type="button" class="btn btn-default" data-dismiss="modal" 
+               {{action submitModal on="click"}}>Submit
+            </button>
+          {{else}}
+            <button id="<%= id_val ||= 'modal-button' %>" type="button" class="btn btn-default" data-dismiss="modal" 
+               {{action modalCallback on="click"}}>Close
+            </button>
+          {{/if}}
       </div>
     </div>
   </div>

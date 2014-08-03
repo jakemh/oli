@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'bug_ticket/create'
+
   get 'boxes/list'
 
   get 'boxes/new'
@@ -40,6 +42,7 @@ Rails.application.routes.draw do
   get '/me', :to => 'ember#index', :constraints => FormatTest.new(:html), :as => :my_page
   get '/me/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
   get '/home', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/bugs', :to => 'ember#index', :constraints => FormatTest.new(:html)
 
   get '/topics', :to => 'topics#list'
   get '/sections', :to => 'sections#list'
@@ -93,6 +96,7 @@ Rails.application.routes.draw do
   get '/action_entries/', :to => 'action_entries#list'
   
   get '/payment', :to => 'paypal#make_payment'
+  post '/bugs', :to => 'bug_ticket#create'
 
 
   resources :courses do

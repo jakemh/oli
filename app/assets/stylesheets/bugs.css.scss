@@ -1,0 +1,6 @@
+@import "oli-root";
+
+.box-bugs{
+  @include oli-box;
+  height: 120px;
+}

@@ -4,6 +4,7 @@ Oli.Router.map ()->
   
 
   # @route('course', {path: "/courses/*wildcard"})
+  @resource('bugs')
   @resource('welcome', ->
     @resource('free_video', {path: "/:id"})
     )

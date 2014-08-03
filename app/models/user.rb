@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :words
   has_many :boxables 
   has_many :payments
+  has_many :bug_tickets
   
   validates :name, {
   :presence => true,
@@ -24,6 +25,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+  def words_for_box(box)
+    Word.all_for_user(self).joins(:boxables).where('boxables.box_id' => box.id, 'boxables.user_id' => self.id)
+  end
 
   def role
     role = self.roles.first
