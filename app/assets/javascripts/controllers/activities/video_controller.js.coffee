@@ -3,9 +3,9 @@ Oli.VideoController = Oli.ActivityBaseController.extend
   setup: ->
     @notifyPropertyChange('transcript')
     @notifyPropertyChange('source')
-    @set('controllers.activities.buttonDisabled', true)
-    @set('finished', false)
-    
+    @set('finished', @get('activityController.content.completed'))
+    @set('controllers.activities.buttonDisabled', !@get('finished'))
+
 
   needs: ['activities']
   preload: false
