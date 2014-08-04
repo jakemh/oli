@@ -22,6 +22,8 @@ Oli.VideoView = Em.View.extend Oli.AnimatedView,
           outer.set('controller.finished', true)
         if src == "/videos/xxx" || src == "/videos/"
           outer.set('controller.duration', 0)
+          $('#videoErrorModal').modal()
+
         else
           this.on "durationchange", =>
             outer.set('controller.duration', this.duration())

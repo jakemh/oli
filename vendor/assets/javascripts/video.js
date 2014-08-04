@@ -3000,7 +3000,6 @@ vjs.MenuButton.prototype.unpressButton = function(){
  */
 vjs.MediaError = function(code){
   if (code === 4){
-    $('#videoErrorModal').modal()
   }
   if (typeof code === 'number') {
     this.code = code;
