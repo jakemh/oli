@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
 $nav-bar-height: 60px;
 $levels-height: 45px;
 
@@ -42,7 +45,10 @@ $levels-height: 45px;
   box-shadow: 0 0 10px rgba(0,0,0,.12); 
 }
 @mixin oli-font{
-  font-family: pn-light;
+  // font-family: pn-light;
+  font-family: 'PT Sans', sans-serif;
+
+  font-weight: 300;
   color: #696969;
 }
 
@@ -104,10 +110,14 @@ $levels-height: 45px;
 }
 
 @mixin black-bold-text{
-  -webkit-text-stroke: 0px!important;
-  -webkit-font-smoothing: antialiased !important;
+  // -webkit-text-stroke: 0px!important;
+  // -webkit-font-smoothing: antialiased !important;
   color: rgba(0,0,0, 1);
-  font-family: pn-bold;
+  // font-family: pn-bold;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -.05em;
+
+  font-weight: bold;
   text-align: center;
   font-size: .85em;
 
@@ -118,7 +128,9 @@ $levels-height: 45px;
 }
 
 @mixin oli-bold{
-  font-family: pn-bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: -.05em;
   color: rgba(0,0,0,.9) !important;
 }
 

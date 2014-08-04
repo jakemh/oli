@@ -134,10 +134,14 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 
 
 .header-text-oli{
-  color: #f26e1b;
-  font-family: pn-bold;
+  // font-family: pn-bold;
+  // font-family: 'Montserrat', sans-serif;
+  // font-weight: bold;
+  @include oli-bold;
+  color: #f26e1b !important;
+
   text-align: center;
-  font-weight: normal;
+  // font-weight: normal;
   font-smoothing: antialiased;
   font-size: 1.285em;
 
@@ -145,7 +149,8 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 
 .body-text-oli{
   line-height: 1.31em;
-  font-family: pn-light;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 300;
   text-align: center;
   font-weight: normal;
   font-smoothing: antialiased;
@@ -158,10 +163,11 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 
 
 .footer-text-oli{
-  font-family: pn-light;
+  // font-family: pn-light;
   text-align: center;
   font-weight: normal;
-  font-smoothing: antialiased;
+  @include oli-font;
+  // font-smoothing: antialiased;
   margin:0 auto;
   max-width: 300px;
   color: rgba(0,0,0,.6) !important;
@@ -171,9 +177,10 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 
 .status-oli{
   height: 15px;
-  font-family: pn-light;
+  @include oli-font;
+  // font-family: pn-light;
   text-align: center;
-  font-weight: normal;
+  // font-weight: normal;
   font-smoothing: antialiased;
   opacity: .6;
   padding-top: 5px;
