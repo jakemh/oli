@@ -1,5 +1,5 @@
 <div class="button-activity back-button-activity">
-  <button class="smaller-button" data-style="zoom-out" {{action "backButtonClicked" this on="click"}}>
+  <button class="smaller-button oli-inactive" data-style="zoom-out" {{action "backButtonClicked" this on="click"}}>
     <span class="ladda-label"></span>
     Back
   </button>
@@ -7,7 +7,7 @@
 </div>
 
 <div class="button-activity forward-button-activity">
-  <button class="ladda-button smaller-button" data-style="zoom-out" {{action "buttonClicked" this on="click"}}>
+  <button {{bind-attr class=":ladda-button :smaller-button buttonDisabled:oli-inactive" disabled=buttonDisabled}} data-style="zoom-out" {{action "buttonClicked" this on="click"}}>
     <span class="ladda-label">    {{controller.buttonText}}
 </span>
   </button>

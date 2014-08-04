@@ -12,6 +12,9 @@ Oli.BugsController = Ember.ObjectController.extend Ember.Evented,
       bug = @store.createRecord('bug',
         description: @get('input')
         url: document.URL
+        userAgent: navigator.userAgent
+
+
         )
       bug.save()
     ).property()

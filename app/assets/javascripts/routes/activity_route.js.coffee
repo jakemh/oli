@@ -42,6 +42,7 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
       @get('controller').off("buttonPressed")
       @get('controller').set("status", "")
       @get('controller').set("templateName", "status")
+      @get('controller').set("buttonDisabled", false)
 
       # video.js require video to be disposed between transitions
       if @get('controller.video')

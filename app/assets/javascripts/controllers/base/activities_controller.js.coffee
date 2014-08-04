@@ -31,6 +31,8 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
       )
     ).property('activities')
 
+  buttonDisabled: false
+
   boxUpdated: ->
     @trigger('threadUpdater')
 

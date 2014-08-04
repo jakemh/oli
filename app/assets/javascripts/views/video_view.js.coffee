@@ -15,10 +15,19 @@ Oli.VideoView = Em.View.extend Oli.AnimatedView,
     #   return
 
     # # alert "TeST"
-    player = vjs(document.getElementsByClassName('video-js')[0], {preload: "none"}, ->
-
-
+    outer = this
+    player = vjs(document.getElementsByClassName('video-js')[0], {preload: "metadata"}, ->
+      outer.get('source').then (src)=>
+        this.on "ended", =>
+          outer.set('controller.finished', true)
+        if src == "/videos/xxx" || src == "/videos/"
+          outer.set('controller.duration', 0)
+        else
+          this.on "durationchange", =>
+            outer.set('controller.duration', this.duration())
     )
+
+
     @get('controller').handleVideoDispose(player)
 
 
