@@ -114,8 +114,7 @@ $levels-height: 45px;
   // -webkit-font-smoothing: antialiased !important;
   color: rgba(0,0,0, 1);
   // font-family: pn-bold;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: -.05em;
+  // letter-spacing: -.05em;
 
   font-weight: bold;
   text-align: center;
@@ -127,10 +126,14 @@ $levels-height: 45px;
   }
 }
 
-@mixin oli-bold{
+@mixin mont{
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  letter-spacing: -.05em;
+}
+
+@mixin oli-bold{
+  @include mont;
+  // letter-spacing: -.05em;
   color: rgba(0,0,0,.9) !important;
 }
 
