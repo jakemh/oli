@@ -45,10 +45,11 @@ $levels-height: 45px;
   box-shadow: 0 0 10px rgba(0,0,0,.12); 
 }
 @mixin oli-font{
-  // font-family: pn-light;
-  font-family: 'PT Sans', sans-serif;
-
-  font-weight: 300;
+  font-family: pn-light;
+  // font-family: 'PT Sans', sans-serif;
+  // font-family: arial;
+  font-weight: 400;
+  font-size: .95em;
   color: #696969;
 }
 
@@ -97,8 +98,11 @@ $levels-height: 45px;
   border-radius: 20px;
   margin-top: 10px;
   background-color: oli-blue(1);
+  // @include oli-font;
+  text-transform: uppercase;
   color: white;
   font-family: pn-thin;
+
   box-shadow: 0 1px 3px rgba(38, 109, 191, .3); 
 
   font-size: .9em;
@@ -113,9 +117,10 @@ $levels-height: 45px;
   // -webkit-text-stroke: 0px!important;
   // -webkit-font-smoothing: antialiased !important;
   color: rgba(0,0,0, 1);
+  @include mont;
   // font-family: pn-bold;
-  // letter-spacing: -.05em;
-
+  letter-spacing: 0em;
+  text-transform: uppercase;
   font-weight: bold;
   text-align: center;
   font-size: .85em;
@@ -127,14 +132,24 @@ $levels-height: 45px;
 }
 
 @mixin mont{
-  font-family: 'Montserrat', sans-serif;
+  font-family: arial;
+  // font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+}
+
+@mixin oli-font-main{
+
+
+
 }
 
 @mixin oli-bold{
   @include mont;
   // letter-spacing: -.05em;
   color: rgba(0,0,0,.9) !important;
+  text-transform: uppercase;
+  font-size: .85em;
+  line-height: 2em;
 }
 
 @mixin oli-form-field{

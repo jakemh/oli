@@ -2,7 +2,8 @@ Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable, Em
   needs: "activities"
 
   setup: ->
-
+ 
+  finished: false
   submitForm: (callback)->
     callback()
 

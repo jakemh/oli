@@ -3,7 +3,7 @@
 $flames-height: 363;
 
 body, html{
-  height: 100%;
+  height: 90%;
   width: 100%;
   margin: 0;
   padding:0;
@@ -149,11 +149,10 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 
 .body-text-oli{
   line-height: 1.31em;
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 300;
+  @include oli-font;
   text-align: center;
-  font-weight: normal;
-  font-smoothing: antialiased;
+  // font-weight: normal;
+  // font-smoothing: antialiased;
   margin:0 auto;
   max-width: 285px;
   padding-bottom: 20px;

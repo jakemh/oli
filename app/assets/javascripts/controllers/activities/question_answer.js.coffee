@@ -1,27 +1,30 @@
 Oli.QuestionAnswersController = Oli.ActivityBaseController.extend
 
   setup: -> 
+    @_super()
     @notifyPropertyChange('comp')
-    @notifyPropertyChange('questionEntry')
+    @setInput()
     # @notifyPropertyChange('questionEntryList')
 
   comp: (->
     @component("question_answer")
     ).property()
 
+  input: null
 
+  inputChanged: (->
+    if @get('input') && @get('input').length > 5
+      @allowContinue()
+    else @preventContinue()
+    ).observes('input')
 
-  questionEntry: (->
-    return DS.PromiseObject.create promise: 
-
-      new Em.RSVP.Promise (resolve, reject) =>      
-        @entry("question_answer", "paragraph").then (e)->
-          lastEntry = e.toArray()[e.get('length') - 1]
-          if lastEntry 
-            resolve lastEntry.get('post')
-          else resolve ""
-    ).property()
-
+  setInput: -> 
+    @entry("question_answer", "paragraph").then (e)=>
+      lastEntry = e.toArray()[e.get('length') - 1]
+      if lastEntry 
+        @set('input', lastEntry.get('post'))
+      else 
+        @set('input', null)
   # questionEntryList: (->
   #   return DS.PromiseObject.create promise: 
   #     new Em.RSVP.Promise (resolve, reject) =>      
@@ -34,4 +37,4 @@ Oli.QuestionAnswersController = Oli.ActivityBaseController.extend
 
 
   submitForm: (callback)-> 
-    @commitEntry("question_answer", "paragraph", @get('questionEntry').content, callback)
+    @commitEntry("question_answer", "paragraph", @get('input'), callback)

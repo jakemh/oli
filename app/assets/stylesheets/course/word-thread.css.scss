@@ -13,9 +13,11 @@
   background-color: oli-blue(1);
   margin: 2px;
   display: inline-block;
+  @include oli-font;
+  font-family: pn-thin;
   color: white;
   padding: 0px 5px 0px 5px;
-  font-family: pn-thin;
+  text-transform: uppercase;
   border-radius: 50px;
   line-height: 1.8em;  
   font-weight: thin;
