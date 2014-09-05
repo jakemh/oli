@@ -18,6 +18,12 @@ Oli.MeController = Ember.ObjectController.extend Ember.Evented,
           resolve users.get('firstObject')
     ).property()
 
+  closeModal: ->
+    frame = $('#video-iframe')
+    src = frame.attr('src')
+    frame.attr('src', '')
+    frame.attr('src', src)
+
   accountLevel: (->
     @get('user.accountType')
     ).property()

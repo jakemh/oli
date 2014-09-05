@@ -17,7 +17,7 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
 
   childControllers: (->
     "share_2" : @controllerFor('emailForm')
-    "choose_word" : @controllerFor('activities')
+    "choose_word" : @controllerFor('wordSelection')
     "questions_answers" : @controllerFor('questionAnswers')
     "questions_values" : @controllerFor('answersValues')
     "word_thread" : @controllerFor('wordThread')
@@ -33,7 +33,7 @@ Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
 
   template: ->
     template = @modelFor('activities').get('template') || 'empty'
-  
+
   actions: 
     willTransition: ->
       

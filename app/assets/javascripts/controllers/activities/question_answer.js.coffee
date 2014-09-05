@@ -13,7 +13,7 @@ Oli.QuestionAnswersController = Oli.ActivityBaseController.extend
   input: null
 
   inputChanged: (->
-    if @get('input') && @get('input').length > 5
+    if (@get('input') && @get('input').length > 5) || @get('finished')
       @allowContinue()
     else @preventContinue()
     ).observes('input')

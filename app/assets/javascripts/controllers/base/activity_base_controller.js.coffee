@@ -1,20 +1,13 @@
 
-Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable, Ember.Evented, 
+Oli.ActivityBaseController = Ember.ObjectController.extend Oli.Componentable, Oli.Validations, Ember.Evented,  
   needs: "activities"
 
   setup: ->
-    @set('finished', @get('activityController.content.completed'))
-    @set('controllers.activities.buttonDisabled', !@get('finished'))
+    @validationsSetup()
     
-  finished: false
   submitForm: (callback)->
     callback()
 
-  allowContinue: ->
-    @set('controllers.activities.buttonDisabled', false)
-
-  preventContinue: ->
-    @set('controllers.activities.buttonDisabled', true)
 
   activity: (-> 
     @get('controllers.activities.content')

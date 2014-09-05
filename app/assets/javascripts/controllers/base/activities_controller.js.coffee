@@ -1,4 +1,4 @@
-Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
+Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable, Oli.Validations,
   
   needs: ['sections']
 
@@ -119,7 +119,9 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
  
   actions:
     skipActivity: (act)->
+      @allowContinue(@)
       @nextAct(act)
+
 
     updateContent: ->
 

@@ -12,10 +12,10 @@ Oli.Word = DS.Model.extend
   removeBox: (->
 
     if @get('selected') == false
-
-      @get("box").then (box)=>
-        if box
-          box.get('words').then (words)=>
-            words.removeObject(@)
+      if @get('box')
+        @get("box").then (box)=>
+          if box
+            box.get('words').then (words)=>
+              words.removeObject(@)
 
   ).observes("selected")

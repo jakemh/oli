@@ -27,7 +27,7 @@ class Activity < ActiveRecord::Base
   def update_completed(status, current_user)
     status_obj = status(current_user).first
     if status_obj
-      status_obj.update_attributes(:status => status)
+      status_obj.update_attributes(:completed => status)
     else Status.create(:activity => self, :user => current_user, :completed => status)
     end
   end

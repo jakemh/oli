@@ -1,15 +1,22 @@
-Oli.WordThreadController = Oli.ActivityBaseController.extend
+Oli.WordThreadController = Oli.ActivityBaseController.extend Oli.Threadable,
   needs: "activities"
 
+  minThreads: 4
+
   setup: ->
+    @_super()
     @setLists()
     @dependentWords()
-
 
   wordsBox: []
   placeHolder: (->
     "Drop a word here!"
     ).property("")
+
+  handleWordDrop: (newList) ->
+    newList.save()
+    @listValidation()
+
 
   dependentActivity: (->
     new Em.RSVP.Promise (resolve, reject) =>
@@ -28,6 +35,19 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
 
     ).observes("lists.@each")
 
+  listValidation: (->
+    counter = 0
+    for list in @get('listsExceptLast')
+      if list &&  list.get('length') > 0
+        counter += 1
+
+    if counter >= @minThreads
+      @allowContinue()
+    else 
+      @preventContinue()
+
+    ).observes("lists.@each")
+
   setLists: ->
     # @get('allWords').then (all)=>
     @component("word_thread").then (c)=>
@@ -35,8 +55,10 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
         c.get('boxes').then (bxs)=>
           for box, i in bxs.toArray()
             do (box, i)=>
+              @joinedThread2(box).then (thread)->
               # alert @get('lists')[i] + "  :  " + box.get('words')
               box.get('words').then (b)=>
+
                 @get('lists')[i] = b
                 @notifyPropertyChange('lists.@each')
 
@@ -55,6 +77,8 @@ Oli.WordThreadController = Oli.ActivityBaseController.extend
     lastBox.get('words').then (wx)=>
         wx.pushObject(word)
         @setLists()
+  
+
 
   dependentWords: ->
     @component("word_thread").then (c)=>

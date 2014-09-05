@@ -1,8 +1,9 @@
 Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
   needs: "topics"
 
+  # @deprecated
   hash: (() ->
-    
+    console.warn("Calling deprecated sections hash function!"); 
     hash = {}
     @get('sections').then (sects)->
       console.log "UPDATE SECT HASH"
@@ -10,6 +11,14 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
         hash[s.get('name')] = (i + 1)
       return hash
     ).property('content')
+
+  sectionsHash: ->      
+    new Em.RSVP.Promise (resolve, reject) =>
+      hash = {}
+      @get('sections').then (sects)->
+        for s, i in sects.toArray()
+          hash[s] = (i + 1)
+        resolve(hash)
 
   section: null
   aps: []
@@ -56,11 +65,17 @@ Oli.SectionsController = Ember.ObjectController.extend(Ember.Evented, {
       
     click: (item)->
       @set('clicking', item); 
+
   
-  
-  sections: (() ->
+  # sections: (() ->
+  #   @get('controllers.topics').get('sections')
+  #   ).property()
+
+  sections: (->
+    # @get('controllers.topics').sections()
     @get('controllers.topics').get('sections')
-    ).property()
+
+    ).property('content')
 
   nextLevel: (() ->
     @get('hash').then (h) =>

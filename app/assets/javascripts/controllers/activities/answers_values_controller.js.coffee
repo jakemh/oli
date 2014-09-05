@@ -43,7 +43,7 @@ Oli.AnswersValuesController  = Oli.ActivityBaseController.extend
     ).property()
 
   parseWordsChanged: (->
-    if @get('parsedWords.length') >= 3
+    if @get('parsedWords.length') >= 3 || @get('finished')
       @allowContinue()
     else @preventContinue()
     ).observes("parsedWords.length")

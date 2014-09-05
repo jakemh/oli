@@ -1,10 +1,22 @@
 Oli.Share1Controller = Oli.ActivityBaseController.extend
   needs: ["activities"]
+  setup: ->
+    @_super()
+    @get('controllers.activities').on("skipActivity", @, "handleSkip")
+    @last_post("share_box_fb").then (entry)=>
+      @set("fb_message", entry)
 
+  # fb_message: (->
+  #   @last_post("share_box_fb")
+  # ).property()
+  fb_message: null
 
-  fb_message: (->
-    @last_post("share_box_fb")
-  ).property()
+  validation: (->
+    if @fb_message.length > 10
+      @allowContinue()
+    else 
+      @preventContinue()
+    ).observes("fb_message")
 
   name: "Discovering your values and honoring them are the keys to being happy and fulfilled."
   title: ""
@@ -28,10 +40,10 @@ Oli.Share1Controller = Oli.ActivityBaseController.extend
       link: @get('link')
       picture: @get('picture')
     , (response) ->
-      if not response or response.error
-      else
-        callback()
-      return
+        if not response or response.error
+        else
+          callback()
+        return
 
   facebookLogin: (content)->
     FB.login ((response) =>
@@ -57,14 +69,15 @@ Oli.Share1Controller = Oli.ActivityBaseController.extend
     component.then (c) =>
 
       entry = @store.createRecord('entry', {
-          post: @get('fb_message.content')
+          post: @get('fb_message')
           component: c
         })
       c.get('entries').then (es)->
         es.pushObject(entry)
         entry.save()
 
-    FB.login ((response) =>
+    FB.login (response) =>
+
       if response.authResponse
         console.log "Welcome!  Fetching your information.... "
         @shareOnFacebook(callback)
@@ -72,8 +85,6 @@ Oli.Share1Controller = Oli.ActivityBaseController.extend
       else
         console.log "User cancelled login or did not fully authorize."
       return
-    ),
-      scope: "publish_actions"
-      return_scopes: true
+  
 
     

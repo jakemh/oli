@@ -44,9 +44,9 @@ Oli.Droppable = Ember.Mixin.create(
     # console.log @get('index')
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]
-    if view
-      if @get('index') != view.get('originalBox')
-        alert("ENTER")
+    # if view
+    #   if @get('index') != view.get('originalBox')
+    #     alert("ENTER")
 
   dragLeave: (event)->
     # event.preventDefault()
@@ -81,7 +81,7 @@ Oli.Droppable = Ember.Mixin.create(
       oldList.save()
     # alert typeof newList.save
     if typeof newList.save == 'function'
-      newList.save()
+      @get('controller').handleWordDrop(newList)
     else 
       box = @get('controller.store').all('box').get('lastObject')
       view.value.set('box', box)

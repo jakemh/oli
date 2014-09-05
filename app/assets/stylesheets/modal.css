@@ -11,3 +11,10 @@
   color: #f26e1b;
 
 }
+
+.big-modal .modal-dialog-oli{
+  padding-top: 10%;
+  width: 810px;
+  max-width: 100% !important;
+
+}

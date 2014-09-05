@@ -41,7 +41,8 @@ gem "resque"
 gem 'resque_mailer'
 gem 'stemmify'
 gem 'paypal-sdk-adaptivepayments'
-
+gem 'puma'
+gem 'foreman'
 
 group :production do
   gem 'unicorn'

@@ -3,6 +3,10 @@ Oli.TopicsController = Ember.ObjectController.extend({
   disableLink: (->
     false)()
 
+  # sections:  ->
+  #   if @content
+  #     return @content.get('sections')
+  #   else return null
   
 });
 
