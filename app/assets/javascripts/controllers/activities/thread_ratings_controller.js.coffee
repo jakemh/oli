@@ -1,12 +1,26 @@
 Oli.ThreadRatingsController = Oli.ActivityBaseController.extend Oli.Threadable,
   
   setup: ->
+    @_super()
     @get('activityController').on('threadUpdater', @, @threadUpdater)
     @threadUpdater()
     @notifyPropertyChange("box") 
     @notifyPropertyChange("buttons") #force buttons to reload
     @notifyPropertyChange("isSelected")
     @notifyPropertyChange("isSelected2")
+    @ratingBase("thread_rating_1").then (rating1)=>
+      @ratingBase("thread_rating_2").then (rating2)=>
+        @set('input1', rating1)
+        @set('input2', rating2)
+
+
+  validate: (->
+    @get('joinedThread').then (t)=>
+      if t == "" || (@input1 && @input2)
+        @allowContinue()
+      else @preventContinue()
+    ).observes("input1", "input2")
+
 
   threadUpdater: ->
     @notifyPropertyChange("thread")
@@ -30,7 +44,9 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend Oli.Threadable,
               resolve rating.get('value')
             else resolve null
 
-
+  input1: null
+  input2: null
+  
   isSelected: (->
     @ratingBase("thread_rating_1")
     ).property("")

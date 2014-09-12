@@ -2,6 +2,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
 
   setup: ->
+    @_super()
     @setFields()
     @notifyPropertyChange("threadsList")
     @get('threadsList').then (list)->
@@ -57,6 +58,10 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
     []
     ).property("")
 
+  validate: (->
+    alert JSON.stringify @get('sortedList')
+
+    ).observes('list.@each')
   sortedList: (->
     @get('list').sortBy('createdAt').reverse()
     ).property("list.@each")

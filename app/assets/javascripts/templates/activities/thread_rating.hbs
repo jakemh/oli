@@ -7,7 +7,7 @@
     <div class="radio-button-container">
       {{#each index in controller.buttons}}
         <div class="radio-rating">
-          {{view Oli.RatingButton name="thread_rating_1" selectionBinding="isSelected.content" value=index}}
+          {{view Oli.RatingButton name="thread_rating_1" selectionBinding="input1" value=index}}
 
           <div class="rating-label">
             <label for="thread_rating_1">{{index}}</label>
@@ -22,7 +22,7 @@
     <div class="radio-button-container">
       {{#each index in controller.buttons}}
         <div class="radio-rating">
-          {{view Oli.RatingButton name="thread_rating_2" selectionBinding="isSelected2.content" value=index}}
+          {{view Oli.RatingButton name="thread_rating_2" selectionBinding="input2" value=index}}
 
           <div class="rating-label">
             <label for="thread_rating_2">{{index}}</label>

@@ -95,7 +95,6 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
       @get('activities').then (acts)=>
 
         actsArray = acts.toArray()
-
         if act.get('completed') == false
           @trigger('delegate.increaseProgress', @, ->
             # console.log "COMPLETED"

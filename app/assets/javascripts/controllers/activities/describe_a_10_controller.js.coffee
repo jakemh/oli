@@ -1,5 +1,7 @@
 Oli.DescribeA10Controller = Oli.ActivityBaseController.extend Oli.Threadable,
   setup: ->
+    @_super()
+
     @get('activityController').on('threadUpdater', @, @threadUpdater)
     @threadUpdater()
     @threadEntry1().then (t1)=>
@@ -15,6 +17,14 @@ Oli.DescribeA10Controller = Oli.ActivityBaseController.extend Oli.Threadable,
   input1: null
   input2: null
 
+
+  validate: (->
+    @get('joinedThread').then (t)=>
+      if t == "" || (@get('input1') && @get('input2') && @get('input1').length > 5 && @get('input2').length > 5)
+        @allowContinue()
+      else @preventContinue()
+
+    ).observes("input1", "input2")
   threadEntry1: ->
     return DS.PromiseObject.create promise: 
       new Em.RSVP.Promise (resolve, reject) =>
