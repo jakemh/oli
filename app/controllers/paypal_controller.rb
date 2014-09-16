@@ -5,16 +5,16 @@ require 'paypal'
 class PaypalController < ApplicationController
   
   def create
-    @payment = Payment.create!(
+    @payment = Payment.new(
       :amount => 7.99,
       :digital => true,
       :popup => false,
-      :recurring => true
+      :recurring => false
       )
 
     @payment.setup!(
-     'http://localhost:3000/paypal_success',
-      'http://localhost:3000/paypal_cancel'
+     paypal_success_url,
+     paypal_cancel_url
     )
     if @payment.popup?
       redirect_to @payment.popup_uri

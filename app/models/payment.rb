@@ -1,6 +1,6 @@
 class Payment < ActiveRecord::Base
-  # validates :token, uniqueness: true
-  # validates :amount, presence: true
+  validates :token, uniqueness: true
+  validates :amount, presence: true
   # validates :identifier, uniqueness: true
   scope :recurring, where(recurring: true)
   scope :digital,   where(digital: true)
@@ -38,6 +38,7 @@ class Payment < ActiveRecord::Base
       no_shipping: self.digital?
     )
     self.token = response.token
+    puts "TOKEN: ", self.token
     self.save!
     @redirect_uri = response.redirect_uri
     @popup_uri = response.popup_uri
@@ -69,7 +70,7 @@ class Payment < ActiveRecord::Base
     self.cancel!
   end
 
-  # private
+  private
 
   def client
     Paypal::Express::Request.new PAYPAL_CONFIG

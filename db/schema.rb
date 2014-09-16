@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912031649) do
+ActiveRecord::Schema.define(version: 20140916231001) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -99,7 +99,6 @@ ActiveRecord::Schema.define(version: 20140912031649) do
   end
 
   create_table "payments", force: true do |t|
-    t.integer  "amount",     default: 1
     t.string   "token"
     t.string   "identifier"
     t.string   "payer_id"
@@ -110,6 +109,7 @@ ActiveRecord::Schema.define(version: 20140912031649) do
     t.boolean  "canceled",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "amount"
   end
 
   create_table "permissions", force: true do |t|
