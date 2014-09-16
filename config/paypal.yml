@@ -12,4 +12,4 @@ production: &production
   username: <%= ENV["PAYPAL_USERNAME"] %>
   password: <%= ENV["PAYPAL_PASSWORD"] %>
   signature: <%= ENV["PAYPAL_SIGNATURE"] %>
-  sandbox: <%= ENV["PG_PW"] %>
+  sandbox: false
