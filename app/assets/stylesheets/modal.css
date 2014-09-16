@@ -13,8 +13,8 @@
 }
 
 .big-modal .modal-dialog-oli{
-  padding-top: 10%;
-  width: 810px;
-  max-width: 100% !important;
-
+  padding: 0 !important;
+  max-width: inherit !important;
+  width: 600px !important;
 }
+

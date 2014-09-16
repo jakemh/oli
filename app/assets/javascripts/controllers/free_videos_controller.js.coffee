@@ -30,15 +30,20 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
 
     $.ajax(
       url: "/payment"
-      type: "get"
-      dataType: "json"
+      type: "post"
+      dataType: 'json'
+      beforeSend: (xhr) ->
+        xhr.setRequestHeader "X-CSRF-Token", $('meta[name="csrf-token"]').attr("content")
     ).fail((error) =>
+      alert "FAIL" + JSON.stringify error
       laddaLoadingButton.stop()
     ).success((response)=>
-      @store.push('user', response.user)
+      alert decodeURI response
+      window.location = decodeURI response
 
-      @transitionTo('course_info')
-      $('#myModal').modal()
+      # @store.push('user', response.user)
+      # @transitionTo('course_info')
+      # $('#myModal').modal()
     ).always ->
       laddaLoadingButton.stop()
 

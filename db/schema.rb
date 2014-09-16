@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804003251) do
+ActiveRecord::Schema.define(version: 20140912031649) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -99,14 +99,17 @@ ActiveRecord::Schema.define(version: 20140804003251) do
   end
 
   create_table "payments", force: true do |t|
-    t.integer  "user_id"
-    t.string   "item"
-    t.integer  "amount"
+    t.integer  "amount",     default: 1
+    t.string   "token"
+    t.string   "identifier"
+    t.string   "payer_id"
+    t.boolean  "recurring",  default: false
+    t.boolean  "digital",    default: false
+    t.boolean  "popup",      default: false
+    t.boolean  "completed",  default: false
+    t.boolean  "canceled",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "confirmation"
-    t.integer  "purchasable_id"
-    t.string   "purchasable_type"
   end
 
   create_table "permissions", force: true do |t|

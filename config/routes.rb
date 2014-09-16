@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   get 'mailer/send'
 
+  get "/paypal_success" => "paypal#success", :as => "paypal_success"
+  get "/paypal_cancel" => "paypal#cancel", :as => "paypal_cancel"
+
   class FormatTest
     attr_accessor :mime_type
 
@@ -95,9 +98,10 @@ Rails.application.routes.draw do
 
   get '/action_entries/', :to => 'action_entries#list'
   
-  get '/payment', :to => 'paypal#make_payment'
+  post '/payment', :to => 'paypal#create'
   post '/bugs', :to => 'bug_ticket#create'
 
+  get '/me/first_login', :as => "first_login"
 
   resources :courses do
     resources :topics do

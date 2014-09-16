@@ -1,39 +1,15 @@
-development: &default
-  username: jb-us-seller_api1.paypal.com
-  password: WX4WTU3S8MY44S7F
-  signature: AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy
-  app_id: APP-80W284485P519543T
-  http_timeout: 30
-  mode: sandbox
-  sandbox_email_address: Platform.sdk.seller@gmail.com
-  # username: jb-us-seller_api1.paypal.com
-  # password: WX4WTU3S8MY44S7F
-  # signature: AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy
-  # app_id: APP-80W284485P519543T
-  # http_timeout: 30
-  # mode: sandbox
-  # sandbox_email_address: Platform.sdk.seller@gmail.com
-  # # with certificate
-  # cert_path: "config/cert_key.pem"
-  # # with token authentication
-  # token: ESTy2hio5WJQo1iixkH29I53RJxaS0Gvno1A6.YQXZgktxbY4I2Tdg
-  # token_secret: ZKPhUYuwJwYsfWdzorozWO2U9pI
-  # # with Proxy
-  # http_proxy: http://proxy-ipaddress:3129/
-  # # with device ip address
-  # device_ipaddress: "127.0.0.1"
+development: &sandbox # change to your own
+
+  username: ahalya-facilitator_api1.ahalyakumaran.com
+  password: QPAP5LMUFZ56J9MS
+  signature: AFcWxV21C7fd0v3bYYYRCpSSRl31Azg87K2o0wUFX5ukAgs7GmSG8cqh
+  sandbox: true
+  
 test:
-  <<: *default
-production:
-  # mode: live
-  # username: USERNAME
-  # password: PASSWORD
-  # signature: SIGNATURE
-  # app_id: APP_ID
-  username: jb-us-seller_api1.paypal.com
-  password: WX4WTU3S8MY44S7F
-  signature: AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy
-  app_id: APP-80W284485P519543T
-  http_timeout: 30
-  mode: sandbox
-  sandbox_email_address: Platform.sdk.seller@gmail.com
+  <<: *sandbox
+
+production: &production
+  username: <%= ENV["PAYPAL_USERNAME"] %>
+  password: <%= ENV["PAYPAL_PASSWORD"] %>
+  signature: <%= ENV["PAYPAL_SIGNATURE"] %>
+  sandbox: <%= ENV["PG_PW"] %>

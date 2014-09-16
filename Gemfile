@@ -40,7 +40,7 @@ gem 'sidekiq'
 gem "resque"
 gem 'resque_mailer'
 gem 'stemmify'
-gem 'paypal-sdk-adaptivepayments'
+gem 'paypal-express'
 gem 'puma'
 gem 'foreman'
 

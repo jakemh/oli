@@ -39,12 +39,8 @@ class User < ActiveRecord::Base
     return self.roles.pluck(:name).include? role
   end
 
-  def purchase_course(item, confirmation, amount)
-    item.payments << Payment.create(
-      :user => self,
-      :confirmation => confirmation,
-      :amount => amount
-    )
+  def purchase_course(item)
+  
     self.courses << item
     self.roles << Role.create(:name => Role::CUSTOMER)
   end

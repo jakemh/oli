@@ -79,8 +79,8 @@ class OliController < Devise::RegistrationsController
 
     respond_to do |format|
       format.html
-      format.js do 
-       
+      format.json do 
+        render :json => "TEST"
       end
     end
   end

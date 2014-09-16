@@ -2,8 +2,5 @@
 
 FactoryGirl.define do
   factory :payment do
-    user_id 1
-    item "MyString"
-    amount 1
   end
 end

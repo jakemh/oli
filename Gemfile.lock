@@ -32,6 +32,7 @@ GEM
     acts_as_tree (1.6.0)
       activerecord (>= 3.0.0)
     arel (5.0.1.20140414130214)
+    attr_required (1.0.0)
     aweber (1.6.1)
       json
       oauth
@@ -137,14 +138,14 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    netrc (0.7.7)
     newrelic_rpm (3.8.0.218)
     oauth (0.4.7)
     orm_adapter (0.5.0)
-    paypal-sdk-adaptivepayments (1.110.0)
-      paypal-sdk-core (~> 0.2.3)
-    paypal-sdk-core (0.2.10)
-      multi_json (~> 1.0)
-      xml-simple
+    paypal-express (0.5.5)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.5)
+      restclient_with_cert
     pg (0.17.1)
     polyglot (0.3.4)
     puma (2.9.0)
@@ -190,6 +191,11 @@ GEM
       vegas (~> 0.1.2)
     resque_mailer (2.2.6)
       actionmailer (>= 3.0)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    restclient_with_cert (0.0.8)
+      rest-client (>= 1.6)
     rspec-core (2.14.8)
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -264,7 +270,6 @@ GEM
       rack (>= 1.0.0)
     warden (1.2.3)
       rack (>= 1.0)
-    xml-simple (1.1.4)
 
 PLATFORMS
   ruby
@@ -292,7 +297,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   newrelic_rpm
-  paypal-sdk-adaptivepayments
+  paypal-express
   pg
   puma
   rack-rewrite
