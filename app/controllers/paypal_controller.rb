@@ -9,7 +9,7 @@ class PaypalController < ApplicationController
       :amount => 7.99,
       :digital => true,
       :popup => false,
-      :recurring => false
+      :recurring => true
       )
 
     @payment.setup!(
@@ -20,7 +20,6 @@ class PaypalController < ApplicationController
       redirect_to @payment.popup_uri
     else
       @uri = @payment.redirect_uri.to_s
-      puts "URI: ", @uri
       # redirect_to @payment.redirect_uri
 
       respond_to do |format|
@@ -43,10 +42,8 @@ class PaypalController < ApplicationController
 
   def success
     payment = Payment.find_by_token! params[:token]
-    p "PAYMENT: ", payment
     payment.complete!(params[:PayerID])
     flash[:notice] = 'Payment Transaction Completed'
-    p "PAYMENT URL", payment_url(payment.identifier)
     current_user.purchase_course(Course.first)
     redirect_to first_login_path
   end

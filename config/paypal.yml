@@ -4,12 +4,12 @@ development: &sandbox # change to your own
   password: QPAP5LMUFZ56J9MS
   signature: AFcWxV21C7fd0v3bYYYRCpSSRl31Azg87K2o0wUFX5ukAgs7GmSG8cqh
   sandbox: true
-  
+
 test:
   <<: *sandbox
 
 production: &production
-  username: <%= ENV["PAYPAL_USERNAME"] %>
-  password: <%= ENV["PAYPAL_PASSWORD"] %>
-  signature: <%= ENV["PAYPAL_SIGNATURE"] %>
-  sandbox: false
+  username: ENV["PAYPAL_USERNAME"],
+  password: ENV["PAYPAL_PASSWORD"],
+  signature: ENV["PAYPAL_SIGNATURE"],
+  sandbox: ENV['PAYPAL_SANDBOX']
