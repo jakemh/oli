@@ -13,7 +13,8 @@
 #= require jquery
 #= require jquery_ujs
 #= require underscore
-#= require bootstrap
+#= require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
+#= require bootstrap-sass-official/assets/javascripts/bootstrap
 #= require bootstrap-datepicker
 #= require browser_selector
 #= require select2
@@ -23,20 +24,25 @@
 #= require ladda.min
 #= require oli-content
 #= require handlebars
-#= require ember
-#= require ember-state
-#= require ember-data
-#= require ember-animated-outlet
 #= require video
 #= require video-media-error
 #= require jquery.highlighttextarea
+#= require paloma
+#= require ember
+#= require ember-data
 #= require_self
 #= require hoverintent.min
 #= require oli
 #= require app
-# for more details see: http:#emberjs.com/guides/application/
+# EmberController = Paloma.controller('Ember');
+# EmberController.prototype.index = ->
 
-window.Oli = Em.Application.create({
+  # for more details see: http:#emberjs.com/guides/application/
+  # window.alert = (msg) ->
+  #   debugger
+  #   return
+# alert "TEST"
+window.Oli = Ember.Application.create({
   LOG_TRANSITIONS: true
   customEvents: {
     #key is the jquery event, value is the name used in views

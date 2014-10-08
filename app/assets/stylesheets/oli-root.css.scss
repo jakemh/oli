@@ -96,21 +96,22 @@ $levels-height: 45px;
   height: 30px;
   width: 120px;
   border-radius: 20px;
-  margin-top: 10px;
+  // margin-top: 10px;
+  
   background-color: oli-blue(1);
   // @include oli-font;
   text-transform: uppercase;
   color: white;
   font-family: pn-thin;
 
-  box-shadow: 0 1px 3px rgba(38, 109, 191, .3); 
+  // box-shadow: 0 1px 3px rgba(38, 109, 191, .3); 
 
   font-size: .9em;
   letter-spacing:.03em;
   font-weight: thin;
   outline: none;
   -webkit-appearance:none;
-  opacity: .95;
+  // opacity: .95;
 }
 
 @mixin black-bold-text{

@@ -10,12 +10,12 @@ Oli.VideoController = Oli.ActivityBaseController.extend
   player: null
   duration: false
 
-  durationChange: (->
+  validation: (->
     if @get('duration') == 0
-      @set('controllers.activities.buttonDisabled', false) 
+      @allowContinue()
     else 
       if @get('finished') == true
-        @set('controllers.activities.buttonDisabled', false) 
+        @allowContinue()
     ).observes("duration", "finished")
 
   transcript: (->

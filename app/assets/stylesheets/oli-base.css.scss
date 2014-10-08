@@ -82,7 +82,7 @@ body {
 
 .oli-button{
   @include oli-button;
-  float: right;
+  // float: right;
 }
 .oli-text-smaller{
   @include oli-text-smaller;

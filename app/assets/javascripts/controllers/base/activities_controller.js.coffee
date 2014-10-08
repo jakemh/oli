@@ -14,7 +14,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
   buttonText: "Continue"
 
   title: (->
-    @content.get('name')
+    @content. get('name')
     ).property("content")
 
   tip: (->
@@ -45,7 +45,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
     ).property('activities')
 
   handleDelimeter: ->
-    alert("TEST")
+    # alert("TEST")
 
   submitForm: (callback) -> 
     callback()
@@ -95,16 +95,15 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
       @get('activities').then (acts)=>
 
         actsArray = acts.toArray()
-        if act.get('completed') == false
-          @trigger('delegate.increaseProgress', @, ->
-            # console.log "COMPLETED"
-          ) 
-          act.set('completed', true)
-          act.save()
+        if act.get('justCompleted') == true
+          # @trigger('delegate.increaseProgress', @)
+          # displayToast()
+          act.set('justCompleted', false)
+          # act.save()
         if newActInd < actsArray.length
           
           newAct = actsArray[newActInd].get('name')
-          @transitionToRouteAnimated('activities', main: 'slowSlideLeft', newAct)
+          @transitionToRoute('activities', newAct)
         
         else  
           # false
@@ -155,7 +154,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
  
     goHere: (act) ->
       if act != undefined
-        @transitionToRouteAnimated('activities', main: 'slideLeft', act)
+        @transitionToRoute('activities', act)
 
     hover: (item)->
       console.log "HOVER: " + item

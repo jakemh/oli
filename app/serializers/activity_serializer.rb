@@ -2,13 +2,14 @@ class ActivitySerializer < ActiveModel::Serializer
   attributes :id, :display, :name, :template, :description, :section_id, :completed, :dependencies, :tip, :box_dependencies
 
   def completed
+    p "CURRENT: "
     stat = object.status(current_user).first
     if stat
       return stat.completed
     else return stat
     end
   end
-
+ 
   def display
     object.display
   end

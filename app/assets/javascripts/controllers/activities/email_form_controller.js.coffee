@@ -41,11 +41,11 @@ Oli.EmailFormController = Oli.ActivityBaseController.extend
     entries = [@addressEntry, @subjectEntry, @bodyEntry]
 
     for entry in entries
-      if !entry || entry == ""
-        @preventContinue()
+      if entry && entry.length >= @minLength
+        @allowContinue()
         return false
     
-    @allowContinue()
+    @preventContinue()
 
 
     ).observes("addressEntry", "subjectEntry", "bodyEntry")

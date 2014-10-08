@@ -6,7 +6,7 @@ Oli.SectionsRoute = Ember.Route.extend Oli.Validations,
         sectionID = response.sectionID
         previousSectionID = Math.max(0,sectionID - 2)
         section = controller.get('sections').objectAt(previousSectionID)
-        @handleValidationTransition(section.get("name"))
+        # @handleValidationTransition(section.get("name"))
         # @transitionTo('sections', section.get("name"))
     
 

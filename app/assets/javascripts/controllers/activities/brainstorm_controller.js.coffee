@@ -59,9 +59,19 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
     ).property("")
 
   validate: (->
-    alert JSON.stringify @get('sortedList')
+    successCount = 0
+    if @get('list.length') > 0
+      for list in @get("list").toArray()
+        text = list.text
+        if text && text.length > @minLength
+          successCount += 1
+        if successCount >= @minimumFields
+          @allowContinue()
 
-    ).observes('list.@each')
+          return
+    @preventContinue()
+    ).observes('sortedList.@each.text')
+
   sortedList: (->
     @get('list').sortBy('createdAt').reverse()
     ).property("list.@each")
@@ -135,6 +145,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
   actions:
     addTask: ->
+      alert JSON.stringify @get('sortedList')
       @get('list').insertAt(0, {
         entry_id: null
         text: null 

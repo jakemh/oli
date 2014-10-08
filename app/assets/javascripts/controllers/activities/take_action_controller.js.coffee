@@ -1,5 +1,6 @@
 Oli.TakeActionController = Oli.ActivityBaseController.extend
   setup: ->
+    @_super()
     @notifyPropertyChange("dependentTasks")
     @notifyPropertyChange("dependentTasksMapped")
 
@@ -24,6 +25,14 @@ Oli.TakeActionController = Oli.ActivityBaseController.extend
     ).property("")
 
   selectedTask: null
+
+  validate: (->
+    @get("actionsList").then (list)=>
+      if list.get('length') >= @minLength
+        @allowContinue()
+      else @preventContinue()
+
+  ).observes("actionsList.content.@each")
 
   dependentTasksMapped: (->
     return DS.PromiseObject.create promise: 

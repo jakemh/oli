@@ -1,11 +1,13 @@
 Oli.Validations = Ember.Mixin.create
   finished: false
+  minLength: 3
+  needs: ["activities"]
 
   validationsSetup: (actController) ->
     actController = actController || @get('activityController')
     @set('finished', actController.get('content.completed'))
     actController.set('buttonDisabled', !@get('finished'))
-    
+
   allowContinue: (actController) ->
     actController = actController || @get('activityController')
 
@@ -13,7 +15,11 @@ Oli.Validations = Ember.Mixin.create
     if actController.get('content.completed') == false
       act = actController.get('content')
       act.set('completed', true)
+      act.set('justCompleted', true)
       act.save()
+
+      @get('controllers.activities').trigger('delegate.increaseProgress', @)
+      #increase progress bar 
       @set('finished', true)
 
   preventContinue: (actController) ->
@@ -24,6 +30,8 @@ Oli.Validations = Ember.Mixin.create
       act = actController.get('content')
       act.set('completed', false)
       act.save()
+      @get('controllers.activities').trigger('delegate.decreaseProgress', @)
+      #decrease progress bar 
       @set('finished', false)
 
   handleValidationTransition: (sectionName) -> 

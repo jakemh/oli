@@ -32,17 +32,19 @@ gem 'acts_as_tree'
 gem 'figaro'
 gem 'cancancan', '~> 1.8'
 gem 'ember-rails'
-gem 'ember-source', '1.5.0'
+gem 'ember-source', "1.5.0"
 gem 'rack-rewrite' # for the actual rewriting
-gem 'active_model_serializers'
+gem 'active_model_serializers', '0.8.1'
 gem 'deep_cloneable' #phase this out
 gem 'sidekiq'
-gem "resque"
+gem 'resque'
+gem 'paloma'
 gem 'resque_mailer'
 gem 'stemmify'
 gem 'paypal-express'
 gem 'puma'
 gem 'foreman'
+gem 'exception_notification'
 
 group :production do
   gem 'unicorn'

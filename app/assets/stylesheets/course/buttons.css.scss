@@ -1,0 +1,70 @@
+@import "oli-root";
+
+.buttons__outer{
+  margin: auto;
+}
+
+.buttons__outer{
+  // margin: auto;
+  text-align: right;
+}
+
+.button__outer--right{
+  // background: red;
+}
+
+.button__expandable{
+  position: absolute;
+  display: inline-block;
+  border: 2px solid oli-blue(1);
+  border-radius: 20px;
+  width: 200px;
+}
+
+.button__message{
+ 
+  border-radius: 30px;
+  font-family: pn-light; 
+  font-size: .75em;
+  padding: 10px 0;
+}
+
+.button__btn{
+  @include oli-button;
+}
+
+.button__btn--smaller{
+  height: 30px;
+  width: 100px;
+}
+
+.button__btn--smaller{
+
+}
+
+.button__outer{
+  // display: inline-block;
+}
+
+.button__btn--left{
+  float: left;
+}
+
+.button__btn--right{
+  position: absolute;
+  border: 2px solid oli-blue(1) !important;
+}
+
+.button-activity{
+  // display: inline-block;
+  // margin:auto; 
+  // margin-right:0;
+
+}
+
+.forward-button-activity{
+}
+
+.back-button-activity{
+  // float: left;
+}

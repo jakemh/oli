@@ -5,7 +5,7 @@ class Word < ActiveRecord::Base
   has_many :selections, dependent: :destroy
   belongs_to :user
   has_many :boxes, through: :boxable
-  validates :word, :uniqueness => true
+  # validates :word, :uniqueness => true
 
   def self.all_for_user(current_user)
     Word.where("words.user_id = ? OR all_users = ?", current_user.id, true)

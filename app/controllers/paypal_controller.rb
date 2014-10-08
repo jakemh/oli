@@ -9,7 +9,7 @@ class PaypalController < ApplicationController
       :amount => 7.99,
       :digital => true,
       :popup => false,
-      :recurring => true
+      :recurring => false
       )
 
     @payment.setup!(

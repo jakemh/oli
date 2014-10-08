@@ -16,7 +16,7 @@ Oli.VideoView = Em.View.extend Oli.AnimatedView,
 
     # # alert "TeST"
     outer = this
-    player = vjs(document.getElementsByClassName('video-js')[0], {preload: "metadata"}, ->
+    player = videojs(document.getElementsByClassName('video-js')[0], {preload: "metadata"}, ->
       outer.get('source').then (src)=>
         this.on "ended", =>
           outer.set('controller.finished', true)

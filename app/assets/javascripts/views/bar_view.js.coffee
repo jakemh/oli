@@ -1,7 +1,10 @@
 Oli.BarView = Em.View.extend({
-
   didInsertElement: ->
     @get('controller').on('delegate.increaseProgress', @, @delegate.increaseProgress);
+    @get('controller').on('delegate.decreaseProgress', @, @delegate.decreaseProgress);
+
+    # @trigger('delegate.increaseProgress', @)
+
     # @get('controller.controllers.sections.activitiesPerSection').then (aps) =>
     #   @set('activitiesPerSection', aps)
     @get('drawBar')
@@ -22,8 +25,16 @@ Oli.BarView = Em.View.extend({
       @get('controller').get('controllers.sections').get('sections').then (sects) =>
         firstID = sects.toArray()[0].id
         currentID = @get('controller').get('controllers.sections').content.id
-        relID = currentID - firstID
-        @get('controller').progress.grow(relID, callback)
+        relID = currentID - firstID        
+        @get('controller').progress.grow(relID)
+
+    decreaseProgress: (e, callback)->
+      @get('controller').get('controllers.sections').get('sections').then (sects) =>
+        firstID = sects.toArray()[0].id
+        currentID = @get('controller').get('controllers.sections').content.id
+        relID = currentID - firstID        
+        @get('controller').progress.shrink(relID)
+
 
   click: ->
 
