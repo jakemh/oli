@@ -6,7 +6,10 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
     @setFields()
     @notifyPropertyChange("threadsList")
     @get('threadsList').then (list)->
-
+    # alert JSON.stringify @get('list').toArray()
+    # @registerInputs(=>
+    #   @get("list").toArray()
+    #   )
     
               # if i == boxes.get('length')
                 # @setFields()
@@ -14,6 +17,12 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
   minimumFields: 3
 
+  # test: ->
+  #   alert "WOW!"
+  
+  # xxx: (->
+  #   @trigger('testView', @)
+  #   ).observes("sortedList.@each.text")
 
   actionEntry: (componentContext, entryContext, activity)->
     return DS.PromiseObject.create promise: 
@@ -58,36 +67,54 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
     []
     ).property("")
 
-  validate: (->
-    successCount = 0
-    if @get('list.length') > 0
-      for list in @get("list").toArray()
-        text = list.text
-        if text && text.length > @minLength
-          successCount += 1
-        if successCount >= @minimumFields
-          @allowContinue()
+  # validate: (->
+  #   successCount = 0
+  #   if @get('list.length') > 0
+  #     for list in @get("list").toArray()
+  #       text = list.text
+  #       if text && text.length > @minLength
+  #         successCount += 1
+  #       if successCount >= @minimumFields
+  #         @allowContinue()
+  #         return
 
-          return
-    @preventContinue()
-    ).observes('sortedList.@each.text')
+  #   @preventContinue()
+  #   ).observes('sortedList.@each.text')
+  
+  validate: ->
+    pass = true
+    @validateInputs((inputStatus) =>
+      # alert inputStatus
+      if !inputStatus
+        pass = false
+    )
+
+    if pass
+      @allowContinue()
+    else @preventContinue()
 
   sortedList: (->
     @get('list').sortBy('createdAt').reverse()
     ).property("list.@each")
 
   listChanged: (->
+    if @get('list').length > 0
+      @registerInputs( (=>
+        @get('list').map((item, index)-> item.text )
+      ),
+      options = {array: "sortedList.@each.text"}
+      )
     # alert JSON.stringify @get('sortedList').toArray()
-    ).observes("sortedList.@each")
+    ).observes("sortedList.@each.text")
 
-  threadsList2: (->
-    return DS.PromiseObject.create promise: 
-      new Em.RSVP.Promise (resolve, reject) =>
-        # alert _.clone(@get('threadsList'))
-        @get('threadsList').then (list)->
-          resolve Ember.copy(list)
-          @set('test', {"value": "58", "label": "Word 9"})
-    ).property()
+  # threadsList2: (->
+  #   return DS.PromiseObject.create promise: 
+  #     new Em.RSVP.Promise (resolve, reject) =>
+  #       # alert _.clone(@get('threadsList'))
+  #       @get('threadsList').then (list)->
+  #         resolve Ember.copy(list)
+  #         @set('test', {"value": "58", "label": "Word 9"})
+  #   ).property()
 
   threadsList: (->
     return DS.PromiseObject.create promise: 
@@ -126,12 +153,13 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
        
           i = entries.length
           if entries.length > 0 
-            for entry in entries
-              do (entry) =>
+            for entry, i in entries
+              do (entry, i) =>
                 entry.get('boxes').then (boxes)=>
                   boxesArray = boxes.map((item, index)-> {value: item.id})
                   el.pushObject({
                     entry_id: entry.id
+                    class: @boxErrorName(i + 1)
                     text: entry.get('post')
                     saved: true
                     selections: boxesArray
@@ -145,7 +173,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
 
   actions:
     addTask: ->
-      alert JSON.stringify @get('sortedList')
+      # alert JSON.stringify @get('sortedList')
       @get('list').insertAt(0, {
         entry_id: null
         text: null 

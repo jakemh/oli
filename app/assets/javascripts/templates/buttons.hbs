@@ -1,24 +1,25 @@
-<div class="buttons__outer">
-  <div class="button__outer button__outer--left">
-    <div class="button-activity back-button-activity">
-      <button class="oli-inactive button__btn button__btn--smaller button__btn--left" data-style="zoom-out" {{action "backButtonClicked" this on="click"}}>
-        <span class="ladda-label"></span>
-        Back
-      </button>
+{{#view Oli.ButtonsView}}
+  <div class="buttons__outer">
+    <div class="button__outer button__outer--left">
+      <div class="button-activity back-button-activity">
+        <button class="oli-inactive button__btn button__btn--smaller button__btn--left" data-style="zoom-out" {{action "backButtonClicked" this on="click"}}>
+          <span class="ladda-label"></span>
+          Back
+        </button>
+      </div>
     </div>
-  </div>
-  
-  <div class="button__outer button__outer--right">
-  {{!--   <div class="button-activity forward-button-activity"><span class="button__message">Success message. This is a successful success bubble.</span> --}}
-     <button {{bind-attr class=":ladda-button :button__btn :button__btn--smaller  buttonDisabled:oli-inactive" disabled=buttonDisabled}} data-style="zoom-out" {{action "buttonClicked" this on="click"}}>
-        <span class="ladda-label">    
-          {{controller.buttonText}}
-        </span>
-      </button>
+    
+    <div class="button__outer button__outer--right">
+       <button {{bind-attr class=":js-button__btn buttonDisabled:button__btn--disabled :ladda-button :button__btn :button__btn--smaller"}} data-style="zoom-out" {{action "buttonClicked" this on="click"}}>
+          <span class="ladda-label">    
+            {{controller.buttonText}}
+          </span>
+        </button>
+      </div>
     </div>
-  </div>
 
-  <div class="activity-status oli-text-smaller">
-    {{outlet status}}
+    <div class="activity-status oli-text-smaller">
+      {{outlet status}}
+    </div>
   </div>
-</div>
+{{/view}}

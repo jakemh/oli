@@ -1,11 +1,21 @@
 Oli.ActivitiesRoute = Ember.Route.extend Ember.Evented,
-  setupController: (controller, model) ->
-    controller.set('content', model);
-    controller.send('trans', model)
 
+  setupController: (controller, model) ->
+
+    # alert controller.hasObserverFor('completed')
+    controller.removeObserver('completed', controller, controller.updateProgress)
+    controller.set('content', model);
+    if !controller.hasObserverFor('completed')
+      controller.addObserver('completed', controller, controller.updateProgress)
+    # controller.set('validations', Oli.Validations.create())
+    controller.send('trans', model)
+    controller.set("activeChild", @get('childControllers')[@template()])
     # controller.notifyPropertyChange('hash')
     controller.set('template', @template())
     @get('childControllers')[@template()].setup()
+
+  testing: ->
+    # alert "XXX"
 
   model: (params) -> 
     section = @modelFor('sections')

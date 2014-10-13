@@ -3,6 +3,13 @@ Oli.QuestionAnswersController = Oli.ActivityBaseController.extend
   setup: -> 
     @_super()
     @notifyPropertyChange('comp')
+    @registerInputs(=>
+      ['input']
+    )
+
+    @registerErrors(=>
+      "You can do better! Try entering more text."
+    )
     @setInput()
     # @notifyPropertyChange('questionEntryList')
 
@@ -10,13 +17,35 @@ Oli.QuestionAnswersController = Oli.ActivityBaseController.extend
     @component("question_answer")
     ).property()
 
-  input: null
 
-  inputChanged: (->
-    if (@get('input') && @get('input').length >= @minLength)
+  input: null
+  # boxOneError: false
+  
+  inputError: (->
+
+    ).property("input")
+
+  validate: ->
+    pass = true
+    @validateInputs((inputStatus) =>
+      if !inputStatus
+        pass = false
+    )
+
+    if pass
       @allowContinue()
     else @preventContinue()
-    ).observes('input')
+
+  # validate: (->
+
+  #   if (@get('input') && @get('input').length >= @minLength)
+  #     @set('boxOneError', false) 
+  #     @allowContinue()
+  #   else 
+  #     @preventContinue()
+  #     @set('boxOneError', true) 
+
+  #   ).observes('input')
 
   setInput: -> 
     @entry("question_answer", "paragraph").then (e)=>

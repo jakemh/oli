@@ -14,6 +14,10 @@ Oli.EmailFormController = Oli.ActivityBaseController.extend
       if entry
         @set("bodyEntry", entry)
 
+    @registerInputs(=>
+      ["addressEntry", "subjectEntry", "bodyEntry"]
+    )
+
   submitForm: (callback)->
     laddaLoadingButton = Ladda.create( document.querySelector('.ladda-button' ) );
     laddaLoadingButton.start();
@@ -37,18 +41,17 @@ Oli.EmailFormController = Oli.ActivityBaseController.extend
 
       return
 
-  validation: (->
-    entries = [@addressEntry, @subjectEntry, @bodyEntry]
+  validate: ->
+    pass = true
+    @validateInputs((inputStatus) =>
+      pass = false if !inputStatus
+    )
 
-    for entry in entries
-      if entry && entry.length >= @minLength
-        @allowContinue()
-        return false
-    
-    @preventContinue()
-
-
-    ).observes("addressEntry", "subjectEntry", "bodyEntry")
+    if pass
+      @allowContinue()
+    else 
+      @preventContinue()
+  
 
   addressEntry: null
   subjectEntry: null

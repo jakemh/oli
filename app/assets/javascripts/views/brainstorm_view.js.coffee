@@ -1,8 +1,12 @@
 Oli.BrainstormView = Em.View.extend
+  needs: ['brainstorm']
+
   didInsertElement: -> 
    
 
 Oli.BrainstormItemView = Em.View.extend
+  needs: ['brainstorm']
+
   didInsertElement: -> 
  
   selections: null

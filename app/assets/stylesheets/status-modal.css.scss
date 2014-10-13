@@ -1,0 +1,51 @@
+@import "oli-root";
+
+.modal__status{
+  height: 150px !important;
+  border-radius: 25px !important;
+}
+
+.circle-collapse{
+  position: absolute;
+  @include oli-circle(90px, .6px);
+ 
+  $mult: .65px;
+  background: #fbf5f2 image-url("flame-disgust.png") center no-repeat;
+  background-size: 57*$mult 108*$mult;
+  left: -38px;
+  top: 32%;
+}
+
+.modal-dialog-center { /* Edited classname 10/03/2014 */
+    // margin: 0;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    border-radius: 25px !important;
+    padding-top:15%;
+}
+
+.modal__title{
+
+}
+
+.modal__body--error{
+  color: oli-red(1) !important;
+  text-align: center;
+}
+
+.modal__body-message{
+  font-style: italic;
+  padding-top: 25px;
+  font-size: .85em;
+}
+
+
+.modal__body{
+  position: relative;
+}
+@media (max-width: 767px) {
+  .modal-dialog-center { /* Edited classname 10/03/2014 */
+    width: 100%;
+  }
+} 

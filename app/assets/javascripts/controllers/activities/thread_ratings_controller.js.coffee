@@ -13,15 +13,42 @@ Oli.ThreadRatingsController = Oli.ActivityBaseController.extend Oli.Threadable,
         @set('input1', rating1)
         @set('input2', rating2)
 
+    @registerInputs(=>
+      ['input1', 'input2']
+    )
 
-  validate: (->
+  # validate: (->
+  #   @get('joinedThread').then (t)=>
+  #     if t == "" || (@input1 && @input2)
+  #       @allowContinue()
+  #     else @preventContinue()
+  #   ).observes("input1", "input2")
+
+
+  # validate: ->
+  #   pass = true
+  #   @get('joinedThread').then (t)=>
+  #     @validateInputs((inputStatus) =>
+  #       alert t
+  #       if !inputStatus && t != ""
+  #         pass = false
+  #     )
+
+  #     if pass
+  #       @allowContinue()
+  #     else @preventContinue()
+  validate: ->
+    pass = true
     @get('joinedThread').then (t)=>
-      if t == "" || (@input1 && @input2)
+      @validateInputs((inputStatus) =>
+        if !inputStatus && t != ""
+          pass = false
+      )
+
+      if pass
         @allowContinue()
       else @preventContinue()
-    ).observes("input1", "input2")
-
-
+         
   threadUpdater: ->
     @notifyPropertyChange("thread")
 

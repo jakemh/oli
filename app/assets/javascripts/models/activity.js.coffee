@@ -1,4 +1,4 @@
-Oli.Activity = DS.Model.extend({
+Oli.Activity = DS.Model.extend
   display: DS.attr('boolean')
   name: DS.attr('string')
   tip: DS.attr('string')
@@ -10,5 +10,4 @@ Oli.Activity = DS.Model.extend({
   justCompleted: false
   dependencies: DS.hasMany('activity', async: true)
   box_dependencies: DS.hasMany('box', async: true)
-
-});
+  

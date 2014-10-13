@@ -1,11 +1,12 @@
-Oli.SectionsRoute = Ember.Route.extend Oli.Validations,
+Oli.SectionsRoute = Ember.Route.extend
   setupController: (controller, model) ->
+    # validations = Oli.Validations.create()
     controller.set('content', model)
-    @sectionReady(controller, model).then (response)=>
-      if !response.success
-        sectionID = response.sectionID
-        previousSectionID = Math.max(0,sectionID - 2)
-        section = controller.get('sections').objectAt(previousSectionID)
+    # validations.sectionReady(controller, model).then (response)=>
+      # if !response.success
+      #   sectionID = response.sectionID
+      #   previousSectionID = Math.max(0,sectionID - 2)
+      #   section = controller.get('sections').objectAt(previousSectionID)
         # @handleValidationTransition(section.get("name"))
         # @transitionTo('sections', section.get("name"))
     

@@ -1,0 +1,20 @@
+
+<div class="modal fade "  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="status-modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-center">
+    <div class="modal-content container-acknowledgement modal__status">
+        
+      <div class="modal-body modal__body modal__body--error">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title modal__title" id="myModalLabel">OOPS.</h4>
+        <div class="circle-collapse circle modal-circle">
+
+        </div>
+        <div class="modal__body-message">
+          {{#each e in controller.errors}}
+            {{e}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

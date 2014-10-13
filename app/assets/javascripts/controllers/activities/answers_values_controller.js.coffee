@@ -1,13 +1,14 @@
 Oli.AnswersValuesController  = Oli.ActivityBaseController.extend
-
-
   setup: -> 
     @_super()
     @notifyPropertyChange('comp')
     @notifyPropertyChange('questionEntryList')
     @set('initialList', null)
     @notifyPropertyChange('dependentEntry')
+    @registerInputs(->
 
+      ['parsedWords']
+    )
     # @get('parsedWords').then (words)->
     #   alert words
     @get('questionEntryList').then (rawText)=>
@@ -42,11 +43,23 @@ Oli.AnswersValuesController  = Oli.ActivityBaseController.extend
       $.trim(@get('input')).split(/\s*,\s*|\s*\n\s*|\s*\r\s*/)
     ).property()
 
-  parseWordsChanged: (->
-    if @get('parsedWords.length') >= @minLength
+  validate: ->
+    pass = true
+    @validateInputs((inputStatus) =>
+      # alert inputStatus
+      if !inputStatus
+        pass = false
+    )
+
+    if pass
       @allowContinue()
     else @preventContinue()
-    ).observes("parsedWords.length")
+
+  # validate: (->
+  #   if @get('parsedWords.length') >= @minLength
+  #     @allowContinue()
+  #   else @preventContinue()
+  #   ).observes("parsedWords.length")
   
   dependentActivity: (->
     return DS.PromiseObject.create promise: 

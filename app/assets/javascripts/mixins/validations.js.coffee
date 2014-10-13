@@ -2,35 +2,114 @@ Oli.Validations = Ember.Mixin.create
   finished: false
   minLength: 3
   needs: ["activities"]
+  passedValidation: null
+  errors: []
 
-  validationsSetup: (actController) ->
-    actController = actController || @get('activityController')
-    @set('finished', actController.get('content.completed'))
-    actController.set('buttonDisabled', !@get('finished'))
+  registerErrors: (callback) ->
+    @set('errors', [])
+    @get('errors').push(callback())
+
+  boxErrorName: (index)->
+    "box" + index + "Error"
+
+  validationFail: ->
+
+
+  validationCheck: (success, fail) ->
+    act = @get('content')
+
+    if act.get('completed') == true
+      success.call(@, @get('content'))
+    else
+      fail.call(@, @get('content'))
+
+  # validationsSetup: (actController) ->
+    # actController = actController || @get('activityController')
+    # @set('finished', actController.get('content.completed'))
+    # actController.set('buttonDisabled', !@get('finished'))
+    # @set("passedValidation", @get('finished'))
+  validateInput: (input, options = {}) ->
+    minLength = options.minLength ? options.minLength || @minLength
+    # alert input
+    if input && input.length >= minLength
+      true
+    else 
+      false
+
+  registeredInputs: []
+  validateInputs: (callback, inputs) ->
+    a = []
+    _inputs = @registeredInputs
+    # alert JSON.stringify _inputs
+    for input in _inputs 
+      v = null
+      if input.reference
+        v = input.value 
+      else v = @get(input.value)
+      value = @validateInput(v)
+      # alert JSON.stringify input
+      # alert input.container + " " + !value
+      @set(input.container, !value)
+      callback(value)
+
+  # validate: ->
+  #   throw new error("YOU MUST OVERRIDE THIS")
+  registerInputs: (callback, opt = {}) ->
+    @registeredInputs = []
+    for input, i in callback()
+      name = @boxErrorName(i + 1)
+      #add var to model
+      if @[name] == undefined
+        @[name] = false
+      else 
+        @set(name, false)
+
+      reference = null
+      if opt.array
+        reference = true
+      else reference = false
+
+      @registeredInputs.push({value: input, container: name, reference: reference})
+
+      if !opt.array
+        @addObserver(input, @, @validate) if !@hasObserverFor(input)
+
+    if opt.array
+      @addObserver(opt.array, @, @validate) if !@hasObserverFor(opt.array)
+    
+    #initial validation
+    @validate()
 
   allowContinue: (actController) ->
-    actController = actController || @get('activityController')
 
-    actController.set('buttonDisabled', false)
-    if actController.get('content.completed') == false
-      act = actController.get('content')
+    actController = actController || @get('activityController')
+    act = actController.get('content')
+
+    # actController.set('buttonDisabled', false)
+    @set("passedValidation", true)
+    if act.get('completed') == false
+      # alert "ALLOW"
+
       act.set('completed', true)
       act.set('justCompleted', true)
       act.save()
 
-      @get('controllers.activities').trigger('delegate.increaseProgress', @)
+      # @get('controllers.activities').trigger('delegate.increaseProgress', @)
       #increase progress bar 
-      @set('finished', true)
+      # @set('finished', true)
 
   preventContinue: (actController) ->
     actController = actController || @get('activityController')
 
-    actController.set('buttonDisabled', true)
+    # actController.set('buttonDisabled', true)
+    @set("passedValidation", false)
+
     if actController.get('content.completed') == true
+      # alert "PREVENT"
       act = actController.get('content')
       act.set('completed', false)
       act.save()
-      @get('controllers.activities').trigger('delegate.decreaseProgress', @)
+      # @get('controllers.activities').trigger('delegate.decreaseProgress', @)
       #decrease progress bar 
       @set('finished', false)
 

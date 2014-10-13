@@ -2,6 +2,12 @@ Oli.DescribeA10Controller = Oli.ActivityBaseController.extend Oli.Threadable,
   
   setup: ->
     @_super()
+    
+    @registerInputs(=>
+      ['input1', 'input2']
+    )
+      # [@get('input1'), @get('input2')]
+    @addObserver(@get('input1'), @get('input1'), @validateInput)
 
     @get('activityController').on('threadUpdater', @, @threadUpdater)
     @threadUpdater()
@@ -11,21 +17,34 @@ Oli.DescribeA10Controller = Oli.ActivityBaseController.extend Oli.Threadable,
     @threadEntry2().then (t2)=>
       @set('input2', t2)
 
-
   threadUpdater: ->
     @notifyPropertyChange("thread")
 
   input1: null
   input2: null
+  boxOneError: false
+  boxTwoError: false
 
-
-  validate: (->
+  validate: ->
+    pass = true
     @get('joinedThread').then (t)=>
-      if t == "" || (@get('input1') && @get('input2') && @get('input1').length >= @minLength && @get('input2').length >= @minLength)
+      @validateInputs((inputStatus) =>
+        if !inputStatus && t != ""
+          pass = false
+      )
+
+      if pass
         @allowContinue()
       else @preventContinue()
 
-    ).observes("input1", "input2")
+
+      #thread is blank OR
+      # if t == "" || (@get('input1')  && @get('input2')  && @get('input1').length >= @minLength && @get('input2').length >= @minLength)
+      #   @allowContinue()
+      # else @preventContinue()
+
+
+
 
   threadEntry1: ->
     return DS.PromiseObject.create promise: 

@@ -6,17 +6,33 @@ Oli.Share1Controller = Oli.ActivityBaseController.extend
     @last_post("share_box_fb").then (entry)=>
       @set("fb_message", entry)
 
+    @registerInputs(->
+      ['fb_message']
+
+      )
   # fb_message: (->
   #   @last_post("share_box_fb")
   # ).property()
   fb_message: null
 
-  validation: (->
-    if @fb_message.length > 10
+  # validation: (->
+  #   if @fb_message.length > 10
+  #     @allowContinue()
+  #   else 
+  #     @preventContinue()
+  #   ).observes("fb_message")
+
+  validate: ->
+    pass = true
+    @validateInputs((inputStatus) =>
+      
+      if !inputStatus
+        pass = false
+    )
+
+    if pass
       @allowContinue()
-    else 
-      @preventContinue()
-    ).observes("fb_message")
+    else @preventContinue()
 
   name: "Discovering your values and honoring them are the keys to being happy and fulfilled."
   title: ""

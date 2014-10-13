@@ -22,19 +22,22 @@ Oli.BarView = Em.View.extend({
 
   delegate:
     increaseProgress: (e, callback)->
-      @get('controller').get('controllers.sections').get('sections').then (sects) =>
+      controller = @get('controller')
+      controller.get('controllers.sections').get('sections').then (sects) =>
+        # debugger
         firstID = sects.toArray()[0].id
         currentID = @get('controller').get('controllers.sections').content.id
         relID = currentID - firstID        
-        @get('controller').progress.grow(relID)
+        controller.progress.grow(relID)
 
     decreaseProgress: (e, callback)->
-      @get('controller').get('controllers.sections').get('sections').then (sects) =>
-        firstID = sects.toArray()[0].id
-        currentID = @get('controller').get('controllers.sections').content.id
-        relID = currentID - firstID        
-        @get('controller').progress.shrink(relID)
-
+      # if @get('controller').progress
+        @get('controller').get('controllers.sections').get('sections').then (sects) =>
+          firstID = sects.toArray()[0].id
+          currentID = @get('controller').get('controllers.sections').content.id
+          relID = currentID - firstID        
+          @get('controller').progress.shrink(relID)
+      # else debugger
 
   click: ->
 

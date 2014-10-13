@@ -24,7 +24,7 @@
 #= require ladda.min
 #= require oli-content
 #= require handlebars
-#= require video
+#= require frogaloop
 #= require video-media-error
 #= require jquery.highlighttextarea
 #= require paloma

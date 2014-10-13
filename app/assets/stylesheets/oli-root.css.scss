@@ -44,6 +44,12 @@ $levels-height: 45px;
   z-index: 100;
   box-shadow: 0 0 10px rgba(0,0,0,.12); 
 }
+
+@mixin inactive{
+  background-color: oli-dark-gray(1);
+  box-shadow: 0 1px 3px oli-dark-gray(.3); 
+}
+
 @mixin oli-font{
   font-family: pn-light;
   // font-family: 'PT Sans', sans-serif;
@@ -85,6 +91,7 @@ $levels-height: 45px;
   outline: none;
   border-radius: 3px;
 }
+
 
 @mixin oli-border{
   border: 1px solid oli-gray(1);

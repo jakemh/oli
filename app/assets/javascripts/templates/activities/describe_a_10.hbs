@@ -4,7 +4,7 @@
 <div class="oli-text rating-section-container">
 
     {{controller.component1.content.content}}
-  {{input class="oli-form-field"
+  {{input classBinding=":oli-form-field box1Error:box__input--error"
   value=controller.input1}}
 </div>
 
@@ -12,6 +12,7 @@
 <div class="oli-text rating-section-container">
 
     {{controller.component2.content.content}}
-  {{textarea class="oli-box-large"
+  {{textarea
+  classBinding=":oli-box-large box2Error:box__input--error"
   value=controller.input2}}
 </div>

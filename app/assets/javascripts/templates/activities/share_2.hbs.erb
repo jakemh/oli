@@ -6,17 +6,17 @@
 <form role="form">
   <div class="email-field-outer">
     <div class="oli-semibold">Email address</div>
-    {{input value=addressEntry name='subject'type="email" class="email-field" id="emailField" placeholder="Enter email"}}
+    {{input value=addressEntry name='subject'type="email" classBinding=":email-field box1Error:box__input--error" id="emailField" placeholder="Enter email"}}
   </div>
 
   <div class="email-field-outer oli-text">
     <div class="oli-semibold">Subject</div>
-    {{input id="subjectField" value=subjectEntry class="subject-field"}}
+    {{input id="subjectField" value=subjectEntry classBinding=":subject-field box2Error:box__input--error"}}
   </div>
 
 
   <div class="email-field-outer oli-text">
-    {{textarea value=bodyEntry class="body-field"}}
+    {{textarea value=bodyEntry classBinding=":body-field box3Error:box__input--error"}}
   </div>
 
 </form>

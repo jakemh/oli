@@ -7,7 +7,7 @@ class Activity < ActiveRecord::Base
   has_many :users, :through => :course
   has_many :activity_dependencies, dependent: :destroy
   # has_many :statuses, :through => :users
-  has_many :statuses
+  has_many :statuses, dependent: :destroy
   # has_one :status, :through => current_user
   # has_one :status, :scope => current_user.statuses.where(:activity => this)
 

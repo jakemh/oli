@@ -1,8 +1,9 @@
 {{#view Oli.VideoView source=controller.source}}
   {{video-player width=controller.width 
   height=controller.height
-  source=controller.source
+  source=controller.source.content
   controls=true}}
+
   <div class="transcript">
     {{{controller.transcript.content.content}}}
   </div>

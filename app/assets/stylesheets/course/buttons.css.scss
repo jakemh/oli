@@ -1,8 +1,6 @@
 @import "oli-root";
 
-.buttons__outer{
-  margin: auto;
-}
+
 
 .buttons__outer{
   // margin: auto;
@@ -27,6 +25,11 @@
   font-family: pn-light; 
   font-size: .75em;
   padding: 10px 0;
+}
+
+.button__btn--disabled{
+  cursor: pointer !important;
+  // @include inactive;
 }
 
 .button__btn{

@@ -12,6 +12,11 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
 
   video: null
   buttonText: "Continue"
+  activeChild: null
+
+  errors: (->
+    @get('activeChild.errors')
+    ).property('content')
 
   title: (->
     @content. get('name')
@@ -30,6 +35,19 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
       {name: item.get('name'), completed: item.get('completed')}
       )
     ).property('activities')
+
+  updateProgress: (context)->
+    if context.get('content.completed') == true
+      context.trigger('delegate.increaseProgress', @)
+    else
+      context.trigger('delegate.decreaseProgress', @)
+
+  # activityStatusChanged: (->
+  #   if @get('content.completed') == true
+  #     @trigger('delegate.increaseProgress', @)
+  #   else
+  #     @trigger('delegate.decreaseProgress', @)
+  #   ).observes('completed')
 
   buttonDisabled: false
 
@@ -70,7 +88,7 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
   activities:  ((model, obj) ->
     @get('controllers.sections').get('activities')
     ).property('controllers.sections.activities')
-  
+    
 
   # activities: (->
   #   return DS.PromiseObject.create promise: 
@@ -89,31 +107,37 @@ Oli.ActivitiesController = Ember.ObjectController.extend Ember.Evented, Oli.Comp
           newAct = actsArray[newActInd].get('name')
           @transitionToRoute('activities',newAct)
 
-  nextAct: (act) ->
-    @hash().then (h)=>
+  validationSuccess: (act)->
+    @hash().then (h) =>
       newActInd = h[act]
-      @get('activities').then (acts)=>
+      @get('activities').then (acts) =>
 
         actsArray = acts.toArray()
         if act.get('justCompleted') == true
-          # @trigger('delegate.increaseProgress', @)
           # displayToast()
           act.set('justCompleted', false)
-          # act.save()
         if newActInd < actsArray.length
-          
           newAct = actsArray[newActInd].get('name')
           @transitionToRoute('activities', newAct)
-        
         else  
-          # false
-          # @get('controllers.sections').get('sectionDone').then (done)=>
-
-          #   if done
-
-          #     @get('controllers.sections').get('nextLevel')
           @get('controllers.sections').get('nextLevel')
 
+  validationFail: (act)->
+    $("#status-modal").modal()
+      # initModalHeight = $(".modal-dialog").outerHeight() #give an id to .mobile-dialog
+      # userScreenHeight = $(document).outerHeight()
+      # if initModalHeight > userScreenHeight
+      #   $(".modal-dialog").css "overflow", "auto" #set to overflow if no fit
+      # else
+      #   $(".modal-dialog").css "margin-top", (userScreenHeight / 2) - (initModalHeight / 2) #center it if it does fit
+      # return
+      # )
+   
+  nextAct: (act) ->
+    @validationCheck(
+      @validationSuccess, 
+       @validationFail
+    )
  
   actions:
     skipActivity: (act)->
