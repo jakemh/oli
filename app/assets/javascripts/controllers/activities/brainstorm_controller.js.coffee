@@ -9,11 +9,16 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
     # alert JSON.stringify @get('list').toArray()
     # @registerInputs(=>
     #   @get("list").toArray()
-    #   )
+    # , {array: 'sortedList.@each.text'}
+    # )
     
               # if i == boxes.get('length')
                 # @setFields()
-
+    @registerInputs( (=>
+      @get('list').map((item, index)-> item.text )
+    ),
+    {array: "sortedList.@each.text", reference: true}
+    )
 
   minimumFields: 3
 
@@ -82,11 +87,14 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
   #   ).observes('sortedList.@each.text')
   
   validate: ->
-    pass = true
+    pass = false
     @validateInputs((inputStatus) =>
       # alert inputStatus
-      if !inputStatus
+      if inputStatus
+        pass = true
+      else 
         pass = false
+        return 
     )
 
     if pass
@@ -102,7 +110,7 @@ Oli.BrainstormController = Oli.ActivityBaseController.extend Oli.Threadable, Emb
       @registerInputs( (=>
         @get('list').map((item, index)-> item.text )
       ),
-      options = {array: "sortedList.@each.text"}
+      {array: "sortedList.@each.text", reference: true}
       )
     # alert JSON.stringify @get('sortedList').toArray()
     ).observes("sortedList.@each.text")

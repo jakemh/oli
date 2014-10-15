@@ -2,6 +2,7 @@ Oli.VideoController = Oli.ActivityBaseController.extend
   
   setup: ->
     @_super()
+    @set('finished')
     @notifyPropertyChange('transcript')
     @notifyPropertyChange('source')
     @notifyPropertyChange('embedCode')
@@ -19,7 +20,10 @@ Oli.VideoController = Oli.ActivityBaseController.extend
   error: "Please finish the video before proceeding!"
 
   videoFinished: ->
-    @set('finished', true)
+    # alert "FIN"
+    # @set('finished', true)
+    @allowContinue()
+
 
   embedCode: ->
     return DS.PromiseObject.create promise:
@@ -32,13 +36,13 @@ Oli.VideoController = Oli.ActivityBaseController.extend
           ).always (response) ->
             resolve response
 
-  validation: (->
-    # if @get('duration') == 0
-    #   @allowContinue()
-    # else 
-    if @get('finished') == true
-      @allowContinue()
-    ).observes("finished")
+  # validation: (->
+  #   # if @get('duration') == 0
+  #   #   @allowContinue()
+  #   # else 
+  #   if @get('finished') == true
+  #     @allowContinue()
+  #   ).observes("finished")
 
   transcript: (->
     @component("video")

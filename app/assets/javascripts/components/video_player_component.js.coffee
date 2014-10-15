@@ -1,14 +1,12 @@
 Oli.VideoPlayerComponent = Ember.Component.extend
   didInsertElement: ->
-    $('#vimeoplayer').bind 'DOMSubtreeModified', (e) => 
+    $('#vimeoplayer').bind('DOMSubtreeModified', (e)=> 
       if (e.target.getAttribute('src').length > 0)
-        $("#vimeoplayer").load(@srcUpdated)
-    # $('#vimeoplayer').on("load", (target)=>
-    #   if $("#vimeoplayer").attr('src').length > 0
-    #     alert "TARG: " + target
-    #     @srcUpdated() 
-    # )
-    #   # )
+        $('#vimeoplayer').on("load", =>
+          @srcUpdated()
+          # $('#vimeoplayer').load(@srcUpdated) 
+      )
+    )
 
   srcChange: (->
   
@@ -27,14 +25,14 @@ Oli.VideoPlayerComponent = Ember.Component.extend
 
       player = $f(iframe)
       onPause = (id) =>
-        alert "P"
+        # alert "P"
         return
 
       onFinish = (id) =>
-        alert "F"
-        # @set('finished', true)
+        @set('finished', true)
         return
       
+
       # status = $(".status")
       player.addEvent "ready", ->
         # status.text "ready"
@@ -42,5 +40,9 @@ Oli.VideoPlayerComponent = Ember.Component.extend
         player.addEvent "finish", onFinish
         # player.addEvent "playProgress", onPlayProgress
         return
+
+      # $("button").bind "click", ->
+      #   player.api $(this).text().toLowerCase()
+      #   return
 
       return

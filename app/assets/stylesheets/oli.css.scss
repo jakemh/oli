@@ -53,7 +53,7 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
   }
 
   .logo-flame{
-    padding-bottom: 30px !important;
+    // padding-bottom: 30px !important;
   }
 
   .logo-flame img{
@@ -228,7 +228,8 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 }
 
 .submit-field-oli{
-    margin-bottom: 8px;
+   margin-bottom: 10px !important;
+
 }
 
 .mobile .submit-field-oli{
@@ -271,6 +272,8 @@ src: font-url('proxima_nova_scosf_extrabold.otf');
 .footer-oli, .push-oli {
     height:  ($flames-height)*.6px; /* .push must be the same height as .footer */
 }
+
+
 
 .flames{
   width: 100%;

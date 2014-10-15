@@ -117,7 +117,6 @@ var Froogaloop = (function(){
      * @param target (HTMLElement): Target iframe to post the message to.
      */
     function postMessage(method, params, target) {
-        alert("TARG: " + target + " TARG.C: " + target.contentWindow)
         if (!target.contentWindow.postMessage) {
             return false;
         }

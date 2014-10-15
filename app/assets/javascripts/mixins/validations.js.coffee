@@ -30,7 +30,6 @@ Oli.Validations = Ember.Mixin.create
     # @set("passedValidation", @get('finished'))
   validateInput: (input, options = {}) ->
     minLength = options.minLength ? options.minLength || @minLength
-    # alert input
     if input && input.length >= minLength
       true
     else 
