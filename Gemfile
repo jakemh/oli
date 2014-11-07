@@ -19,7 +19,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '2.1.3'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -42,12 +42,12 @@ gem 'paloma'
 gem 'resque_mailer'
 gem 'stemmify'
 gem 'paypal-express'
-gem 'puma'
 gem 'foreman'
 gem 'exception_notification'
 
 group :production do
   gem 'unicorn'
+  gem 'puma'
   gem 'pg'
   gem 'rails_12factor'
 end
@@ -56,9 +56,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'sqlite3'
-  gem 'thin'
-  gem 'debugger'
-  gem 'byebug'
+  gem 'thin', '1.6.2'
+  # gem 'debugger'
+  gem 'byebug', '3.1.2'
 end
 
 group :development do

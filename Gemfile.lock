@@ -42,10 +42,9 @@ GEM
       handlebars-source
     bcrypt (3.1.7)
     builder (3.2.2)
-    byebug (3.5.1)
+    byebug (3.1.2)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
-      slop (~> 3.6)
     cancancan (1.9.2)
     capistrano (3.2.1)
       i18n
@@ -76,12 +75,7 @@ GEM
     columnize (0.8.9)
     connection_pool (2.0.0)
     daemons (1.1.9)
-    debugger (1.6.8)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.3.5)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.3.5)
     deep_cloneable (2.0.0)
       activerecord (>= 3.1.0, < 5.0.0)
     devise (3.4.0)
@@ -127,7 +121,7 @@ GEM
     handlebars-source (1.3.0)
     hike (1.2.3)
     i18n (0.6.11)
-    jbuilder (2.2.1)
+    jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
@@ -242,7 +236,6 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    slop (3.6.0)
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -259,10 +252,10 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     stemmify (0.0.2)
-    thin (1.6.3)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0)
-      rack (~> 1.0)
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -291,7 +284,7 @@ DEPENDENCIES
   active_model_serializers (= 0.8.1)
   acts_as_tree
   aweber
-  byebug
+  byebug (= 3.1.2)
   cancancan (~> 1.8)
   capistrano (~> 3.1)
   capistrano-bundler (~> 1.1.2)
@@ -299,7 +292,6 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.0)
   capistrano-rvm
   coffee-rails (~> 4.0.0)
-  debugger
   deep_cloneable
   devise
   ember-rails
@@ -308,7 +300,7 @@ DEPENDENCIES
   factory_girl_rails
   figaro
   foreman
-  jbuilder (~> 2.0)
+  jbuilder (= 2.1.3)
   jquery-rails
   newrelic_rpm
   paloma
@@ -327,6 +319,6 @@ DEPENDENCIES
   spring
   sqlite3
   stemmify
-  thin
+  thin (= 1.6.2)
   uglifier (>= 1.3.0)
   unicorn

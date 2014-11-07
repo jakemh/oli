@@ -1,5 +1,5 @@
 Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Componentable,
-  needs: ["me"]
+  needs: ["me", "activities"]
   video: null
   notchGap: false
 
@@ -46,6 +46,16 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
     ).always ->
       # laddaLoadingButton.stop()
 
+  embedCode: (video)->
+    return DS.PromiseObject.create promise:
+      new Em.RSVP.Promise (resolve, reject) =>
+        @videoComp(video).then (vid)->
+          $.ajax(
+            url: "http://vimeo.com/api/oembed.json?url=http://vimeo.com/user31408016/" + vid.get('file_name')
+            type: "get"
+            dataType: "json"
+          ).always (response) ->
+            resolve response
 
   videosFormatted: (->
     return DS.PromiseObject.create promise: 
@@ -67,14 +77,29 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
                   height: @get('height')
                   source: @source(vid)
                   )
+                
                 resolve formattedObjs if count == 0
     ).property()
 
   source: (video)->
     return DS.PromiseObject.create promise:
       new Em.RSVP.Promise (resolve, reject) =>
-        @videoComp(video).then (vid)->
-          resolve '/videos/' + vid.get('file_name')
+        @videoComp(video).then (vid)=>
+          @embedCode(video).then (code)=>
+            src = '//player.vimeo.com/video/' + code["video_id"]  + "?api=1&player_id=vimeoplayer"
+            resolve src
+            @set('sourceAttr', src)
+
+  # source: (->
+  #   return DS.PromiseObject.create promise:
+  #     new Em.RSVP.Promise (resolve, reject) =>
+  #       @videoComp(@get('controllers.activities.content')).then (vid)=>
+  #         # resolve '/videos/' + vid.get('file_name')
+  #         @embedCode().then (code)=>
+  #           src = '//player.vimeo.com/video/' + code["video_id"]  + "?api=1&player_id=vimeoplayer"
+  #           resolve src
+  #           @set('sourceAttr', src)
+    # ).property("content")
 
   width: "121"
   height: "67"

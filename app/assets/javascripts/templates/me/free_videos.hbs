@@ -3,7 +3,6 @@
   Free Video Content
 </div>
 {{#each video in videosFormatted.content}}
-  
   <div {{action goToVideo video}} class="free-video video-container-free-videos oli-text-smaller">
    
     <div class="thumb-free-videos">
@@ -16,7 +15,7 @@
       {{video-player 
       width=video.width
        height=video.height
-        source=video.source
+        source=video.source.content
         controls=false}}
 
     </div>
