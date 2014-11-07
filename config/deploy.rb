@@ -14,6 +14,7 @@ set :deploy_via, :remote_cache
 set :unicorn_config_path, '/home/oli/www/current/config/unicorn.rb'
 set :unicorn_rack_env, 'production'
 set :unicorn_pid, '/home/oli/www/shared/tmp/pids/unicorn.pid'
+
 # Default value for :scm is :git
 # set :scm, :git
 

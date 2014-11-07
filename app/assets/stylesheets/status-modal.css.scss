@@ -10,10 +10,12 @@
   @include oli-circle(90px, .6px);
  
   $mult: .65px;
-  background: #fbf5f2 image-url("flame-disgust.png") center no-repeat;
+  // background: #fbf5f2 image-url("flame-disgust.png") center no-repeat;
+  background: #fbf5f2 image-url("tip-logo-big.png") center no-repeat;
+
   background-size: 57*$mult 108*$mult;
   left: -38px;
-  top: 32%;
+  top: 20%;
 }
 
 .modal-dialog-center { /* Edited classname 10/03/2014 */
