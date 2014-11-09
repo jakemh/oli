@@ -32,8 +32,11 @@ class PaypalController < ApplicationController
         # render :json => "TEST", :head => :no_content
       end
     else 
-
-      redirect_to paypal_success_path
+      
+      flash[:notice] = 'Payment Transaction Completed'
+      current_user.purchase_course(Course.first)
+      render json: {:success => true}
+      # redirect_to paypal_success_path
 
     end
   end
@@ -55,6 +58,8 @@ class PaypalController < ApplicationController
     
     flash[:notice] = 'Payment Transaction Completed'
     current_user.purchase_course(Course.first)
+    # redirect_to root_url
+
     redirect_to first_login_path
   end
 

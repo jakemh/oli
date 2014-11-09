@@ -35,11 +35,14 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
       beforeSend: (xhr) ->
         xhr.setRequestHeader "X-CSRF-Token", $('meta[name="csrf-token"]').attr("content")
     ).fail((error) =>
+      alert JSON.stringify error 
+
       # alert "FAIL" + JSON.stringify error
       laddaLoadingButton.stop()
-    ).success((response)=>
-      window.location = decodeURI response
 
+    ).success((response)=>
+      # window.location = decodeURI response
+      window.location.href = "/"
       # @store.push('user', response.user)
       # @transitionTo('course_info')
       # $('#myModal').modal()
