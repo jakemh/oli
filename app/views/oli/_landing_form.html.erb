@@ -10,7 +10,7 @@
     <%= f.password_field :password, autocomplete: "off", :class => "submit-field-oli", :placeholder => "Password", :autocomplete => :off, :type => "password"  %>
 
   <button class="ladda-button submit-button-oli" data-style="zoom-out"><span class="ladda-label"><%= "Submit" %></span></button>
-  <div class="signed-in-oli oli-text oli-small signed-in-oli">Already registered? <%= link_to  "Sign in", new_user_session_path %> </div>
+  <div class="signed-in-oli oli-text oli-small signed-in-oli">Already have an account? <%= link_to  "Sign in", new_user_session_path %> </div>
   <div class="status-oli"> <%= flash.now[:notice] %></div>
 <% end %>
 
