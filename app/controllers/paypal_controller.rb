@@ -3,31 +3,38 @@
 require 'paypal'
 
 class PaypalController < ApplicationController
-  
+  BYPASS = true
   def create
-    @payment = Payment.new(
-      :amount => 7.99,
-      :digital => true,
-      :popup => false,
-      :recurring => false
+    #th
+    if BYPASS != true
+      @payment = Payment.new(
+        :amount => 7.99,
+        :digital => true,
+        :popup => false,
+        :recurring => false
+        )
+
+      @payment.setup!(
+       paypal_success_url,
+       paypal_cancel_url
       )
+      if @payment.popup?
+        redirect_to @payment.popup_uri
+      else
+        @uri = @payment.redirect_uri.to_s
+        # redirect_to @payment.redirect_uri
 
-    @payment.setup!(
-     paypal_success_url,
-     paypal_cancel_url
-    )
-    if @payment.popup?
-      redirect_to @payment.popup_uri
-    else
-      @uri = @payment.redirect_uri.to_s
-      # redirect_to @payment.redirect_uri
-
-      respond_to do |format|
-        format.html
-        format.json
+        respond_to do |format|
+          format.html
+          format.json
+        end
+        # redirect_to payment.redirect_uri
+        # render :json => "TEST", :head => :no_content
       end
-      # redirect_to payment.redirect_uri
-      # render :json => "TEST", :head => :no_content
+    else 
+
+      redirect_to paypal_success_path
+
     end
   end
 
