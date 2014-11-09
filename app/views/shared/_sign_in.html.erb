@@ -1,10 +1,10 @@
 <div class="oli-form">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div>
-    <%= f.email_field  :email, autofocus: true, :class => "submit-field-name-oli", :type => :email, :placeholder => "Email" %></div>
+    <%= f.email_field  :email, autofocus: true, :class => "submit-field-name-oli", :type => "email", :placeholder => "Email" %></div>
 
     <div>
-      <%= f.password_field :password, autocomplete: "off",  :class => "submit-field-oli",  :type => :password,  :placeholder => "Password" %></div>
+      <%= f.password_field :password, autocomplete: "off",  :class => "submit-field-oli",  :type => "password",  :placeholder => "Password" %></div>
 
       <div class="remember-me-oli">
         <div class="roundedOne">

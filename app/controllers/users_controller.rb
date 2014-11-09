@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   skip_authorization_check
-  
+  skip_before_action :authorization
   def user
+
     @user = current_user 
     render json: [@user], :key => :users  
 
