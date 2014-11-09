@@ -27,21 +27,13 @@
 #= require frogaloop
 #= require video-media-error
 #= require jquery.highlighttextarea
-#= require paloma
 #= require ember
 #= require ember-data
 #= require_self
 #= require hoverintent.min
 #= require oli
 #= require app
-# EmberController = Paloma.controller('Ember');
-# EmberController.prototype.index = ->
 
-  # for more details see: http:#emberjs.com/guides/application/
-  # window.alert = (msg) ->
-  #   debugger
-  #   return
-# alert "TEST"
 window.Oli = Ember.Application.create({
   LOG_TRANSITIONS: true
   customEvents: {

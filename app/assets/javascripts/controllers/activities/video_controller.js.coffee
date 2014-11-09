@@ -1,5 +1,4 @@
 Oli.VideoController = Oli.ActivityBaseController.extend
-  needs: ["activities"]
 
   setup: ->
     @_super()

@@ -38,7 +38,6 @@ gem 'active_model_serializers', '0.8.1'
 gem 'deep_cloneable' #phase this out
 gem 'sidekiq'
 gem 'resque'
-gem 'paloma'
 gem 'resque_mailer'
 gem 'stemmify'
 gem 'paypal-express'
