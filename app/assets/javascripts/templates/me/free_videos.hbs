@@ -20,7 +20,9 @@
 
     </div>
 
-    <a href="#" {{action "buttonClicked" this on="click"}}>{{video.title}}</a>
+    <a href="#" {{action goToVideo video on="click"}}>
+      {{video.title}}
+    </a>
 
     <div class="description-free-videos">
       {{video.description}}
@@ -29,6 +31,7 @@
 {{/each}}
 
   <button class="ladda-button oli-button" data-style="zoom-out" {{action "buttonClicked" this on="click"}}>
-    <span class="ladda-label">Buy Course</span>  </button>
+    <span class="ladda-label">Buy Course</span>  
+  </button>
 
 

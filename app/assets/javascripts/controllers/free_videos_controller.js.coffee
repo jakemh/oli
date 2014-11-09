@@ -22,32 +22,7 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
   purchaseTransition: (->
    
   ).property()
-  buttonClicked: ->
- 
-    laddaLoadingButton = Ladda.create( document.querySelector( '.ladda-button' ) );
- 
-    laddaLoadingButton.start();
-
-    $.ajax(
-      url: "/payment"
-      type: "post"
-      dataType: 'json'
-      beforeSend: (xhr) ->
-        xhr.setRequestHeader "X-CSRF-Token", $('meta[name="csrf-token"]').attr("content")
-    ).fail((error) =>
-      alert JSON.stringify error 
-
-      # alert "FAIL" + JSON.stringify error
-      laddaLoadingButton.stop()
-
-    ).success((response)=>
-      # window.location = decodeURI response
-      window.location.href = "/me/first_login"
-      # @store.push('user', response.user)
-      # @transitionTo('course_info')
-      # $('#myModal').modal()
-    ).always ->
-      # laddaLoadingButton.stop()
+  
 
   embedCode: (video)->
     return DS.PromiseObject.create promise:
