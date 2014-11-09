@@ -42,7 +42,7 @@ Oli.MeFreeVideosController = Ember.ObjectController.extend Ember.Evented, Oli.Co
 
     ).success((response)=>
       # window.location = decodeURI response
-      window.location.href = "/"
+      window.location.href = "/me/first_login"
       # @store.push('user', response.user)
       # @transitionTo('course_info')
       # $('#myModal').modal()
