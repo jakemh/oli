@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   get '/me/*all', :to => 'ember#index', :constraints => FormatTest.new(:html)
   get '/home', :to => 'ember#index', :constraints => FormatTest.new(:html)
   get '/bugs', :to => 'ember#index', :constraints => FormatTest.new(:html)
+  get '/me/first_login', :as => "first_login",  :to => 'ember#index', :constraints => FormatTest.new(:html)
 
   get '/topics', :to => 'topics#list'
   get '/sections', :to => 'sections#list'
@@ -101,7 +102,6 @@ Rails.application.routes.draw do
   post '/payment', :to => 'paypal#create'
   post '/bugs', :to => 'bug_ticket#create'
 
-  get '/me/first_login', :as => "first_login"
 
   resources :courses do
     resources :topics do
