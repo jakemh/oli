@@ -1,41 +1,30 @@
 {{#view Oli.FreeVideoView}}
   <div class="course-wrapper">
+    <div id="fb-root"></div>
+    <div class="free-video__container">
+      {{partial 'activityTitle'}}
+      {{partial 'bar'}}
+        
+      {{#view Oli.VideoView autoplay=true preload=true}}
 
-  <div id="fb-root"></div>
+        {{video-player width=controller.width 
+        height=controller.height
+        source=controller.source.content
+        controls=true}}
 
-    {{partial 'activityTitle'}}
-    {{partial 'bar'}}
-    
-    {{#view Oli.VideoView autoplay=true preload=true}}
-    {{video-player width=controller.width 
-    height=controller.height
-    source=controller.source.content
-    controls=true}}
-    <div class="transcript">
-      {{{controller.transcript.content.content}}}
+        <div class="transcript">
+          {{{controller.transcript.content.content}}}
+        </div>
+
+      {{/view}}
     </div>
-  {{/view}}
-  <div class="modal fade" id="videoErrorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-oli">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title modal-title-oli" id="myModalLabel">Sorry!</h4>
-        </div>
-        <div class="modal-body">
-          <p>This content hasn't been added yet.</p>
-          <p> We'll fix it as soon as possible!</p>
-                </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+
+    {{partial 'button'}}
+
+    <div id="fb-comments" class="fb-free-video">
+      <div  class="fb-comments" data-href="http://getoli.com" data-numposts="5" data-colorscheme="light">
       </div>
     </div>
-</div>
-
-  {{partial 'button'}}
-  <div id="fb-comments" class="fb-free-video">
-    <div  class="fb-comments" data-href="http://getoli.com" data-numposts="5" data-colorscheme="light"></div>
   </div>
-</div>
+
 {{/view}}

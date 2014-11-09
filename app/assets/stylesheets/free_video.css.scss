@@ -1,9 +1,13 @@
 @import "oli-root";
 
 .fb-free-video{
-  margin-top: 50px !important;
+  margin-top: 55px !important;
 }
 
 .free-video a{
   @include oli-bold;
+}
+
+.free-video__container{
+  margin-bottom: 15px;
 }
