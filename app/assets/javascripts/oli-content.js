@@ -42,7 +42,7 @@ $(document ).ready(function() {
           }).success(function(){
             laddaLoadingButton.stop();
             successAnimation(function(){
-              window.location.href = "/me/first_login"
+              window.location.href = "/welcome/1"
 
             });
 
