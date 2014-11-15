@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {registrations: 'oli'}
 
   devise_scope :user do
-    root to: 'oli#new'
+    root to: 'devise/sessions#new'
   end
 
   get "/users" => "users#user"
