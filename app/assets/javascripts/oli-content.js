@@ -125,7 +125,6 @@ $(document).ready(function() {
                         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
                     }
                 }).fail(function(error) {
-                    alert(JSON.stringify(error))
                     failAnimation();
                     laddaLoadingButton.stop();
 
