@@ -1,291 +1,238 @@
-@import "oli-root";
-
+@import"oli-root";
 $flames-height: 363;
-
-body, html{
-  height: 90%;
-  width: 100%;
-  margin: 0;
-  padding:0;
-  font-size: 1.02em;
+body, html {
+    height: 90%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.02em;
 }
-
-.alert-oli, .notice-oli{
-  margin: 0;
-  padding: 0;
+.alert-oli, .notice-oli {
+    margin: 0;
+    padding: 0;
 }
-
-@font-face
-{
-font-family: pn-light;
-src: font-url('proxima_nova_light.otf');
+@font-face {
+    font-family: pn-light;
+    src: font-url('proxima_nova_light.otf');
 }
-
-@font-face
-{
-font-family: pn-extrabold;
-src: font-url('proxima_nova_scosf_extrabold.otf');
+@font-face {
+    font-family: pn-extrabold;
+    src: font-url('proxima_nova_scosf_extrabold.otf');
 }
-
-
-
 /* Landscape phones and smaller */
+
 @media (max-width: 480px) {
-
-  .header-text-oli{
-    font-size: 1.2em !important;
-
-  }
-
-   .logo-oli img{
-  max-width: 331*.5px !important;
-   max-height: 208*.5px !important;
-
-  }
-
-  .logo-oli{
-    padding-top: 10px !important;
-    margin-bottom: -10px !important;
-  }
-
-  .footer-text-oli{
-    padding-top: 10px !important;
-  }
-
-  .logo-flame{
-    // padding-bottom: 30px !important;
-  }
-
-  .logo-flame img{
-    max-width: 122*.5px !important;
-      max-height: 188*.5px !important;
-    margin-right: 10px !important;
-    margin-top: -40px !important;
-  }
-
-  .logo-wrapper{
-    max-width:190px !important;
-  }
+    .header-text-oli {
+        font-size: 1.2em !important;
+    }
+    .logo-oli img {
+        max-width: 331*.5px !important;
+        max-height: 208*.5px !important;
+    }
+    .logo-oli {
+        padding-top: 10px !important;
+        margin-bottom: -10px !important;
+    }
+    .footer-text-oli {
+        padding-top: 10px !important;
+    }
+    .logo-flame {
+        // padding-bottom: 30px !important;
+    }
+    .logo-flame img {
+        max-width: 122*.5px !important;
+        max-height: 188*.5px !important;
+        margin-right: 10px !important;
+        margin-top: -40px !important;
+    }
+    .logo-wrapper {
+        max-width: 190px !important;
+    }
+}
+@media (max-height: 350px) and (min-width: 400px) {
+    .body-text-oli {
+        display: none;
+    }
+    .footer-text-oli {
+        padding-top: 10px !important;
+    }
+}
+.signed-in-oli {
+    text-align: center;
+    margin-top: 4px;
+    color: white;
+    font-size: .8em !important;
 }
 
-@media (max-height: 350px ) and (min-width: 400px) {
-  .body-text-oli{
-  display: none;
-
-  }
-
-  .footer-text-oli{
-    padding-top: 10px !important;
-  }
+.signed-in-oli a{
+    color: white;
+    text-decoration: underline;
 }
-
-.signed-in-oli{
-  text-align: center;
-  margin-top: 4px;
-  font-size: .8em !important;
+.logo-oli {
+    position: absolute;
+    margin: 0 auto;
+    top: 10px;
+    right: 28px;
+    text-align: center;
+    padding-bottom: 60px;
+    padding-top: 50px;
+    max-width: 250px;
 }
-
-.logo-oli{
-  position: absolute;
-  margin:0 auto;
-  top: 10px;
-  right: 28px;
-  text-align: center;
-  padding-bottom: 60px;
-  padding-top: 50px;
-  max-width: 250px;
+.logo-oli img {
+    max-width: 331*.6px;
+    max-height: 208*.6px;
 }
-
-.logo-oli img{
-  max-width: 331*.6px;
-  max-height: 208*.6px;
+.logo-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 250px;
+    z-index: 3;
 }
-
-.logo-wrapper{
-  position: relative;
-  margin:0 auto;
-  max-width: 250px;
-  z-index: 3;
-
+.logo-flame {
+    position: relative;
+    z-index: 100;
+    max-width: 250px;
+    text-align: center;
+    padding-bottom: 60px;
+    margin-right: 95px;
+    padding-top: 60px;
 }
-
-.logo-flame{
-  position: relative;
-  z-index:100;
-  max-width: 250px;
-  text-align: center;
-  padding-bottom: 60px;
-  margin-right:95px;
-  padding-top: 60px;
-  
+.logo-flame img {
+    max-width: 122*.6px;
+    max-height: 188*.6px;
 }
-  
-.logo-flame img{
-  max-width: 122*.6px;
-  max-height: 188*.6px;
-
+.oli-form {
+    width: 100%;
+    margin: auto;
+    text-align: center;
 }
-
-.oli-form{
-  width: 100%;
-  margin:auto;
-  text-align: center;
+.header-text-oli {
+    // font-family: pn-bold;
+    // font-family: 'Montserrat', sans-serif;
+    // font-weight: bold;
+    @include oli-bold;
+    color: #f26e1b !important;
+    text-align: center;
+    // font-weight: normal;
+    font-smoothing: antialiased;
+    font-size: 1.285em;
 }
-
-
-.header-text-oli{
-  // font-family: pn-bold;
-  // font-family: 'Montserrat', sans-serif;
-  // font-weight: bold;
-  @include oli-bold;
-  color: #f26e1b !important;
-
-  text-align: center;
-  // font-weight: normal;
-  font-smoothing: antialiased;
-  font-size: 1.285em;
-
+.body-text-oli {
+    line-height: 1.31em;
+    @include oli-font;
+    text-align: center;
+    // font-weight: normal;
+    // font-smoothing: antialiased;
+    margin: 0 auto;
+    max-width: 285px;
+    padding-bottom: 20px;
+    color: rgba(0, 0, 0, .6) !important;
 }
-
-.body-text-oli{
-  line-height: 1.31em;
-  @include oli-font;
-  text-align: center;
-  // font-weight: normal;
-  // font-smoothing: antialiased;
-  margin:0 auto;
-  max-width: 285px;
-  padding-bottom: 20px;
-  color: rgba(0,0,0,.6) !important;
-} 
-
-
-
-.footer-text-oli{
-  // font-family: pn-light;
-  text-align: center;
-  font-weight: normal;
-  @include oli-font;
-  // font-smoothing: antialiased;
-  margin:0 auto;
-  max-width: 300px;
-  color: rgba(0,0,0,.6) !important;
-  padding-top: 0px;
-  padding-bottom: 10px;
+.footer-text-oli {
+    // font-family: pn-light;
+    text-align: center;
+    font-weight: normal;
+    @include oli-font;
+    // font-smoothing: antialiased;
+    margin: 0 auto;
+    max-width: 300px;
+    color: rgba(0, 0, 0, .6) !important;
+    padding-top: 0px;
+    padding-bottom: 10px;
 }
-
-.status-oli{
-  height: 15px;
-  @include oli-font;
-  // font-family: pn-light;
-  text-align: center;
-  // font-weight: normal;
-  font-smoothing: antialiased;
-  opacity: .6;
-  padding-top: 5px;
-  margin-bottom: 10px;
+.status-oli {
+    height: 15px;
+    @include oli-font;
+    // font-family: pn-light;
+    text-align: center;
+    // font-weight: normal;
+    font-smoothing: antialiased;
+    opacity: .6;
+    padding-top: 5px;
+    margin-bottom: 10px;
 }
-
-.oli-form{
-  max-width: 400px;
+.oli-form {
+    max-width: 400px;
 }
-.submit-button-oli{
-  @include oli-button;
-  height: 37px;
-  width: 100px;
+.submit-button-oli {
+    @include oli-button;
+    height: 37px;
+    width: 100px;
 }
-
-.oli-form ::-webkit-input-placeholder{
-  opacity: .7;
+.oli-form::-webkit-input-placeholder {
+    opacity: .7;
 }
-
-.oli-form input[type=text], .oli-form input[type=email], .oli-form input[type=password]{
-  border: solid 1px rgba(0, 0, 0, .2);
-  width: 65%;
-  display: block;
-  margin: auto;
-  outline:none;
-  height: 37px;
-  font-family: pn-light;
-  border-radius: 20px;
-  padding-left: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
-
+.oli-form input[type=text], .oli-form input[type=email], .oli-form input[type=password] {
+    border: solid 1px rgba(0, 0, 0, .2);
+    width: 75%;
+    display: block;
+    margin: auto;
+    outline: none;
+    height: 45px;
+    font-family: pn-light;
+    border-radius: 20px;
+    padding-left: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
-.mobile .oli-form input[type=text], .mobile .oli-form input[type=email]{
-  display: inline !important;
-  border-radius: 0;
-  border: none !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important; 
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.mobile .oli-form input[type=text], .mobile .oli-form input[type=email] {
+    display: inline !important;
+    border-radius: 0;
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-.submit-field-name-oli{
-  margin-bottom: 10px !important;
-
+.submit-field-name-oli {
+    margin-bottom: 10px !important;
 }
-
-.submit-field-oli{
-   margin-bottom: 10px !important;
-
+.submit-field-oli {
+    margin-bottom: 10px !important;
 }
-
-.mobile .submit-field-oli{
-  width: 63% !important;
-  border-top-right-radius: 20px !important;
-  border-bottom-right-radius: 20px !important;
-  padding: 5px !important;
-  padding-left: 20px !important;
-  padding-right: 120px !important;
-
+.mobile .submit-field-oli {
+    width: 63% !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    padding: 5px !important;
+    padding-left: 20px !important;
+    padding-right: 120px !important;
 }
-
-
-.mobile .submit-button-oli{
-  margin-left: -106px !important;
+.mobile .submit-button-oli {
+    margin-left: -106px !important;
 }
-
-.mobile .submit-field-name-oli{
-
-  width: 35% !important;
-  border-top-left-radius: 20px !important;
-  border-bottom-left-radius: 20px !important;
-  margin-right: -3px !important;
+.mobile .submit-field-name-oli {
+    width: 35% !important;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    margin-right: -3px !important;
 }
-
-.loader{
-  position: absolute;
-  width: 0px;
-  right: 0;
-  margin-right: 0;
+.loader {
+    position: absolute;
+    width: 0px;
+    right: 0;
+    margin-right: 0;
 }
-
 .wrapper-oli {
-  background: image-url('oli_bg2.png'); 
+    background: image-url('oli_bg2.png');
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -1 * ($flames-height) * .6px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -1 * ($flames-height) * .6px;
+    /* the bottom margin is the negative value of the footer's height */
 }
 .footer-oli, .push-oli {
-    height:  ($flames-height)*.6px; /* .push must be the same height as .footer */
+    height: ($flames-height)*.6px;
+    /* .push must be the same height as .footer */
 }
-
-
-
-.flames{
-  width: 100%;
-  background: image-url("flames.png");
-  height: ($flames-height) * .6px;
-  background-size:1721*.6px $flames-height * .6px;
+.flames {
+    width: 100%;
+    background: image-url("flames.png");
+    height: ($flames-height) * .6px;
+    background-size: 1721*.6px $flames-height * .6px;
 }
-
-.mobile .submit-field-oli, .mobile .submit-field-name-oli{
-  height: 50px !important;
+.mobile .submit-field-oli, .mobile .submit-field-name-oli {
+    height: 50px !important;
 }
-
-.mobile .submit-button-oli{
-  height: 48px !important;
+.mobile .submit-button-oli {
+    height: 48px !important;
 }

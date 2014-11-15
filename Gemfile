@@ -43,6 +43,7 @@ gem 'stemmify'
 gem 'paypal-express'
 gem 'foreman'
 gem 'exception_notification'
+gem 'font-awesome-rails'
 
 group :production do
   gem 'unicorn'

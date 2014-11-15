@@ -1,0 +1,110 @@
+<nav class="navbar navbar-default navbar-fixed-top top-nav-collapse lnd__nav" role="navigation">
+  <div class="container lnd__nav-container">
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand page-scroll " href="#page-top">
+
+        <div class="lnd__img-oli-full">
+          <%=image_tag "oli-logo.png" %>
+        </div>
+
+        <% if false %>
+          <div class="lnd__img-oli">
+            <%=image_tag "oli-no-flame.png" %>
+          </div>
+          <div class="lnd__img-flame">
+            <%=image_tag "flame.png" %>
+          </div>
+        <% end %>
+
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse lnd__nav-inner">
+      <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden">
+          <a class="page-scroll" href="#page-top"></a>
+
+        </li>
+        <li>
+          <a class="page-scroll" href="#about">About</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#services">Features</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#contact">Testimonials</a>
+        </li>
+
+        <li>
+          <a class="page-scroll js-switch-to-login" href="#log-in">Log in</a>
+        </li>
+
+      </ul>
+
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+
+<!-- Intro Section -->
+<div class="lnd__section--large lnd__man-background ">
+</div>
+  <section id="intro" class="lnd__section lnd__intro-container">
+    
+    <%= render "/landing/top" %>
+
+
+  </section>
+
+  <section class="lnd__section lnd__about-container" id="about">
+    <%= render "/landing/about" %>
+  </section>
+</div>
+<!-- About Section -->
+
+
+<!-- Services Section -->
+<section id="services" class="lnd__section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <%= render "/landing/features" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="lnd__section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <%= render "/landing/testimonials" %>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="log-in" class="lnd__section lnd__login-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <%= render "/landing/log_in" %>
+
+      </div>
+    </div>
+  </div>
+</section>
+

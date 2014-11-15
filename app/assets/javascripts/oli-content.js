@@ -1,9 +1,84 @@
 $(document ).ready(function() {
 
+  // var swapToLogin = function(){
+  //   $(".lnd__session").empty().
+  // }
+
+  // $("#sign-up-").submit(function() {
+  //   laddaLoadingButton.start();
+  //   $.ajax({
+  //   url: '/users',
+  //   type: 'post',
+  //   async: true,
+  //   data: $("#new_user").serialize(),
+  //   dataType: 'script',
+  //   beforeSend: function (xhr) {
+  //     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+  //   }
+  //   }).fail(function(error) {
+  //     failAnimation();
+  //     laddaLoadingButton.stop();
+
+  //   }).success(function(){
+  //     laddaLoadingButton.stop();
+  //     successAnimation(function(){
+  //       // window.location.href = "/welcome/1"
+
+  //     });
+
+  //   });
+  // return false;
+  // })
+
+
   // $('#register-modal').on('click', function(){
   //   window.location.href = "/me"
   // })
-  
+
+  $(".js-switch-to-login").on('click', function(e){
+    e.preventDefault()
+
+    $(".js-sign-up-form").hide()
+    $(".js-sign-in-form").show()
+
+  })
+
+
+  $(".js-switch-to-register").on('click', function(e){
+    e.preventDefault()
+
+    $(".js-sign-in-form").hide()
+    $(".js-sign-up-form").show()
+
+  })
+  $(".lnd__play-button").on("click", function(e){
+    if (window.videoPlaying != true){
+      window.videoPlaying = true;
+      $(".lnd__video").fadeIn("slow", function(){
+        $("#landing-video").get(0).play();
+
+
+      });
+    } else {
+      $(".lnd__video").fadeOut("slow");
+      $("#landing-video").get(0).pause();
+      window.videoPlaying = false;
+    }
+
+    e.stopPropagation();
+
+  })
+
+  $(".lnd__intro-container").on("click", function(){
+    if (window.videoPlaying != true){
+    
+    } else {
+      $(".lnd__video").fadeOut("slow");
+      $("#landing-video").get(0).pause();
+      window.videoPlaying = false;
+    }
+  })
+
   if ($(".ladda-button").length > 0){
     var laddaLoadingButton = Ladda.create( document.querySelector( '.ladda-button' ) );
 
@@ -42,7 +117,8 @@ $(document ).ready(function() {
           }).success(function(){
             laddaLoadingButton.stop();
             successAnimation(function(){
-              window.location.href = "/welcome/1"
+              $(".lnd-button").html("Thanks for signing up!")
+              // window.location.href = "/welcome/1"
 
             });
 

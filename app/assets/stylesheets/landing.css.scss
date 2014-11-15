@@ -1,0 +1,314 @@
+
+@import 'oli-base';
+
+.intro-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #fff;
+}
+.lnd__intro-text{
+    color: white;
+    // line-height: .8em;
+}
+
+.lnd__intro-text--shadow{
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 1);
+}
+
+.lnd__video{
+    display: none;
+    position: absolute;
+    top: 0px;
+
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lnd__video video{
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1000;
+    background-size: cover;
+}
+
+
+
+.lnd__intro-title{
+    // line-height: 4.3em;
+    padding-top: 3%;
+}
+
+.lnd__intro-text--upper-1{
+   font-family: "Arial Black", Arial;
+   font-weight: 900;
+   line-height: .3em;
+
+    font-size: 6.0em;
+    margin-bottom: 30px;
+}
+
+.play-button{
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100px;
+    padding-left: 10px;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    border: 2px solid white;
+    background: rgba(0,0,0, .5);
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.lnd__intro-play{
+    line-height: 3em;
+    margin: 5%;
+}
+
+.lnd__section-sub{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.lnd__intro-section{
+    margin: auto;
+    text-align: center;
+}
+
+.lnd__intro-section--bottom{
+    max-width: 1000px;
+    line-height: 2em !important;
+}
+
+.lnd__intro-section--button{
+
+    // width: 100px;
+    display: inline-block;
+    background: oli-blue(1);
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+    font-size: 1.3em;
+    margin: 40px 20px 20px 20px;
+    font-family: pn-thin;
+    // line-height: 2em !important;
+}
+
+.lnd-button{
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    display: inline-block;
+    background: oli-blue(1);
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+    font-size: 1.3em;
+    margin: 40px 20px 20px 20px;
+    font-family: pn-thin;
+}
+
+.lnd__session-container{
+    margin: 5%;
+}
+
+.lnd__intro-text--upper-2{
+    font-family: pn-light;
+    letter-spacing: .1em;
+
+    font-size: 4.5em;
+}
+
+.lnd__intro-text--upper-3{
+    font-family: pn-thin;
+    letter-spacing: .1em;
+
+    font-size: 2em;
+}
+
+.lnd__intro-text--reg-1{
+    font-family: pn-light;
+    letter-spacing: .1em;
+
+    font-size: 1.5em;
+}
+
+.lnd__intro-text--reg-2{
+    font-family: pn-thin;
+    letter-spacing: .1em;
+
+    font-size: 1.5em;
+}
+
+.lnd__intro-text--reg-2{
+    font-family: pn-thin;
+    letter-spacing: .1em;
+
+    font-size: 1.3em;
+}
+
+
+
+.lnd__nav{
+    background: white !important;
+}
+
+.about-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #eee;
+}   
+
+.services-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #fff;
+}
+
+.contact-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #eee;
+}
+  
+.lnd__section{
+    height: 100%;
+    position: relative;
+    // padding-top: 150px;
+    text-align: center;
+    // background: #fff;
+    padding-top: 62px; 
+    // margin-top: -62px;
+}
+
+.lnd__intro-container{
+    height: 100%;
+    // position: absolute;
+    // top: 0;
+    // width: 100%;
+    position: relative;
+
+    // z-index: 100;
+    // background: inherit;
+    // background: green;
+    width: 100%;
+    text-align: center;
+}
+
+.lnd__man-background{
+    width: 100%;
+    height: 100%;
+    background: image-url("beautiful_business_mmn.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+    background-position: 0 62px;
+//     -moz-transform: scale(1.4,1.4);
+//        -webkit-transform: scale(1.4,1.4);
+//        transform: scale(1.4,1.4);
+}
+
+
+.lnd__section--large{
+    height: 145%;
+    position: absolute;
+    top: 62px;
+    // background: orange;
+}
+
+.lnd__about-container{
+    height: 45%;
+    width: 100%;
+    background: oli-orange(1);
+    opacity: .7;
+    // background: red;
+    margin-top: 62px;
+    position: relative;
+    z-index: 1000;
+}
+
+.lnd__login-container{
+    // width: 100%;
+    // height: 100%;
+    background: image-url("beautiful_business_woman.jpg");  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.lnd__section-bottom{
+    position: absolute;
+    bottom: 2%;
+    width: 100%;
+    color: white;
+    font-family: pn-thin;
+    text-transform: capitalize;
+
+    font-size: .8em;
+    letter-spacing: .1em;
+
+}
+
+.lnd__section-bottom i{
+    font-size: 1.5em;
+}
+
+.lnd__nav-inner{
+
+}
+
+.lnd__nav-container{
+    margin-left: 15%;
+}
+
+.lnd__nav-inner ul{
+    height: 100%;
+    margin-top: 5px;
+}
+
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background: white !important;
+    color: oli-orange(1) !important;
+
+}
+
+.lnd__nav-inner ul li a{
+    font-family: pn-light;
+    color: black !important;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: .9em;
+}
+
+.lnd__img-oli img{
+    max-width: 331*.14px;
+    max-height: 208*.14px;
+}
+
+
+.lnd__img-oli-full img{
+    max-width: 331*.15px;
+    max-height: 208*.15px;
+}
+
+
+.lnd__img-flame img{
+    max-width: 122*.1px !important;
+      max-height: 188*.1px !important;
+    margin-right: 10px !important;
+    margin-top: -40px !important;
+}
+

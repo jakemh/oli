@@ -12,10 +12,13 @@
 #
 #= require jquery
 #= require jquery_ujs
+
 #= require underscore
 #= require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
 #= require bootstrap-sass-official/assets/javascripts/bootstrap
 #= require bootstrap-datepicker
+#= require jquery.easing.min
+#= require scrolling-nav
 #= require browser_selector
 #= require select2
 #= require moment

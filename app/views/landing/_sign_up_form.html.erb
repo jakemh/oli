@@ -3,14 +3,14 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= f.text_field :name, autofocus: true, :class => "submit-field-name-oli", :placeholder => "Name", :autocomplete => :off %>
+  <%= f.text_field :name, autofocus: false, :class => "submit-field-name-oli", :placeholder => "Name", :autocomplete => :off %>
 
   <%= f.email_field :email, :type => "email", :class => "submit-field-name-oli", :placeholder => "Email", :autocomplete => :off  %>
 
     <%= f.password_field :password, autocomplete: "off", :class => "submit-field-oli", :placeholder => "Password", :autocomplete => :off, :type => "password"  %>
 
-  <button class="ladda-button submit-button-oli" data-style="zoom-out"><span class="ladda-label"><%= "Sign up for free training" %></span></button>
-  <div class="signed-in-oli oli-text oli-small signed-in-oli">Already have an account? <%= link_to  "Sign in", new_user_session_path %> </div>
+  <button class="ladda-button lnd-button" data-style="zoom-out"><span class="ladda-label"><%= "Sign up for free training" %></span></button>
+  <div class="signed-in-oli oli-text oli-small signed-in-oli">Already a member? <%= link_to  "Log in", new_user_session_path, :class => "js-switch-to-login" %> </div>
   <div class="status-oli"> <%= flash.now[:notice] %></div>
 <% end %>
 

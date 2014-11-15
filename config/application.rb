@@ -10,6 +10,8 @@ module Oli
   class Application < Rails::Application
     config.action_mailer.perform_deliveries = true
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+    config.sass.load_paths << File.expand_path('../../vendor/assets/stylesheets/')
+
     config.assets.paths << Rails.root.join("vendor","assets","bower_components","bootstrap-sass-official","assets","fonts")
     # config.action_mailer.delivery_method = :sendmail
     config.action_mailer.smtp_settings = {
@@ -22,7 +24,7 @@ module Oli
       :password => "getoli2014",
       :enable_starttls_auto => true
     }
-        
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
