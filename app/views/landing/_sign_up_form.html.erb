@@ -6,9 +6,10 @@
     <%= f.text_field :name, autofocus: false, :class => "submit-field-name-oli", :placeholder => "Name", :autocomplete => :off %>
 
     <%= f.email_field :email, :type => "email", :class => "submit-field-name-oli", :placeholder => "Email", :autocomplete => :off  %>
-
+    <% if false %>
       <%= f.password_field :password, autocomplete: "off", :class => "submit-field-oli", :placeholder => "Password", :autocomplete => :off, :type => "password"  %>
 
+      <% end %>
     <button class="ladda-button lnd-button" data-style="zoom-out">
       <span class="ladda-label">
         <%= "Sign up for free training" %>

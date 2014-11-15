@@ -78,7 +78,7 @@ $(document).ready(function() {
             window.videoPlaying = false;
         }
     })
-    
+
     if ($(".oli-form-register .ladda-button").length > 0) {
         var laddaLoadingButton = Ladda.create(document.querySelector('.oli-form-register .ladda-button'));
 
@@ -116,7 +116,7 @@ $(document).ready(function() {
 
                 laddaLoadingButton.start();
                 $.ajax({
-                    url: '/users',
+                    url: '/email',
                     type: 'post',
                     async: true,
                     data: $(".js-landing-register").serialize(),

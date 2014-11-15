@@ -20,6 +20,33 @@ class OliController < Devise::RegistrationsController
     render "landing"
   end
 
+  def email
+    # build_resource(sign_up_params)
+    puts "PARAMS: ", sign_up_params
+    SubUser.create(whitelist)
+    sub
+    # resource_saved = resource.save
+    # yield resource if block_given?
+    # if resource_saved
+      # if resource.active_for_authentication?
+        # set_flash_message :notice, :signed_up if is_flashing_format?
+
+
+        # sign_up(resource_name, resource)
+        # sub
+    #   else
+    #     set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+    #     expire_data_after_sign_in!
+    #     sub
+    #   end
+    # else
+      # clean_up_passwords resource
+      # @status = resource.errors.messages.first.join(" ")
+      # flash.now[:notice] = @status
+      # render 'error', :status => 404
+    # end
+  end
+
   def create
     build_resource(sign_up_params)
     puts "PARAMS: ", sign_up_params
@@ -85,4 +112,7 @@ class OliController < Devise::RegistrationsController
     end
   end
 
+  def whitelist
+    params.require(:user).permit(:name, :email)
+  end
 end

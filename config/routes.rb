@@ -31,11 +31,12 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     root to: 'devise/sessions#new'
+    post "/email" => "oli#email"
+
   end
 
   get "/users" => "users#user"
   put "/users/:id" => "users#update"
-
   match "/landing" => "oli#landing", via: :get
   match "/landing" => "oli#subscribe", via: :post
   get '/me', :to => 'ember#index'

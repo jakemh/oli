@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916231001) do
+ActiveRecord::Schema.define(version: 20141115081727) do
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -161,6 +161,13 @@ ActiveRecord::Schema.define(version: 20140916231001) do
     t.integer  "activity_id"
     t.integer  "user_id"
     t.boolean  "completed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sub_users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
