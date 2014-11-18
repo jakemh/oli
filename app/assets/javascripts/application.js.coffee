@@ -12,7 +12,7 @@
 #
 #= require jquery
 #= require jquery_ujs
-
+#= require waypoints
 #= require underscore
 #= require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
 #= require bootstrap-sass-official/assets/javascripts/bootstrap

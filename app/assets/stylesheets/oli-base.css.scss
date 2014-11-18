@@ -2,12 +2,49 @@
 @import "oli-root";
 @import "font-awesome";
 
-body, html{
-  height: 100% !important;
-}
+// body, html{
+//   height: 100% !important;
+//   padding-top: 62px;
+// }
 
 * {
 margin: 0;
+}
+
+// body{
+//   overflow-x: hidden !important;
+//   white-space: nowrap !important;
+// }
+
+.oli__text--white{
+  color: white;
+}
+
+.oli__text{
+  text-align: left;
+}
+
+.oli__text--title{
+  // text-align: left;
+  font-size: 1.4em;
+}
+
+.oli__text--body{
+  // text-align: left;
+  font-size: .8em;
+}
+
+.oli-arial{
+  font-family: arial;
+  font-weight: 900;
+}
+
+.oli-pn-light{
+  font-family: pn-light;
+}
+
+.oli-pn-thin{
+  font-family: pn-thin;
 }
 
 .oli-yellow{

@@ -29,6 +29,11 @@ $levels-height: 45px;
   @return rgba(38, 109, 191, $a); 
 }
 
+
+@function oli-tan($a){
+  @return rgba(252, 245, 242, $a); 
+}
+
 @function oli-dark-gray($a){
   @return rgba(180, 180, 179, $a); 
 }
