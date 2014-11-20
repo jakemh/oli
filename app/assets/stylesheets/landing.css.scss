@@ -103,6 +103,15 @@
     text-align:center;
 }
 
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
 .testi{
 
 
@@ -125,14 +134,7 @@
 .testi__item-title{
     margin-top: 12px;
 }
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
-}
+
 
 .testi img{
     width: 100px;

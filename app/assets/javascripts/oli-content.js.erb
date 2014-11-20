@@ -101,41 +101,47 @@ $(document).ready(function() {
     if ($(".oli-form-register .ladda-button").length > 0) {
         var laddaLoadingButton = Ladda.create(document.querySelector('.oli-form-register .ladda-button'));
 
-        // var successAnimation = function(callback){
-        //   var _this = $(".logo-flame")
-        //   _this.addClass("success-animation");
-        //   setTimeout(function() {
-        //     _this.removeClass("success-animation")
-        //     callback()
-        //   }, 750);
-        // }
-
-        // var failAnimation = function(){
-        //   var _this = $(".logo-flame")
-        //   _this.addClass("fail-animation");
-        //   setTimeout(function() {
-        //     _this.removeClass("fail-animation")
-        //   }, 2000);
-        // }
-
-        var successAnimation = function(callback) {
-
-            setTimeout(function() {
-                callback()
-            }, 750);
+        var successAnimation = function(callback){
+          var _this = $(".logo-flame")
+          _this.addClass("success-animation");
+          setTimeout(function() {
+            _this.removeClass("success-animation")
+            callback()
+          }, 750);
         }
 
-        var failAnimation = function() {
-
-            setTimeout(function() {}, 2000);
+        var failAnimation = function(){
+          var _this = $(".logo-flame")
+          _this.addClass("fail-animation");
+          setTimeout(function() {
+            _this.removeClass("fail-animation")
+          }, 2000);
         }
+
+        // var successAnimation = function(callback) {
+
+        //     setTimeout(function() {
+        //         callback()
+        //     }, 750);
+        // }
+
+        // var failAnimation = function() {
+
+        //     setTimeout(function() {}, 2000);
+        // }
         if ($(".oli-form-register").length > 0) {
+               var route = null;
 
+            if ($(".oli-form-register.old-form").length > 0) 
+                route = "/users"
+            else  
+                route = "/email"
+            
             $(".js-landing-register").submit(function() {
 
                 laddaLoadingButton.start();
                 $.ajax({
-                    url: '/email',
+                    url: route,
                     type: 'post',
                     async: true,
                     data: $(".js-landing-register").serialize(),
@@ -150,9 +156,13 @@ $(document).ready(function() {
                 }).success(function() {
                     laddaLoadingButton.stop();
                     successAnimation(function() {
+                        if ($(".oli-form-register.old-form").length > 0) {
+                            window.location.href = "/me/first_login"
+
+                        } else {
                         $(".lnd-button").html("<i class=\"fa fa-check\"></i>")
                             // window.location.href = "/welcome/1"
-
+                        }
                     });
 
                 });

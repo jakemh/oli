@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "/paypal_success" => "paypal#success", :as => "paypal_success"
   get "/paypal_cancel" => "paypal#cancel", :as => "paypal_cancel"
 
+
+
   class FormatTest
     attr_accessor :mime_type
 
@@ -34,6 +36,8 @@ Rails.application.routes.draw do
     post "/email" => "oli#email"
 
   end
+
+ 
 
   get "/users" => "users#user"
   put "/users/:id" => "users#update"

@@ -67,6 +67,20 @@ body, html {
     font-size: .8em !important;
 }
 
+
+.signed-in-oli--dark{
+    color: black;
+}
+
+.signed-in-oli--dark a{
+    color: oli-blue(1) !important;
+    text-decoration: none !important;
+}
+
+.status-oli--dark{
+    color: black;
+}
+
 .signed-in-oli a{
     color: white;
     text-decoration: underline;
