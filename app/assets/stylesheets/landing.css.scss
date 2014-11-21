@@ -16,6 +16,9 @@
     // line-height: .8em;
 }
 
+.lnd__section a{
+    outline: 0;
+}
 .lnd__title{
     margin-bottom: 15px;
 }
@@ -148,7 +151,7 @@
 
 .lnd__intro-play{
     line-height: 3em;
-    margin: 5%;
+    // margin: 5%;
 }
 
 .lnd__section-sub{
@@ -156,6 +159,10 @@
     overflow-x: hidden;
     margin: 0 auto;
     // margin: 0 15%;
+}
+
+.offset-vertical{
+    height: 8%;
 }
 .feature__item-title{
     color: oli-orange(1);
@@ -305,6 +312,7 @@
 
 .lnd__intro-container{
     height: 100%;
+    overflow: hidden;
     // position: absolute;
     // top: 0;
     // width: 100%;
