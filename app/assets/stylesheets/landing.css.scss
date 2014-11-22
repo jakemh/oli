@@ -43,14 +43,18 @@
 
 .about__mac{
     // width: 100%;
+    position: relative;
     height: 260px;
     max-width: 450px;
     background: image-url("mac.png") no-repeat; 
- 
     background-size: 100%;
 }
 
-
+.about__mac-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
 
 .lnd__intro-title{
     // line-height: 4.3em;
