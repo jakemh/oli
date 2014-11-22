@@ -1,3 +1,72 @@
+// @media all and (max-width: 1200px) { /* screen size until 1200px */
+//     body {
+//         font-size: 1em; /* 1.5x default size */
+//     }
+// }
+// @media all and (max-width: 1000px) { /* screen size until 1000px */
+//     body {
+//         font-size: .8em !important; /* 1.2x default size */
+//         }
+//     }
+// @media all and (max-width: 500px) { /* screen size until 500px */
+//     body {
+//         font-size: 0.45em !important; /* 0.8x default size */
+//         }
+//     }
+
+@media only screen {
+  html{
+    // background: green !important;
+  }
+
+  .lnd__intro-text--upper-1{
+    font-size: 11vw !important;
+    line-height: .8em !important;
+  }
+
+  .lnd__intro-text--upper-2{
+    font-size: 8vw !important;
+
+  }
+
+  .lnd__intro-text--reg-1{
+    font-size: 1em !important;
+    letter-spacing: 0em !important;
+
+  }
+
+  .lnd__intro-text--upper-3{
+    // font-size: 7.5vw !important;
+    letter-spacing: 0em;
+    font-size: 1.5em !important;
+    line-height: 4em !important;
+  }
+
+  .lnd__intro-section--bottom{
+    line-height: 1em !important;
+    font-size: .8em !important;
+  }
+
+  .lnd__intro-text--reg-2{
+
+  }
+
+  .offset-vertical{
+    height: 3% !important;
+  }
+
+  .play-button{
+    margin: 5px;
+  }
+
+  .lnd__intro-section--button{
+    font-size: .8em !important;
+
+  }
+
+/* Styles */
+}
+
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
 
