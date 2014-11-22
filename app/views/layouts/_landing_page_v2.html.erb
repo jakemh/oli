@@ -60,7 +60,7 @@
 <!-- Intro Section -->
 <div class="lnd__section--large lnd__man-background ">
 </div>
-  <section id="intro" class="lnd__section lnd__intro-container">
+  <section id="intro" class="lnd__section lnd__intro-container lnd__section--padding">
     
     <%= render "/landing/top" %>
 
@@ -78,7 +78,7 @@
 
 
 <!-- Services Section -->
-<section id="features" class="lnd__features-container lnd__section">
+<section id="features" class="lnd__features-container lnd__section lnd__section--padding">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -89,15 +89,10 @@
 </section>
 
 <!-- Contact Section -->
-<section id="testimonials" class="lnd__section lnd__section--small">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
+<section id="testimonials" class="lnd__section lnd__section--small outer">
+  
         <%= render "/landing/testimonials" %>
 
-      </div>
-    </div>
-  </div>
 </section>
 
 <section id="log-in" class="lnd__section lnd__login-container">

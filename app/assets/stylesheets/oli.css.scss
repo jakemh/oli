@@ -196,38 +196,38 @@ body, html {
     padding-left: 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
-.mobile .oli-form input[type=text], .mobile .oli-form input[type=email] {
-    display: inline !important;
-    border-radius: 0;
-    border: none !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+// .mobile .oli-form input[type=text], .mobile .oli-form input[type=email] {
+//     display: inline !important;
+//     border-radius: 0;
+//     border: none !important;
+//     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+//     -moz-box-sizing: border-box;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
 .submit-field-name-oli {
     margin-bottom: 10px !important;
 }
 .submit-field-oli {
     margin-bottom: 10px !important;
 }
-.mobile .submit-field-oli {
-    width: 63% !important;
-    border-top-right-radius: 20px !important;
-    border-bottom-right-radius: 20px !important;
-    padding: 5px !important;
-    padding-left: 20px !important;
-    padding-right: 120px !important;
-}
-.mobile .submit-button-oli {
-    margin-left: -106px !important;
-}
-.mobile .submit-field-name-oli {
-    width: 35% !important;
-    border-top-left-radius: 20px !important;
-    border-bottom-left-radius: 20px !important;
-    margin-right: -3px !important;
-}
+// .mobile .submit-field-oli {
+//     width: 63% !important;
+//     border-top-right-radius: 20px !important;
+//     border-bottom-right-radius: 20px !important;
+//     padding: 5px !important;
+//     padding-left: 20px !important;
+//     padding-right: 120px !important;
+// }
+// .mobile .submit-button-oli {
+//     margin-left: -106px !important;
+// }
+// .mobile .submit-field-name-oli {
+//     width: 35% !important;
+//     border-top-left-radius: 20px !important;
+//     border-bottom-left-radius: 20px !important;
+//     margin-right: -3px !important;
+// }
 .loader {
     position: absolute;
     width: 0px;
