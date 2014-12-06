@@ -123,6 +123,10 @@
 
 }
 
+.lnd__testi-container{ 
+    min-height: 400px;
+}
+
 .testi__text{
     max-width: 500px;
     margin: auto;
@@ -389,11 +393,12 @@
 
 .lnd__features-container{
     background: oli-tan(1);
+    min-height: 700px;
 }
 
 .lnd__about-container{
     height: 45%;
-    min-height: 300px;
+    min-height: 500px;
     width: 100%;
     background: oli-orange(.7);
     opacity: 1;
